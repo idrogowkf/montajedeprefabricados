@@ -1,20 +1,172 @@
 // app/(marketing)/tipos/[tipo]/page.tsx
-import React from "react";
-import Link from "next/link";
+import Image from "next/image";
+import { notFound } from "next/navigation";
 
-// ===============================================================
-// Página dinámica de tipos de obra (static pre-rendering)
-// Pre-renderiza las páginas de tipos más comunes:
-//   - naves-industriales
-//   - puentes
-//   - viaductos
-//   - fachadas
-//   - cubiertas
-//   - cerramientos
-// ===============================================================
+// Fuerza SSG: nada de runtime dynamic ni cookies/headers
+export const dynamic = "force-static";
+export const revalidate = false;
+export const dynamicParams = false;
 
-export const dynamicParams = false; // solo genera las rutas listadas abajo
+type Params = { params: { tipo: string } };
 
+// ---- Contenido por tipo ----
+const TIPOS: Record<
+    string,
+    {
+        title: string;
+        subtitle: string;
+        bullets: string[];
+        images: { src: string; alt: string; meta?: string }[];
+        cta?: { href: string; label: string };
+    }
+> = {
+    "naves-industriales": {
+        title: "Naves industriales",
+        subtitle:
+            "Montaje integral de prefabricado: pilares, pórticos, losas alveolares y panel de fachada. Plan de izado, cuadrillas y grúas coordinadas.",
+        bullets: [
+            "Plan de izados para grandes formatos",
+            "Coordinación de transporte especial (Ibercarga)",
+            "Montaje de losas alveolares y paneles sándwich",
+            "Turnos día/noche, balizamiento y señalistas",
+        ],
+        images: [
+            {
+                src: "/proyectos/industrial-nave-losa-alveolar-35t.webp",
+                alt: "Nave logística con losas alveolares 35t",
+                meta: "Grúa 250T · Radio 20 m · 3 jornadas",
+            },
+            {
+                src: "/proyectos/industrial-panel-fachada-22t.webp",
+                alt: "Panel industrial de 22t",
+                meta: "16 paneles · 2 jornadas",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Calcular montaje" },
+    },
+    puentes: {
+        title: "Puentes",
+        subtitle:
+            "Montaje de vigas cajón, V/O, WT y elementos singulares. Análisis de curvas Liebherr y maniobras críticas.",
+        bullets: [
+            "Izados nocturnos con cortes coordinados",
+            "Selección de grúas 300–500T+",
+            "QA/QC y control dimensional",
+            "Dossier de cierre y as-built",
+        ],
+        images: [
+            {
+                src: "/proyectos/civil-puente-viga-cajon-150t.webp",
+                alt: "Puente con viga cajón 150t",
+                meta: "Grúa 500T · 4 jornadas",
+            },
+            {
+                src: "/proyectos/civil-viaducto-viga-wt-80t.webp",
+                alt: "Viaducto con viga WT 80t",
+                meta: "Grúa 350T · Radio 22 m",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Solicitar propuesta" },
+    },
+    viaductos: {
+        title: "Viaductos",
+        subtitle:
+            "Ejecución por fases con pórticos y vigas WT de gran tonelaje. Señalización, accesos y plataformas.",
+        bullets: [
+            "Planificación de acopios y fases",
+            "Señalización y permisos",
+            "Control de radios y contrapesos",
+            "Checklists de seguridad y útiles",
+        ],
+        images: [
+            {
+                src: "/proyectos/civil-viaducto-viga-wt-80t.webp",
+                alt: "Viga WT en viaducto",
+                meta: "80 t · radio 22 m",
+            },
+            {
+                src: "/proyectos/civil-puente-viga-cajon-150t.webp",
+                alt: "Viga cajón gran formato",
+                meta: "Grúa 500T",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Planificar izados" },
+    },
+    fachadas: {
+        title: "Fachadas arquitectónicas",
+        subtitle:
+            "Montaje de paneles vistos y texturizados. Tolerancias, anclajes y secuencia sin sorpresas.",
+        bullets: [
+            "Marcado y replanteo preciso",
+            "Útiles, eslingas y herrajes certificados",
+            "Ajustes, sellados y remates",
+            "Dossier fotográfico y as-built",
+        ],
+        images: [
+            {
+                src: "/proyectos/residencial-altura-panel-9t.webp",
+                alt: "Panel fachada 9t en residencial",
+                meta: "Radio 18 m · 2 jornadas",
+            },
+            {
+                src: "/proyectos/industrial-panel-fachada-22t.webp",
+                alt: "Fachada industrial 22t",
+                meta: "16 paneles · logística coordinada",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Solicitar planificación" },
+    },
+    cubiertas: {
+        title: "Cubiertas",
+        subtitle:
+            "Montaje de cubiertas prefabricadas, correas y remates. Seguridad y accesos priorizados.",
+        bullets: [
+            "Líneas de vida y barandillas temporales",
+            "Plataformas elevadoras coordinadas",
+            "Secuencias por paños",
+            "Cierre estanco y control de calidad",
+        ],
+        images: [
+            {
+                src: "/proyectos/industrial-nave-losa-alveolar-35t.webp",
+                alt: "Cubiertas con losas alveolares",
+                meta: "42 piezas · 3 jornadas",
+            },
+            {
+                src: "/proyectos/vivienda-unifamiliar-losas-12t.webp",
+                alt: "Cubierta vivienda con losas 12t",
+                meta: "200T · radio 16 m",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Solicitar propuesta" },
+    },
+    cerramientos: {
+        title: "Cerramientos",
+        subtitle:
+            "Cerramientos perimetrales y panelería prefabricada. Tiempos competitivos y acabados limpios.",
+        bullets: [
+            "Paneles de cerramiento y sándwich",
+            "Sellados y encuentros",
+            "Integración con carpinterías",
+            "Inspecciones y checklist final",
+        ],
+        images: [
+            {
+                src: "/proyectos/industrial-panel-fachada-22t.webp",
+                alt: "Cerramiento de paneles 22t",
+                meta: "Grúa 300T · 2 jornadas",
+            },
+            {
+                src: "/proyectos/residencial-altura-panel-9t.webp",
+                alt: "Cerramiento residencial",
+                meta: "9t · alta precisión",
+            },
+        ],
+        cta: { href: "/presupuesto", label: "Calcular montaje" },
+    },
+};
+
+// --- paths estáticos ---
 export function generateStaticParams() {
     return [
         { tipo: "naves-industriales" },
@@ -22,118 +174,81 @@ export function generateStaticParams() {
         { tipo: "viaductos" },
         { tipo: "fachadas" },
         { tipo: "cubiertas" },
-        { tipo: "cerramientos" },
+        { tipo: "cerramientos" }, // <- este faltaba o quedaba dinámico
     ];
 }
 
-const TITULOS: Record<string, string> = {
-    "naves-industriales": "Montaje de Naves Industriales",
-    "puentes": "Montaje de Puentes Prefabricados",
-    "viaductos": "Montaje de Viaductos y Estructuras Civiles",
-    "fachadas": "Montaje de Fachadas Arquitectónicas",
-    "cubiertas": "Montaje de Cubiertas y Placas Pretensadas",
-    "cerramientos": "Montaje de Cerramientos Prefabricados",
-};
+export function generateMetadata({ params }: Params) {
+    const key = params.tipo;
+    const d = TIPOS[key];
+    if (!d) return {};
+    return {
+        title: `${d.title} | Montaje de Prefabricados`,
+        description: d.subtitle,
+    };
+}
 
-const DESCRIPCIONES: Record<string, string> = {
-    "naves-industriales":
-        "Montaje integral de estructuras prefabricadas de hormigón o acero para naves logísticas e industriales. Coordinación de transporte, grúas, y equipos de montaje certificados.",
-    "puentes":
-        "Ejecución de montaje de vigas, dovelas y tableros prefabricados para puentes carreteros y ferroviarios. Control dimensional, seguridad y planificación técnica.",
-    "viaductos":
-        "Montaje de vigas pretensadas y celosías en grandes luces y accesos complejos. Plan de izado, seguridad, y coordinación de maniobras críticas.",
-    "fachadas":
-        "Montaje de paneles arquitectónicos de gran formato, anclajes y juntas. Manipulación controlada, izado vertical, y alineación estética en obra.",
-    "cubiertas":
-        "Montaje de placas alveolares, pretensadas o de celosía en cubiertas industriales y logísticas. Coordinación con estructura metálica y sellado final.",
-    "cerramientos":
-        "Cerramientos de hormigón prefabricado para parques industriales, centros logísticos y obras de infraestructura. Rapidez, seguridad y control de calidad.",
-};
-
-export default function TipoPage({
-    params,
-}: {
-    params: { tipo: string };
-}) {
-    const { tipo } = params;
-    const titulo = TITULOS[tipo] || "Montaje de Prefabricados";
-    const descripcion =
-        DESCRIPCIONES[tipo] ||
-        "Servicio técnico especializado en montaje de estructuras y elementos prefabricados.";
+export default function TipoPage({ params }: Params) {
+    const key = params.tipo;
+    const d = TIPOS[key];
+    if (!d) return notFound();
 
     return (
-        <div className="min-h-screen bg-neutral-950 text-neutral-200">
-            {/* Header simple */}
-            <header className="sticky top-0 z-40 border-b border-neutral-900/80 bg-neutral-950/80 backdrop-blur">
-                <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-                    <Link href="/" className="flex items-center gap-3">
-                        <div className="grid h-10 w-10 place-items-center rounded-xl bg-yellow-400 font-black text-neutral-900">
-                            MP
-                        </div>
-                        <div>
-                            <div className="text-sm font-bold tracking-widest text-yellow-400">
-                                MONTAJE DE PREFABRICADOS
-                            </div>
-                            <div className="text-xs text-neutral-400">
-                                Estructuras · Transporte · Grúas
-                            </div>
-                        </div>
-                    </Link>
-                    <Link
-                        href="/presupuesto"
-                        className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300"
-                    >
-                        Solicitar cotización
-                    </Link>
-                </div>
+        <main className="mx-auto max-w-6xl px-5 py-10">
+            <header className="mb-6">
+                <a href="/" className="text-sm text-neutral-500 hover:underline">
+                    ← Volver
+                </a>
+                <h1 className="mt-2 text-2xl font-extrabold tracking-tight">
+                    {d.title}
+                </h1>
+                <p className="mt-2 text-sm text-neutral-600">{d.subtitle}</p>
             </header>
 
-            {/* Contenido principal */}
-            <main className="mx-auto max-w-5xl px-6 py-16">
-                <h1 className="text-4xl font-extrabold text-yellow-400 sm:text-5xl">
-                    {titulo}
-                </h1>
-                <p className="mt-4 text-neutral-300 text-lg">{descripcion}</p>
-
-                <div className="mt-10 grid gap-6 sm:grid-cols-2">
-                    <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                        <h3 className="font-semibold text-neutral-100">
-                            Características del servicio
-                        </h3>
-                        <ul className="mt-3 space-y-2 text-sm text-neutral-300 list-disc pl-5">
-                            <li>Planificación técnica y estudio de izado.</li>
-                            <li>Coordinación de transporte especial y grúas.</li>
-                            <li>Montaje certificado y control de calidad.</li>
-                            <li>Seguridad y documentación PRL.</li>
-                            <li>Entrega “as-built” y dossier fotográfico.</li>
-                        </ul>
-                    </div>
-
-                    <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
-                        <h3 className="font-semibold text-neutral-100">
-                            Solicita tu presupuesto
-                        </h3>
-                        <p className="mt-2 text-sm text-neutral-400">
-                            Indica el tipo de elementos, tonelajes, radios y fechas
-                            estimadas. Te enviaremos una estimación y un plan técnico.
-                        </p>
-                        <Link
-                            href="/presupuesto"
-                            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300"
+            <section className="grid gap-6 md:grid-cols-2">
+                <ul className="space-y-2 rounded-2xl border border-neutral-200 bg-neutral-50 p-5">
+                    {d.bullets.map((b, i) => (
+                        <li key={i} className="flex items-start gap-2 text-sm text-neutral-800">
+                            <span className="mt-1 h-1.5 w-1.5 rounded-full bg-yellow-400" />
+                            <span>{b}</span>
+                        </li>
+                    ))}
+                </ul>
+                <div className="grid gap-4">
+                    {d.images.map((im, i) => (
+                        <figure
+                            key={i}
+                            className="overflow-hidden rounded-xl border border-neutral-200 bg-white"
                         >
-                            Generar presupuesto
-                        </Link>
-                    </div>
+                            <div className="relative aspect-[16/10]">
+                                <Image
+                                    src={im.src}
+                                    alt={im.alt}
+                                    fill
+                                    sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 33vw"
+                                    className="object-cover"
+                                />
+                            </div>
+                            {im.meta ? (
+                                <figcaption className="px-3 py-2 text-center text-xs text-neutral-600">
+                                    {im.meta}
+                                </figcaption>
+                            ) : null}
+                        </figure>
+                    ))}
                 </div>
-            </main>
+            </section>
 
-            {/* Footer */}
-            <footer className="border-t border-neutral-900/80 mt-16">
-                <div className="mx-auto max-w-7xl px-6 py-10 text-center text-sm text-neutral-400">
-                    © {new Date().getFullYear()} Montajedeprefabricados.com · Todos los
-                    derechos reservados
+            {d.cta ? (
+                <div className="mt-8">
+                    <a
+                        href={d.cta.href}
+                        className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 hover:bg-yellow-300"
+                    >
+                        {d.cta.label}
+                    </a>
                 </div>
-            </footer>
-        </div>
+            ) : null}
+        </main>
     );
 }

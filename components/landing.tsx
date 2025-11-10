@@ -4,40 +4,73 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// ===== Versión aprobada DEFINITIVA — COMPLETA (Hotfix v3) =====
+// ===== Versión aprobada DEFINITIVA — COMPLETA (Hotfix v3-TS) =====
 // Cambios en esta versión:
-//  - Eliminado el bloque DevTests / imagen no disponible.
-//  - Añadido teléfono +34 624 433 123 en la sección Contacto.
-//  - Mantiene fix de <Tag> cuando children es null/undefined.
+//  - Tipado completo de SafeImage para evitar "implicit any".
+//  - Tipado básico de Tag/Section/Pictogram para evitar futuros avisos.
+//  - Mantiene: sin DevTests; teléfono +34 624 433 123 en Contacto; fix de <Tag> con children null.
+
+// ---------- Tipos ----------
+type SafeImageProps = Omit<React.ComponentProps<typeof Image>, "src" | "alt"> & {
+    src?: string;
+    alt?: string;
+};
+
+type TagProps = {
+    children?: React.ReactNode;
+};
+
+type SectionProps = {
+    id?: string;
+    eyebrow?: React.ReactNode;
+    title: React.ReactNode;
+    subtitle?: React.ReactNode;
+    children?: React.ReactNode;
+};
+
+type PictogramProps = {
+    name: string;
+    Icon: React.FC;
+    items: string[];
+};
+
+type Proyecto = {
+    src: string;
+    titulo: string;
+    meta: string;
+    alt: string;
+};
 
 // ---------- Helpers ----------
 // SafeImage: evita errores cuando la imagen no existe (usa placeholder)
-const SafeImage = ({ src, alt, ...props }) => {
-    const [safeSrc, setSafeSrc] = useState(src);
-    const isLocal = typeof safeSrc === 'string' && safeSrc.startsWith('/');
+const SafeImage: React.FC<SafeImageProps> = ({ src = "", alt = "", ...props }) => {
+    const [safeSrc, setSafeSrc] = useState<string>(src ?? "");
+    // Si la ruta es local (/public/*), desactiva el optimizer de Next para que onError funcione en cliente
+    const isLocal = typeof safeSrc === "string" && safeSrc.startsWith("/");
     const fallbackSvg = `data:image/svg+xml;utf8,${encodeURIComponent(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100"><rect width="160" height="100" fill="#0a0a0a"/><rect x="6" y="6" width="148" height="88" fill="#111" stroke="#262626"/><text x="80" y="55" fill="#eab308" font-size="10" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">imagen no disponible</text></svg>'
     )}`;
 
     return (
         <Image
-            src={safeSrc}
+            src={safeSrc || fallbackSvg}
             alt={alt}
             onError={() => setSafeSrc(fallbackSvg)}
+            // Bypass del optimizador solo para rutas locales
             unoptimized={isLocal}
             {...props}
         />
     );
 };
 
-const Tag = ({ children }) => (
+const Tag: React.FC<TagProps> = ({ children }) => (
     <span className="inline-flex items-center gap-2 rounded-full border border-yellow-500 bg-yellow-400 px-3 py-1 text-xs font-bold text-neutral-900 shadow-md">
         <span className="h-1.5 w-1.5 rounded-full bg-neutral-900" />
-        {children ?? ''}
+        {children ?? ""}
     </span>
 );
 
-const Section = ({ id, eyebrow, title, subtitle, children }) => (
+const Section: React.FC<SectionProps> = ({ id, eyebrow, title, subtitle, children }) => (
     <section id={id} className="relative mx-auto max-w-7xl px-6 py-20">
         <div className="mb-8 flex items-center gap-3">
             {eyebrow ? <Tag>{eyebrow}</Tag> : null}
@@ -54,11 +87,11 @@ const Section = ({ id, eyebrow, title, subtitle, children }) => (
 );
 
 // ---------- Inline mocks para previsualizar ----------
-const LeadForm = () => {
+const LeadForm: React.FC = () => {
     const [ok, setOk] = useState("");
     const [err, setErr] = useState("");
 
-    const submit = async (e) => {
+    const submit: React.FormEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault();
         setOk("");
         setErr("");
@@ -79,7 +112,7 @@ const LeadForm = () => {
             const j = await r.json();
             if (j?.ok) setOk("Solicitud enviada. Te responderemos en 24h.");
             else setErr(j?.error || "No se pudo enviar. Inténtalo de nuevo.");
-        } catch (e) {
+        } catch {
             setErr("Error de red. Reintenta en unos segundos.");
         }
     };
@@ -107,9 +140,9 @@ const LeadForm = () => {
     );
 };
 
-const Calculator = () => {
+const Calculator: React.FC = () => {
     const router = useRouter();
-    const estimate = (e) => {
+    const estimate: React.FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
         router.push("/presupuesto");
     };
@@ -130,7 +163,7 @@ const Calculator = () => {
 };
 
 // ---------- Pictogramas (hover sobrepuestos) ----------
-const CraneIcon = () => (
+const CraneIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <path d="M6 40h36" stroke="currentColor" strokeWidth="2" />
         <path d="M10 40V18l10-6h18" stroke="currentColor" strokeWidth="2" />
@@ -138,7 +171,7 @@ const CraneIcon = () => (
         <circle cx="34" cy="30" r="3" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
-const TruckIcon = () => (
+const TruckIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <rect x="4" y="18" width="22" height="12" stroke="currentColor" strokeWidth="2" />
         <path d="M26 22h10l6 6v2H26z" stroke="currentColor" strokeWidth="2" />
@@ -146,13 +179,13 @@ const TruckIcon = () => (
         <circle cx="34" cy="36" r="3" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
-const BeamIcon = () => (
+const BeamIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <rect x="6" y="22" width="36" height="6" rx="1" stroke="currentColor" strokeWidth="2" />
         <path d="M10 18h28M10 34h28" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
-const TeamIcon = () => (
+const TeamIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <circle cx="16" cy="18" r="4" stroke="currentColor" strokeWidth="2" />
         <circle cx="32" cy="18" r="4" stroke="currentColor" strokeWidth="2" />
@@ -160,20 +193,20 @@ const TeamIcon = () => (
         <path d="M24 34c0-4 4-8 8-8s8 4 8 8v2H24v-2Z" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
-const PlanIcon = () => (
+const PlanIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <rect x="8" y="10" width="28" height="24" rx="2" stroke="currentColor" strokeWidth="2" />
         <path d="M16 18h12M16 24h18M16 30h10" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
-const SafetyIcon = () => (
+const SafetyIcon: React.FC = () => (
     <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-10 w-10">
         <path d="M24 6l16 6v10c0 8.284-6.716 16-16 16S8 30.284 8 22V12l16-6Z" stroke="currentColor" strokeWidth="2" />
         <path d="M16 24l6 6 10-12" stroke="currentColor" strokeWidth="2" />
     </svg>
 );
 
-const Pictogram = ({ name, Icon, items }) => (
+const Pictogram: React.FC<PictogramProps> = ({ name, Icon, items }) => (
     <div className="group relative z-0 rounded-2xl border border-neutral-800 bg-neutral-900 p-6 text-center transition hover:-translate-y-1 hover:shadow-lg hover:shadow-yellow-500/10 hover:z-50">
         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-xl bg-neutral-800 text-yellow-400 ring-1 ring-neutral-700">
             <Icon />
@@ -196,7 +229,7 @@ const Pictogram = ({ name, Icon, items }) => (
     </div>
 );
 
-const PICTOS = [
+const PICTOS: PictogramProps[] = [
     { name: 'Grúas y Maniobras', Icon: CraneIcon, items: ['Selección 80–500T+', 'Plan de izados', 'Balizamiento y señalistas', 'Inspección de accesos'] },
     { name: 'Transporte Especial', Icon: TruckIcon, items: ['Rutas y permisos', 'Escoltas', 'Coordinación carga/descarga', 'Tracking en ruta'] },
     { name: 'Montaje de Elementos', Icon: BeamIcon, items: ['Vigas y losas alveolares', 'Pilares y pórticos', 'Paneles de fachada', 'Ajustes y sellados'] },
@@ -205,16 +238,8 @@ const PICTOS = [
     { name: 'Seguridad y Calidad', Icon: SafetyIcon, items: ['PSS / PTB', 'Checklists útiles/grúas', 'Partes diarios', 'Cierre documental'] },
 ];
 
-const PictogramGrid = () => (
-    <div className="relative isolate grid gap-6 sm:grid-cols-2 lg:grid-cols-3 overflow-visible">
-        {PICTOS.map((p) => (
-            <Pictogram key={p.name} {...p} />
-        ))}
-    </div>
-);
-
 // ---------- PROYECTOS (6 experiencias reales) ----------
-const PROYECTOS = [
+const PROYECTOS: Proyecto[] = [
     // Vivienda (2)
     {
         src: "/proyectos/vivienda-unifamiliar-losas-12t.webp",
@@ -436,3 +461,12 @@ export default function Landing() {
         </div>
     );
 }
+
+// ---------- Grid de pictogramas (se define al final para usar tipos) ----------
+const PictogramGrid: React.FC = () => (
+    <div className="relative isolate grid gap-6 sm:grid-cols-2 lg:grid-cols-3 overflow-visible">
+        {PICTOS.map((p) => (
+            <Pictogram key={p.name} {...p} />
+        ))}
+    </div>
+);

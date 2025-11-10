@@ -8,6 +8,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
  *  (1) Dimensiones con decimales: acepta coma y punto (estado draft + onBlur)
  *  (2) Se añade bloque "Coordinación y supervisión de montaje (a convenir)"
  *      con Lifting Plan, Secuencia, Seguridad e Instrucciones de montaje.
+ *  (3) Fix de tipos para setPartidas({}) usando PartidasMap
  *  Resto del flujo, estilos y endpoints permanecen igual.
  * ========================================================================= */
 
@@ -38,7 +39,7 @@ type Dimensiones = {
     largo: number;
     ancho: number;
     alto: number;
-    peso: number;  // t
+    peso: number; // t
     radio: number; // m
     plataformas: boolean;
 };
@@ -54,6 +55,10 @@ type ResultadoResumen = {
     iva_public: number;
     total_public: number;
 };
+
+// ✅ Tipo auxiliar para permitir resets con {}
+type PartidasMap = Partial<Record<PartidasAny, PartidaState>>;
+type DraftMap = Partial<Record<PartidasAny, Partial<Record<keyof Dimensiones, string>>>>;
 
 // -------------------- Estilos reutilizables --------------------
 const BTN =
@@ -249,12 +254,10 @@ export default function PresupuestoPage() {
 
     // Partidas
     const [seleccion, setSeleccion] = useState<PartidasAny[]>([]);
-    const [partidas, setPartidas] = useState<Record<PartidasAny, PartidaState>>({} as any);
+    const [partidas, setPartidas] = useState<PartidasMap>({}); // ✅ fix typing
 
     // --- NUEVO: estado draft por campo decimal (permite teclear coma/punto) ---
-    const [draft, setDraft] = useState<
-        Record<PartidasAny, Partial<Record<keyof Dimensiones, string>>>
-    >({} as any);
+    const [draft, setDraft] = useState<DraftMap>({}); // ✅ fix typing
 
     // Resultados
     const [tablaHTML, setTablaHTML] = useState("");
@@ -644,8 +647,8 @@ export default function PresupuestoPage() {
                                         onClick={() => {
                                             setTipoObra(t);
                                             setSeleccion([]);
-                                            setPartidas({});
-                                            setDraft({});
+                                            setPartidas({}); // ✅ permitido por PartidasMap
+                                            setDraft({});    // ✅ permitido por DraftMap
                                         }}
                                         className={`${BTN} ${tipoObra === t ? BTN_SOLID : BTN_GHOST}`}
                                     >

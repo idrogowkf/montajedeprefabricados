@@ -1,0 +1,4 @@
+export type CalcInput={ciudad?:string;elementos?:string;tonelajes?:string;radios?:string;plazo?:string};
+const numbers=(value="")=>(value.match(/\d+(?:\.\d+)?/g)??[]).map(Number).filter(Number.isFinite);
+const round=(value:number)=>Math.round(value*100)/100;
+export function estimateAssembly(input:CalcInput){const tons=numbers(input.tonelajes);const radii=numbers(input.radios);const avg=tons.length?tons.reduce((sum,value)=>sum+value,0)/tons.length:30;const radius=radii.length?Math.max(...radii):18;const deadline=(input.plazo??"").toLowerCase();const factor=/\b(noches?|nocturn[ao]s?)\b/.test(deadline)?1.25:/\b(2|3)\b/.test(deadline)||/urgente/.test(deadline)?1.15:1;const base=1200+avg*90+(radius>20?(radius-20)*80:0);return{avg_tonelaje:round(avg),radio_max:radius,base:round(base),factor_urgencia:factor,total:round(base*factor)}}

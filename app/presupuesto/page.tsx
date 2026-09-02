@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { BTN, BTN_GHOST, BTN_SOLID, CARD, CHIP, FIELD, GRID_FORM, GRID_PARTIDAS, HR, parseDecimal } from "@/components/presupuesto/styles";
 
 /** =========================================================================
  *  PRESUPUESTO — FIXES v2
@@ -59,36 +60,6 @@ type ResultadoResumen = {
 // ✅ Tipo auxiliar para permitir resets con {}
 type PartidasMap = Partial<Record<PartidasAny, PartidaState>>;
 type DraftMap = Partial<Record<PartidasAny, Partial<Record<keyof Dimensiones, string>>>>;
-
-// -------------------- Estilos reutilizables --------------------
-const BTN =
-    "inline-flex items-center justify-center rounded-xl px-3 py-2 text-sm font-semibold ring-1 transition";
-const BTN_SOLID =
-    "bg-yellow-400 text-neutral-900 ring-yellow-300 hover:bg-yellow-300";
-const BTN_GHOST =
-    "text-neutral-200 ring-neutral-700 hover:bg-neutral-900/60";
-
-const FIELD =
-    "rounded-xl border border-neutral-300/80 bg-white px-3 py-2 text-sm text-neutral-900 focus:outline-none focus:ring-2 focus:ring-yellow-400/70 min-w-0";
-const CARD =
-    "rounded-2xl border border-neutral-200 bg-neutral-50 p-5 shadow-sm";
-const GRID_FORM =
-    "grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4";
-const GRID_PARTIDAS =
-    "grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6";
-const CHIP =
-    "inline-flex items-center rounded-xl px-3 py-1 text-xs font-semibold ring-1";
-const HR = <div className="my-6 h-px bg-neutral-200" />;
-
-// ---------- Utilidades ----------
-const parseDec = (v: string): number => {
-    if (v == null) return 0;
-    const trimmed = v.trim();
-    if (trimmed === "" || trimmed === "," || trimmed === ".") return 0;
-    const s = trimmed.replace(",", ".").replace(/[^\d.\-]/g, "");
-    const n = Number(s);
-    return isNaN(n) ? 0 : n;
-};
 
 // ==================== Calendario propio ====================
 type CalendarProps = {
@@ -273,7 +244,7 @@ export default function PresupuestoPage() {
     const [contactoNombre, setContactoNombre] = useState("");
     const [contactoEmail, setContactoEmail] = useState("");
 
-    const payloadRef = useRef<any>(null);
+    const payloadRef = useRef<Record<string, unknown> | null>(null);
 
     const visibleLabels = useMemo(() => {
         if (tipoObra === "civil") return LABELS_CIVIL;
@@ -321,7 +292,7 @@ export default function PresupuestoPage() {
     };
     const commitDraftField = (key: PartidasAny, field: keyof Dimensiones) => {
         const text = draft[key]?.[field] ?? "";
-        const num = typeof text === "string" ? parseDec(text) : 0;
+        const num = typeof text === "string" ? parseDecimal(text) : 0;
         setPartidas((prev) => {
             const clone = { ...prev };
             const cur = clone[key];
@@ -663,16 +634,16 @@ export default function PresupuestoPage() {
                     <div className="mt-4">
                         <label className="mb-1 block text-xs font-semibold text-neutral-700">Sistema constructivo</label>
                         <div className="flex flex-wrap gap-2">
-                            {[
+                            {([
                                 ["hormigon", "Hormigón"],
                                 ["madera", "Madera"],
                                 ["steel", "Steel framing"],
                                 ["pvc", "PVC"],
-                            ].map(([k, label]) => (
+                            ] as const).map(([k, label]) => (
                                 <button
                                     key={k}
                                     type="button"
-                                    onClick={() => setSistema(k as any)}
+                                    onClick={() => setSistema(k)}
                                     className={`${BTN} ${sistema === k ? BTN_SOLID : BTN_GHOST}`}
                                 >
                                     {label}

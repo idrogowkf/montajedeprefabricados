@@ -1,0 +1,1 @@
+import {ContentHub} from "@/components/content-hub";import {hubs} from "@/lib/content/hubs";import {buildMetadata} from "@/lib/seo";export const metadata=buildMetadata({title:hubs.ingenieria.title,description:hubs.ingenieria.description,path:"/ingenieria"});export default function Page(){return <ContentHub hub={hubs.ingenieria} path="/ingenieria" schemaType="Service"/>}

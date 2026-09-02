@@ -1,35 +1,10 @@
-import type { Metadata } from 'next'
-
-export const site = {
-  name: 'Montaje de Prefabricados',
-  url: 'https://montajedeprefabricados.com',
-  description:
-    'Especialistas en montaje de prefabricados en España: grúas 80–500T+, transporte especial (Ibercarga), cuadrillas expertas, planteizado, planos y as-built.',
-}
-
-export const defaultMetadata: Metadata = {
-  title: site.name,
-  description: site.description,
-  openGraph: {
-    title: site.name,
-    description: site.description,
-    type: 'website',
-    url: site.url,
-    images: ['/og.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: site.name,
-    description: site.description,
-  },
-}
-
-export function jsonLdOrganization() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": site.name,
-    "url": site.url,
-    "email": "ofertas@montajedeprefabricados.com"
-  }
-}
+import type {Metadata} from "next";
+export const site={name:"Montaje de Prefabricados",url:"https://montajesprefabricados.com",description:"Ingeniería, planificación y ejecución de montaje de prefabricados en España.",email:"ofertas@montajedeprefabricados.com"} as const;
+type MetadataInput={title:string;description:string;path:string};
+export function buildMetadata({title,description,path}:MetadataInput):Metadata{return{title,description,alternates:{canonical:path},robots:{index:true,follow:true},openGraph:{title,description,type:"website",locale:"es_ES",siteName:site.name,url:path,images:[{url:"/og-social.jpg",width:1200,height:630,alt:"Montaje de prefabricados e ingeniería de montaje"}]},twitter:{card:"summary_large_image",title,description,images:["/og-social.jpg"]}}}
+export const defaultMetadata:Metadata={metadataBase:new URL(site.url),...buildMetadata({title:"Montaje de prefabricados en España",description:site.description,path:"/"}),title:{default:"Montaje de prefabricados en España",template:`%s | ${site.name}`},manifest:"/manifest.webmanifest",icons:{icon:[{url:"/favicon.ico"},{url:"/favicon-32x32.png",sizes:"32x32",type:"image/png"}],apple:"/apple-touch-icon.png"}};
+export function jsonLdOrganization(){return{"@context":"https://schema.org","@type":"Organization",name:site.name,url:site.url,email:site.email,logo:`${site.url}/android-chrome-512x512.png`}}
+export function jsonLdWebsite(){return{"@context":"https://schema.org","@type":"WebSite",name:site.name,url:site.url,inLanguage:"es-ES"}}
+export function jsonLdService(){return{"@context":"https://schema.org","@type":"Service",name:"Montaje de prefabricados",serviceType:"Montaje e ingeniería de estructuras prefabricadas",areaServed:{"@type":"Country",name:"España"},provider:{"@type":"Organization",name:site.name,url:site.url}}}
+export function jsonLdBreadcrumbs(items:Array<{name:string;path:string}>){return{"@context":"https://schema.org","@type":"BreadcrumbList",itemListElement:items.map((item,index)=>({"@type":"ListItem",position:index+1,name:item.name,item:new URL(item.path,site.url).toString()}))}}
+export function jsonLdFaq(items:Array<{question:string;answer:string}>){return{"@context":"https://schema.org","@type":"FAQPage",mainEntity:items.map(item=>({"@type":"Question",name:item.question,acceptedAnswer:{"@type":"Answer",text:item.answer}}))}}

@@ -1,0 +1,3 @@
+import Link from "next/link";
+import { technicalPages } from "@/lib/content/technical-pages";
+export function TechnicalDirectory({category}:{category:"servicios"|"ingenieria"}){const pages=technicalPages.filter(page=>page.category===category);return <section className="mt-14"><h2 className="text-2xl font-bold text-neutral-100">Contenidos técnicos</h2><div className="mt-6 grid gap-4 sm:grid-cols-2">{pages.map(page=><article key={page.slug} className="rounded-2xl border border-neutral-800 bg-neutral-900 p-5"><h3 className="font-semibold text-neutral-100"><Link href={`/${category}/${page.slug}`} className="hover:text-yellow-400">{page.title}</Link></h3><p className="mt-2 text-sm text-neutral-300">{page.description}</p></article>)}</div></section>}

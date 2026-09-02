@@ -1,3 +1,23 @@
-import {Section} from "@/components/landing/section";
-const services=[['Grúas y maniobras',['Selección 80–500T+','Plan de izados','Balizamiento y señalistas','Inspección de accesos']],['Transporte especial',['Rutas y permisos','Escoltas','Coordinación carga/descarga','Tracking en ruta']],['Montaje de elementos',['Vigas y losas alveolares','Pilares y pórticos','Paneles de fachada','Ajustes y sellados']],['Cuadrillas',['Capataces','Soldadores / pernos','Atornillado controlado','Turnos día/noche']],['Planos y as-built',['Planos 2D/3D','Marcado de piezas','Dossier fotográfico','As-built final']],['Seguridad y calidad',['PSS / PTB','Checklists útiles/grúas','Partes diarios','Cierre documental']]] as const;
-export function ServicesSection(){return <Section id="servicios" eyebrow="Catálogo de servicios" title="Todo el ciclo del montaje prefabricado" subtitle="Un solo interlocutor para logística, ingeniería de izado, grúas, mano de obra, planteizado y planos de montaje. Coordinación directa con Ibercarga para transportes especiales."><div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{services.map(([name,items])=><article key={name} className="group relative rounded-2xl border border-neutral-800 bg-neutral-900 p-6 text-center"><div className="mx-auto grid h-16 w-16 place-items-center rounded-xl bg-neutral-800 text-2xl font-bold text-yellow-400">{name[0]}</div><h3 className="mt-3 font-semibold text-neutral-100">{name}</h3><div className="absolute left-1/2 top-full z-50 mt-3 hidden w-72 -translate-x-1/2 rounded-2xl border border-neutral-800 bg-neutral-950 p-4 text-left shadow-xl group-hover:block"><ul className="text-sm text-neutral-300">{items.map(item=><li key={item}>• {item}</li>)}</ul><div className="mt-3 text-right"><a href="#contacto" className="rounded-xl bg-yellow-400 px-3 py-1.5 text-xs font-semibold text-neutral-900">Solicitar</a></div></div></article>)}</div></Section>}
+import Link from "next/link";
+import { Section } from "@/components/landing/section";
+
+const services = [
+  ['Ingeniería de montaje', ['Revisión de datos de partida', 'Secuencia y posiciones de trabajo', 'Condicionantes y puntos de control']],
+  ['Grúas y maniobras', ['Carga total suspendida', 'Radio y configuración', 'Interferencias y zonas de exclusión']],
+  ['Transporte especial', ['Orden de suministro', 'Accesos y radios de giro', 'Descarga y zonas de acopio']],
+  ['Montaje de elementos', ['Vigas, pilares y losas', 'Paneles y fachadas', 'Estructuras metálicas']],
+  ['Control de ejecución', ['Replanteo y tolerancias', 'Estabilidad provisional', 'Registro de incidencias']],
+  ['Documentación', ['Planos vigentes y despiece', 'Secuencia comunicada', 'Cierre según alcance acordado']],
+] as const;
+
+export function ServicesSection() {
+  return <Section id="servicios" eyebrow="Servicios" title="Del estudio previo al cierre del montaje" subtitle="El alcance se define para cada obra a partir de los elementos, el emplazamiento, los medios necesarios y las responsabilidades de los intervinientes.">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{services.map(([name, items]) => <article key={name} className="flex flex-col rounded-2xl border border-neutral-800 bg-neutral-900 p-6 text-center">
+      <div className="mx-auto grid h-12 w-12 place-items-center rounded-xl bg-neutral-800 text-xl font-bold text-yellow-400" aria-hidden="true">{name[0]}</div>
+      <h3 className="mt-3 font-semibold text-neutral-100">{name}</h3>
+      <ul className="mt-4 flex-1 space-y-1 text-left text-sm text-neutral-300">{items.map(item => <li key={item}>• {item}</li>)}</ul>
+      <a href="#contacto" className="mt-5 rounded-xl border border-yellow-400 px-3 py-2 text-sm font-semibold text-yellow-400">Consultar alcance</a>
+    </article>)}</div>
+    <Link href="/servicios" className="mt-8 inline-flex font-semibold text-yellow-400">Ver el alcance completo de servicios →</Link>
+  </Section>;
+}

@@ -1,6 +1,6 @@
 ﻿// app/layout.tsx
 import "./globals.css";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { jsonLdOrganization } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -19,8 +19,13 @@ export const metadata: Metadata = {
         follow: true,
     },
     icons: {
-        icon: "/favicon.ico",
+        icon: "/favicon.svg",
     },
+    manifest: "/site.webmanifest",
+};
+
+export const viewport: Viewport = {
+    themeColor: "#070707",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -34,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         __html: JSON.stringify(jsonLdOrganization()),
                     }}
                 />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className="bg-neutral-950 text-neutral-200">{children}</body>
         </html>

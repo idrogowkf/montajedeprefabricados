@@ -1,5 +1,7 @@
 
 @import url('./fonts/inter.css');
+@import url('./v21.css');
+@import url('./v21-extra.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

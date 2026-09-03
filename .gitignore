@@ -23,5 +23,6 @@ pnpm-debug.log*
 
 # Tests
 coverage/
+*.tsbuildinfo
 
 .vercel

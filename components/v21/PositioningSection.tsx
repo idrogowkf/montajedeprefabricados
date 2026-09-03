@@ -1,0 +1,3 @@
+export default function PositioningSection() {
+  return <section className="v21-section"><div className="shell manifest"><div className="kicker mono">01 — Posicionamiento</div><h2>Montamos lo que otros <span className="outlined">diseñan.</span></h2><div className="manifest-copy"><p>El cliente no necesita “una grúa” o “un formulario”. Necesita convertir planos, piezas, pesos, geometrías y plazos en una operación de montaje comprensible.</p><p>Revisamos accesos, medios, secuencia y condicionantes para estructurar un preestudio útil, incluso cuando todavía faltan datos del proyecto.</p></div></div></section>;
+}

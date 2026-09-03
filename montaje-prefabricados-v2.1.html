@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Montaje Prefabricado — V2.1</title>
+<meta name="description" content="Prototipo interactivo V2.1 de Montaje Prefabricado: montaje, ingeniería, izado, logística, centro técnico y preestudio con carga de documentación." />
+<style>
+:root{
+  --black:#070707;
+  --black-2:#111315;
+  --ink:#111;
+  --paper:#f1efeb;
+  --paper2:#e7e4de;
+  --white:#fff;
+  --muted:#706d68;
+  --line:rgba(17,17,17,.15);
+  --red:#ef233c;
+  --red2:#c8172c;
+  --green:#2ea66a;
+  --radius:0px;
+  --max:1480px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  overflow-x:hidden;
+}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--red);color:#fff}
+.shell{width:min(var(--max),calc(100% - 56px));margin-inline:auto}
+.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;text-transform:uppercase;letter-spacing:.09em}
+.red{color:var(--red)}
+.outline{color:transparent;-webkit-text-stroke:1.2px currentColor}
+.kicker{font-size:10px;color:var(--muted)}
+.section{padding:112px 0}
+.section-head{display:flex;justify-content:space-between;gap:40px;align-items:flex-end;margin-bottom:46px}
+.section-head h2{margin:0;font-size:clamp(44px,5.8vw,88px);line-height:.92;letter-spacing:-.058em}
+.section-head p{max-width:470px;margin:0;color:var(--muted);font-size:14px;line-height:1.65}
+.btn{
+  min-height:52px;padding:0 20px;border:1px solid currentColor;background:transparent;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  font-weight:850;font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+  transition:.22s ease;
+}
+.btn.redbtn{background:var(--red);border-color:var(--red);color:#fff}
+.btn.redbtn:hover{background:#fff;color:#111;border-color:#fff}
+.btn.darkbtn{background:#111;color:#fff;border-color:#111}
+.btn.darkbtn:hover{background:var(--red);border-color:var(--red)}
+.btn.lightbtn{color:#fff;border-color:rgba(255,255,255,.55)}
+.btn.lightbtn:hover{background:white;color:#111}
+
+/* BRAND */
+.brand{display:flex;align-items:center;gap:13px;min-width:250px}
+.brand-symbol{width:58px;height:38px;display:block}
+.brand-text strong{display:block;color:#fff;font-size:15px;line-height:.98;letter-spacing:.025em}
+.brand-text span{display:block;color:rgba(255,255,255,.54);font-size:8px;margin-top:5px}
+.mp-logo .m1{fill:var(--red)}
+.mp-logo .m2{fill:#fff}
+.mp-logo .cut{fill:#090909}
+
+/* MAST */
+.mast{position:relative;min-height:100svh;background:#070707;color:#fff;overflow:hidden}
+.mast-bg{position:absolute;inset:0;overflow:hidden}
+.bg-shot{
+  position:absolute;inset:-5%;
+  background-size:cover;background-position:center;
+  filter:grayscale(1) brightness(.42) contrast(1.13);
+  transform:scale(1.08);
+}
+.bg-shot.a{
+  background-image:url("https://candidozamora.com/wp-content/uploads/2024/05/DJI_0634-1024x576.jpg");
+  animation:panA 23s ease-in-out infinite alternate,crossA 20s ease-in-out infinite;
+}
+.bg-shot.b{
+  background-image:url("https://img.interempresas.net/fotos/4649308.jpeg");
+  opacity:0;
+  animation:panB 27s ease-in-out infinite alternate,crossB 20s ease-in-out infinite;
+}
+@keyframes panA{from{transform:scale(1.08) translate(-1%,0)}to{transform:scale(1.18) translate(2%,-1%)}}
+@keyframes panB{from{transform:scale(1.14) translate(1%,1%)}to{transform:scale(1.2) translate(-2%,-1%)}}
+@keyframes crossA{0%,43%{opacity:1}52%,91%{opacity:0}100%{opacity:1}}
+@keyframes crossB{0%,43%{opacity:0}52%,91%{opacity:1}100%{opacity:0}}
+.mast:after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,.65),rgba(0,0,0,.04) 42%,rgba(0,0,0,.83)),
+             linear-gradient(90deg,rgba(0,0,0,.48),rgba(0,0,0,.03) 65%);
+}
+.grain{position:absolute;inset:0;z-index:2;opacity:.065;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.86' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E")}
+.header{
+  position:relative;z-index:9;min-height:92px;display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,.22)
+}
+.nav{display:flex;align-items:center;gap:24px}
+.nav a{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.78);position:relative;padding:11px 0}
+.nav a:after{content:"";position:absolute;bottom:4px;left:0;width:0;height:1px;background:var(--red);transition:.25s}
+.nav a:hover{color:#fff}.nav a:hover:after{width:100%}
+.nav .nav-cta{padding:11px 15px;background:var(--red);color:white}
+.nav .nav-cta:after{display:none}
+.mobile-menu{display:none;border:0;background:none;color:white;font-size:20px}
+.hero{
+  position:relative;z-index:4;min-height:calc(100svh - 92px);
+  display:grid;grid-template-columns:minmax(0,1.62fr) minmax(285px,.55fr);
+  gap:70px;align-items:end;padding:84px 0 44px
+}
+.hero-label{display:flex;align-items:center;gap:12px;font-size:10px;color:rgba(255,255,255,.66);margin-bottom:19px}
+.hero-label:before{content:"";width:28px;height:2px;background:var(--red)}
+.hero h1{margin:0;font-size:clamp(58px,7.8vw,125px);line-height:.84;letter-spacing:-.064em;font-weight:950;max-width:1070px}
+.hero-copy{max-width:660px;margin:28px 0 0;color:rgba(255,255,255,.72);font-size:16px;line-height:1.58}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-side{border-top:1px solid rgba(255,255,255,.38);padding-top:20px}
+.hero-side-head{display:flex;justify-content:space-between;color:rgba(255,255,255,.48);font-size:9px}
+.hero-side h3{font-size:31px;letter-spacing:-.045em;margin:20px 0 10px}
+.hero-side p{font-size:12px;color:rgba(255,255,255,.63);line-height:1.56}
+.hero-steps{margin-top:24px;display:grid;gap:8px}
+.hero-step{display:grid;grid-template-columns:28px 1fr auto;align-items:center;border-top:1px solid rgba(255,255,255,.14);padding-top:8px;font-size:9px}
+.hero-step i{width:6px;height:6px;border-radius:50%;background:var(--red);display:block}
+.hero-step span{color:rgba(255,255,255,.58)}
+.hero-step b{font-size:8px;color:#fff;font-weight:500}
+
+/* manifesto */
+.manifest{display:grid;grid-template-columns:.62fr 2fr;gap:70px}
+.manifest h2{font-size:clamp(44px,5.8vw,86px);line-height:.95;letter-spacing:-.058em;margin:0}
+.manifest-copy{grid-column:2;display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:880px;color:#45423f;font-size:15px;line-height:1.66}
+
+/* services */
+.dark{background:#090a0b;color:#fff}
+.dark .section-head p{color:rgba(255,255,255,.55)}
+.services{border-top:1px solid rgba(255,255,255,.18)}
+.service-row{
+  min-height:124px;border-bottom:1px solid rgba(255,255,255,.18);
+  display:grid;grid-template-columns:70px 1.05fr 1fr 52px;gap:25px;align-items:center;
+  transition:.25s;position:relative
+}
+.service-row:hover{padding-left:16px;background:rgba(255,255,255,.035)}
+.service-num{font-size:10px;color:rgba(255,255,255,.34)}
+.service-title{font-size:26px;font-weight:800;letter-spacing:-.032em}
+.service-desc{font-size:13px;line-height:1.52;color:rgba(255,255,255,.52)}
+.service-arrow{width:46px;height:46px;border:1px solid rgba(255,255,255,.22);display:grid;place-items:center;justify-self:end}
+.service-row:hover .service-arrow{background:var(--red);border-color:var(--red)}
+.float-img{position:fixed;z-index:90;pointer-events:none;width:320px;height:190px;object-fit:cover;filter:grayscale(1) contrast(1.08);border:5px solid #fff;opacity:0;transform:translate(-50%,-50%) scale(.93);transition:opacity .12s,transform .2s}
+.float-img.show{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* PROCESS */
+.process-grid{display:grid;grid-template-columns:.62fr 2fr;gap:70px}
+.process-copy h2{font-size:clamp(46px,5.5vw,84px);line-height:.94;letter-spacing:-.06em;margin:0 0 25px}
+.process-copy>p{max-width:530px;color:var(--muted);font-size:14px;line-height:1.65}
+.timeline{margin-top:46px;border-top:1px solid var(--line)}
+.time-row{display:grid;grid-template-columns:72px 1fr auto;gap:22px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line)}
+.time-row .no{font-size:10px;color:var(--muted)}
+.time-row b{font-size:17px}
+.time-row span:last-child{font-size:10px;color:var(--red);font-weight:850}
+
+/* PRESTUDY */
+.study{background:#dcd9d3;padding:112px 0}
+.study-shell{
+  display:grid;grid-template-columns:340px minmax(0,1fr) 300px;
+  background:#f7f5f1;border:1px solid #161616;min-height:760px;
+  box-shadow:0 30px 90px rgba(0,0,0,.11)
+}
+.study-intro{background:#0a0b0c;color:#fff;padding:34px;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.study-intro:after{
+  content:"";position:absolute;inset:auto -80px -110px -80px;height:330px;
+  background:url("https://www.masa-group.com/Bilder/Produkte/Porenbetonfertigung/15_VARIO-PANEL-Fertigung/AAC_Bewehrung_Xella_Hebel-Wandplatten-Montage-3_5521_Bildergalerie.jpg") center/cover;
+  filter:grayscale(1) brightness(.34);opacity:.75
+}
+.study-intro>*{position:relative;z-index:2}
+.study-intro h2{font-size:44px;line-height:.92;letter-spacing:-.052em;margin:14px 0 20px}
+.study-intro p{font-size:13px;line-height:1.62;color:rgba(255,255,255,.59)}
+.study-benefits{margin-top:24px;display:grid;gap:12px}
+.study-benefit{font-size:10px;display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.73)}
+.dot{width:7px;height:7px;background:var(--red);border-radius:50%}
+.study-mini{margin-top:auto;font-size:9px;color:rgba(255,255,255,.55);padding-top:220px}
+.study-main{padding:32px 36px;display:flex;flex-direction:column;min-width:0}
+.progress-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:18px}
+.progress-head strong{font-size:13px}
+.progress-head span{font-size:9px;color:var(--muted)}
+.progress{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin:20px 0 32px}
+.progress i{height:3px;background:#d2cfca;display:block;transition:.25s}
+.progress i.done{background:var(--red)}
+.step-panel{display:none;animation:fade .25s ease}
+.step-panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.step-panel h3{font-size:27px;letter-spacing:-.035em;margin:0 0 7px}
+.step-panel .sub{font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:26px}
+.choice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.choice{
+  border:1px solid #c5c2bd;background:white;min-height:112px;padding:16px;text-align:left;position:relative;
+  transition:.2s
+}
+.choice:hover,.choice.selected{border-color:var(--red);box-shadow:inset 0 0 0 1px var(--red)}
+.choice.selected:before{content:"✓";position:absolute;right:12px;top:10px;width:22px;height:22px;background:var(--red);color:white;border-radius:50%;display:grid;place-items:center;font-size:10px}
+.choice strong{display:block;font-size:13px;margin-top:18px}
+.choice span{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+.choice-icon{font-size:20px}
+.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:grid;gap:7px}
+.field.full{grid-column:1/-1}
+.field label{font-size:9px;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:#5a5752}
+.field input,.field textarea,.field select{
+  width:100%;border:1px solid #c5c2bd;background:#fff;padding:13px 14px;outline:none;min-height:47px
+}
+.field textarea{min-height:90px;resize:vertical}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--red);box-shadow:0 0 0 1px var(--red)}
+.dropzone{
+  border:1px dashed #9d9993;background:white;padding:30px 20px;text-align:center;transition:.2s;
+}
+.dropzone.drag,.dropzone:hover{border-color:var(--red);background:#fff7f8}
+.dropzone input{display:none}
+.dropzone .dropicon{width:48px;height:48px;border:1px solid #cbc7c1;margin:0 auto 14px;display:grid;place-items:center;font-size:21px}
+.dropzone strong{display:block;font-size:13px}
+.dropzone span{display:block;margin-top:6px;font-size:10px;color:var(--muted)}
+.file-list{margin-top:12px;display:grid;gap:7px}
+.file-item{display:grid;grid-template-columns:1fr auto;gap:12px;border:1px solid #ddd9d3;background:#fff;padding:10px 12px;font-size:10px;align-items:center}
+.file-item b{font-weight:650;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.file-item span{color:var(--muted)}
+.study-actions{margin-top:auto;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:12px}
+.study-actions button{min-width:130px}
+.study-actions .back{visibility:hidden}
+.study-actions .back.show{visibility:visible}
+.study-side{border-left:1px solid var(--line);padding:26px;display:flex;flex-direction:column;background:#f0eeea}
+.tech-card{background:white;border:1px solid #d1cec8;padding:17px}
+.tech-status{display:flex;justify-content:space-between;align-items:center;font-size:9px}
+.online{display:flex;gap:6px;align-items:center;color:#527e64}.online:before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+.tech-card h4{font-size:14px;margin:20px 0 8px}
+.tech-card p{font-size:11px;color:var(--muted);line-height:1.52}
+.quick{display:grid;gap:7px;margin-top:14px}
+.quick button{border:1px solid #d0ccc6;background:#faf9f7;text-align:left;padding:9px;font-size:9px}
+.quick button:hover{border-color:var(--red);color:var(--red)}
+.contact-card{margin-top:14px;background:#0c0d0e;color:white;padding:18px}
+.contact-card h4{margin:0 0 13px;font-size:13px}
+.contact-row{padding:10px 0;border-top:1px solid rgba(255,255,255,.12)}
+.contact-row b{display:block;font-size:9px;color:rgba(255,255,255,.48);text-transform:uppercase;letter-spacing:.08em}
+.contact-row span{display:block;font-size:11px;margin-top:4px}
+.security-note{margin-top:auto;padding-top:18px;font-size:9px;color:var(--muted);line-height:1.5}
+
+/* PROJECTS */
+.projects{background:#0a0a0a;color:#fff}
+.projects .section-head p{color:rgba(255,255,255,.54)}
+.project-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}
+.project-stack{display:grid;gap:18px}
+.project-card{min-height:540px;position:relative;overflow:hidden}
+.project-card.small{min-height:260px}
+.project-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(.66) contrast(1.06);transition:.65s}
+.project-card:hover img{transform:scale(1.04);filter:grayscale(.55) brightness(.62)}
+.project-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.85))}
+.project-copy{position:absolute;z-index:2;left:24px;right:24px;bottom:22px}
+.project-copy small{font-size:9px;color:#bbb}
+.project-copy h3{font-size:28px;letter-spacing:-.038em;margin:7px 0 0}
+
+/* CENTER */
+.center{background:var(--paper)}
+.center-grid{display:grid;grid-template-columns:.78fr 1.22fr;border:1px solid #151515;min-height:650px}
+.center-nav{background:#090a0b;color:#fff;padding:32px;display:flex;flex-direction:column}
+.center-nav h2{font-size:44px;line-height:.92;letter-spacing:-.052em;margin:14px 0}
+.center-nav p{font-size:12px;line-height:1.6;color:rgba(255,255,255,.55)}
+.topic-list{display:grid;gap:7px;margin-top:25px}
+.topic{border:1px solid rgba(255,255,255,.18);background:none;color:#fff;text-align:left;padding:12px;font-size:10px}
+.topic:hover,.topic.active{background:var(--red);border-color:var(--red)}
+.center-main{padding:32px;display:flex;flex-direction:column;background:#f7f5f1}
+.chat-head{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:17px}
+.chat-head b{font-size:12px}.chat-head span{font-size:9px;color:var(--muted)}
+.chat{flex:1;padding:25px 0;display:flex;flex-direction:column;gap:12px;max-height:390px;overflow:auto}
+.bubble{max-width:82%;background:#fff;border:1px solid #ddd9d2;padding:13px;font-size:12px;line-height:1.55}
+.bubble.me{align-self:flex-end;background:#151515;color:#fff;border-color:#151515}
+.bubble label{display:block;color:var(--red);font-size:8px;font-weight:900;margin-bottom:6px}
+.ask{display:grid;grid-template-columns:1fr auto;gap:8px;border-top:1px solid var(--line);padding-top:16px}
+.ask input{border:1px solid #c7c3bd;background:white;padding:13px;outline:none}
+.ask button{border:0;background:var(--red);color:#fff;padding:0 20px;font-weight:850}
+
+/* CTA FOOT */
+.cta-band{background:var(--red);color:#fff;padding:90px 0}
+.cta-grid{display:grid;grid-template-columns:1.5fr .5fr;align-items:end;gap:50px}
+.cta-grid h2{font-size:clamp(54px,8vw,120px);line-height:.82;letter-spacing:-.065em;margin:0}
+.cta-grid p{font-size:14px;line-height:1.58;color:rgba(255,255,255,.78)}
+footer{background:#08090a;color:#fff;padding:36px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:40px;align-items:flex-end}
+.footer-meta{text-align:right;font-size:9px;color:rgba(255,255,255,.44);line-height:1.8}
+
+/* MODAL success */
+.modal{position:fixed;z-index:200;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:24px}
+.modal.show{display:flex}
+.modal-card{background:white;max-width:520px;width:100%;padding:34px;border-top:5px solid var(--red)}
+.modal-card h3{font-size:28px;letter-spacing:-.04em;margin:0 0 10px}
+.modal-card p{color:var(--muted);font-size:13px;line-height:1.6}
+.modal-card button{margin-top:18px}
+
+/* responsive */
+@media(max-width:1100px){
+  .nav{display:none}.mobile-menu{display:block}
+  .study-shell{grid-template-columns:270px 1fr}.study-side{display:none}
+  .brand{min-width:unset}
+}
+@media(max-width:820px){
+  .shell{width:min(100% - 30px,var(--max))}
+  .hero{grid-template-columns:1fr;gap:36px}
+  .hero h1{font-size:clamp(54px,15vw,92px)}
+  .hero-side{max-width:440px}
+  .manifest,.process-grid{grid-template-columns:1fr;gap:28px}
+  .manifest-copy{grid-column:1;grid-template-columns:1fr}
+  .service-row{grid-template-columns:48px 1fr 48px}
+  .service-desc{display:none}
+  .study-shell{grid-template-columns:1fr}
+  .study-intro{min-height:360px}
+  .study-mini{padding-top:110px}
+  .project-grid,.center-grid,.cta-grid{grid-template-columns:1fr}
+  .project-card{min-height:390px}
+  .section-head{align-items:flex-start;flex-direction:column}
+  .footer-grid{align-items:flex-start;flex-direction:column}
+  .footer-meta{text-align:left}
+}
+@media(max-width:580px){
+  .header{min-height:78px}.brand-text strong{font-size:12px}.brand-symbol{width:49px}
+  .hero{min-height:calc(100svh - 78px);padding-top:52px}
+  .hero h1{font-size:15vw}
+  .fields,.choice-grid{grid-template-columns:1fr}
+  .study-main{padding:25px 18px}
+  .progress-head span{display:none}
+  .progress{margin-bottom:24px}
+  .study-actions{flex-direction:column-reverse}.study-actions button{width:100%}
+}
+</style>
+</head>
+<body>
+
+<section class="mast" id="inicio">
+  <div class="mast-bg">
+    <div class="bg-shot a"></div>
+    <div class="bg-shot b"></div>
+  </div>
+  <div class="grain"></div>
+
+  <div class="shell">
+    <header class="header">
+      <a class="brand" href="#inicio" aria-label="Montaje Prefabricado">
+        <svg class="brand-symbol mp-logo" viewBox="0 0 82 54" role="img" aria-label="MP">
+          <polygon class="m1" points="1,46 19,8 35,8 43,24 50,8 66,8 46,46 31,46 23,30 16,46"/>
+          <path class="m2" d="M51 8h18c8 0 12 4 12 11s-4 12-12 12h-7l-7 15H40l18-38h-7zm13 9-3 7h7c3 0 4-1 4-4 0-2-1-3-4-3h-4z"/>
+          <polygon class="cut" points="23,30 29,17 37,33 31,46"/>
+        </svg>
+        <div class="brand-text">
+          <strong>MONTAJE<br>PREFABRICADO</strong>
+          <span class="mono">ingeniería · montaje · coordinación</span>
+        </div>
+      </a>
+
+      <nav class="nav">
+        <a href="#capacidades">Servicios</a>
+        <a href="#metodo">Método</a>
+        <a href="#preestudio">Preestudio</a>
+        <a href="#proyectos">Tipologías</a>
+        <a href="#centro-tecnico">Centro técnico</a>
+        <a class="nav-cta" href="#preestudio">Estudiar mi montaje →</a>
+      </nav>
+
+      <button class="mobile-menu" onclick="document.querySelector('#preestudio').scrollIntoView()">☰</button>
+    </header>
+
+    <div class="hero">
+      <div>
+        <div class="hero-label mono">Especialistas en coordinación de montaje prefabricado</div>
+        <h1>LA INGENIERÍA<br>COBRA <span class="red">FORMA</span><br>EN OBRA.</h1>
+        <p class="hero-copy">
+          Montaje de estructuras prefabricadas con planificación, coordinación de medios, izado y logística.
+          Primero entendemos la pieza. Después diseñamos cómo colocarla.
+        </p>
+        <div class="hero-actions">
+          <a class="btn redbtn" href="#preestudio">Estudiar mi montaje ↗</a>
+          <a class="btn lightbtn" href="#proyectos">Ver tipologías →</a>
+        </div>
+      </div>
+
+      <aside class="hero-side">
+        <div class="hero-side-head mono"><span>Proceso de montaje</span><span>01 → 05</span></div>
+        <h3>De la documentación al izado.</h3>
+        <p>No presentamos medios antes de entender geometría, accesos, secuencia, radios y condicionantes reales.</p>
+        <div class="hero-steps">
+          <div class="hero-step"><i></i><span>01 — Preestudio</span><b>PIEZA</b></div>
+          <div class="hero-step"><i></i><span>02 — Planificación</span><b>SECUENCIA</b></div>
+          <div class="hero-step"><i></i><span>03 — Medios</span><b>GRÚA + LOGÍSTICA</b></div>
+          <div class="hero-step"><i></i><span>04 — Montaje</span><b>OBRA</b></div>
+          <div class="hero-step"><i></i><span>05 — Control</span><b>CIERRE</b></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<main>
+
+<section class="section">
+  <div class="shell manifest">
+    <div class="kicker mono">01 — Posicionamiento</div>
+    <div>
+      <h2>Montamos lo que otros <span class="outline" style="-webkit-text-stroke-color:#111">diseñan.</span></h2>
+    </div>
+    <div class="manifest-copy">
+      <p>La propuesta gira alrededor de una idea muy clara: el cliente no necesita “una grúa” o “un formulario”. Necesita convertir planos, piezas, plazos y condicionantes en una operación de montaje comprensible.</p>
+      <p>Por eso la experiencia combina contenido técnico, una estética industrial directa y un preestudio guiado que reduce fricción: si el cliente tiene planos, los sube; si conoce datos, los introduce; si no sabe qué necesita, lo guiamos.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="capacidades">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="kicker mono" style="color:#777;margin-bottom:12px">02 — Capacidades</div>
+        <h2>Un montaje.<br>Un criterio técnico.</h2>
+      </div>
+      <p>Montaje, planificación, grúas, logística y asistencia técnica se presentan como partes de una misma operación, no como servicios aislados.</p>
+    </div>
+
+    <div class="services">
+      <div class="service-row" data-img="https://candidozamora.com/wp-content/uploads/2024/05/DJI_0634-1024x576.jpg">
+        <div class="service-num mono">01</div><div class="service-title">Montaje de prefabricados</div>
+        <div class="service-desc">Pilares, vigas, paneles, forjados y elementos singulares.</div><div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row" data-img="https://www.masa-group.com/Bilder/Produkte/Porenbetonfertigung/15_VARIO-PANEL-Fertigung/AAC_Bewehrung_Xella_Hebel-Wandplatten-Montage-3_5521_Bildergalerie.jpg">
+        <div class="service-num mono">02</div><div class="service-title">Ingeniería de montaje</div>
+        <div class="service-desc">Secuencia, accesos, radios, estabilidad temporal y procedimiento.</div><div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row" data-img="https://img.interempresas.net/fotos/4649308.jpeg">
+        <div class="service-num mono">03</div><div class="service-title">Grúas y maniobras</div>
+        <div class="service-desc">Selección y coordinación del medio de elevación según la operación.</div><div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row" data-img="https://www.bgmnavesindustriales.com/media/im/688x459-16205166-original.jpg">
+        <div class="service-num mono">04</div><div class="service-title">Logística de obra</div>
+        <div class="service-desc">Accesos, acopios, orden de llegada y ventanas de descarga/montaje.</div><div class="service-arrow">↗</div>
+      </div>
+      <div class="service-row" data-img="https://www.prefabricadodehormigonjaen.es/fotos/591/cibic-arquitectura.jpg">
+        <div class="service-num mono">05</div><div class="service-title">Asistencia técnica</div>
+        <div class="service-desc">Información de obra estructurada para resolver decisiones críticas.</div><div class="service-arrow">↗</div>
+      </div>
+    </div>
+  </div>
+  <img id="floatImg" class="float-img" alt="">
+</section>
+
+<section class="section" id="metodo">
+  <div class="shell process-grid">
+    <div class="kicker mono">03 — Método</div>
+    <div class="process-copy">
+      <h2>Precisión en<br>cada <span class="red">fase.</span></h2>
+      <p>El diseño comunica cómo pensamos una operación: primero reducimos incertidumbre y después coordinamos medios y montaje.</p>
+      <div class="timeline">
+        <div class="time-row"><span class="no mono">01</span><b>Entender piezas y documentación</b><span>DATOS</span></div>
+        <div class="time-row"><span class="no mono">02</span><b>Revisar emplazamiento y accesos</b><span>OBRA</span></div>
+        <div class="time-row"><span class="no mono">03</span><b>Definir secuencia y condicionantes</b><span>PLAN</span></div>
+        <div class="time-row"><span class="no mono">04</span><b>Configurar medios y logística</b><span>MEDIOS</span></div>
+        <div class="time-row"><span class="no mono">05</span><b>Coordinar montaje y cierre</b><span>EJECUCIÓN</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="study" id="preestudio">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="kicker mono" style="margin-bottom:12px">04 — Conversión principal</div>
+        <h2>Estudio de montaje<br><span class="red">interactivo.</span></h2>
+      </div>
+      <p>En vez de un formulario burocrático, el cliente entrega la información que ya tiene. Puede introducir datos, subir planos o pegar un enlace con documentación pesada.</p>
+    </div>
+
+    <div class="study-shell">
+      <aside class="study-intro">
+        <div class="kicker mono" style="color:#737373">Tu proyecto empieza aquí</div>
+        <h2>Cuéntanos<br>la obra.<br><span class="red">Nosotros</span><br>ordenamos<br>los datos.</h2>
+        <p>Completa solo lo que conozcas. Si ya tienes planos, puedes utilizarlos como punto de partida.</p>
+        <div class="study-benefits">
+          <div class="study-benefit"><span class="dot"></span>Sin presupuesto automático ficticio</div>
+          <div class="study-benefit"><span class="dot"></span>Documentación en el mismo flujo</div>
+          <div class="study-benefit"><span class="dot"></span>Enlace externo para archivos pesados</div>
+        </div>
+        <div class="study-mini mono">Preestudio técnico · no vinculante</div>
+      </aside>
+
+      <section class="study-main">
+        <div class="progress-head">
+          <strong id="progressTitle">01 · ¿Qué vas a montar?</strong>
+          <span class="mono" id="progressCount">Paso 1 de 6</span>
+        </div>
+        <div class="progress" id="progressBars">
+          <i class="done"></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+
+        <div class="step-panel active" data-step="1">
+          <h3>¿Qué vas a montar?</h3>
+          <div class="sub">Selecciona la tipología que más se parece a tu proyecto. No pasa nada si no es exacta.</div>
+          <div class="choice-grid single-choice">
+            <button class="choice"><span class="choice-icon">⌂</span><strong>Nave industrial</strong><span>Estructura prefabricada industrial</span></button>
+            <button class="choice"><span class="choice-icon">═</span><strong>Puente / viaducto</strong><span>Vigas, dinteles o elementos de obra civil</span></button>
+            <button class="choice"><span class="choice-icon">▥</span><strong>Paneles / fachada</strong><span>Cerramiento y elementos verticales</span></button>
+            <button class="choice"><span class="choice-icon">⌗</span><strong>Estructura prefabricada</strong><span>Pilares, vigas y estructura portante</span></button>
+            <button class="choice"><span class="choice-icon">▤</span><strong>Forjados</strong><span>Placas, losas o elementos horizontales</span></button>
+            <button class="choice"><span class="choice-icon">?</span><strong>Otro / no lo tengo claro</strong><span>Te ayudamos a clasificarlo</span></button>
+          </div>
+        </div>
+
+        <div class="step-panel" data-step="2">
+          <h3>¿Qué sabes de las piezas?</h3>
+          <div class="sub">No necesitas tener todos los datos. Añade lo conocido y deja el resto vacío.</div>
+          <div class="fields">
+            <div class="field"><label>Número aproximado de piezas</label><input type="number" min="1" placeholder="Ej. 24"></div>
+            <div class="field"><label>Peso máximo de una pieza (t)</label><input type="number" step=".1" placeholder="Ej. 42"></div>
+            <div class="field"><label>Longitud máxima (m)</label><input type="number" step=".1" placeholder="Ej. 28"></div>
+            <div class="field"><label>Altura de colocación aprox. (m)</label><input type="number" step=".1" placeholder="Ej. 12"></div>
+            <div class="field full"><label>Algo importante sobre las piezas</label><textarea placeholder="Apoyos, geometría singular, elementos ya fabricados, restricciones..."></textarea></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-step="3">
+          <h3>¿Dónde es la obra?</h3>
+          <div class="sub">La ubicación y los accesos cambian completamente una maniobra.</div>
+          <div class="fields">
+            <div class="field"><label>Provincia / ciudad</label><input placeholder="Ej. Zaragoza"></div>
+            <div class="field"><label>Fecha prevista de montaje</label><input type="date"></div>
+            <div class="field full"><label>Dirección o ubicación aproximada</label><input placeholder="Polígono, carretera, municipio o enlace de Maps"></div>
+            <div class="field"><label>¿Hay zona de acopio?</label><select><option>No lo sé</option><option>Sí</option><option>No</option><option>Limitada</option></select></div>
+            <div class="field"><label>Acceso de transporte pesado</label><select><option>No lo sé</option><option>Bueno</option><option>Limitado</option><option>Muy condicionado</option></select></div>
+            <div class="field full"><label>Condicionantes conocidos</label><textarea placeholder="Líneas eléctricas, tráfico, vía férrea, pendientes, espacio reducido, horarios..."></textarea></div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-step="4">
+          <h3>¿Qué necesitas?</h3>
+          <div class="sub">Puedes seleccionar varias opciones. Si no lo sabes, también es una respuesta válida.</div>
+          <div class="choice-grid multi-choice">
+            <button class="choice"><span class="choice-icon">⌘</span><strong>Montaje</strong><span>Ejecución / coordinación de montaje</span></button>
+            <button class="choice"><span class="choice-icon">↟</span><strong>Grúa</strong><span>Selección y coordinación del medio</span></button>
+            <button class="choice"><span class="choice-icon">⇢</span><strong>Transporte</strong><span>Logística asociada a las piezas</span></button>
+            <button class="choice"><span class="choice-icon">⌁</span><strong>Planificación técnica</strong><span>Secuencia, procedimiento y condicionantes</span></button>
+            <button class="choice"><span class="choice-icon">♜</span><strong>Equipo de montaje</strong><span>Personal y medios auxiliares</span></button>
+            <button class="choice"><span class="choice-icon">?</span><strong>No lo tengo claro</strong><span>Quiero que reviséis el proyecto</span></button>
+          </div>
+        </div>
+
+        <div class="step-panel" data-step="5">
+          <h3>Los planos hablan mejor que 20 campos.</h3>
+          <div class="sub">Adjunta documentación o pega un enlace a Drive, OneDrive, Dropbox, WeTransfer u otro repositorio.</div>
+
+          <label class="dropzone" id="dropzone">
+            <input type="file" id="files" multiple accept=".pdf,.xlsx,.xls,.csv,.jpg,.jpeg,.png,.webp,.zip,.dwg,.dxf">
+            <div class="dropicon">↥</div>
+            <strong>Arrastra aquí tus planos y documentos</strong>
+            <span>o haz clic para seleccionar · PDF, Excel, imágenes, ZIP, DWG/DXF</span>
+          </label>
+          <div class="file-list" id="fileList"></div>
+
+          <div class="fields" style="margin-top:18px">
+            <div class="field full">
+              <label>¿La documentación pesa demasiado? Pega un enlace</label>
+              <input type="url" placeholder="https://drive.google.com/... / WeTransfer / Dropbox / OneDrive">
+            </div>
+            <div class="field full">
+              <label>Nota sobre la documentación</label>
+              <textarea placeholder="Ej.: planos estructurales + listado de pesos; falta confirmar accesos..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <div class="step-panel" data-step="6">
+          <h3>¿Con quién hablamos?</h3>
+          <div class="sub">Ahora sí: los datos de contacto. El formulario ya contiene el contexto técnico de tu consulta.</div>
+          <div class="fields">
+            <div class="field"><label>Nombre</label><input id="contactName" placeholder="Nombre y apellidos"></div>
+            <div class="field"><label>Empresa</label><input placeholder="Empresa / organización"></div>
+            <div class="field"><label>Teléfono</label><input type="tel" placeholder="+34 ..."></div>
+            <div class="field"><label>Email</label><input type="email" id="contactEmail" placeholder="nombre@empresa.com"></div>
+            <div class="field full"><label>Mensaje final</label><textarea placeholder="Cualquier información que quieras añadir antes de enviarlo"></textarea></div>
+          </div>
+        </div>
+
+        <div class="study-actions">
+          <button class="btn darkbtn back" id="backBtn" type="button">← Anterior</button>
+          <button class="btn redbtn" id="nextBtn" type="button">Siguiente →</button>
+        </div>
+      </section>
+
+      <aside class="study-side">
+        <div class="tech-card">
+          <div class="tech-status"><b>Centro técnico</b><span class="online">online</span></div>
+          <h4>¿Tienes una duda mientras completas el estudio?</h4>
+          <p>El formulario no debería obligarte a conocer información que corresponde estudiar al técnico.</p>
+          <div class="quick">
+            <button data-msg="¿Qué datos necesito para seleccionar una grúa?">¿Qué datos necesito para una grúa?</button>
+            <button data-msg="No conozco el peso exacto de las piezas">No conozco el peso exacto</button>
+            <button data-msg="Tengo planos pero no tengo listado de pesos">Solo tengo planos</button>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <h4>También puedes contactar directamente</h4>
+          <div class="contact-row"><b>Email</b><span>ofertas@montajesprefabricados.com</span></div>
+          <div class="contact-row"><b>Teléfono</b><span>+34 624 473 123</span></div>
+          <div class="contact-row"><b>Documentación pesada</b><span>Puedes incluir un enlace externo en el paso 5.</span></div>
+        </div>
+
+        <div class="security-note">
+          Prototipo V2.1. La carga de archivos es interactiva a nivel de interfaz; el envío real se conectará al backend al llevar este diseño a producción.
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section class="section projects" id="proyectos">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="kicker mono" style="color:#777;margin-bottom:12px">05 — Tipologías</div>
+        <h2>Obras que<br>necesitan <span class="red">criterio.</span></h2>
+      </div>
+      <p>La fotografía se trata en blanco y negro para convertir la operación real en la identidad visual de la marca, no en decoración.</p>
+    </div>
+
+    <div class="project-grid">
+      <article class="project-card">
+        <img src="https://candidozamora.com/wp-content/uploads/2024/05/DJI_0634-1024x576.jpg" alt="Montaje de prefabricados">
+        <div class="project-copy"><small class="mono">Industrial · grandes luces</small><h3>Naves y estructuras prefabricadas</h3></div>
+      </article>
+      <div class="project-stack">
+        <article class="project-card small">
+          <img src="https://img.interempresas.net/fotos/4649308.jpeg" alt="Montaje de piezas prefabricadas">
+          <div class="project-copy"><small class="mono">Obra civil · izado</small><h3>Puentes y viaductos</h3></div>
+        </article>
+        <article class="project-card small">
+          <img src="https://www.masa-group.com/Bilder/Produkte/Porenbetonfertigung/15_VARIO-PANEL-Fertigung/AAC_Bewehrung_Xella_Hebel-Wandplatten-Montage-3_5521_Bildergalerie.jpg" alt="Montaje de paneles">
+          <div class="project-copy"><small class="mono">Envolvente · cerramiento</small><h3>Paneles y fachadas</h3></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section center" id="centro-tecnico">
+  <div class="shell">
+    <div class="section-head">
+      <div>
+        <div class="kicker mono" style="margin-bottom:12px">06 — Centro Técnico</div>
+        <h2>Pregunta antes<br>de <span class="red">improvisar.</span></h2>
+      </div>
+      <p>El Centro Técnico orienta dudas iniciales y puede empujar al usuario hacia el preestudio cuando la consulta ya contiene intención comercial.</p>
+    </div>
+
+    <div class="center-grid">
+      <aside class="center-nav">
+        <div class="kicker mono" style="color:#777">Montaje Prefabricado / Technical Desk</div>
+        <h2>Centro<br>Técnico.</h2>
+        <p>Selecciona un tema o escribe una duda. La respuesta es orientativa y no sustituye el estudio de una maniobra.</p>
+        <div class="topic-list">
+          <button class="topic active" data-topic="grua">Selección preliminar de grúa</button>
+          <button class="topic" data-topic="secuencia">Secuencia de montaje</button>
+          <button class="topic" data-topic="paneles">Paneles y fachadas</button>
+          <button class="topic" data-topic="logistica">Logística y accesos</button>
+          <button class="topic" data-topic="planos">Documentación necesaria</button>
+        </div>
+      </aside>
+      <section class="center-main">
+        <div class="chat-head"><b>Asistente de preestudio</b><span class="mono">Demo interactiva · no vinculante</span></div>
+        <div class="chat" id="chat">
+          <div class="bubble"><label class="mono">Montaje Prefabricado</label>Cuéntame qué vas a montar. Si me indicas pieza, peso aproximado, ubicación y cualquier restricción, puedo decirte qué información necesitamos para estudiar la operación.</div>
+        </div>
+        <form class="ask" id="askForm">
+          <input id="askInput" placeholder="Ej.: viga de 55 t a 18 m de radio en Madrid..." autocomplete="off">
+          <button type="submit">Consultar ↗</button>
+        </form>
+      </section>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="shell cta-grid">
+    <div>
+      <div class="kicker mono" style="color:rgba(255,255,255,.58);margin-bottom:16px">07 — Empezar</div>
+      <h2>PONGAMOS<br>LA PIEZA<br>EN SU SITIO.</h2>
+    </div>
+    <div>
+      <p>Si tienes planos, pesos o simplemente una obra que necesitas estudiar, empieza por el preestudio. No tienes que saber de antemano qué grúa, transporte o secuencia necesitas.</p>
+      <a class="btn lightbtn" href="#preestudio">Estudiar mi montaje →</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="shell footer-grid">
+    <div class="brand">
+      <svg class="brand-symbol mp-logo" viewBox="0 0 82 54" aria-hidden="true">
+        <polygon class="m1" points="1,46 19,8 35,8 43,24 50,8 66,8 46,46 31,46 23,30 16,46"/>
+        <path class="m2" d="M51 8h18c8 0 12 4 12 11s-4 12-12 12h-7l-7 15H40l18-38h-7zm13 9-3 7h7c3 0 4-1 4-4 0-2-1-3-4-3h-4z"/>
+        <polygon class="cut" points="23,30 29,17 37,33 31,46"/>
+      </svg>
+      <div class="brand-text"><strong>MONTAJE<br>PREFABRICADO</strong><span class="mono">montajesprefabricados.com</span></div>
+    </div>
+    <div class="footer-meta">V2.1 · Prototipo UX/UI interactivo<br>Identidad: negro · blanco · rojo<br>© 2026 Montaje Prefabricado</div>
+  </div>
+</footer>
+
+<div class="modal" id="successModal">
+  <div class="modal-card">
+    <div class="kicker mono">Preestudio completado</div>
+    <h3>La solicitud ya tiene contexto técnico.</h3>
+    <p>En esta V2.1 el envío es una simulación de interfaz. Al pasar el diseño a Next.js, este botón conectará con el endpoint real para enviar datos, archivos y enlace de documentación sin abrir ningún cliente de correo.</p>
+    <button class="btn darkbtn" onclick="document.getElementById('successModal').classList.remove('show')">Cerrar</button>
+  </div>
+</div>
+
+<script>
+// hover media
+const floatImg=document.getElementById('floatImg');
+document.querySelectorAll('.service-row').forEach(row=>{
+  row.addEventListener('mouseenter',()=>{floatImg.src=row.dataset.img;floatImg.classList.add('show')});
+  row.addEventListener('mousemove',e=>{floatImg.style.left=e.clientX+'px';floatImg.style.top=e.clientY+'px'});
+  row.addEventListener('mouseleave',()=>floatImg.classList.remove('show'));
+});
+
+// study choices
+document.querySelectorAll('.single-choice .choice').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    btn.closest('.single-choice').querySelectorAll('.choice').forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+  });
+});
+document.querySelectorAll('.multi-choice .choice').forEach(btn=>{
+  btn.addEventListener('click',()=>btn.classList.toggle('selected'));
+});
+
+// study navigation
+const titles=[
+  '01 · ¿Qué vas a montar?',
+  '02 · Datos de las piezas',
+  '03 · Emplazamiento y accesos',
+  '04 · ¿Qué necesitas?',
+  '05 · Documentación',
+  '06 · Datos de contacto'
+];
+let currentStep=1;
+const nextBtn=document.getElementById('nextBtn');
+const backBtn=document.getElementById('backBtn');
+function renderStep(){
+  document.querySelectorAll('.step-panel').forEach(p=>p.classList.toggle('active',Number(p.dataset.step)===currentStep));
+  document.querySelectorAll('#progressBars i').forEach((bar,i)=>bar.classList.toggle('done',i<currentStep));
+  document.getElementById('progressTitle').textContent=titles[currentStep-1];
+  document.getElementById('progressCount').textContent=`Paso ${currentStep} de 6`;
+  backBtn.classList.toggle('show',currentStep>1);
+  nextBtn.textContent=currentStep===6?'Enviar para preestudio →':'Siguiente →';
+}
+nextBtn.addEventListener('click',()=>{
+  if(currentStep<6){currentStep++;renderStep();document.querySelector('.study-main').scrollIntoView({behavior:'smooth',block:'center'});}
+  else{
+    document.getElementById('successModal').classList.add('show');
+  }
+});
+backBtn.addEventListener('click',()=>{if(currentStep>1){currentStep--;renderStep();}});
+
+// file drop
+const dz=document.getElementById('dropzone');
+const fileInput=document.getElementById('files');
+const fileList=document.getElementById('fileList');
+['dragenter','dragover'].forEach(evt=>dz.addEventListener(evt,e=>{e.preventDefault();dz.classList.add('drag')}));
+['dragleave','drop'].forEach(evt=>dz.addEventListener(evt,e=>{e.preventDefault();dz.classList.remove('drag')}));
+dz.addEventListener('drop',e=>renderFiles(e.dataTransfer.files));
+fileInput.addEventListener('change',()=>renderFiles(fileInput.files));
+function renderFiles(files){
+  fileList.innerHTML='';
+  [...files].forEach(f=>{
+    const row=document.createElement('div');row.className='file-item';
+    const size=f.size<1024*1024?(f.size/1024).toFixed(0)+' KB':(f.size/1024/1024).toFixed(1)+' MB';
+    row.innerHTML=`<b>${escapeHtml(f.name)}</b><span>${size}</span>`;
+    fileList.appendChild(row);
+  });
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+
+// center technical chat
+const answers={
+ grua:'Para una selección preliminar necesitamos peso total de izado, radio real de trabajo, altura, obstáculos y condiciones del emplazamiento. La capacidad nominal de una grúa no equivale a su capacidad al radio real.',
+ secuencia:'La secuencia ordena fabricación, llegada, acopio, estabilidad temporal y liberación de la grúa. Un cambio de orden puede cambiar medios y rendimiento.',
+ paneles:'En paneles revisamos peso, geometría, puntos de izado, fijación, tolerancias, altura de colocación y acceso auxiliar.',
+ logistica:'Conviene revisar gálibos, radios de giro, firme, estacionamiento, acopio, orden de descarga y compatibilidad con la secuencia de montaje.',
+ planos:'Puedes empezar con planos estructurales, listados de piezas/pesos, emplazamiento y calendario. Si falta información, el preestudio debe identificarla en lugar de obligarte a inventarla.'
+};
+const chat=document.getElementById('chat');
+function bubble(text,me=false){
+  const d=document.createElement('div');d.className='bubble'+(me?' me':'');
+  if(!me){const l=document.createElement('label');l.className='mono';l.textContent='Montaje Prefabricado';d.appendChild(l)}
+  d.appendChild(document.createTextNode(text));chat.appendChild(d);chat.scrollTop=chat.scrollHeight;
+}
+document.querySelectorAll('.topic').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.topic').forEach(x=>x.classList.remove('active'));btn.classList.add('active');
+    bubble(answers[btn.dataset.topic]);
+  });
+});
+document.getElementById('askForm').addEventListener('submit',e=>{
+  e.preventDefault();const inp=document.getElementById('askInput');const q=inp.value.trim();if(!q)return;
+  bubble(q,true);inp.value='';
+  const s=q.toLowerCase();
+  let a='La consulta necesita contexto de obra. Si me indicas tipo de pieza, peso aproximado, ubicación, fecha y restricciones conocidas, podemos estructurarla en el preestudio.';
+  if(s.includes('grúa')||s.includes('grua')||s.includes('radio')||s.includes('ton')) a=answers.grua;
+  else if(s.includes('plano')||s.includes('document')) a=answers.planos;
+  else if(s.includes('panel')||s.includes('fachada')) a=answers.paneles;
+  else if(s.includes('acceso')||s.includes('transport')) a=answers.logistica;
+  setTimeout(()=>bubble(a),280);
+});
+// Quick technical questions on study side
+document.querySelectorAll('.quick button').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelector('#centro-tecnico').scrollIntoView({behavior:'smooth'});
+    setTimeout(()=>{bubble(btn.dataset.msg,true);bubble(answers.planos)},500);
+  });
+});
+</script>
+</body>
+</html>

@@ -4,11 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-// ===== Versión aprobada DEFINITIVA — COMPLETA (Hotfix v3-TS) =====
-// Cambios en esta versión:
-//  - Tipado completo de SafeImage para evitar "implicit any".
-//  - Tipado básico de Tag/Section/Pictogram para evitar futuros avisos.
-//  - Mantiene: sin DevTests; teléfono +34 624 433 123 en Contacto; fix de <Tag> con children null.
+// ===== Versión aprobada DEFINITIVA — COMPLETA (Hotfix v3-TS + SEO FAQ + Ecosistema) =====
 
 // ---------- Tipos ----------
 type SafeImageProps = Omit<React.ComponentProps<typeof Image>, "src" | "alt"> & {
@@ -45,7 +41,6 @@ type Proyecto = {
 // SafeImage: evita errores cuando la imagen no existe (usa placeholder)
 const SafeImage: React.FC<SafeImageProps> = ({ src = "", alt = "", ...props }) => {
     const [safeSrc, setSafeSrc] = useState<string>(src ?? "");
-    // Si la ruta es local (/public/*), desactiva el optimizer de Next para que onError funcione en cliente
     const isLocal = typeof safeSrc === "string" && safeSrc.startsWith("/");
     const fallbackSvg = `data:image/svg+xml;utf8,${encodeURIComponent(
         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100"><rect width="160" height="100" fill="#0a0a0a"/><rect x="6" y="6" width="148" height="88" fill="#111" stroke="#262626"/><text x="80" y="55" fill="#eab308" font-size="10" text-anchor="middle" font-family="Arial, Helvetica, sans-serif">imagen no disponible</text></svg>'
@@ -56,7 +51,6 @@ const SafeImage: React.FC<SafeImageProps> = ({ src = "", alt = "", ...props }) =
             src={safeSrc || fallbackSvg}
             alt={alt}
             onError={() => setSafeSrc(fallbackSvg)}
-            // Bypass del optimizador solo para rutas locales
             unoptimized={isLocal}
             {...props}
         />
@@ -125,7 +119,9 @@ const LeadForm: React.FC = () => {
             </div>
             <input name="email" className="rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm" placeholder="Email / Teléfono" required />
             <textarea name="mensaje" rows={5} className="rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm" placeholder="Elementos, tonelajes, radios, planos, fechas" />
-            <button className="w-full rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">Enviar</button>
+            <button className="w-full rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">
+                Enviar
+            </button>
             <a
                 href="https://wa.me/34624473123?text=Hola%20tengo%20una%20consulta%20sobre%20montaje"
                 target="_blank"
@@ -156,7 +152,9 @@ const Calculator: React.FC = () => {
                 <input placeholder="Tonelajes (ej. 45T, 70T)" className="rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm" />
                 <input placeholder="Radios de grúa (m)" className="rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm" />
                 <input placeholder="Plazo objetivo (días/noches)" className="rounded-xl border border-neutral-700 bg-neutral-950 px-4 py-2 text-sm" />
-                <button className="rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">Calcular</button>
+                <button className="rounded-xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">
+                    Calcular
+                </button>
             </form>
         </div>
     );
@@ -223,24 +221,28 @@ const Pictogram: React.FC<PictogramProps> = ({ name, Icon, items }) => (
                 ))}
             </ul>
             <div className="mt-3 text-right">
-                <a href="#contacto" className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-3 py-1.5 text-xs font-semibold text-neutral-900 ring-1 ring-yellow-300 hover:bg-yellow-300">Solicitar</a>
+                <a
+                    href="#contacto"
+                    className="inline-flex items-center gap-2 rounded-xl bg-yellow-400 px-3 py-1.5 text-xs font-semibold text-neutral-900 ring-1 ring-yellow-300 hover:bg-yellow-300"
+                >
+                    Solicitar
+                </a>
             </div>
         </div>
     </div>
 );
 
 const PICTOS: PictogramProps[] = [
-    { name: 'Grúas y Maniobras', Icon: CraneIcon, items: ['Selección 80–500T+', 'Plan de izados', 'Balizamiento y señalistas', 'Inspección de accesos'] },
-    { name: 'Transporte Especial', Icon: TruckIcon, items: ['Rutas y permisos', 'Escoltas', 'Coordinación carga/descarga', 'Tracking en ruta'] },
-    { name: 'Montaje de Elementos', Icon: BeamIcon, items: ['Vigas y losas alveolares', 'Pilares y pórticos', 'Paneles de fachada', 'Ajustes y sellados'] },
-    { name: 'Cuadrillas', Icon: TeamIcon, items: ['Capataces', 'Soldadores / pernos', 'Atornillado controlado', 'Turnos día/noche'] },
-    { name: 'Planos y As-Built', Icon: PlanIcon, items: ['Planos 2D/3D', 'Marcado de piezas', 'Dossier fotográfico', 'As-built final'] },
-    { name: 'Seguridad y Calidad', Icon: SafetyIcon, items: ['PSS / PTB', 'Checklists útiles/grúas', 'Partes diarios', 'Cierre documental'] },
+    { name: "Grúas y Maniobras", Icon: CraneIcon, items: ["Selección 80–500T+", "Plan de izados", "Balizamiento y señalistas", "Inspección de accesos"] },
+    { name: "Transporte Especial", Icon: TruckIcon, items: ["Rutas y permisos", "Escoltas", "Coordinación carga/descarga", "Tracking en ruta"] },
+    { name: "Montaje de Elementos", Icon: BeamIcon, items: ["Vigas y losas alveolares", "Pilares y pórticos", "Paneles de fachada", "Ajustes y sellados"] },
+    { name: "Cuadrillas", Icon: TeamIcon, items: ["Capataces", "Soldadores / pernos", "Atornillado controlado", "Turnos día/noche"] },
+    { name: "Planos y As-Built", Icon: PlanIcon, items: ["Planos 2D/3D", "Marcado de piezas", "Dossier fotográfico", "As-built final"] },
+    { name: "Seguridad y Calidad", Icon: SafetyIcon, items: ["PSS / PTB", "Checklists útiles/grúas", "Partes diarios", "Cierre documental"] },
 ];
 
 // ---------- PROYECTOS (6 experiencias reales) ----------
 const PROYECTOS: Proyecto[] = [
-    // Vivienda (2)
     {
         src: "/proyectos/vivienda-unifamiliar-losas-12t.webp",
         titulo: "Vivienda unifamiliar — Losas alveolares 12t",
@@ -253,7 +255,6 @@ const PROYECTOS: Proyecto[] = [
         meta: "16 paneles · Grúa 250T · Radio 18 m · 2 jornadas diurnas",
         alt: "Montaje de paneles de 9 toneladas en edificio residencial en altura",
     },
-    // Obra civil (2)
     {
         src: "/proyectos/civil-viaducto-viga-wt-80t.webp",
         titulo: "Obra civil — Viaducto con viga WT 80t",
@@ -266,7 +267,6 @@ const PROYECTOS: Proyecto[] = [
         meta: "Grúa 500T · Radio 24 m · 4 jornadas diurnas",
         alt: "Montaje de viga cajón de 150 toneladas en puente",
     },
-    // Industrial (2)
     {
         src: "/proyectos/industrial-panel-fachada-22t.webp",
         titulo: "Industrial — Paneles de fachada 22t",
@@ -296,35 +296,72 @@ export default function Landing() {
                         </div>
                     </a>
                     <nav className="hidden items-center gap-6 md:flex">
-                        <a href="#servicios" className="text-sm text-neutral-300 hover:text-yellow-300">Servicios</a>
-                        <a href="#proceso" className="text-sm text-neutral-300 hover:text-yellow-300">Proceso</a>
-                        <a href="#proyectos" className="text-sm text-neutral-300 hover:text-yellow-300">Proyectos</a>
-                        <a href="#confianza" className="text-sm text-neutral-300 hover:text-yellow-300">Confianza</a>
-                        <a href="#contacto" className="text-sm text-neutral-300 hover:text-yellow-300">Contacto</a>
-                        <a href="/presupuesto" className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">Solicitar cotización</a>
+                        <a href="#servicios" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Servicios
+                        </a>
+                        <a href="#proceso" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Proceso
+                        </a>
+                        <a href="#proyectos" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Proyectos
+                        </a>
+                        <a href="#confianza" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Confianza
+                        </a>
+                        <a href="#ecosistema" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Ecosistema
+                        </a>
+                        <a href="#contacto" className="text-sm text-neutral-300 hover:text-yellow-300">
+                            Contacto
+                        </a>
+                        <a
+                            href="/presupuesto"
+                            className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-4 py-2 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300"
+                        >
+                            Solicitar cotización
+                        </a>
                     </nav>
                 </div>
             </header>
 
-            {/* Héroe — tarjeta derecha = CALCULADORA */}
+            {/* Héroe */}
             <section className="relative overflow-hidden">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(60%_50%_at_50%_0%,rgba(250,204,21,0.15),rgba(0,0,0,0))]" />
                 <div className="mx-auto grid max-w-7xl items-center gap-10 px-6 py-20 lg:grid-cols-12">
                     <div className="lg:col-span-7">
                         <Tag>Especialistas en Montaje Industrial</Tag>
-                        <h1 className="mt-4 text-4xl font-extrabold leading-tight text-neutral-100 sm:text-6xl">Montaje de prefabricados, sin sorpresas.</h1>
+                        <h1 className="mt-4 text-4xl font-extrabold leading-tight text-neutral-100 sm:text-6xl">
+                            Montaje de prefabricados, sin sorpresas.
+                        </h1>
                         <p className="mt-4 max-w-2xl text-lg text-neutral-300">
-                            Ingeniería de izado, equipos certificados y cuadrillas expertas para viaductos, naves, puentes, fachadas y gran formato.
-                            Coordinamos transporte, grúas y maniobras críticas, desde el planteizado hasta la entrega.
+                            Ingeniería de izado, equipos certificados y cuadrillas expertas para viaductos, naves, puentes,
+                            fachadas y gran formato. Coordinamos transporte, grúas y maniobras críticas,
+                            desde el planteizado hasta la entrega.
                         </p>
                         <div className="mt-6 flex flex-wrap items-center gap-3">
-                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">COORDINACIÓN CON IBERCARGA</span>
-                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">PLANOS DE MONTAJE</span>
-                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">ASESORÍA DE MANIOBRAS</span>
+                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">
+                                COORDINACIÓN CON IBERCARGA
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">
+                                PLANOS DE MONTAJE
+                            </span>
+                            <span className="inline-flex items-center rounded-full bg-neutral-800/70 px-3 py-1 text-xs text-neutral-200 ring-1 ring-neutral-700">
+                                ASESORÍA DE MANIOBRAS
+                            </span>
                         </div>
                         <div className="mt-8 flex flex-wrap gap-4">
-                            <a href="/presupuesto" className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-5 py-3 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300">Calcula tu montaje</a>
-                            <a href="#servicios" className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold text-neutral-200 ring-1 ring-neutral-800 transition hover:bg-neutral-900">Ver servicios</a>
+                            <a
+                                href="/presupuesto"
+                                className="inline-flex items-center gap-2 rounded-2xl bg-yellow-400 px-5 py-3 font-semibold text-neutral-900 ring-2 ring-yellow-300 transition hover:bg-yellow-300"
+                            >
+                                Calcula tu montaje
+                            </a>
+                            <a
+                                href="#servicios"
+                                className="inline-flex items-center gap-2 rounded-2xl px-5 py-3 font-semibold text-neutral-200 ring-1 ring-neutral-800 transition hover:bg-neutral-900"
+                            >
+                                Ver servicios
+                            </a>
                         </div>
                     </div>
                     <div className="lg:col-span-5">
@@ -336,7 +373,7 @@ export default function Landing() {
                 </div>
             </section>
 
-            {/* Marcador de ancla para CTA "Calcula tu montaje" */}
+            {/* Ancla CTA */}
             <div id="calcula" className="mx-auto max-w-7xl px-6 pb-4" />
 
             {/* Catálogo pictos */}
@@ -367,7 +404,9 @@ export default function Landing() {
                     ].map(([title, desc], i) => (
                         <li key={i} className="group rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
                             <div className="flex items-start gap-4">
-                                <div className="grid h-10 w-10 place-items-center rounded-xl bg-neutral-800 text-yellow-400 ring-1 ring-neutral-700">{i + 1}</div>
+                                <div className="grid h-10 w-10 place-items-center rounded-xl bg-neutral-800 text-yellow-400 ring-1 ring-neutral-700">
+                                    {i + 1}
+                                </div>
                                 <div>
                                     <h4 className="font-semibold text-neutral-100">{title}</h4>
                                     <p className="mt-1 text-neutral-300">{desc}</p>
@@ -378,7 +417,7 @@ export default function Landing() {
                 </ol>
             </Section>
 
-            {/* Proyectos (6 experiencias reales) */}
+            {/* Proyectos */}
             <Section
                 id="proyectos"
                 eyebrow="Obras destacadas"
@@ -407,7 +446,7 @@ export default function Landing() {
                 </div>
             </Section>
 
-            {/* Confianza (sin mención a referencias) */}
+            {/* Confianza */}
             <Section
                 id="confianza"
                 eyebrow="Confianza y cumplimiento"
@@ -431,7 +470,142 @@ export default function Landing() {
                 </div>
             </Section>
 
-            {/* Contacto (LeadForm con botones apilados) */}
+            {/* Ecosistema: Ibercarga + Robotarq */}
+            <Section
+                id="ecosistema"
+                eyebrow="Ecosistema de soluciones"
+                title="Tres piezas para un mismo proyecto"
+                subtitle="Montaje de prefabricados, transporte especial y reformas interiores conectadas en un solo ecosistema."
+            >
+                <div className="grid gap-6 md:grid-cols-2">
+                    {/* Card Ibercarga / Transporte especial */}
+                    <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+                        <h3 className="text-lg font-semibold text-neutral-100">
+                            Transporte especial para prefabricados (Ibercarga)
+                        </h3>
+                        <p className="mt-2 text-sm text-neutral-300">
+                            Si ya tienes definido el montaje pero necesitas{" "}
+                            <strong>transporte especial de vigas, paneles, losas o pórticos</strong>, colaboramos con
+                            una plataforma específica para rutas, permisos, escoltas y góndolas:{" "}
+                            <span className="font-semibold">Ibercarga</span>.
+                        </p>
+                        <p className="mt-2 text-xs text-neutral-400">
+                            Esta web se centra en el <strong>montaje</strong> (grúas, cuadrillas, izados). Para el puro{" "}
+                            <strong>transporte especial</strong>, te recomendamos apoyarte en Ibercarga.
+                        </p>
+                        <a
+                            // TODO: cambia este dominio al definitivo de Ibercarga cuando lo tengas
+                            href="https://ibercarga.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center justify-center rounded-xl bg-neutral-100 px-4 py-2 text-sm font-semibold text-neutral-900 ring-1 ring-neutral-400 hover:bg-yellow-200 hover:text-neutral-900"
+                        >
+                            Ir a Ibercarga (transporte especial)
+                        </a>
+                    </div>
+
+                    {/* Card Robotarq / Reformas y presupuestos */}
+                    <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
+                        <h3 className="text-lg font-semibold text-neutral-100">
+                            Reformas interiores y licencias (Robotarq)
+                        </h3>
+                        <p className="mt-2 text-sm text-neutral-300">
+                            Cuando tu proyecto incluye{" "}
+                            <strong>reforma interior de nave, local u oficina</strong> (suelo, instalaciones,
+                            acabados, licencia de actividad), trabajamos también con una herramienta específica
+                            de presupuestos y arquitectura: <strong>Robotarq</strong>.
+                        </p>
+                        <p className="mt-2 text-xs text-neutral-400">
+                            En esta web calculamos y gestionamos el <strong>montaje de prefabricados</strong>. Para el{" "}
+                            <strong>diseño interior, licencias y presupuesto detallado de reforma</strong>, puedes apoyarte
+                            en Robotarq.
+                        </p>
+                        <a
+                            href="https://robotarq.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-4 inline-flex items-center justify-center rounded-xl bg-yellow-400 px-4 py-2 text-sm font-semibold text-neutral-900 ring-2 ring-yellow-300 hover:bg-yellow-300"
+                        >
+                            Ir a Robotarq (reformas y licencias)
+                        </a>
+                    </div>
+                </div>
+            </Section>
+
+            {/* SEO: bloque de texto y FAQ */}
+            <Section
+                id="preguntas-frecuentes-montaje-prefabricados"
+                eyebrow="SEO · Preguntas frecuentes"
+                title="Montaje de prefabricados en España: preguntas frecuentes"
+                subtitle="Resolvemos dudas habituales sobre montaje de prefabricados de hormigón, estructuras metálicas, puentes y naves industriales."
+            >
+                <div className="space-y-6 text-sm text-neutral-300">
+                    <p>
+                        Somos especialistas en <strong>montaje de prefabricados de hormigón</strong>,
+                        <strong> estructuras metálicas</strong>, <strong>montaje de puentes</strong>,
+                        <strong> naves industriales</strong>, <strong>fachadas arquitectónicas</strong> y
+                        <strong> cerramientos</strong> en toda España. Coordinamos
+                        transporte especial, grúas de gran tonelaje, cuadrillas de montaje y
+                        <strong> ingeniería de izado</strong> para que la obra sea predecible,
+                        segura y sin sorpresas.
+                    </p>
+
+                    <div>
+                        <h3 className="font-semibold text-neutral-100">
+                            ¿Qué incluye un servicio completo de montaje de prefabricados?
+                        </h3>
+                        <p className="mt-2">
+                            Un servicio completo de montaje de prefabricados suele incluir revisión de
+                            planos, definición de secuencia de montaje, cálculo de radios y tonelajes,
+                            selección de grúas, coordinación de <strong>transporte especial</strong>,
+                            planteizado en obra, montaje de vigas, pilares, losas y paneles,
+                            control dimensional, checklist de QA/QC y dossier de cierre con as-built
+                            y documentación de seguridad.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="font-semibold text-neutral-100">
+                            ¿Trabajáis solo con prefabricado de hormigón o también con estructura metálica?
+                        </h3>
+                        <p className="mt-2">
+                            Trabajamos tanto con <strong>prefabricado de hormigón</strong> como con
+                            <strong> estructura metálica</strong>. Podemos asumir el montaje completo
+                            de puentes mixtos, pasarelas, naves logísticas, estructuras de acero, así
+                            como paneles y fachadas prefabricadas. Adaptamos el plan de izados y los
+                            medios auxiliares a cada tipología de estructura.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="font-semibold text-neutral-100">
+                            ¿En qué zonas de España ofrecéis montaje de prefabricados?
+                        </h3>
+                        <p className="mt-2">
+                            Ofrecemos <strong>montaje de prefabricados en toda España</strong>:
+                            proyectos de obra civil, industrial y residencial en Madrid, Barcelona,
+                            Valencia, Andalucía, Galicia, País Vasco y resto de comunidades. Para
+                            montajes con gran tonelaje o plazos ajustados, planificamos con suficiente
+                            antelación la logística, equipos y turnos de trabajo.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 className="font-semibold text-neutral-100">
+                            ¿Podéis ayudar solo con ingeniería de montaje y planificación?
+                        </h3>
+                        <p className="mt-2">
+                            Sí. Además del montaje, ofrecemos <strong>ingeniería de montaje</strong>:
+                            estudio de secuencias, planos de izado, optimización de radios, definición
+                            de acopios, rutas de transporte, cortes de tráfico y
+                            <strong> coordinación entre prefabricador, montador y grúas</strong>.
+                            Esto permite reducir riesgos, tiempos muertos y costes de maquinaria.
+                        </p>
+                    </div>
+                </div>
+            </Section>
+
+            {/* Contacto */}
             <Section
                 id="contacto"
                 eyebrow="Contacto"
@@ -444,9 +618,15 @@ export default function Landing() {
                     </div>
                     <div className="rounded-2xl border border-neutral-800 bg-neutral-900 p-6">
                         <ul className="mt-2 space-y-3 text-neutral-300">
-                            <li><strong>Email:</strong> ofertas@montajedeprefabricados.com</li>
-                            <li><strong>Atención:</strong> Lun–Vie 08:00–19:00</li>
-                            <li><strong>Teléfono:</strong> +34 624 433 123</li>
+                            <li>
+                                <strong>Email:</strong> ofertas@montajedeprefabricados.com
+                            </li>
+                            <li>
+                                <strong>Atención:</strong> Lun–Vie 08:00–19:00
+                            </li>
+                            <li>
+                                <strong>Teléfono:</strong> +34 624 433 123
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -462,7 +642,7 @@ export default function Landing() {
     );
 }
 
-// ---------- Grid de pictogramas (se define al final para usar tipos) ----------
+// ---------- Grid de pictogramas ----------
 const PictogramGrid: React.FC = () => (
     <div className="relative isolate grid gap-6 sm:grid-cols-2 lg:grid-cols-3 overflow-visible">
         {PICTOS.map((p) => (

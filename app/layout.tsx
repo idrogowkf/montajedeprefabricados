@@ -1,11 +1,26 @@
-// app/layout.tsx
-import './globals.css'
-import type { Metadata } from 'next'
-import { defaultMetadata, jsonLdOrganization } from '@/lib/seo'
+﻿// app/layout.tsx
+import "./globals.css";
+import type { Metadata } from "next";
+import { jsonLdOrganization } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Montaje de Prefabricados",
-    icons: { icon: "/favicon.ico" },
+    metadataBase: new URL("https://montajesprefabricados.com"),
+    title: {
+        default: "Montaje de Prefabricados en España | Grúas, Estructuras, Ingeniería",
+        template: "%s | Montaje de Prefabricados",
+    },
+    description:
+        "Especialistas en montaje de prefabricados de hormigón, estructuras metálicas, puentes, naves industriales, fachadas y paneles. Servicio en toda España.",
+    alternates: {
+        canonical: "https://montajesprefabricados.com",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
+    icons: {
+        icon: "/favicon.ico",
+    },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -14,13 +29,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <head>
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdOrganization()) }}
+                    suppressHydrationWarning
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(jsonLdOrganization()),
+                    }}
                 />
                 <link rel="icon" href="/favicon.ico" />
             </head>
-            <body className="text-neutral-200">
-                {children}
-            </body>
+            <body className="bg-neutral-950 text-neutral-200">{children}</body>
         </html>
-    )
+    );
 }

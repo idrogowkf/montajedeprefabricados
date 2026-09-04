@@ -1,23 +1,12 @@
-"use client";
-
-import { FormEvent, useState } from "react";
-import { technicalTopics, type TechnicalTopicKey } from "@/data/v21-content";
-
-type Message = { text: string; mine?: boolean };
+import Link from "next/link";
 
 export default function TechnicalCenter() {
-  const [active, setActive] = useState<TechnicalTopicKey>("grua");
-  const [question, setQuestion] = useState("");
-  const [messages, setMessages] = useState<Message[]>([{ text: "Cuéntame qué vas a montar. Con pieza, peso aproximado, ubicación y restricciones podemos ordenar la información necesaria para estudiar la operación." }]);
-  const selectTopic = (key: TechnicalTopicKey) => { setActive(key); setMessages((items) => [...items, { text: technicalTopics[key].answer }]); };
-  const submit = (event: FormEvent) => {
-    event.preventDefault();
-    const clean = question.trim();
-    if (!clean) return;
-    const lower = clean.toLowerCase();
-    const key: TechnicalTopicKey = lower.match(/grúa|grua|radio|ton/) ? "grua" : lower.match(/plano|document/) ? "planos" : lower.match(/panel|fachada/) ? "paneles" : lower.match(/acceso|transport/) ? "logistica" : "secuencia";
-    setMessages((items) => [...items, { text: clean, mine: true }, { text: technicalTopics[key].answer }]);
-    setQuestion("");
-  };
-  return <section className="v21-section center" id="centro-tecnico"><div className="shell"><div className="section-head"><div><div className="kicker mono">06 — Centro Técnico</div><h2>Pregunta antes<br />de <span className="red">improvisar.</span></h2></div><p>Orientación preliminar para identificar la información que condiciona la planificación.</p></div><div className="center-grid"><aside className="center-nav"><div className="kicker mono">Montaje Prefabricado / Technical Desk</div><h2>Resolver dudas también es planificar.</h2><p>Selecciona un tema para revisar sus datos de partida.</p><div className="topic-list">{Object.entries(technicalTopics).map(([key,topic]) => <button type="button" className={`topic${active === key ? " active" : ""}`} aria-pressed={active === key} onClick={() => selectTopic(key as TechnicalTopicKey)} key={key}>{topic.label}</button>)}</div><a className="v21-btn redbtn center-continue" href="#preestudio">Continuar con preestudio →</a></aside><div className="center-main"><div className="chat-head"><b>Asistente de preestudio</b><span className="mono">Orientación · no vinculante</span></div><div className="chat" aria-live="polite">{messages.map((message,index) => <div className={`bubble${message.mine ? " me" : ""}`} key={`${index}-${message.text}`}>{!message.mine && <label className="mono">Montaje Prefabricado</label>}{message.text}</div>)}</div><form className="ask" onSubmit={submit}><label className="sr-only" htmlFor="technical-question">Consulta técnica</label><input id="technical-question" value={question} onChange={(event) => setQuestion(event.target.value)} placeholder="Ej.: viga de 55 t a 18 m de radio en Madrid..." autoComplete="off" /><button type="submit" aria-label="Enviar consulta">→</button></form></div></div></div></section>;
+  const topics=[
+    {title:"Documentación y trazabilidad",text:"Relacionar planos, despiece, pesos, insertos y revisiones evita estudiar una pieza con datos de otra versión. La lista de pendientes debe existir antes de cerrar secuencia o medios.",items:["Planos y listado de piezas coherentes","Pesos, geometría e insertos confirmados","Revisión vigente y cambios identificados"],href:"/servicios/asistencia-tecnica"},
+    {title:"Secuencia y estabilidad temporal",text:"El orden de montaje debe indicar cuándo cada elemento pasa de suspendido a apoyado, arriostrado y liberado. Los estados transitorios requieren tanta atención como la estructura terminada.",items:["Sentido de avance y orden de llegada","Apoyos, uniones y arriostramientos","Puntos de espera antes de soltar la grúa"],href:"/servicios/ingenieria-de-montaje"},
+    {title:"Grúa y lifting plan",text:"La capacidad se comprueba al radio real, con configuración, altura, deducciones y peso de aparejos. Un lifting plan documenta la maniobra y las hipótesis que todavía deben verificarse.",items:["Carga total y centro de gravedad","Radio, altura y tabla de carga","Aparejos, terreno, obstáculos y viento"],href:"/servicios/lifting-plan"},
+    {title:"Accesos, entregas y acopio",text:"La ruta final, el giro dentro de obra y la posición de descarga pueden cambiar la implantación. Las entregas deben alimentar la secuencia sin convertir el acopio en una segunda obra.",items:["Gálibos, pendientes y radios de giro","Ventanas y orden de expedición","Superficie y capacidad de acopio"],href:"/servicios/logistica-de-obra"},
+    {title:"Seguridad integrada desde diseño",text:"Los puntos de izado, anclajes de seguridad y fijaciones temporales se resuelven mejor cuando se coordinan con diseño y fabricación. Trasladarlos a obra suele añadir exposición y trabajos correctivos.",items:["Accesos y protecciones previstos","Insertos compatibles con la maniobra","Exclusiones, comunicaciones y responsabilidades"],href:"/servicios/montaje-prefabricados"}
+  ];
+  return <section className="v21-section center" id="centro-tecnico"><div className="shell"><div className="section-head"><div><div className="kicker mono">06 — Centro Técnico</div><h2>Información útil<br/>para <span className="red">decidir.</span></h2></div><p>Criterios preliminares para preparar el montaje, detectar datos pendientes y formular las preguntas correctas antes de movilizar.</p></div><div className="knowledge-grid">{topics.map((topic,index)=><article key={topic.title}><span className="mono">{String(index+1).padStart(2,"0")}</span><h3>{topic.title}</h3><p>{topic.text}</p><ul>{topic.items.map(item=><li key={item}>{item}</li>)}</ul><Link href={topic.href}>Ampliar criterio técnico →</Link></article>)}</div><div className="source-strip"><div><strong>Fuentes para ampliar</strong><p>Contenido propio basado en documentación sectorial. La referencia externa no implica afiliación ni sustituye el estudio específico.</p></div><a href="https://andece.org/" target="_blank" rel="noreferrer">ANDECE ↗</a><a href="https://prefabricadoseguro.com/" target="_blank" rel="noreferrer">Prefabricado Seguro ↗</a></div></div></section>;
 }

@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { jsonLdOrganization } from "@/lib/seo";
+import FloatingContactActions from "@/components/v21/FloatingContactActions";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://montajesprefabricados.com"),
@@ -41,7 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
-            <body className="bg-neutral-950 text-neutral-200">{children}</body>
+            <body className="bg-neutral-950 text-neutral-200">{children}<FloatingContactActions /></body>
         </html>
     );
 }

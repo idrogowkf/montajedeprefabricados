@@ -5,5 +5,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.floating-contact-actions{position:fixed;z-index:80;inset:0;pointer-events:none}.floating-contact-actions a{pointer-events:auto;position:absolute;text-decoration:none;font-family:Arial,sans-serif;font-size:11px;font-weight:850;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 12px 30px rgba(0,0,0,.22)}.floating-study{right:0;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;background:#ef233c;color:#fff;padding:18px 12px;border:1px solid #ef233c}.floating-whatsapp{right:22px;bottom:22px;background:#101112;color:#fff;border:1px solid rgba(255,255,255,.2);min-height:50px;padding:8px 15px 8px 8px;display:flex;align-items:center;gap:10px}.floating-whatsapp span{width:34px;height:34px;border-radius:50%;background:#25d366;color:#07150c;display:grid;place-items:center;font-size:10px}.floating-contact-actions a:focus-visible{outline:3px solid #ef233c;outline-offset:3px}@media(max-width:640px){.floating-study{top:auto;bottom:82px;right:14px;transform:none;writing-mode:horizontal-tb;padding:12px 14px}.floating-whatsapp{right:14px;bottom:18px}.floating-whatsapp b{display:none}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.floating-contact-actions *{transition:none!important}}
 :root { color-scheme: dark; }
 html, body { background: #0a0a0a; }

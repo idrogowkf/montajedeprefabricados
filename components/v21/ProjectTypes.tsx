@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const projects = [
   { title: "Naves y estructuras prefabricadas", label: "Industrial · grandes luces", image: "/proyectos/industrial-nave-losa-alveolar-35t.webp", href: "/tipos/naves-industriales" },
@@ -7,7 +8,7 @@ const projects = [
 ] as const;
 
 function ProjectCard({ project, small = false }: { project: typeof projects[number]; small?: boolean }) {
-  return <a href={project.href} className={`project-card${small ? " small" : ""}`}><Image src={project.image} alt={project.title} fill sizes={small ? "(max-width: 820px) 100vw, 40vw" : "(max-width: 820px) 100vw, 58vw"} /><span className="project-copy"><small className="mono">{project.label}</small><h3>{project.title}</h3></span></a>;
+  return <Link href={project.href} className={`project-card${small ? " small" : ""}`}><Image src={project.image} alt={project.title} fill sizes={small ? "(max-width: 820px) 100vw, 40vw" : "(max-width: 820px) 100vw, 58vw"} /><span className="project-copy"><small className="mono">{project.label}</small><h3>{project.title}</h3><span>Ver página técnica →</span></span></Link>;
 }
 
 export default function ProjectTypes() {

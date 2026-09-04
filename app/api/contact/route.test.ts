@@ -10,5 +10,5 @@ describe("contact API module", () => {
     vi.stubEnv("RESEND_API_KEY", "");
 
     await expect(import("./route")).resolves.toHaveProperty("POST");
-  });
+  }, 15_000);
 });

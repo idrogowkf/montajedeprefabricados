@@ -7,7 +7,7 @@ export async function POST(req: Request) {
         const { nombre, empresa, email, mensaje, origen } = body;
 
         if (!nombre || !email || !mensaje) {
-            return NextResponse.json({ ok: false, error: "Faltan campos obligatorios" });
+            return NextResponse.json({ ok: false, error: "Faltan campos obligatorios" }, { status: 400 });
         }
 
         // Enviar correo con Resend

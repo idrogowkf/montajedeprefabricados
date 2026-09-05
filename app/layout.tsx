@@ -5,7 +5,7 @@ import { jsonLdOrganization } from "@/lib/seo";
 import FloatingContactActions from "@/components/v21/FloatingContactActions";
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://montajesprefabricados.com"),
+    metadataBase: new URL("https://www.montajedeprefabricados.com"),
     title: {
         default: "Montaje de Prefabricados en España | Grúas, Estructuras, Ingeniería",
         template: "%s | Montaje de Prefabricados",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     description:
         "Especialistas en montaje de prefabricados de hormigón, estructuras metálicas, puentes, naves industriales, fachadas y paneles. Servicio en toda España.",
     alternates: {
-        canonical: "https://montajesprefabricados.com",
+        canonical: "https://www.montajedeprefabricados.com",
     },
     robots: {
         index: true,

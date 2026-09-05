@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const site = {
   name: 'Montaje de Prefabricados',
-  url: 'https://montajedeprefabricados.com',
+  url: 'https://www.montajedeprefabricados.com',
   description:
     'Especialistas en montaje de prefabricados en España: grúas 80–500T+, transporte especial (Ibercarga), cuadrillas expertas, planteizado, planos y as-built.',
 }

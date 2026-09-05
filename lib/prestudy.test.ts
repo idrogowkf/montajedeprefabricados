@@ -7,6 +7,10 @@ describe("pre-study validation",() => {
     expect(validateStep(2,initialPreStudyData)).toEqual({});
     expect(validateStep(3,initialPreStudyData)).toHaveProperty("location");
   });
+  it("treats missing fields as empty values at the API boundary",() => {
+    expect(() => validateStep(6,{} as typeof initialPreStudyData)).not.toThrow();
+    expect(validateStep(6,{} as typeof initialPreStudyData)).toHaveProperty("name");
+  });
   it("accepts phone instead of email at contact",() => {
     const data = {...initialPreStudyData,name:"Ana",phone:"600000000"};
     expect(validateStep(6,data)).toEqual({});

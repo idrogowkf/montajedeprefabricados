@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             }
         ],
-        sitemap: "https://montajesprefabricados.com/sitemap.xml",
+        sitemap: "https://www.montajedeprefabricados.com/sitemap.xml",
     };
 }

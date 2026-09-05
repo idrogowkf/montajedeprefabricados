@@ -11,4 +11,16 @@ describe("contact API module", () => {
 
     await expect(import("./route")).resolves.toHaveProperty("POST");
   }, 15_000);
+
+  it("rejects an incomplete payload with HTTP 400", async () => {
+    const { POST } = await import("./route");
+    const response = await POST(new Request("http://localhost/api/contact", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: "{}",
+    }));
+
+    expect(response.status).toBe(400);
+    await expect(response.json()).resolves.toMatchObject({ ok: false });
+  });
 });

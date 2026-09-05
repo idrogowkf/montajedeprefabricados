@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     description:
         "Montaje profesional de prefabricados de hormigón: vigas, dovelas, paneles, forjados, pilares y elementos especiales. Servicio en toda España.",
     alternates: {
-        canonical: "https://montajesprefabricados.com/servicios/montaje-prefabricado-hormigon",
+        canonical: "https://www.montajedeprefabricados.com/servicios/montaje-prefabricado-hormigon",
     },
 };
 

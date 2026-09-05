@@ -17,11 +17,11 @@ export const initialPreStudyData: PreStudyData = { projectType:"",pieces:"",maxW
 export function validateStep(step: number, data: PreStudyData) {
   const errors: Record<string,string> = {};
   if (step === 1 && !data.projectType) errors.projectType = "Selecciona una tipología o la opción de ayuda.";
-  if (step === 3 && !data.location.trim()) errors.location = "Indica una ubicación aproximada.";
+  if (step === 3 && !data.location?.trim()) errors.location = "Indica una ubicación aproximada.";
   if (step === 5 && data.externalUrl && !/^https?:\/\//i.test(data.externalUrl)) errors.externalUrl = "Introduce una URL completa que empiece por http:// o https://.";
   if (step === 6) {
-    if (!data.name.trim()) errors.name = "Indica tu nombre.";
-    if (!data.email.trim() && !data.phone.trim()) errors.contact = "Indica un email o un teléfono.";
+    if (!data.name?.trim()) errors.name = "Indica tu nombre.";
+    if (!data.email?.trim() && !data.phone?.trim()) errors.contact = "Indica un email o un teléfono.";
     if (data.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) errors.email = "Revisa el formato del email.";
   }
   return errors;

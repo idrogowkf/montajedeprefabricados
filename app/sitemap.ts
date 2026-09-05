@@ -1,7 +1,9 @@
 ﻿import { MetadataRoute } from "next";
 
+import { cities } from "../lib/cities";
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://montajesprefabricados.com";
+  const base = "https://www.montajedeprefabricados.com";
 
   const tipos = [
     "naves-industriales",
@@ -12,18 +14,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "otras-tipologias",
   ];
 
-  const ciudades = [
-    "madrid",
-    "barcelona",
-    "valencia",
-    "sevilla",
-    "mallorca",
-    "zaragoza",
-    "bilbao",
-    "malaga",
-    "murcia",
-    "alicante"
-  ];
   const servicios = ["montaje-prefabricados","ingenieria-de-montaje","lifting-plan","gruas-y-maniobras","logistica-de-obra","asistencia-tecnica"];
 
   return [
@@ -36,7 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     })),
 
-    ...ciudades.map((c) => ({
+    ...cities.map((c) => ({
       url: `${base}/${c}`,
       priority: 0.8,
     })),

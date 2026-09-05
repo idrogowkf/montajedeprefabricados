@@ -123,9 +123,9 @@ The Home presents five substantial topics:
 
 Each topic provides a practical checklist, explains why the information changes the operation, and links to the most relevant technical service page. The content must be original and informed by authoritative or specialist references, including:
 
-- ANDECE material on traceability between design, piece definition, logistics, and erection.
-- ANDECE safety recommendations concerning lifting devices, lifelines, bracing anchors, and planning before erection.
-- Prefabricado Seguro material on bringing erection and safety needs upstream into design/fabrication rather than solving them reactively on site.
+- Sector documentation on traceability between design, piece definition, logistics, and erection.
+- Safety recommendations concerning lifting devices, lifelines, bracing anchors, and planning before erection.
+- Technical material on bringing erection and safety needs upstream into design and fabrication rather than solving them reactively on site.
 - Recognised lifting/erection guidance for load mass, rigging configuration, crane set-up, temporary support, ground/access conditions, exclusion zones, and documented sequencing.
 
 Source links appear in a restrained `Fuentes para ampliar` block. The site does not present itself as affiliated with or endorsed by those sources.

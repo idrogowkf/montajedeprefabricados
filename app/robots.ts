@@ -8,6 +8,7 @@ export default function robots(): MetadataRoute.Robots {
                 allow: "/",
             }
         ],
+        host: "https://www.montajedeprefabricados.com",
         sitemap: "https://www.montajedeprefabricados.com/sitemap.xml",
     };
 }

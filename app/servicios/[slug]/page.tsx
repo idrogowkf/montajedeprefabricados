@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import TechnicalServicePage from "@/components/v21/TechnicalServicePage";
-import { technicalServiceBySlug, technicalServices } from "@/data/technical-services";
+import { serviceSeoPages, seoPageByPath } from "@/data/seo-pages";
+import { createPageMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
-export function generateStaticParams(){return technicalServices.map(({slug})=>({slug}));}
+export function generateStaticParams(){return serviceSeoPages.map(({path})=>({slug:path.split("/").pop()!}));}
 export function generateMetadata({params}:{params:{slug:string}}):Metadata {
-  const service=technicalServiceBySlug[params.slug];
-  if(!service)return {};
-  return {title:service.title,description:service.description,alternates:{canonical:`/servicios/${service.slug}`},openGraph:{title:service.title,description:service.description,type:"website",images:[service.image]}};
+  const service=seoPageByPath[`/servicios/${params.slug}`];
+  return service ? createPageMetadata(service) : {};
 }
-export default function Page({params}:{params:{slug:string}}){const service=technicalServiceBySlug[params.slug];if(!service)notFound();return <TechnicalServicePage service={service}/>;}
+export default function Page({params}:{params:{slug:string}}){const page=seoPageByPath[`/servicios/${params.slug}`];if(!page)notFound();return <TechnicalServicePage page={page}/>;}

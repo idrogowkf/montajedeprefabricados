@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { homeFaqs, homeRelatedLinks } from "@/data/home-seo";
+
+export default function HomeSeoContent() {
+  return <section className="v21-section seo-home" aria-labelledby="seo-home-title"><div className="shell"><div className="section-head"><div><div className="kicker mono">08 — Información técnica</div><h2 id="seo-home-title">Montaje prefabricado:<br/><span className="red">decisiones clave.</span></h2></div><p>Accesos directos a los servicios, tipologías y zonas de planificación, seguidos de respuestas a las consultas técnicas más habituales.</p></div><div className="seo-link-columns"><nav aria-label="Servicios de montaje"><h3>Servicios</h3>{homeRelatedLinks.services.map(link=><Link key={link.href} href={link.href}>{link.label} →</Link>)}</nav><nav aria-label="Tipologías prefabricadas"><h3>Tipologías</h3>{homeRelatedLinks.types.map(link=><Link key={link.href} href={link.href}>{link.label} →</Link>)}</nav><nav aria-label="Montaje por ubicación"><h3>Ubicaciones</h3>{homeRelatedLinks.locations.map(link=><Link key={link.href} href={link.href}>{link.label} →</Link>)}</nav></div><div className="seo-faq-grid home-faq">{homeFaqs.map(faq=><article key={faq.question}><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div></div></section>;
+}

@@ -1,7 +1,7 @@
 ﻿// app/layout.tsx
 import "./globals.css";
 import type { Metadata, Viewport } from "next";
-import { jsonLdOrganization } from "@/lib/seo";
+import { jsonLdOrganization, jsonLdWebSite } from "@/lib/seo";
 import FloatingContactActions from "@/components/v21/FloatingContactActions";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         template: "%s | Montaje de Prefabricados",
     },
     description:
-        "Especialistas en montaje de prefabricados de hormigón, estructuras metálicas, puentes, naves industriales, fachadas y paneles. Servicio en toda España.",
+        "Planificación de montaje de prefabricados de hormigón: ingeniería, planes de izado, grúas, logística, secuencia y documentación técnica en España.",
     alternates: {
         canonical: "https://www.montajedeprefabricados.com",
     },
@@ -19,6 +19,8 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
+    openGraph: { type: "website", locale: "es_ES", siteName: "Montaje de Prefabricados", images: [{ url: "/og.png", alt: "Montaje de prefabricados" }] },
+    twitter: { card: "summary_large_image", images: ["/og.png"] },
     icons: {
         icon: "/favicon.svg",
     },
@@ -40,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                         __html: JSON.stringify(jsonLdOrganization()),
                     }}
                 />
+                <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite()) }} />
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className="bg-neutral-950 text-neutral-200">{children}<FloatingContactActions /></body>

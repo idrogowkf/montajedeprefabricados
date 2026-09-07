@@ -1,12 +1,12 @@
 
 export const HERO_TITLE = 'Montaje de prefabricados, sin sorpresas.'
-export const HERO_DESC = 'Ingeniería de izado, equipos certificados y cuadrillas expertas. Coordinamos transporte (Ibercarga), grúas y maniobras críticas, del planteizado a la entrega.'
+export const HERO_DESC = 'Ingeniería de izado y coordinación de transporte, grúas y maniobras desde la planificación hasta la posición final.'
 
 export function cityCopy(city: string) {
   const C = city[0].toUpperCase() + city.slice(1)
   return {
     title: `Montaje de prefabricados en ${C}`,
-    desc: `Cuadrillas especialistas, grúas 80–500T+, transporte especial y planos de montaje en ${C}. Vigas, losas alveolares, pilares, pórticos y fachada.`
+    desc: `Planificación de transporte, grúas y montaje prefabricado en ${C}: vigas, losas alveolares, pilares, pórticos y fachadas.`
   }
 }
 

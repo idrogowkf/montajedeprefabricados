@@ -7,7 +7,8 @@ import ProcessSection from "@/components/v21/ProcessSection";
 import ProjectTypes from "@/components/v21/ProjectTypes";
 import TechnicalCenter from "@/components/v21/TechnicalCenter";
 import PreStudy from "@/components/prestudy/PreStudy";
+import HomeSeoContent from "@/components/v21/HomeSeoContent";
 
 export default function LandingV21() {
-  return <div className="v21-home"><main><Hero /><PositioningSection /><CapabilitiesSection /><ProcessSection /><PreStudy /><ProjectTypes /><TechnicalCenter /><FinalCTA /></main><Footer /></div>;
+  return <div className="v21-home"><main><Hero /><PositioningSection /><CapabilitiesSection /><ProcessSection /><PreStudy /><ProjectTypes /><TechnicalCenter /><HomeSeoContent /><FinalCTA /></main><Footer /></div>;
 }

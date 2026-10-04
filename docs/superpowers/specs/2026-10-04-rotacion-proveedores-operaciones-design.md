@@ -166,4 +166,3 @@ Para activar el envío real harán falta un dominio verificado y una clave de Re
 - TME S.L.U. España: https://www.tme.eu/en/about-us/tme-group/22405/transfer-multisort-elektronik-s-l-u/
 - Resend Inbound: https://www.resend.com/features/inbound
 - Resend Webhooks: https://resend.com/blog/webhooks
-

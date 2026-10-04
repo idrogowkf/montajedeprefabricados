@@ -8,9 +8,9 @@ Validar la demanda de productos para montaje prefabricado sin mantener stock, ac
 
 ## Alcance de la primera versión
 
-La primera versión será exclusivamente B2B y estará orientada inicialmente al mercado español. Incluirá:
+La primera versión será exclusivamente B2B y estará orientada inicialmente al mercado español. La selección comercial, puntuación de proveedores, catálogo corto de alta rotación y centro de operaciones se detallan en `2026-10-04-rotacion-proveedores-operaciones-design.md`. Incluirá:
 
-- catálogo público de 30 a 60 referencias autorizadas;
+- catálogo público de 40 a 60 referencias autorizadas, concentrado en consumibles y EPI de reposición frecuente;
 - categorías, búsqueda y filtros básicos;
 - fichas de producto con información técnica y documentación disponible;
 - cesta de solicitud de oferta, sin pago;
@@ -133,9 +133,9 @@ El panel permitirá:
 - añadir notas internas y respuestas visibles;
 - exportar una solicitud a CSV o PDF;
 - registrar proveedor consultado, coste, precio propuesto y plazo;
-- ver productos más consultados y solicitudes por categoría.
+- ver el embudo completo, rotación, margen estimado, rendimiento del proveedor y entregabilidad de comunicaciones.
 
-No se construirá inicialmente un portal para proveedores. La comunicación con ellos seguirá siendo manual por correo.
+No se construirá inicialmente un portal para proveedores. La comunicación podrá iniciarse manualmente desde cada expediente, quedará registrada y no dependerá de una bandeja externa para su seguimiento.
 
 ## Arquitectura técnica
 
@@ -170,12 +170,15 @@ Tablas principales:
 - `service_requests`: montaje, ingeniería o plan de izado;
 - `consents`: versión, finalidad y fecha;
 - `audit_events`: cambios administrativos relevantes.
+- `communication_events`: envío y recepción, proveedor, identificador externo y estado;
+- `outbox_events`: trabajos de notificación idempotentes y reintentables;
+- `product_events`: vistas, cesta, solicitud y conversión por producto.
 
 Los precios de proveedor y márgenes serán datos internos separados del contenido público.
 
 ## Correos
 
-El buzón predeterminado actual del proyecto es `ofertas@montajedeprefabricados.com`, sujeto a comprobar la configuración real de Vercel y Resend.
+La dirección predeterminada actual del proyecto es `ofertas@montajedeprefabricados.com`, sujeto a comprobar la titularidad del dominio y la configuración real de Vercel y Resend. El panel administrativo, no ese buzón, será la fuente de verdad.
 
 Mensajes de la primera versión:
 
@@ -187,6 +190,8 @@ Mensajes de la primera versión:
 - confirmación de baja de cuenta.
 
 Cada envío guardará identificador, destinatario, plantilla y resultado, sin almacenar innecesariamente el contenido sensible completo.
+
+Los webhooks actualizarán entrega, retraso, rebote, queja o fallo. Las respuestas se realizarán inicialmente dentro de la cuenta. La recepción de correo por Resend Inbound se añadirá después como puente hacia el mismo hilo del expediente, no como una segunda bandeja de trabajo.
 
 ## Privacidad y seguridad
 

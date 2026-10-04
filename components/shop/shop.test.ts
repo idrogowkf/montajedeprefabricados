@@ -15,5 +15,6 @@ describe("shop experience", () => {
     expect(cart).toContain('aria-label="Cesta de solicitud"');
     expect(cart).toContain("/solicitar-oferta");
     expect(cart).toContain("mp-rfq-cart");
+    expect(cart).toContain("if (!lines.length) return null");
   });
 });

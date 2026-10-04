@@ -36,6 +36,7 @@ export function RfqCart() {
     window.addEventListener("mp-cart-change", refresh);
     return () => window.removeEventListener("mp-cart-change", refresh);
   }, []);
+  if (!lines.length) return null;
   const units = lines.reduce((total, line) => total + line.quantity, 0);
   return <aside aria-label="Cesta de solicitud" className="fixed inset-x-4 bottom-4 z-50 mx-auto flex max-w-xl items-center justify-between gap-4 rounded-2xl border border-yellow-400/40 bg-neutral-950/95 px-5 py-4 shadow-2xl backdrop-blur">
     <div><strong className="block text-sm text-white">Solicitud en preparación</strong><span className="text-xs text-neutral-400">{units} {units === 1 ? "unidad" : "unidades"} · sin compromiso</span></div>

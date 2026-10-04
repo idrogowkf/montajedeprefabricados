@@ -3,6 +3,7 @@
 import Link from "next/link";
 import {useEffect, useState} from "react";
 import type {CatalogProduct} from "@/lib/catalog/types";
+import {recordMetric} from "@/lib/catalog/event-validation";
 
 export const CART_KEY = "mp-rfq-cart";
 export type CartLine = Pick<CatalogProduct, "slug" | "name" | "unit"> & {quantity: number};
@@ -23,6 +24,7 @@ export function addCartLine(product: CatalogProduct) {
   if (existing) existing.quantity = Math.min(999, existing.quantity + 1);
   else cart.push({slug: product.slug, name: product.name, unit: product.unit, quantity: 1});
   localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  recordMetric({type: "cart_add", productSlug: product.slug});
   window.dispatchEvent(new Event("mp-cart-change"));
 }
 

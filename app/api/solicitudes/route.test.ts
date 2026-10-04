@@ -1,3 +1,4 @@
+import {readFile} from "node:fs/promises";
 import {describe, expect, it, vi} from "vitest";
 import {submitRfq} from "@/lib/rfq/service";
 import type {RfqRequest} from "@/lib/rfq/types";
@@ -19,5 +20,12 @@ describe("RFQ submission service", () => {
     const result = await submitRfq(request, {create}, notify);
     expect(result.duplicate).toBe(true);
     expect(notify).not.toHaveBeenCalled();
+  });
+
+  it("locks the database function to the service role and resolves concurrent duplicates", async () => {
+    const sql = await readFile(new URL("../../../supabase/migrations/202610050001_catalog_rfq.sql", import.meta.url), "utf8");
+    expect(sql).toContain("exception when unique_violation");
+    expect(sql).toContain("revoke execute on function public.create_rfq_request(jsonb) from public");
+    expect(sql).toContain("grant execute on function public.create_rfq_request(jsonb) to service_role");
   });
 });

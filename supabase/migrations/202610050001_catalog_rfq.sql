@@ -28,11 +28,20 @@ begin
   select * into existing from public.rfqs where idempotency_key = (payload->>'idempotencyKey')::uuid;
   if found then return query select existing.id, existing.reference, true; return; end if;
   ref := 'SOL-' || to_char(current_date, 'YYYY') || '-' || lpad(nextval('public.rfqs_reference_seq')::text, 5, '0');
-  insert into public.rfqs(reference,idempotency_key,company_name,nif,contact_name,email,phone,delivery_location,notes)
-  values(ref,(payload->>'idempotencyKey')::uuid,payload->>'companyName',payload->>'nif',payload->>'contactName',payload->>'email',payload->>'phone',payload->>'deliveryLocation',payload->>'notes') returning * into created;
+  begin
+    insert into public.rfqs(reference,idempotency_key,company_name,nif,contact_name,email,phone,delivery_location,notes)
+    values(ref,(payload->>'idempotencyKey')::uuid,payload->>'companyName',payload->>'nif',payload->>'contactName',payload->>'email',payload->>'phone',payload->>'deliveryLocation',payload->>'notes') returning * into created;
+  exception when unique_violation then
+    select * into existing from public.rfqs where idempotency_key = (payload->>'idempotencyKey')::uuid;
+    if found then return query select existing.id, existing.reference, true; return; end if;
+    raise;
+  end;
   for item in select * from jsonb_array_elements(payload->'items') loop
     insert into public.rfq_items(rfq_id,product_slug,quantity) values(created.id,item->>'slug',(item->>'quantity')::integer);
     insert into public.product_events(event_type,product_slug) values('rfq_submitted',item->>'slug');
   end loop;
   return query select created.id, created.reference, false;
 end $$;
+
+revoke execute on function public.create_rfq_request(jsonb) from public;
+grant execute on function public.create_rfq_request(jsonb) to service_role;

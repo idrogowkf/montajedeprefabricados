@@ -17,4 +17,13 @@ describe("multifaceted catalog", () => {
   it("keeps source and commercial readiness traceable", () => {
     expect(catalogProducts.every((product) => product.supplier.name && product.sourceUrl && product.commercial.status)).toBe(true);
   });
+
+  it("attaches three same-SKU market offers and a real photo to compared products",()=>{
+    for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"]){
+      const product=catalogProducts.find(item=>item.id===id)!;
+      expect(product.imageUrl).toMatch(/^https:\/\//);
+      expect(product.offers).toHaveLength(3);
+      expect(new Set(product.offers.map(offer=>offer.sku))).toEqual(new Set([product.supplier.reference]));
+    }
+  });
 });

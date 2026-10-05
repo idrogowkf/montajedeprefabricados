@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { catalogProducts, filterCatalog } from "./catalog";
+import { catalogProducts, filterCatalog, isPublicationReady } from "./catalog";
 
 describe("multifaceted catalog", () => {
   it("covers safety and the principal prefabricated materials", () => {
@@ -25,5 +25,15 @@ describe("multifaceted catalog", () => {
       expect(product.offers).toHaveLength(3);
       expect(new Set(product.offers.map(offer=>offer.sku))).toEqual(new Set([product.supplier.reference]));
     }
+  });
+
+  it("never publishes incomplete or generic records",()=>{
+    expect(catalogProducts.filter(isPublicationReady).every(product=>(product.imageUrls?.length??0)>=2&&Boolean(product.datasheetUrl)&&product.offers.length===3&&product.supplier.reference!=="PENDIENTE")).toBe(true);
+  });
+
+  it("does not classify the concrete lifeline post as steel",()=>{
+    const post=catalogProducts.find(product=>product.id==="poste-linea-vida")!;
+    expect(post.segments).toContain("hormigon");
+    expect(post.segments).not.toContain("acero");
   });
 });

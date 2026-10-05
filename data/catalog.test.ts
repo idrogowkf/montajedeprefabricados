@@ -36,4 +36,9 @@ describe("multifaceted catalog", () => {
     expect(post.segments).toContain("hormigon");
     expect(post.segments).not.toContain("acero");
   });
+
+  it("does not invent purchase costs for unidentified products",()=>{
+    const unidentified=catalogProducts.filter(product=>product.supplier.reference==="PENDIENTE");
+    expect(unidentified.every(product=>product.commercial.cost===0&&product.price===0)).toBe(true);
+  });
 });

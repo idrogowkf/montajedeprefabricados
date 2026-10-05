@@ -9,7 +9,7 @@ type Seed=Omit<CatalogProduct,"price"|"priceVat"|"profit"|"commercial"|"rating"|
 const rs="https://es.rs-online.com/web/c/equipos-de-proteccion-individual-y-ropa-de-trabajo/proteccion-contra-caidas/";
 const obramat="https://www.obramat.es/";
 const grainger="https://www.grainger.com/category/safety/fall-protection/";
-const make=(s:Seed):CatalogProduct=>{const commercial={cost:s.cost,inboundShipping:Math.max(1.5,s.cost*.04),handling:1.8,contingencyPercent:4,targetMarginPercent:s.margin??28,vatPercent:21,status:s.status??"draft",costVerified:s.costVerified??false};const calc=calculatePrice(commercial);return {...s,commercial,price:calc.salePriceNet,priceVat:calc.salePriceVat,profit:calc.grossProfit,rating:4.6,reviews:0};};
+const make=(s:Seed):CatalogProduct=>{const identified=s.supplier.reference!=="PENDIENTE";const cost=identified?s.cost:0;const commercial={cost,inboundShipping:identified?Math.max(1.5,cost*.04):0,handling:identified?1.8:0,contingencyPercent:identified?4:0,targetMarginPercent:s.margin??28,vatPercent:21,status:s.status??"draft",costVerified:s.costVerified??false};const calc=calculatePrice(commercial);return {...s,commercial,price:calc.salePriceNet,priceVat:calc.salePriceVat,profit:calc.grossProfit,rating:4.6,reviews:0};};
 const base={supplier:{name:"Proveedor por homologar",country:"UE",reference:"PENDIENTE"},offers:[] as MarketOffer[],availability:"Validación comercial pendiente",delivery:"Plazo por confirmar",certifications:["Documentación CE pendiente de validar"],sourceUrl:obramat,accent:"#ef233c",badge:"Alta rotación"};
 
 export const catalogProducts:CatalogProduct[]=[

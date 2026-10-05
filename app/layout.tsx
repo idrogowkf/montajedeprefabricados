@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { jsonLdOrganization, jsonLdWebSite } from "@/lib/seo";
 import FloatingContactActions from "@/components/v21/FloatingContactActions";
+import {ClerkProvider} from "@clerk/nextjs";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.montajedeprefabricados.com"),
@@ -33,7 +34,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <html lang="es">
+        <ClerkProvider><html lang="es">
             <head>
                 <script
                     type="application/ld+json"
@@ -46,6 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className="bg-neutral-950 text-neutral-200">{children}<FloatingContactActions /></body>
-        </html>
+        </html></ClerkProvider>
     );
 }

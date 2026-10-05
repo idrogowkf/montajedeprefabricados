@@ -4,5 +4,5 @@ import "./admin.css";
 import "./price-audit.css";
 import "./filters.css";
 
-export const metadata:Metadata={title:"Administración comercial · Entorno local",robots:{index:false,follow:false}};
+export const metadata:Metadata={title:"Administración comercial · Marketplace",robots:{index:false,follow:false}};
 export default function AdminPage(){return <CatalogAdmin/>}

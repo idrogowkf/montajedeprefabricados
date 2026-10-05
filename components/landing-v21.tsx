@@ -8,7 +8,8 @@ import ProjectTypes from "@/components/v21/ProjectTypes";
 import TechnicalCenter from "@/components/v21/TechnicalCenter";
 import PreStudy from "@/components/prestudy/PreStudy";
 import HomeSeoContent from "@/components/v21/HomeSeoContent";
+import StoreDiscovery from "@/components/v21/StoreDiscovery";
 
 export default function LandingV21() {
-  return <div className="v21-home"><main><Hero /><PositioningSection /><CapabilitiesSection /><ProcessSection /><PreStudy /><ProjectTypes /><TechnicalCenter /><HomeSeoContent /><FinalCTA /></main><Footer /></div>;
+  return <div className="v21-home"><main><Hero /><StoreDiscovery /><PositioningSection /><CapabilitiesSection /><ProcessSection /><PreStudy /><ProjectTypes /><TechnicalCenter /><HomeSeoContent /><FinalCTA /></main><Footer /></div>;
 }

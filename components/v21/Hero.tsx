@@ -1,5 +1,27 @@
 import Header from "./Header";
 
+const quickCategories = ["Protección", "Corte", "Fijación", "Elevación"];
+
 export default function Hero() {
-  return <section className="mast" id="inicio"><div className="mast-bg" aria-hidden="true"><div className="bg-shot a" /><div className="bg-shot b" /></div><div className="grain" /><Header /><div className="shell hero"><div><div className="hero-label mono">Coordinación técnica de montaje prefabricado</div><h1>LA INGENIERÍA<br />COBRA <span className="red">FORMA</span><br />EN OBRA.</h1><p className="hero-copy">Convertimos planos, piezas, accesos y medios en una secuencia de montaje coordinada: planificación, logística, izado y ejecución con criterio técnico.</p><div className="hero-actions"><a className="v21-btn redbtn" href="#preestudio">Estudiar mi montaje ↗</a><a className="v21-btn lightbtn" href="#proyectos">Ver tipologías →</a></div></div><aside className="hero-side"><div className="hero-side-head mono"><span>Proceso de montaje</span><span>01 → 05</span></div><h3>Del plano a la posición final.</h3><p>Cada fase condiciona la siguiente. El preestudio ordena los datos antes de movilizar medios.</p><div className="hero-steps">{[["Preestudio","PIEZA"],["Planificación","SECUENCIA"],["Medios","GRÚA + LOGÍSTICA"],["Montaje","OBRA"],["Control","CIERRE"]].map(([name,tag], index) => <div className="hero-step" key={name}><i /><span>{String(index + 1).padStart(2,"0")} — {name}</span><b>{tag}</b></div>)}</div></aside></div></section>;
+  return <section className="mast hybrid-mast" id="inicio">
+    <div className="mast-bg" aria-hidden="true"><div className="bg-shot a" /><div className="bg-shot b" /></div><div className="grain" /><Header />
+    <div className="shell hybrid-gateway">
+      <article className="gateway-panel gateway-technical">
+        <div className="gateway-eyebrow mono"><span>01</span> Ingeniería y montaje</div>
+        <h1>TENGO UN<br />MONTAJE QUE<br /><span className="red">RESOLVER.</span></h1>
+        <p>Planificación, logística, izado y ejecución coordinados desde el plano hasta la posición final.</p>
+        <div className="hero-actions"><a className="v21-btn redbtn" href="#preestudio">Estudiar mi montaje ↗</a><a className="gateway-text-link" href="#capacidades">Ver capacidad técnica →</a></div>
+      </article>
+      <article className="gateway-panel gateway-commerce">
+        <div className="gateway-eyebrow mono"><span>02</span> Suministro profesional</div>
+        <div className="gateway-shop-head"><p className="gateway-mode">TIENDA TÉCNICA</p><span className="gateway-demo">CATÁLOGO DEMO</span></div>
+        <h2>NECESITO<br /><span>MATERIAL.</span></h2>
+        <p>Encuentra consumibles, protección, fijación y útiles para obra prefabricada.</p>
+        <form className="gateway-search" action="/tienda" method="get"><label className="sr-only" htmlFor="home-store-search">Buscar productos</label><input id="home-store-search" name="q" placeholder="¿Qué necesitas para la obra?" /><button type="submit" aria-label="Buscar en la tienda">Buscar →</button></form>
+        <div className="gateway-chips" aria-label="Categorías rápidas">{quickCategories.map((category) => <a href="/tienda" key={category}>{category}</a>)}</div>
+        <a className="v21-btn gateway-store-btn" href="/tienda">Entrar en la tienda <span>→</span></a>
+      </article>
+    </div>
+    <a className="hybrid-scroll mono" href="#compra-rapida">Compra rápida + capacidad técnica <span>↓</span></a>
+  </section>;
 }

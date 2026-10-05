@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { catalogProducts, filterCatalog, isPublicationReady } from "./catalog";
+import { catalogProducts, filterCatalog, filterStoreCatalog, hasStoreImage, isPublicationReady } from "./catalog";
 
 describe("multifaceted catalog", () => {
   it("covers safety and the principal prefabricated materials", () => {
@@ -40,5 +40,17 @@ describe("multifaceted catalog", () => {
   it("does not invent purchase costs for unidentified products",()=>{
     const unidentified=catalogProducts.filter(product=>product.supplier.reference==="PENDIENTE");
     expect(unidentified.every(product=>product.commercial.cost===0&&product.price===0)).toBe(true);
+  });
+
+  it("separates commercial family from prefabricated material",()=>{
+    const concreteCutting=filterStoreCatalog(catalogProducts,"","corte","hormigon");
+    expect(concreteCutting.length).toBeGreaterThan(0);
+    expect(concreteCutting.every(product=>product.segments.includes("corte")&&product.segments.includes("hormigon"))).toBe(true);
+    expect(filterStoreCatalog(catalogProducts,"","altura","acero").every(product=>product.segments.includes("altura")&&product.segments.includes("acero"))).toBe(true);
+  });
+
+  it("shows only products with a verified storefront image",()=>{
+    expect(catalogProducts.filter(hasStoreImage).length).toBeGreaterThan(0);
+    expect(catalogProducts.filter(hasStoreImage).every(product=>Boolean(product.imageUrl)||(product.imageUrls?.length??0)>0)).toBe(true);
   });
 });

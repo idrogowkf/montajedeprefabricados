@@ -45,4 +45,6 @@ export const catalogProducts:CatalogProduct[]=[
 
 const normalize=(value:string)=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 export function filterCatalog(products:CatalogProduct[],query:string,segment:string){const terms=normalize(query).trim().split(/\s+/).filter(Boolean);return products.filter(p=>(segment==="todos"||p.segments.includes(segment as CatalogSegment))&&terms.every(t=>normalize(`${p.name} ${p.brand} ${p.family} ${p.segments.join(" ")}`).includes(t)));}
+export function hasStoreImage(product:CatalogProduct){return Boolean(product.imageUrl)||(product.imageUrls?.length??0)>0;}
+export function filterStoreCatalog(products:CatalogProduct[],query:string,family:string,prefabricatedMaterial:string){const byFamily=filterCatalog(products,query,family);return byFamily.filter(product=>prefabricatedMaterial==="todos"||product.segments.includes(prefabricatedMaterial as CatalogSegment));}
 export function isPublicationReady(product:CatalogProduct){return product.commercial.status==="ready"&&product.supplier.reference!=="PENDIENTE"&&(product.imageUrls?.length??0)>=2&&Boolean(product.datasheetUrl)&&product.offers.length===3;}

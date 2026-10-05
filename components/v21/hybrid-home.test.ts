@@ -13,4 +13,10 @@ describe("hybrid home composition", () => {
     expect(landing).toContain("StoreDiscovery");
     expect(landing.indexOf("<StoreDiscovery")).toBeLessThan(landing.indexOf("<PositioningSection"));
   });
+
+  it("links the protected administration area from the footer",()=>{
+    const footer=readFileSync(join(process.cwd(),"components/v21/Footer.tsx"),"utf8");
+    expect(footer).toContain('href="/administracion"');
+    expect(footer).toContain("Zona de administración");
+  });
 });

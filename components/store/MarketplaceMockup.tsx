@@ -2,21 +2,24 @@
 
 import {useMemo, useState} from "react";
 import Brand from "@/components/v21/Brand";
-import {catalogProducts, filterCatalog, isPublicationReady, type CatalogProduct} from "@/data/catalog";
+import {catalogProducts, filterStoreCatalog, hasStoreImage, isPublicationReady, type CatalogProduct} from "@/data/catalog";
 import {SignInButton,SignedIn,SignedOut,UserButton} from "@clerk/nextjs";
 
-const categories = [
-  ["todos","Todos"],["altura","Altura y líneas de vida"],["hormigon","Hormigón"],
-  ["acero","Acero"],["madera","Madera"],["pvc","PVC"],["sellado","Sellado y reparación"],["elevacion","Amarre y elevación"],
+const families = [
+  ["todos","Todos"],["epi","Protección y EPI"],["corte","Corte y perforación"],["fijacion","Fijación"],
+  ["sellado","Sellado y reparación"],["elevacion","Amarre y elevación"],["altura","Trabajos en altura"],
 ] as const;
+const prefabricatedMaterials=[["todos","Todos los prefabricados"],["hormigon","Hormigón"],["acero","Acero"],["madera","Madera"],["pvc","PVC"]] as const;
 
 export default function MarketplaceMockup({initialProducts=catalogProducts}:{initialProducts?:CatalogProduct[]}) {
   const [query,setQuery] = useState("");
-  const [category,setCategory] = useState("todos");
+  const [family,setFamily] = useState("todos");
+  const [prefabricatedMaterial,setPrefabricatedMaterial] = useState("todos");
   const [cart,setCart] = useState<Record<string,number>>({});
   const [selected,setSelected] = useState<CatalogProduct | null>(null);
   const [cartOpen,setCartOpen] = useState(false);
-  const products = useMemo(()=>filterCatalog(initialProducts,query,category),[initialProducts,query,category]);
+  const storefrontProducts=useMemo(()=>initialProducts.filter(hasStoreImage),[initialProducts]);
+  const products = useMemo(()=>filterStoreCatalog(storefrontProducts,query,family,prefabricatedMaterial),[storefrontProducts,query,family,prefabricatedMaterial]);
   const units = Object.values(cart).reduce((sum,value)=>sum+value,0);
   const subtotal = initialProducts.reduce((sum,product)=>sum+(cart[product.id] ?? 0)*product.price,0);
   const add = (product:CatalogProduct) => setCart((current)=>({...current,[product.id]:(current[product.id] ?? 0)+1}));
@@ -27,18 +30,18 @@ export default function MarketplaceMockup({initialProducts=catalogProducts}:{ini
       <form className="store-search" onSubmit={(event)=>event.preventDefault()}><label className="sr-only" htmlFor="store-search">Buscar productos</label><input id="store-search" value={query} onChange={(event)=>setQuery(event.target.value)} placeholder="Buscar herramientas, EPI, fijaciones…"/><button aria-label="Buscar">⌕</button></form>
       <nav className="commerce-actions" aria-label="Cuenta y carrito"><SignedOut><SignInButton mode="modal"><button><small>Hola, identifícate</small><strong>Cuenta y listas</strong></button></SignInButton></SignedOut><SignedIn><span className="account-control"><UserButton/><strong>Mi cuenta</strong></span></SignedIn><button><small>Seguimiento</small><strong>Mis solicitudes</strong></button><button className="cart-trigger" onClick={()=>setCartOpen(true)}><span>{units}</span><strong>Carrito</strong></button></nav>
     </header>
-    <nav className="category-bar" aria-label="Categorías de producto">{categories.map(([value,label])=><button key={value} className={category===value?"active":""} onClick={()=>setCategory(value)}>{label}</button>)}<a href="/#preestudio">Necesito ayuda técnica</a></nav>
+    <nav className="category-bar" aria-label="Familias de producto">{families.map(([value,label])=><button key={value} className={family===value?"active":""} onClick={()=>setFamily(value)}>{label}</button>)}<a href="/#preestudio">Necesito ayuda técnica</a></nav>
 
     <main>
       <section className="store-hero"><div><span className="eyebrow">SUMINISTROS PARA MONTAJE PREFABRICADO</span><h1>Compra rápida.<br/><em>Criterio técnico.</em></h1><p>Material habitual de obra y productos configurables con asistencia especializada cuando la referencia exige comprobar carga, medida o compatibilidad.</p><div className="hero-pills"><span>Envío a obra</span><span>Documentación técnica</span><span>Oferta profesional</span></div></div><aside><span>¿No sabes qué referencia necesitas?</span><strong>Descríbenos la aplicación y la buscamos contigo.</strong><a href="/#preestudio">Solicitar selección técnica</a></aside></section>
 
-      <section className="quick-categories" aria-label="Accesos rápidos"><CategoryTile code="01" title="Altura y líneas de vida" note="Arneses, postes y sistemas" onClick={()=>setCategory("altura")}/><CategoryTile code="02" title="Hormigón" note="Corte, anclaje y reparación" onClick={()=>setCategory("hormigon")}/><CategoryTile code="03" title="Acero" note="Abrasivos, soldadura y protección" onClick={()=>setCategory("acero")}/><CategoryTile code="04" title="Madera y PVC" note="Fijación, corte y adhesión" onClick={()=>setCategory("madera")}/></section>
+      <section className="quick-categories" aria-label="Accesos rápidos"><CategoryTile code="01" title="Protección y EPI" note="Arneses y seguridad" onClick={()=>setFamily("epi")}/><CategoryTile code="02" title="Corte y perforación" note="Discos, brocas y abrasivos" onClick={()=>setFamily("corte")}/><CategoryTile code="03" title="Fijación y montaje" note="Anclajes, tornillería y útiles" onClick={()=>setFamily("fijacion")}/><CategoryTile code="04" title="Sellado y reparación" note="Adhesivos, juntas y morteros" onClick={()=>setFamily("sellado")}/></section>
 
-      <section className="catalog-shell"><aside className="filters"><strong>Filtrar resultados</strong><Filter title="Entrega"><label><input type="checkbox"/> Disponible 24–48 h</label><label><input type="checkbox"/> Configurable</label></Filter><Filter title="Precio demo"><label><input type="checkbox"/> Hasta 10 €</label><label><input type="checkbox"/> 10–30 €</label><label><input type="checkbox"/> Más de 30 €</label></Filter><Filter title="Uso"><label><input type="checkbox"/> Consumo frecuente</label><label><input type="checkbox"/> Seguridad</label></Filter></aside>
-        <div className="results"><div className="results-head"><div><span>{products.length} resultados</span><h2>{category==="todos"?"Productos para trabajar sin esperas":categories.find(([value])=>value===category)?.[1]}</h2></div><select aria-label="Ordenar resultados"><option>Más relevantes</option><option>Precio: menor a mayor</option><option>Mejor valorados</option></select></div><div className="product-grid">{products.map((product)=><ProductCard key={product.id} product={product} onAdd={()=>add(product)} onOpen={()=>setSelected(product)}/>)}</div>{!products.length&&<div className="empty-state"><strong>No encontramos coincidencias</strong><span>Prueba otra búsqueda o solicita ayuda técnica.</span></div>}</div>
+      <section className="catalog-shell"><aside className="filters"><strong>Filtrar resultados</strong><label className="prefab-filter"><span>Tipo de prefabricado</span><select value={prefabricatedMaterial} onChange={event=>setPrefabricatedMaterial(event.target.value)}>{prefabricatedMaterials.map(([value,label])=><option value={value} key={value}>{label}</option>)}</select></label><Filter title="Entrega"><label><input type="checkbox"/> Disponible 24–48 h</label><label><input type="checkbox"/> Configurable</label></Filter><Filter title="Uso"><label><input type="checkbox"/> Consumo frecuente</label><label><input type="checkbox"/> Seguridad</label></Filter></aside>
+        <div className="results"><div className="results-head"><div><span>{products.length} resultados con imagen verificada</span><h2>{family==="todos"?"Catálogo visual verificado":families.find(([value])=>value===family)?.[1]}</h2></div><label><span className="sr-only">Tipo de prefabricado</span><select aria-label="Tipo de prefabricado" value={prefabricatedMaterial} onChange={event=>setPrefabricatedMaterial(event.target.value)}>{prefabricatedMaterials.map(([value,label])=><option value={value} key={value}>{label}</option>)}</select></label><select aria-label="Ordenar resultados"><option>Más relevantes</option><option>Precio: menor a mayor</option><option>Mejor valorados</option></select></div><div className="product-grid">{products.map((product)=><ProductCard key={product.id} product={product} onAdd={()=>add(product)} onOpen={()=>setSelected(product)}/>)}</div>{!products.length&&<div className="empty-state"><strong>No hay todavía fichas visuales verificadas para este filtro</strong><span>Las referencias incompletas permanecen en administración hasta incorporar imágenes y fuentes reales.</span></div>}</div>
       </section>
     </main>
-    <nav className="mobile-dock" aria-label="Navegación móvil"><button onClick={()=>setCategory("todos")}>⌂<span>Inicio</span></button><button onClick={()=>document.getElementById("store-search")?.focus()}>⌕<span>Buscar</span></button><button>◎<span>Cuenta</span></button><button onClick={()=>setCartOpen(true)} className="dock-cart">▣<b>{units}</b><span>Carrito</span></button></nav>
+    <nav className="mobile-dock" aria-label="Navegación móvil"><button onClick={()=>setFamily("todos")}>⌂<span>Inicio</span></button><button onClick={()=>document.getElementById("store-search")?.focus()}>⌕<span>Buscar</span></button><button>◎<span>Cuenta</span></button><button onClick={()=>setCartOpen(true)} className="dock-cart">▣<b>{units}</b><span>Carrito</span></button></nav>
     {selected&&<ProductPanel product={selected} onClose={()=>setSelected(null)} onAdd={()=>{add(selected);setSelected(null);}}/>}
     {cartOpen&&<CartPanel products={initialProducts} cart={cart} subtotal={subtotal} onClose={()=>setCartOpen(false)} onChange={(id,amount)=>setCart((current)=>({...current,[id]:Math.max(0,amount)}))}/>} 
   </div>;

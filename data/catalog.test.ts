@@ -3,10 +3,20 @@ import { catalogProducts, filterCatalog, filterStoreCatalog, hasStoreImage, isPu
 
 describe("multifaceted catalog", () => {
   it("covers safety and the principal prefabricated materials", () => {
-    expect(catalogProducts.length).toBeGreaterThanOrEqual(24);
+    expect(catalogProducts.length).toBeGreaterThanOrEqual(100);
     for (const segment of ["altura", "hormigon", "acero", "madera", "pvc"]) {
       expect(catalogProducts.some((product) => product.segments.includes(segment as never))).toBe(true);
     }
+  });
+
+  it("offers an eighty-reference visual storefront without invented configurable prices",()=>{
+    const visual=catalogProducts.filter(hasStoreImage);
+    expect(visual.length).toBeGreaterThanOrEqual(80);
+    expect(visual.filter(product=>product.commercial.status==="quote").every(product=>product.commercial.cost===0&&product.price===0)).toBe(true);
+    expect(visual.some(product=>product.family.toLowerCase().includes("balanc"))).toBe(true);
+    expect(visual.some(product=>product.name.toLowerCase().includes("pinza"))).toBe(true);
+    expect(visual.some(product=>product.name.toLowerCase().includes("grillete"))).toBe(true);
+    expect(visual.filter(product=>product.segments.includes("utiles" as never)).length).toBeGreaterThanOrEqual(70);
   });
 
   it("finds lifelines and wind equipment by plain language", () => {

@@ -3,6 +3,10 @@ import {readFileSync} from "node:fs";
 import {join} from "node:path";
 
 describe("store taxonomy controls",()=>{
+  it("exposes assembly tools as a dedicated product family",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).toContain('["utiles","Útiles de montaje"]');
+  });
   it("uses product families in navigation and a separate prefabricated-material filter",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("Familias de producto");

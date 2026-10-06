@@ -1,6 +1,7 @@
 import { calculatePrice } from "../lib/pricing";
+import { externalLiftingSeeds } from "./catalog-lifting";
 
-export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion";
+export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion"|"utiles";
 export type CommercialStatus="draft"|"quote"|"ready";
 export type MarketOffer={seller:string;sku:string;price:number;vatIncluded:boolean;shippingIncluded:boolean;url:string;capturedAt:string;country:string};
 export type CatalogProduct={id:string;sku:string;name:string;brand:string;family:string;segments:CatalogSegment[];unit:string;rotation:"alta"|"media"|"especialista";certifications:string[];supplier:{name:string;country:string;reference:string};sourceUrl:string;imageUrl?:string;imageUrls?:string[];imageSource?:string;datasheetUrl?:string;offers:MarketOffer[];commercial:{cost:number;inboundShipping:number;handling:number;contingencyPercent:number;targetMarginPercent:number;vatPercent:number;status:CommercialStatus;costVerified:boolean};price:number;priceVat:number;profit:number;accent:string;initials:string;availability:string;delivery:string;badge?:string;rating:number;reviews:number};
@@ -9,7 +10,7 @@ type Seed=Omit<CatalogProduct,"price"|"priceVat"|"profit"|"commercial"|"rating"|
 const rs="https://es.rs-online.com/web/c/equipos-de-proteccion-individual-y-ropa-de-trabajo/proteccion-contra-caidas/";
 const obramat="https://www.obramat.es/";
 const grainger="https://www.grainger.com/category/safety/fall-protection/";
-const make=(s:Seed):CatalogProduct=>{const identified=s.supplier.reference!=="PENDIENTE";const cost=identified?s.cost:0;const commercial={cost,inboundShipping:identified?Math.max(1.5,cost*.04):0,handling:identified?1.8:0,contingencyPercent:identified?4:0,targetMarginPercent:s.margin??28,vatPercent:21,status:s.status??"draft",costVerified:s.costVerified??false};const calc=calculatePrice(commercial);return {...s,commercial,price:calc.salePriceNet,priceVat:calc.salePriceVat,profit:calc.grossProfit,rating:4.6,reviews:0};};
+const make=(s:Seed):CatalogProduct=>{const identified=s.supplier.reference!=="PENDIENTE";const cost=identified?s.cost:0;const priced=identified&&cost>0;const commercial={cost,inboundShipping:priced?Math.max(1.5,cost*.04):0,handling:priced?1.8:0,contingencyPercent:priced?4:0,targetMarginPercent:s.margin??28,vatPercent:21,status:s.status??"draft",costVerified:s.costVerified??false};const calc=calculatePrice(commercial);return {...s,commercial,price:calc.salePriceNet,priceVat:calc.salePriceVat,profit:calc.grossProfit,rating:4.6,reviews:0};};
 const base={supplier:{name:"Proveedor por homologar",country:"UE",reference:"PENDIENTE"},offers:[] as MarketOffer[],availability:"Validación comercial pendiente",delivery:"Plazo por confirmar",certifications:["Documentación CE pendiente de validar"],sourceUrl:obramat,accent:"#ef233c",badge:"Alta rotación"};
 
 export const catalogProducts:CatalogProduct[]=[
@@ -41,6 +42,7 @@ export const catalogProducts:CatalogProduct[]=[
   make({...base,id:"cincha-5t",sku:"ELE-CIN-070",name:"Cincha de amarre 5 t · 9 m",brand:"Gama profesional UE",family:"Amarre y elevación",segments:["elevacion","acero","hormigon","madera"],unit:"ud.",rotation:"alta",cost:19,initials:"CA",certifications:["EN 12195-2 · según referencia"]}),
   make({...base,id:"grillete-lira",sku:"ELE-GRI-071",name:"Grillete lira con pasador roscado",brand:"Gama elevación",family:"Amarre y elevación",segments:["elevacion"],unit:"ud.",rotation:"alta",cost:12,status:"quote",initials:"GL",certifications:["CMU y certificado por referencia"]}),
   make({...base,id:"eslinga-textil",sku:"ELE-ESL-072",name:"Eslinga plana doble capa",brand:"Gama elevación",family:"Amarre y elevación",segments:["elevacion"],unit:"ud.",rotation:"alta",cost:17,status:"quote",initials:"ET",certifications:["EN 1492-1 · longitud y CMU por variante"]}),
+  ...externalLiftingSeeds.map(seed=>make({...base,...seed,segments:[...seed.segments,"utiles"] as CatalogSegment[],unit:"ud.",rotation:"especialista",cost:0,status:"quote",costVerified:false,initials:"UT",imageUrls:[seed.imageUrl],imageSource:seed.brand,datasheetUrl:seed.sourceUrl,supplier:{name:seed.brand,country:"ES",reference:seed.reference},offers:[],availability:"Disponible bajo oferta técnica",delivery:"Plazo según configuración",badge:"Oferta técnica",certifications:["CMU, medidas y configuración según variante seleccionada"]})),
 ];
 
 const normalize=(value:string)=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();

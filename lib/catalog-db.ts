@@ -24,8 +24,8 @@ export async function ensureCatalogSchema(){const db=sql();
  await db`CREATE TABLE IF NOT EXISTS catalog_migrations (id text PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())`;
 }
 
-async function applyCatalogMigrations(){const db=sql();const migration="2026-10-06-verified-products-v1";const applied=await db`SELECT id FROM catalog_migrations WHERE id=${migration}`;if(applied.length)return;
- for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"]){const product=catalogProducts.find(item=>item.id===id);if(product)await db`UPDATE catalog_products SET commercial=${JSON.stringify(product.commercial)}::jsonb,updated_at=now() WHERE id=${id}`;}
+async function applyCatalogMigrations(){const db=sql();const migration="2026-10-06-verified-products-v2";const applied=await db`SELECT id FROM catalog_migrations WHERE id=${migration}`;if(applied.length)return;
+ for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"])await db`UPDATE catalog_products SET commercial=commercial||'{"status":"ready","costVerified":true}'::jsonb,updated_at=now() WHERE id=${id}`;
  await db`INSERT INTO catalog_migrations(id) VALUES(${migration}) ON CONFLICT DO NOTHING`;
 }
 

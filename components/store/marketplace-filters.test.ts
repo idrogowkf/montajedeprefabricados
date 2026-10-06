@@ -5,6 +5,7 @@ import {join} from "node:path";
 describe("store taxonomy controls",()=>{
   it("exposes assembly tools as a dedicated product family",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).not.toContain('from "@/data/catalog"');
     expect(source).toContain('["utiles","Útiles de montaje"]');
   });
   it("uses product families in navigation and a separate prefabricated-material filter",()=>{
@@ -21,7 +22,7 @@ describe("store taxonomy controls",()=>{
     for(const internalLabel of ["ROTACIÓN ALTA","Fuente de mercado","Fuentes de mercado","margen objetivo"]){
       expect(source).not.toContain(internalLabel);
     }
-    for(const publicLabel of ["Precio sin IVA","IVA (21 %)","Total con IVA","Transporte"]){
+    for(const publicLabel of ["Precio sin IVA","vatPercent","Total con IVA","Transporte"]){
       expect(source).toContain(publicLabel);
     }
   });

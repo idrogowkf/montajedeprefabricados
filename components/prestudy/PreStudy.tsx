@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { initialPreStudyData, validateStep, type PreStudyData } from "@/lib/prestudy";
 import ContactStep from "./ContactStep";
 import DocumentsStep from "./DocumentsStep";
@@ -18,6 +18,7 @@ export default function PreStudy() {
   const [reference,setReference] = useState("");
   const [message,setMessage] = useState("");
   const main = useRef<HTMLDivElement>(null);
+  useEffect(()=>{const product=new URLSearchParams(window.location.search).get("producto");if(product)setData(current=>({...current,message:current.message||`Solicitud de oferta para la referencia de catálogo: ${product}`}));},[]);
   const update = (patch: Partial<PreStudyData>) => { setData((current) => ({...current,...patch})); setErrors({}); };
   const move = (next: number) => { setStep(next); requestAnimationFrame(() => {main.current?.focus(); main.current?.scrollIntoView({behavior:"smooth",block:"center"});}); };
   const submit = async (event: FormEvent) => {

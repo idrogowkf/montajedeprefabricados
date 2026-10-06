@@ -1,5 +1,5 @@
 import {describe,expect,it} from "vitest";
-import {mergeCatalogCommercial,sanitizeCommercialPatch} from "./catalog-db";
+import {mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
 import {catalogProducts} from "../data/catalog";
 
 describe("catalog database validation",()=>{
@@ -9,6 +9,16 @@ describe("catalog database validation",()=>{
   it("rejects invalid commercial values",()=>{
     expect(()=>sanitizeCommercialPatch({cost:-1})).toThrow();
     expect(()=>sanitizeCommercialPatch({status:"published"})).toThrow();
+    expect(()=>sanitizeCommercialPatch({targetMarginPercent:100})).toThrow();
+    expect(()=>sanitizeCommercialPatch({vatPercent:101})).toThrow();
+  });
+});
+
+describe("publication transition",()=>{
+  it("rejects ready status without verified commercial evidence",()=>{
+    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
+    expect(()=>validatePublicationTransition(source,{status:"ready",costVerified:false})).toThrow("expediente");
+    expect(()=>validatePublicationTransition(source,{status:"ready",cost:0})).toThrow("expediente");
   });
 });
 

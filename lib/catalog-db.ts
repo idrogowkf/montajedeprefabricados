@@ -1,5 +1,5 @@
 import {neon} from "@neondatabase/serverless";
-import {catalogProducts,type CatalogProduct} from "../data/catalog";
+import {catalogProducts,isPublicationReady,type CatalogProduct} from "../data/catalog";
 
 type CommercialPatch=Partial<CatalogProduct["commercial"]>;
 const numericKeys=["cost","inboundShipping","handling","contingencyPercent","targetMarginPercent","vatPercent"] as const;
@@ -7,9 +7,17 @@ const numericKeys=["cost","inboundShipping","handling","contingencyPercent","tar
 export function sanitizeCommercialPatch(input:Record<string,unknown>):CommercialPatch{
   const patch:CommercialPatch={};
   for(const key of numericKeys){if(input[key]!==undefined){const value=Number(input[key]);if(!Number.isFinite(value)||value<0)throw new Error(`${key} no es válido`);patch[key]=value;}}
+  if(patch.targetMarginPercent!==undefined&&patch.targetMarginPercent>=100)throw new Error("El margen objetivo debe ser menor de 100 %");
+  if(patch.vatPercent!==undefined&&patch.vatPercent>100)throw new Error("El IVA no puede superar 100 %");
+  if(patch.contingencyPercent!==undefined&&patch.contingencyPercent>100)throw new Error("La contingencia no puede superar 100 %");
   if(input.status!==undefined){if(!["draft","quote","ready"].includes(String(input.status)))throw new Error("Estado no válido");patch.status=input.status as CommercialPatch["status"];}
   if(input.costVerified!==undefined)patch.costVerified=Boolean(input.costVerified);
   return patch;
+}
+
+export function validatePublicationTransition(product:CatalogProduct,patch:CommercialPatch){
+ const candidate={...product,commercial:{...product.commercial,...patch}};
+ if(candidate.commercial.status==="ready"&&!isPublicationReady(candidate))throw new Error("El expediente no está completo para publicar: verifica coste, imágenes, documento y comparativas");
 }
 
 function sql(){if(!process.env.DATABASE_URL)throw new Error("DATABASE_URL no configurada");return neon(process.env.DATABASE_URL);}
@@ -53,4 +61,4 @@ export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commer
 let seedPromise:Promise<void>|null=null;
 export async function getCatalog():Promise<CatalogProduct[]>{seedPromise??=seedCatalog().catch(error=>{seedPromise=null;throw error;});await seedPromise;const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 
-export async function updateCommercial(id:string,input:Record<string,unknown>,actorId:string){const patch=sanitizeCommercialPatch(input);const db=sql();const rows=await db`UPDATE catalog_products SET commercial=commercial||${JSON.stringify(patch)}::jsonb,updated_at=now() WHERE id=${id} RETURNING payload,commercial`;if(!rows.length)throw new Error("Producto no encontrado");await db`INSERT INTO catalog_audit(product_id,actor_id,patch) VALUES(${id},${actorId},${JSON.stringify(patch)}::jsonb)`;return {...rows[0].payload,commercial:rows[0].commercial} as CatalogProduct;}
+export async function updateCommercial(id:string,input:Record<string,unknown>,actorId:string){const patch=sanitizeCommercialPatch(input);const db=sql();const current=await db`SELECT payload,commercial FROM catalog_products WHERE id=${id}`;if(!current.length)throw new Error("Producto no encontrado");const staticProduct=catalogProducts.find(product=>product.id===id);if(!staticProduct)throw new Error("Producto no encontrado");const product={...staticProduct,commercial:current[0].commercial} as CatalogProduct;validatePublicationTransition(product,patch);const rows=await db`UPDATE catalog_products SET commercial=commercial||${JSON.stringify(patch)}::jsonb,updated_at=now() WHERE id=${id} RETURNING commercial`;await db`INSERT INTO catalog_audit(product_id,actor_id,patch) VALUES(${id},${actorId},${JSON.stringify(patch)}::jsonb)`;return {...staticProduct,commercial:rows[0].commercial} as CatalogProduct;}

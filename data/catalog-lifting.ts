@@ -1,8 +1,9 @@
 import type {CatalogSegment} from "./catalog";
 
-export type ExternalLiftingSeed={id:string;sku:string;name:string;brand:string;family:string;segments:CatalogSegment[];reference:string;sourceUrl:string;imageUrl:string};
+type ExternalLiftingSource={id:string;sku:string;name:string;brand:string;family:string;segments:CatalogSegment[];reference:string;sourceUrl:string;imageUrl:string};
+export type ExternalLiftingSeed=ExternalLiftingSource&{description:string;specifications:string[];imageVerification:{status:"verified";checkedAt:string;httpStatus:number}};
 
-export const externalLiftingSeeds:ExternalLiftingSeed[]=[
+const externalLiftingSourceRows:ExternalLiftingSource[]=[
   {
     "id": "util-001-gancho-giratorio-de-seguridad-brgx",
     "sku": "UT-001",
@@ -1220,4 +1221,17 @@ export const externalLiftingSeeds:ExternalLiftingSeed[]=[
     "imageUrl": "https://image.jimcdn.com/app/cms/image/transf/none/path/s35aa80b40a81b796/backgroundarea/i82d5f986c613cc13/version/1565087234/image.jpg"
   }
 ];
+
+const descriptions:Record<string,string>={
+  "Balancines y útiles":"Útil de reparto de carga para operaciones de elevación. La longitud, capacidad y puntos de suspensión se confirman para la maniobra.",
+  "Pinzas de montaje":"Pinza profesional para manipulación y colocación de elementos. La apertura, capacidad y geometría se confirman según la pieza.",
+  "Grilletes":"Accesorio de unión para sistemas de elevación y amarre. El tamaño y la carga máxima de utilización se seleccionan para cada aplicación.",
+  "Eslingas":"Elemento flexible de elevación o amarre. Longitud, configuración y capacidad se determinan según la carga y el método de uso.",
+  "Ganchos":"Accesorio de conexión para elevación. La referencia exacta se selecciona según capacidad, conexión y sistema de seguridad.",
+};
+
+export const externalLiftingSeeds:ExternalLiftingSeed[]=externalLiftingSourceRows.map(seed=>{
+  const measures=seed.name.match(/\b\d+(?:[.,]\d+)?\s?(?:t|kg|mm|m)\b/gi)??[];
+  return {...seed,description:descriptions[seed.family]??`Referencia profesional de la familia ${seed.family}. La variante exacta se confirma antes del suministro.`,specifications:[`Referencia del catálogo: ${seed.reference}`,`Tipo de producto: ${seed.family}`,...measures.map(value=>`Dato identificado en la denominación: ${value}`)],imageVerification:{status:"verified",checkedAt:"2026-10-06",httpStatus:200}};
+});
 

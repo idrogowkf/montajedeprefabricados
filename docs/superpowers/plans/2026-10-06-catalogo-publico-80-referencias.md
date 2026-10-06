@@ -39,11 +39,11 @@
 - Consumes: `CatalogProduct`, `isPublicationReady`
 - Produces: escaparate sin metadatos internos y detalle público con neto, IVA, total y transporte
 
-- [ ] Escribir pruebas que prohíban rotación, fuentes y margen en el componente público y exijan IVA/transporte.
-- [ ] Ejecutarlas y comprobar el fallo.
-- [ ] Implementar la presentación pública mínima.
-- [ ] Ejecutar pruebas y confirmar el pase.
-- [ ] Commit.
+- [x] Escribir pruebas que prohíban rotación, fuentes y margen en el componente público y exijan IVA/transporte.
+- [x] Ejecutarlas y comprobar el fallo.
+- [x] Implementar la presentación pública mínima.
+- [x] Ejecutar pruebas y confirmar el pase.
+- [x] Commit.
 
 ### Task 2: Catálogo auditado por familias
 
@@ -57,11 +57,11 @@
 - Produces: `catalogProducts` con objetivo de 80 referencias identificadas, familias y modo `ready` o `quote`
 - Consumes: tipos comerciales existentes
 
-- [ ] Escribir pruebas de cantidad, identidad, imágenes y reglas quote/ready.
-- [ ] Ejecutarlas y comprobar el fallo.
-- [ ] Incorporar referencias reales por familias, con fuente administrativa y modo de venta correcto.
-- [ ] Ejecutar pruebas y confirmar el pase.
-- [ ] Commit.
+- [x] Escribir pruebas de cantidad, identidad, imágenes y reglas quote/ready.
+- [x] Ejecutarlas y comprobar el fallo.
+- [x] Incorporar referencias reales por familias, con fuente administrativa y modo de venta correcto.
+- [x] Ejecutar pruebas y confirmar el pase.
+- [x] Commit.
 
 ### Task 3: Administración y despliegue Preview
 
@@ -74,9 +74,9 @@
 - Consumes: catálogo ampliado y campos comerciales
 - Produces: filtros administrativos y sincronización Neon sin filtrar datos al público
 
-- [ ] Escribir pruebas para filtros, comparadores y cálculos internos.
-- [ ] Ejecutarlas y comprobar el fallo.
-- [ ] Implementar filtros y sincronización.
-- [ ] Ejecutar suite, typecheck y build.
+- [x] Escribir pruebas para filtros, comparadores y cálculos internos.
+- [x] Ejecutarlas y comprobar el fallo.
+- [x] Implementar filtros y sincronización.
+- [x] Ejecutar suite, typecheck y build.
 - [ ] Desplegar y verificar tienda/administración en Preview.
 - [ ] Commit y push de la rama.

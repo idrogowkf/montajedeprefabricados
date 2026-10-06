@@ -41,6 +41,8 @@ export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
  await applyCatalogMigrations();
 }
 
-export async function getCatalog():Promise<CatalogProduct[]>{await seedCatalog();const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return rows.map(row=>({...row.payload,commercial:row.commercial})) as CatalogProduct[];}
+export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row.commercial]));return catalogProducts.map(product=>({...product,commercial:byId.get(product.id)??product.commercial}));}
+
+export async function getCatalog():Promise<CatalogProduct[]>{await seedCatalog();const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 
 export async function updateCommercial(id:string,input:Record<string,unknown>,actorId:string){const patch=sanitizeCommercialPatch(input);const db=sql();const rows=await db`UPDATE catalog_products SET commercial=commercial||${JSON.stringify(patch)}::jsonb,updated_at=now() WHERE id=${id} RETURNING payload,commercial`;if(!rows.length)throw new Error("Producto no encontrado");await db`INSERT INTO catalog_audit(product_id,actor_id,patch) VALUES(${id},${actorId},${JSON.stringify(patch)}::jsonb)`;return {...rows[0].payload,commercial:rows[0].commercial} as CatalogProduct;}

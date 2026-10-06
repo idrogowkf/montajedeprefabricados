@@ -1,5 +1,6 @@
 import {describe,expect,it} from "vitest";
-import {sanitizeCommercialPatch} from "./catalog-db";
+import {mergeCatalogCommercial,sanitizeCommercialPatch} from "./catalog-db";
+import {catalogProducts} from "../data/catalog";
 
 describe("catalog database validation",()=>{
   it("keeps only editable commercial fields and normalizes values",()=>{
@@ -8,5 +9,16 @@ describe("catalog database validation",()=>{
   it("rejects invalid commercial values",()=>{
     expect(()=>sanitizeCommercialPatch({cost:-1})).toThrow();
     expect(()=>sanitizeCommercialPatch({status:"published"})).toThrow();
+  });
+});
+
+describe("catalog database merge",()=>{
+  it("keeps audited product media while preserving admin commercial edits",()=>{
+    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
+    const stale={...source,imageUrl:"https://example.com/stale.jpg"};
+    const commercial={...source.commercial,targetMarginPercent:41};
+    const merged=mergeCatalogCommercial([{payload:stale,commercial}]).find(product=>product.id===source.id)!;
+    expect(merged.imageUrl).toBe(source.imageUrl);
+    expect(merged.commercial.targetMarginPercent).toBe(41);
   });
 });

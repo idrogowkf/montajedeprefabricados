@@ -30,19 +30,27 @@ async function applyCatalogMigrations(){const db=sql();const migration="2026-10-
 }
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
- for(const product of catalogProducts){
-  await db`INSERT INTO catalog_products(id,sku,payload,commercial) VALUES(${product.id},${product.sku},${JSON.stringify(product)}::jsonb,${JSON.stringify(product.commercial)}::jsonb) ON CONFLICT(id) DO UPDATE SET sku=EXCLUDED.sku,payload=EXCLUDED.payload,updated_at=now()`;
-  await db`INSERT INTO catalog_suppliers(product_id,name,country,reference,source_url) VALUES(${product.id},${product.supplier.name},${product.supplier.country},${product.supplier.reference},${product.sourceUrl}) ON CONFLICT(product_id) DO UPDATE SET name=EXCLUDED.name,country=EXCLUDED.country,reference=EXCLUDED.reference,source_url=EXCLUDED.source_url`;
-  const images=product.imageUrls?.length?product.imageUrls:product.imageUrl?[product.imageUrl]:[];
-  for(let i=0;i<images.length;i++)await db`INSERT INTO catalog_images(product_id,position,url,source) VALUES(${product.id},${i},${images[i]},${product.imageSource??null}) ON CONFLICT(product_id,position) DO UPDATE SET url=EXCLUDED.url,source=EXCLUDED.source`;
-  for(const offer of product.offers)await db`INSERT INTO catalog_offers(product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country) VALUES(${product.id},${offer.seller},${offer.sku},${offer.price},${offer.vatIncluded},${offer.shippingIncluded},${offer.url},${offer.capturedAt},${offer.country}) ON CONFLICT(product_id,seller) DO UPDATE SET sku=EXCLUDED.sku,price=EXCLUDED.price,vat_included=EXCLUDED.vat_included,shipping_included=EXCLUDED.shipping_included,url=EXCLUDED.url,captured_at=EXCLUDED.captured_at,country=EXCLUDED.country`;
-  if(product.datasheetUrl)await db`INSERT INTO catalog_documents(product_id,kind,url) VALUES(${product.id},'technical-sheet',${product.datasheetUrl}) ON CONFLICT(product_id,kind) DO UPDATE SET url=EXCLUDED.url`;
+ const seedVersion="2026-10-06-catalog-105-v1";
+ const alreadySeeded=await db`SELECT id FROM catalog_migrations WHERE id=${seedVersion}`;
+ if(!alreadySeeded.length){
+  const productRows=catalogProducts.map(product=>({id:product.id,sku:product.sku,payload:product,commercial:product.commercial}));
+  const supplierRows=catalogProducts.map(product=>({product_id:product.id,name:product.supplier.name,country:product.supplier.country,reference:product.supplier.reference,source_url:product.sourceUrl}));
+  const imageRows=catalogProducts.flatMap(product=>(product.imageUrls?.length?product.imageUrls:product.imageUrl?[product.imageUrl]:[]).map((url,position)=>({product_id:product.id,position,url,source:product.imageSource??null})));
+  const offerRows=catalogProducts.flatMap(product=>product.offers.map(offer=>({product_id:product.id,...offer,vat_included:offer.vatIncluded,shipping_included:offer.shippingIncluded,captured_at:offer.capturedAt})));
+  const documentRows=catalogProducts.filter(product=>product.datasheetUrl).map(product=>({product_id:product.id,kind:"technical-sheet",url:product.datasheetUrl!}));
+  await db`INSERT INTO catalog_products(id,sku,payload,commercial) SELECT id,sku,payload,commercial FROM jsonb_to_recordset(${JSON.stringify(productRows)}::jsonb) AS row(id text,sku text,payload jsonb,commercial jsonb) ON CONFLICT(id) DO UPDATE SET sku=EXCLUDED.sku,payload=EXCLUDED.payload,updated_at=now()`;
+  await db`INSERT INTO catalog_suppliers(product_id,name,country,reference,source_url) SELECT product_id,name,country,reference,source_url FROM jsonb_to_recordset(${JSON.stringify(supplierRows)}::jsonb) AS row(product_id text,name text,country text,reference text,source_url text) ON CONFLICT(product_id) DO UPDATE SET name=EXCLUDED.name,country=EXCLUDED.country,reference=EXCLUDED.reference,source_url=EXCLUDED.source_url`;
+  if(imageRows.length)await db`INSERT INTO catalog_images(product_id,position,url,source) SELECT product_id,position,url,source FROM jsonb_to_recordset(${JSON.stringify(imageRows)}::jsonb) AS row(product_id text,position integer,url text,source text) ON CONFLICT(product_id,position) DO UPDATE SET url=EXCLUDED.url,source=EXCLUDED.source`;
+  if(offerRows.length)await db`INSERT INTO catalog_offers(product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country) SELECT product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country FROM jsonb_to_recordset(${JSON.stringify(offerRows)}::jsonb) AS row(product_id text,seller text,sku text,price numeric,vat_included boolean,shipping_included boolean,url text,captured_at date,country text) ON CONFLICT(product_id,seller) DO UPDATE SET sku=EXCLUDED.sku,price=EXCLUDED.price,vat_included=EXCLUDED.vat_included,shipping_included=EXCLUDED.shipping_included,url=EXCLUDED.url,captured_at=EXCLUDED.captured_at,country=EXCLUDED.country`;
+  if(documentRows.length)await db`INSERT INTO catalog_documents(product_id,kind,url) SELECT product_id,kind,url FROM jsonb_to_recordset(${JSON.stringify(documentRows)}::jsonb) AS row(product_id text,kind text,url text) ON CONFLICT(product_id,kind) DO UPDATE SET url=EXCLUDED.url`;
+  await db`INSERT INTO catalog_migrations(id) VALUES(${seedVersion}) ON CONFLICT DO NOTHING`;
  }
  await applyCatalogMigrations();
 }
 
-export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row.commercial]));return catalogProducts.map(product=>{const stored=byId.get(product.id);return {...product,commercial:stored?{...stored,status:product.commercial.status,costVerified:product.commercial.costVerified}:product.commercial};});}
+export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row.commercial]));return catalogProducts.map(product=>{const stored=byId.get(product.id);return {...product,commercial:stored??product.commercial};});}
 
-export async function getCatalog():Promise<CatalogProduct[]>{await seedCatalog();const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
+let seedPromise:Promise<void>|null=null;
+export async function getCatalog():Promise<CatalogProduct[]>{seedPromise??=seedCatalog().catch(error=>{seedPromise=null;throw error;});await seedPromise;const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 
 export async function updateCommercial(id:string,input:Record<string,unknown>,actorId:string){const patch=sanitizeCommercialPatch(input);const db=sql();const rows=await db`UPDATE catalog_products SET commercial=commercial||${JSON.stringify(patch)}::jsonb,updated_at=now() WHERE id=${id} RETURNING payload,commercial`;if(!rows.length)throw new Error("Producto no encontrado");await db`INSERT INTO catalog_audit(product_id,actor_id,patch) VALUES(${id},${actorId},${JSON.stringify(patch)}::jsonb)`;return {...rows[0].payload,commercial:rows[0].commercial} as CatalogProduct;}

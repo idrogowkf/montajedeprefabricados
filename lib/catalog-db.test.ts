@@ -20,7 +20,7 @@ describe("catalog database merge",()=>{
     const merged=mergeCatalogCommercial([{payload:stale,commercial}]).find(product=>product.id===source.id)!;
     expect(merged.imageUrl).toBe(source.imageUrl);
     expect(merged.commercial.targetMarginPercent).toBe(41);
-    expect(merged.commercial.status).toBe("ready");
-    expect(merged.commercial.costVerified).toBe(true);
+    expect(merged.commercial.status).toBe("draft");
+    expect(merged.commercial.costVerified).toBe(false);
   });
 });

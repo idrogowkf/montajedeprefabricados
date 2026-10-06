@@ -10,5 +10,7 @@ describe("catalog administration",()=>{
     expect(source).not.toContain("localStorage");
     expect(source).toContain("Material / sistema");
     expect(source).toContain("Tipo de producto");
+    expect(source).toContain("Estado de publicación");
+    expect(source).toContain('statusFilter===\"todos\"');
   });
 });

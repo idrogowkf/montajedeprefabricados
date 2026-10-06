@@ -12,9 +12,13 @@ describe("store taxonomy controls",()=>{
     expect(source).toContain("Madera");
     expect(source).not.toContain('title="Altura y líneas de vida"');
   });
-  it("renders traceable reference pricing before purchase approval",()=>{
+  it("keeps commercial intelligence out of the public storefront",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    expect(source).toContain("Precio de referencia");
-    expect(source).toContain("Fuente de mercado");
+    for(const internalLabel of ["ROTACIÓN ALTA","Fuente de mercado","Fuentes de mercado","margen objetivo"]){
+      expect(source).not.toContain(internalLabel);
+    }
+    for(const publicLabel of ["Precio sin IVA","IVA (21 %)","Total con IVA","Transporte"]){
+      expect(source).toContain(publicLabel);
+    }
   });
 });

@@ -41,7 +41,7 @@ export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
  await applyCatalogMigrations();
 }
 
-export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row.commercial]));return catalogProducts.map(product=>({...product,commercial:byId.get(product.id)??product.commercial}));}
+export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row.commercial]));return catalogProducts.map(product=>{const stored=byId.get(product.id);return {...product,commercial:stored?{...stored,status:product.commercial.status,costVerified:product.commercial.costVerified}:product.commercial};});}
 
 export async function getCatalog():Promise<CatalogProduct[]>{await seedCatalog();const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 

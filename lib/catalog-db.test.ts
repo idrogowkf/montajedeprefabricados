@@ -16,9 +16,11 @@ describe("catalog database merge",()=>{
   it("keeps audited product media while preserving admin commercial edits",()=>{
     const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
     const stale={...source,imageUrl:"https://example.com/stale.jpg"};
-    const commercial={...source.commercial,targetMarginPercent:41};
+    const commercial={...source.commercial,targetMarginPercent:41,status:"draft" as const,costVerified:false};
     const merged=mergeCatalogCommercial([{payload:stale,commercial}]).find(product=>product.id===source.id)!;
     expect(merged.imageUrl).toBe(source.imageUrl);
     expect(merged.commercial.targetMarginPercent).toBe(41);
+    expect(merged.commercial.status).toBe("ready");
+    expect(merged.commercial.costVerified).toBe(true);
   });
 });

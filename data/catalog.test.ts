@@ -33,6 +33,15 @@ describe("multifaceted catalog", () => {
     expect(catalogProducts.filter(isPublicationReady).every(product=>(product.imageUrls?.length??0)>=2&&Boolean(product.datasheetUrl)&&product.offers.length===3&&product.supplier.reference!=="PENDIENTE")).toBe(true);
   });
 
+  it("publishes the verified commercial batch",()=>{
+    for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"]){
+      const product=catalogProducts.find(item=>item.id===id)!;
+      expect(product.commercial.status).toBe("ready");
+      expect(product.commercial.costVerified).toBe(true);
+      expect(isPublicationReady(product)).toBe(true);
+    }
+  });
+
   it("does not classify the concrete lifeline post as steel",()=>{
     const post=catalogProducts.find(product=>product.id==="poste-linea-vida")!;
     expect(post.segments).toContain("hormigon");

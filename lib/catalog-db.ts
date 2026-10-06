@@ -21,6 +21,12 @@ export async function ensureCatalogSchema(){const db=sql();
  await db`CREATE TABLE IF NOT EXISTS catalog_offers (product_id text REFERENCES catalog_products(id) ON DELETE CASCADE, seller text NOT NULL, sku text NOT NULL, price numeric(12,2) NOT NULL, vat_included boolean NOT NULL, shipping_included boolean NOT NULL, url text NOT NULL, captured_at date NOT NULL, country text NOT NULL, PRIMARY KEY(product_id,seller))`;
  await db`CREATE TABLE IF NOT EXISTS catalog_documents (product_id text REFERENCES catalog_products(id) ON DELETE CASCADE, kind text NOT NULL, url text NOT NULL, PRIMARY KEY(product_id,kind))`;
  await db`CREATE TABLE IF NOT EXISTS catalog_audit (id bigserial PRIMARY KEY, product_id text NOT NULL, actor_id text NOT NULL, patch jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now())`;
+ await db`CREATE TABLE IF NOT EXISTS catalog_migrations (id text PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())`;
+}
+
+async function applyCatalogMigrations(){const db=sql();const migration="2026-10-06-verified-products-v1";const applied=await db`SELECT id FROM catalog_migrations WHERE id=${migration}`;if(applied.length)return;
+ for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"]){const product=catalogProducts.find(item=>item.id===id);if(product)await db`UPDATE catalog_products SET commercial=${JSON.stringify(product.commercial)}::jsonb,updated_at=now() WHERE id=${id}`;}
+ await db`INSERT INTO catalog_migrations(id) VALUES(${migration}) ON CONFLICT DO NOTHING`;
 }
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
@@ -32,6 +38,7 @@ export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
   for(const offer of product.offers)await db`INSERT INTO catalog_offers(product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country) VALUES(${product.id},${offer.seller},${offer.sku},${offer.price},${offer.vatIncluded},${offer.shippingIncluded},${offer.url},${offer.capturedAt},${offer.country}) ON CONFLICT(product_id,seller) DO UPDATE SET sku=EXCLUDED.sku,price=EXCLUDED.price,vat_included=EXCLUDED.vat_included,shipping_included=EXCLUDED.shipping_included,url=EXCLUDED.url,captured_at=EXCLUDED.captured_at,country=EXCLUDED.country`;
   if(product.datasheetUrl)await db`INSERT INTO catalog_documents(product_id,kind,url) VALUES(${product.id},'technical-sheet',${product.datasheetUrl}) ON CONFLICT(product_id,kind) DO UPDATE SET url=EXCLUDED.url`;
  }
+ await applyCatalogMigrations();
 }
 
 export async function getCatalog():Promise<CatalogProduct[]>{await seedCatalog();const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return rows.map(row=>({...row.payload,commercial:row.commercial})) as CatalogProduct[];}

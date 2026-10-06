@@ -12,4 +12,9 @@ describe("store taxonomy controls",()=>{
     expect(source).toContain("Madera");
     expect(source).not.toContain('title="Altura y líneas de vida"');
   });
+  it("renders traceable reference pricing before purchase approval",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).toContain("Precio de referencia");
+    expect(source).toContain("Fuente de mercado");
+  });
 });

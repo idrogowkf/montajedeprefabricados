@@ -25,12 +25,12 @@ export async function ensureCatalogSchema(){const db=sql();
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
  for(const product of catalogProducts){
-  await db`INSERT INTO catalog_products(id,sku,payload,commercial) VALUES(${product.id},${product.sku},${JSON.stringify(product)}::jsonb,${JSON.stringify(product.commercial)}::jsonb) ON CONFLICT(id) DO NOTHING`;
-  await db`INSERT INTO catalog_suppliers(product_id,name,country,reference,source_url) VALUES(${product.id},${product.supplier.name},${product.supplier.country},${product.supplier.reference},${product.sourceUrl}) ON CONFLICT(product_id) DO NOTHING`;
+  await db`INSERT INTO catalog_products(id,sku,payload,commercial) VALUES(${product.id},${product.sku},${JSON.stringify(product)}::jsonb,${JSON.stringify(product.commercial)}::jsonb) ON CONFLICT(id) DO UPDATE SET sku=EXCLUDED.sku,payload=EXCLUDED.payload,updated_at=now()`;
+  await db`INSERT INTO catalog_suppliers(product_id,name,country,reference,source_url) VALUES(${product.id},${product.supplier.name},${product.supplier.country},${product.supplier.reference},${product.sourceUrl}) ON CONFLICT(product_id) DO UPDATE SET name=EXCLUDED.name,country=EXCLUDED.country,reference=EXCLUDED.reference,source_url=EXCLUDED.source_url`;
   const images=product.imageUrls?.length?product.imageUrls:product.imageUrl?[product.imageUrl]:[];
-  for(let i=0;i<images.length;i++)await db`INSERT INTO catalog_images(product_id,position,url,source) VALUES(${product.id},${i},${images[i]},${product.imageSource??null}) ON CONFLICT DO NOTHING`;
-  for(const offer of product.offers)await db`INSERT INTO catalog_offers(product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country) VALUES(${product.id},${offer.seller},${offer.sku},${offer.price},${offer.vatIncluded},${offer.shippingIncluded},${offer.url},${offer.capturedAt},${offer.country}) ON CONFLICT DO NOTHING`;
-  if(product.datasheetUrl)await db`INSERT INTO catalog_documents(product_id,kind,url) VALUES(${product.id},'technical-sheet',${product.datasheetUrl}) ON CONFLICT DO NOTHING`;
+  for(let i=0;i<images.length;i++)await db`INSERT INTO catalog_images(product_id,position,url,source) VALUES(${product.id},${i},${images[i]},${product.imageSource??null}) ON CONFLICT(product_id,position) DO UPDATE SET url=EXCLUDED.url,source=EXCLUDED.source`;
+  for(const offer of product.offers)await db`INSERT INTO catalog_offers(product_id,seller,sku,price,vat_included,shipping_included,url,captured_at,country) VALUES(${product.id},${offer.seller},${offer.sku},${offer.price},${offer.vatIncluded},${offer.shippingIncluded},${offer.url},${offer.capturedAt},${offer.country}) ON CONFLICT(product_id,seller) DO UPDATE SET sku=EXCLUDED.sku,price=EXCLUDED.price,vat_included=EXCLUDED.vat_included,shipping_included=EXCLUDED.shipping_included,url=EXCLUDED.url,captured_at=EXCLUDED.captured_at,country=EXCLUDED.country`;
+  if(product.datasheetUrl)await db`INSERT INTO catalog_documents(product_id,kind,url) VALUES(${product.id},'technical-sheet',${product.datasheetUrl}) ON CONFLICT(product_id,kind) DO UPDATE SET url=EXCLUDED.url`;
  }
 }
 

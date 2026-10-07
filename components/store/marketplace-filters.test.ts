@@ -40,4 +40,11 @@ describe("store taxonomy controls",()=>{
     expect(source).toContain('id={product.id}');
     expect(source).toContain("setSelected(product)");
   });
+  it("keeps quote navigation alive and styles every product action",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).toContain("requestQuoteUrl");
+    expect(source).toContain("product-document");
+    expect(source).toContain("product-panel-brand");
+    expect(source).not.toContain('onMouseDown={onClose}><section className="product-panel"');
+  });
 });

@@ -1,6 +1,8 @@
 import { calculatePrice } from "../lib/pricing";
 import { externalLiftingSeeds } from "./catalog-lifting";
 import { catalogExpansionSeeds } from "./catalog-expansion";
+import { catalogDocumentOverrides } from "./catalog-document-overrides";
+import { catalogImageOverrides } from "./catalog-image-overrides";
 
 export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion"|"utiles";
 export type CommercialStatus="draft"|"quote"|"ready";
@@ -16,7 +18,7 @@ const make=(s:Seed):CatalogProduct=>{const identified=s.supplier.reference!=="PE
 const expansionReference=(seed:(typeof catalogExpansionSeeds)[number])=>seed.brand==="Petzl"&&/^EPI-\d+$/.test(seed.reference)?(seed.imageUrl.match(/\/product\/([A-Z]\d+[A-Z0-9]*)/)?.[1]??seed.reference):seed.reference;
 const base={supplier:{name:"Proveedor por homologar",country:"UE",reference:"PENDIENTE"},offers:[] as MarketOffer[],availability:"Validación comercial pendiente",delivery:"Plazo por confirmar",certifications:["Documentación CE pendiente de validar"],sourceUrl:obramat,accent:"#ef233c",badge:"Alta rotación"};
 
-export const catalogProducts:CatalogProduct[]=[
+const rawCatalogProducts:CatalogProduct[]=[
   make({...base,id:"casco-barboquejo",sku:"EPI-CAS-001",name:"Casco de obra con barboquejo",brand:"Selección profesional",family:"Protección",segments:["epi","altura"],unit:"ud.",rotation:"alta",cost:13,initials:"CS"}),
   make({...base,id:"guante-anticorte-d",sku:"EPI-GUA-002",name:"Guante anticorte nivel D",brand:"Selección profesional",family:"Protección",segments:["epi","acero"],unit:"par",rotation:"alta",cost:4.1,initials:"GD"}),
   make({...base,id:"gafas-panorama",sku:"EPI-GAF-003",name:"Gafas panorámicas antiempañamiento",brand:"Selección profesional",family:"Protección",segments:["epi","corte"],unit:"ud.",rotation:"alta",cost:6.2,initials:"GP"}),
@@ -48,6 +50,19 @@ export const catalogProducts:CatalogProduct[]=[
   ...externalLiftingSeeds.map(seed=>make({...base,...seed,publicDescription:seed.description,publicSpecifications:seed.specifications,segments:[...seed.segments,"utiles"] as CatalogSegment[],unit:"ud.",rotation:"especialista",cost:0,status:"quote",costVerified:false,initials:"UT",imageUrls:[seed.imageUrl],imageSource:seed.brand,datasheetUrl:seed.sourceUrl,supplier:{name:seed.brand,country:"ES",reference:seed.reference},offers:[],availability:"Disponible bajo oferta técnica",delivery:"Plazo según configuración",badge:"Oferta técnica",certifications:["Configuración, medidas y capacidad según la variante documentada por el fabricante"]})),
   ...catalogExpansionSeeds.map(seed=>make({...base,...seed,publicDescription:seed.description,publicSpecifications:seed.specifications,unit:"ud.",rotation:"media",cost:0,status:"quote",costVerified:false,initials:seed.brand.slice(0,2).toUpperCase(),imageUrls:[seed.imageUrl],imageSource:`Catálogo oficial ${seed.brand}`,datasheetUrl:seed.sourceUrl,supplier:{name:seed.brand,country:"UE",reference:expansionReference(seed)},offers:[],availability:"Disponible bajo oferta técnica",delivery:"Plazo según referencia y destino",badge:"Oferta técnica",certifications:["Documentación técnica según referencia oficial del fabricante"]})),
 ];
+
+/** Public media comes from manufacturer/product pages; URLs are never duplicated to inflate galleries. */
+export const catalogProducts:CatalogProduct[]=rawCatalogProducts.map(product=>{
+  const original=[...(catalogImageOverrides[product.id]??product.imageUrls??[]),...(product.imageUrl?[product.imageUrl]:[])].filter(Boolean);
+  const unique=[...new Set(original)];
+  const primary=unique[0];
+  return {
+    ...product,
+    imageUrl:primary??product.imageUrl,
+    imageUrls:unique,
+    datasheetUrl:catalogDocumentOverrides[product.id]??product.datasheetUrl??product.sourceUrl,
+  };
+});
 
 const normalize=(value:string)=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 export function filterCatalog(products:CatalogProduct[],query:string,segment:string){const terms=normalize(query).trim().split(/\s+/).filter(Boolean);return products.filter(p=>(segment==="todos"||p.segments.includes(segment as CatalogSegment))&&terms.every(t=>normalize(`${p.name} ${p.brand} ${p.family} ${p.segments.join(" ")}`).includes(t)));}

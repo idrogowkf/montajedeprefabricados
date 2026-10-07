@@ -11,3 +11,16 @@
 .store-mock .catalog-help a{flex:none;background:var(--red);color:#fff;text-decoration:none;font-weight:900;padding:14px 18px}
 .store-mock .catalog-help .eyebrow{color:#ff7888}
 @media(max-width:720px){.store-mock .catalog-help{display:grid;padding:20px}.store-mock .catalog-help a{text-align:center}}
+
+.store-mock .product-panel-brand{border-top:7px solid var(--red);box-shadow:0 24px 80px #0008}
+.store-mock .product-panel-kicker{display:block;color:var(--red);font-size:11px;font-weight:950;letter-spacing:.12em;margin-bottom:8px}
+.store-mock .product-document{display:flex;align-items:center;justify-content:space-between;gap:18px;margin:22px 0;padding:15px 18px;border:2px solid #282828;border-left:6px solid var(--red);background:#f7f5f1;color:#111;text-decoration:none;transition:.2s ease}
+.store-mock .product-document span{font-size:10px;font-weight:900;letter-spacing:.08em;color:#666}.store-mock .product-document strong{font-size:14px}
+.store-mock .product-document:hover,.store-mock .product-document:focus-visible{background:#111;color:#fff;outline:3px solid #ef233c44}.store-mock .product-document:hover span{color:#ddd}
+.store-mock .request-quote-button{display:flex!important;align-items:center;justify-content:center;min-height:48px;text-align:center;border:2px solid var(--red);box-sizing:border-box}
+.store-mock button:focus-visible,.store-mock a:focus-visible{outline:3px solid #ef233c88;outline-offset:3px}
+.admin-shell .bulk-bar{display:flex;align-items:end;gap:16px;background:#171717;color:#fff;padding:16px 20px;margin:0 0 18px;border-left:5px solid #e72437}
+.admin-shell .bulk-bar strong{align-self:center;margin-right:auto}.admin-shell .bulk-bar label{display:grid;gap:5px;font-size:11px;font-weight:800}.admin-shell .bulk-bar input,.admin-shell .bulk-bar select{width:110px;padding:9px;border:1px solid #777;background:#fff;color:#111}.admin-shell .bulk-bar button,.admin-shell .save-product{border:0;background:#e72437;color:#fff;padding:11px 18px;font-weight:900;cursor:pointer}.admin-shell .bulk-bar button:disabled{opacity:.35;cursor:not-allowed}
+.admin-shell .editor-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin:16px 0}.admin-shell .editor-tabs button{padding:10px 5px;border:1px solid #bbb;background:#f1f1f1;font-size:11px;font-weight:800;cursor:pointer}.admin-shell .editor-tabs button.active{background:#171717;color:#fff;border-color:#171717}
+.admin-shell .editor-fields{display:grid;gap:13px}.admin-shell .editor-fields label{display:grid;gap:6px;font-size:12px;font-weight:800}.admin-shell .editor-fields input,.admin-shell .editor-fields textarea{width:100%;box-sizing:border-box;padding:10px;border:1px solid #aaa;font:inherit;resize:vertical}.admin-shell .admin-document-link{display:block;border:2px solid #222;border-left:5px solid #e72437;padding:12px;color:#111;font-weight:900;text-decoration:none}.admin-shell .save-product{width:100%;margin-top:18px;min-height:46px}.admin-shell table input[type=checkbox]{width:17px;height:17px;accent-color:#e72437}
+@media(max-width:900px){.admin-shell .bulk-bar{display:grid;grid-template-columns:1fr 1fr}.admin-shell .bulk-bar strong{grid-column:1/-1}.admin-shell .editor-tabs{grid-template-columns:1fr 1fr}}

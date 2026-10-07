@@ -94,4 +94,13 @@ describe("multifaceted catalog", () => {
     expect(petzl.every(product=>!product.name.startsWith("¿Cómo")&&!product.name.includes("Operaciones de rescate")&&!product.name.includes("Parque eólico offshore"))).toBe(true);
     expect(petzl.every(product=>!/^EPI-\d+$/.test(product.supplier.reference))).toBe(true);
   });
+
+  it("gives storefront products verified galleries and technical documentation",()=>{
+    const storefront=catalogProducts.filter(hasStoreImage);
+    expect(storefront.filter(product=>new Set(product.imageUrls).size>=3).length).toBeGreaterThanOrEqual(175);
+    for(const product of storefront){
+      expect(new Set(product.imageUrls).size,product.id).toBeGreaterThanOrEqual(1);
+      expect(product.datasheetUrl,product.id).toMatch(/^https:\/\//);
+    }
+  });
 });

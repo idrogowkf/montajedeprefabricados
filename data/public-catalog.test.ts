@@ -25,4 +25,11 @@ describe("public catalog projection",()=>{
     expect(toPublicCatalogProduct({...source,commercial:{...source.commercial,costVerified:false}}).purchasable).toBe(false);
     expect(toPublicCatalogProduct({...source,commercial:{...source.commercial,cost:0}}).purchasable).toBe(false);
   });
+
+  it("never presents a commercial page as a downloadable technical PDF",()=>{
+    const product=catalogProducts.find(item=>item.id==="util-002-anilla-soldable")!;
+    const projected=toPublicCatalogProduct(product);
+    expect(projected.technicalDocument).toBeUndefined();
+    expect(projected.canRequestTechnicalDocument).toBe(true);
+  });
 });

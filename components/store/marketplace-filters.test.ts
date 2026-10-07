@@ -8,6 +8,14 @@ describe("store taxonomy controls",()=>{
     expect(source).not.toContain('from "@/data/catalog"');
     expect(source).toContain('["utiles","Útiles de montaje"]');
   });
+  it("uses a dedicated product inquiry instead of the mounting prestudy",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    const inquiry=readFileSync(join(process.cwd(),"components/store/ProductInquiryPanel.tsx"),"utf8");
+    expect(source).toContain("ProductInquiryPanel");
+    expect(source).toContain("Solicitar ficha técnica");
+    expect(inquiry).toContain("Cuéntanos qué producto necesitas");
+    expect(source).not.toContain("Configuración técnica necesaria");
+  });
   it("uses product families in navigation and a separate prefabricated-material filter",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("Familias de producto");
@@ -42,7 +50,7 @@ describe("store taxonomy controls",()=>{
   });
   it("keeps quote navigation alive and styles every product action",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    expect(source).toContain("requestQuoteUrl");
+    expect(source).toContain('onRequest("product")');
     expect(source).toContain("product-document");
     expect(source).toContain("product-panel-brand");
     expect(source).not.toContain('onMouseDown={onClose}><section className="product-panel"');

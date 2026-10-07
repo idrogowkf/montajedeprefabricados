@@ -2,7 +2,8 @@ import type {CatalogSegment} from "./catalog";
 
 export type PublicCatalogProduct={
   id:string;sku:string;name:string;brand:string;family:string;segments:CatalogSegment[];unit:string;
-  certifications:string[];imageUrl?:string;imageUrls?:string[];datasheetUrl?:string;
+  certifications:string[];imageUrl?:string;imageUrls?:string[];
+  technicalDocument?:{url:string;label:string};canRequestTechnicalDocument:boolean;
   description:string;specifications:string[];
   price:number;priceVat:number;vatPercent:number;purchasable:boolean;
   accent:string;initials:string;availability:string;delivery:string;rating:number;reviews:number;

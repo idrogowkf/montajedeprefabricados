@@ -2,6 +2,7 @@
 @import url('./fonts/inter.css');
 @import url('./v21.css');
 @import url('./hybrid-home.css');
+@import url('./catalog-enhancements.css');
 @import url('./v21-extra.css');
 @tailwind base;
 @tailwind components;

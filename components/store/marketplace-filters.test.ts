@@ -26,4 +26,12 @@ describe("store taxonomy controls",()=>{
       expect(source).toContain(publicLabel);
     }
   });
+  it("offers assisted sourcing and keeps the filter panel legible",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    const css=readFileSync(join(process.cwd(),"app/catalog-enhancements.css"),"utf8");
+    expect(source).toContain("¿No encuentras lo que buscas?");
+    expect(source).toContain("Te lo buscamos");
+    expect(css).toContain(".store-mock .filters");
+    expect(css).toContain("background:#fff");
+  });
 });

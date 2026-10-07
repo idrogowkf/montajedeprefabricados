@@ -38,7 +38,7 @@ async function applyCatalogMigrations(){const db=sql();const migration="2026-10-
 }
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
- const seedVersion="2026-10-06-catalog-105-v1";
+ const seedVersion="2026-10-07-catalog-expansion-129-v2";
  const alreadySeeded=await db`SELECT id FROM catalog_migrations WHERE id=${seedVersion}`;
  if(!alreadySeeded.length){
   const productRows=catalogProducts.map(product=>({id:product.id,sku:product.sku,payload:product,commercial:product.commercial}));

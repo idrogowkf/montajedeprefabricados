@@ -1,0 +1,13 @@
+.v21-home .discovery-visual.has-photo{background:#fff}
+.v21-home .discovery-visual.has-photo:before{display:none}
+.v21-home .discovery-visual img{width:100%;height:100%;object-fit:contain;padding:12px}
+
+.store-mock .filters{background:#fff;color:#111;border-color:#d7d4cf}
+.store-mock .filters strong,.store-mock .filters label,.store-mock .filters span{color:#111}
+.store-mock .filters select{width:100%;margin-top:10px;background:#fff;color:#111;border:1px solid #aaa;padding:11px}
+.store-mock .catalog-help{display:flex;align-items:center;justify-content:space-between;gap:24px;background:#111;color:#fff;border-left:5px solid var(--red);padding:24px 28px;margin-bottom:18px}
+.store-mock .catalog-help h3{font-size:24px;margin:5px 0}
+.store-mock .catalog-help p{color:#ccc;margin:0;line-height:1.45}
+.store-mock .catalog-help a{flex:none;background:var(--red);color:#fff;text-decoration:none;font-weight:900;padding:14px 18px}
+.store-mock .catalog-help .eyebrow{color:#ff7888}
+@media(max-width:720px){.store-mock .catalog-help{display:grid;padding:20px}.store-mock .catalog-help a{text-align:center}}

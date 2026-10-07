@@ -1,5 +1,6 @@
 import { calculatePrice } from "../lib/pricing";
 import { externalLiftingSeeds } from "./catalog-lifting";
+import { catalogExpansionSeeds } from "./catalog-expansion";
 
 export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion"|"utiles";
 export type CommercialStatus="draft"|"quote"|"ready";
@@ -44,6 +45,7 @@ export const catalogProducts:CatalogProduct[]=[
   make({...base,id:"grillete-lira",sku:"ELE-GRI-071",name:"Grillete lira con pasador roscado",brand:"Gama elevación",family:"Amarre y elevación",segments:["elevacion"],unit:"ud.",rotation:"alta",cost:12,status:"quote",initials:"GL",certifications:["CMU y certificado por referencia"]}),
   make({...base,id:"eslinga-textil",sku:"ELE-ESL-072",name:"Eslinga plana doble capa",brand:"Gama elevación",family:"Amarre y elevación",segments:["elevacion"],unit:"ud.",rotation:"alta",cost:17,status:"quote",initials:"ET",certifications:["EN 1492-1 · longitud y CMU por variante"]}),
   ...externalLiftingSeeds.map(seed=>make({...base,...seed,publicDescription:seed.description,publicSpecifications:seed.specifications,segments:[...seed.segments,"utiles"] as CatalogSegment[],unit:"ud.",rotation:"especialista",cost:0,status:"quote",costVerified:false,initials:"UT",imageUrls:[seed.imageUrl],imageSource:seed.brand,datasheetUrl:seed.sourceUrl,supplier:{name:seed.brand,country:"ES",reference:seed.reference},offers:[],availability:"Disponible bajo oferta técnica",delivery:"Plazo según configuración",badge:"Oferta técnica",certifications:["Configuración, medidas y capacidad según la variante documentada por el fabricante"]})),
+  ...catalogExpansionSeeds.map(seed=>make({...base,...seed,publicDescription:seed.description,publicSpecifications:seed.specifications,unit:"ud.",rotation:"media",cost:0,status:"quote",costVerified:false,initials:seed.brand.slice(0,2).toUpperCase(),imageUrls:[seed.imageUrl],imageSource:`Catálogo oficial ${seed.brand}`,datasheetUrl:seed.sourceUrl,supplier:{name:seed.brand,country:"UE",reference:seed.reference},offers:[],availability:"Disponible bajo oferta técnica",delivery:"Plazo según referencia y destino",badge:"Oferta técnica",certifications:["Documentación técnica según referencia oficial del fabricante"]})),
 ];
 
 const normalize=(value:string)=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();

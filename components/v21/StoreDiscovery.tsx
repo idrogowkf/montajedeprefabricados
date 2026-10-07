@@ -1,13 +1,12 @@
-import { catalogProducts } from "@/data/catalog";
-import type { CSSProperties } from "react";
+import { catalogProducts, hasStoreImage } from "@/data/catalog";
 
-const featuredIds=["arnes-anticaidas","linea-vida-temporal","disco-diamante-230","anclaje-quimico"];
-const products = featuredIds.map(id=>catalogProducts.find(product=>product.id===id)).filter((product):product is NonNullable<typeof product>=>Boolean(product));
+const featuredIds=["arnes-anticaidas","disco-diamante-230","ext-fix-001-varilla-de-anclaje-has-d","ext-epi-081-newton-version-europea","ext-repair-101-arido-sikarep-512","ext-well-120-pinza-para-anillos-de-pozo-1061"];
+const products = featuredIds.map(id=>catalogProducts.find(product=>product.id===id)).filter((product):product is NonNullable<typeof product>=>Boolean(product)).filter(hasStoreImage);
 
 export default function StoreDiscovery() {
   return <section className="store-discovery" id="compra-rapida"><div className="shell">
-    <div className="store-discovery-head"><div><div className="kicker mono">Compra rápida · catálogo provisional</div><h2>LO QUE LA OBRA<br /><span>NECESITA HOY.</span></h2></div><div className="store-discovery-intro"><p>Acceso directo a material de rotación frecuente. Este prototipo usa productos y precios demostrativos hasta conectar proveedores reales.</p><a href="/tienda">Ver catálogo completo →</a></div></div>
-    <div className="discovery-grid">{products.map((product) => <article className="discovery-product" key={product.id}><a href={`/tienda#${product.id}`} aria-label={`Ver ${product.name}`}><div className="discovery-visual" style={{"--product-accent": product.accent} as CSSProperties}><span>{product.initials}</span><small>IMAGEN PROVISIONAL</small></div><div className="discovery-meta mono">{product.family} · {product.brand}</div><h3>{product.name}</h3><div className="discovery-price"><strong>{product.price.toFixed(2).replace(".", ",")} €</strong><span>/{product.unit} · sin IVA</span></div><p>{product.delivery}</p></a></article>)}</div>
+    <div className="store-discovery-head"><div><div className="kicker mono">Compra rápida · catálogo profesional</div><h2>LO QUE LA OBRA<br /><span>NECESITA HOY.</span></h2></div><div className="store-discovery-intro"><p>Productos identificados para montaje, seguridad, fijación y reparación. Las referencias configurables se cotizan según medida, carga y destino.</p><a href="/tienda">Ver catálogo completo →</a></div></div>
+    <div className="discovery-grid">{products.map((product) => <article className="discovery-product" key={product.id}><a href={`/tienda#${product.id}`} aria-label={`Ver ${product.name}`}><div className="discovery-visual has-photo"><img src={product.imageUrl??product.imageUrls?.[0]} alt={product.name}/></div><div className="discovery-meta mono">{product.family} · {product.brand}</div><h3>{product.name}</h3><div className="discovery-price">{product.commercial.status==="ready"&&product.commercial.costVerified?<><strong>{product.price.toFixed(2).replace(".", ",")} €</strong><span>/{product.unit} · sin IVA</span></>:<strong>Solicitar oferta</strong>}</div><p>{product.delivery}</p></a></article>)}</div>
     <div className="technical-continuation"><span className="mono">Después de comprar</span><strong>Sigue explorando nuestra capacidad técnica</strong><a href="#capacidades">Servicios de montaje ↓</a></div>
   </div></section>;
 }

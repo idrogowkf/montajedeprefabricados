@@ -74,4 +74,16 @@ describe("multifaceted catalog", () => {
     expect(catalogProducts.filter(hasStoreImage).length).toBeGreaterThan(0);
     expect(catalogProducts.filter(hasStoreImage).every(product=>Boolean(product.imageUrl)||(product.imageUrls?.length??0)>0)).toBe(true);
   });
+
+  it("contains the requested depth in the principal commercial families",()=>{
+    const count=(segment:string)=>catalogProducts.filter(product=>product.segments.includes(segment as never)).length;
+    expect(count("epi")).toBeGreaterThanOrEqual(20);
+    expect(count("corte")).toBeGreaterThanOrEqual(20);
+    expect(count("fijacion")).toBeGreaterThanOrEqual(60);
+    expect(count("sellado")).toBeGreaterThanOrEqual(20);
+    expect(catalogProducts.filter(product=>product.family==="Pinzas para pozos y arquetas")).toHaveLength(10);
+    for(const material of ["hormigon","acero","madera","pvc"]){
+      expect(count(material)).toBeGreaterThanOrEqual(20);
+    }
+  });
 });

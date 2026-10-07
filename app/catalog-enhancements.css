@@ -31,7 +31,9 @@
 @media(max-width:700px){.inquiry-grid{grid-template-columns:1fr}.inquiry-panel form{padding:20px}.store-mock .product-panel-copy{padding:22px}}
 
 /* Ficha completa: compacta en escritorio y desplazamiento explícito en móvil. */
-.store-mock .product-panel-brand{width:min(1120px,calc(100vw - 32px));max-height:calc(100dvh - 32px);grid-template-columns:minmax(300px,.9fr) minmax(420px,1.1fr);gap:24px;padding:24px;overflow:auto;scrollbar-gutter:stable}
+.store-mock .product-panel-brand{width:min(1120px,calc(100vw - 32px));height:min(820px,calc(100dvh - 32px));max-height:calc(100dvh - 32px);grid-template-columns:minmax(300px,.9fr) minmax(420px,1.1fr);gap:24px;padding:24px;overflow-x:hidden;overflow-y:scroll;scrollbar-gutter:stable}
+.store-mock .product-panel-brand{scrollbar-width:auto;scrollbar-color:var(--red) #d8d5cf}
+.store-mock .product-panel-brand::-webkit-scrollbar{width:14px}.store-mock .product-panel-brand::-webkit-scrollbar-track{background:#d8d5cf;border-left:1px solid #bbb}.store-mock .product-panel-brand::-webkit-scrollbar-thumb{background:var(--red);border:3px solid #d8d5cf;border-radius:10px}.store-mock .product-panel-brand::-webkit-scrollbar-thumb:hover{background:#b50c22}
 .store-mock .product-panel-brand .product-gallery>.product-visual{max-height:360px;aspect-ratio:1.25}
 .store-mock .product-panel-brand .gallery-thumbs{grid-template-columns:repeat(6,minmax(48px,62px));gap:6px}
 .store-mock .product-panel-brand .product-panel-copy{padding:8px 10px 8px 0;display:grid;align-content:start;gap:8px}

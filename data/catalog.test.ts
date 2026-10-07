@@ -86,4 +86,12 @@ describe("multifaceted catalog", () => {
       expect(count(material)).toBeGreaterThanOrEqual(20);
     }
   });
+
+  it("uses commercial Petzl references instead of editorial articles",()=>{
+    const petzl=catalogProducts.filter(product=>product.brand==="Petzl");
+    expect(petzl.some(product=>product.supplier.reference==="A020BA00")).toBe(true);
+    expect(petzl.some(product=>product.supplier.reference==="A010AA00")).toBe(true);
+    expect(petzl.every(product=>!product.name.startsWith("¿Cómo")&&!product.name.includes("Operaciones de rescate")&&!product.name.includes("Parque eólico offshore"))).toBe(true);
+    expect(petzl.every(product=>!/^EPI-\d+$/.test(product.supplier.reference))).toBe(true);
+  });
 });

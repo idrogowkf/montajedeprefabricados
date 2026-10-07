@@ -34,4 +34,10 @@ describe("store taxonomy controls",()=>{
     expect(css).toContain(".store-mock .filters");
     expect(css).toContain("background:#fff");
   });
+  it("opens landing product hashes in the storefront",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).toContain("window.location.hash");
+    expect(source).toContain('id={product.id}');
+    expect(source).toContain("setSelected(product)");
+  });
 });

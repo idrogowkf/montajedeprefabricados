@@ -8,11 +8,11 @@ describe("store taxonomy controls",()=>{
     expect(source).not.toContain('from "@/data/catalog"');
     expect(source).toContain('["utiles","Útiles de montaje"]');
   });
-  it("uses a dedicated product inquiry instead of the mounting prestudy",()=>{
+  it("uses a dedicated product inquiry without exposing missing datasheets",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     const inquiry=readFileSync(join(process.cwd(),"components/store/ProductInquiryPanel.tsx"),"utf8");
     expect(source).toContain("ProductInquiryPanel");
-    expect(source).toContain("Solicitar ficha técnica");
+    expect(source).not.toContain("Solicitar ficha técnica");
     expect(inquiry).toContain("Cuéntanos qué producto necesitas");
     expect(source).not.toContain("Configuración técnica necesaria");
   });

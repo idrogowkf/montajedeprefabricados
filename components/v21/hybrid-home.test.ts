@@ -16,7 +16,7 @@ describe("hybrid home composition", () => {
 
   it("links the protected administration area from the footer",()=>{
     const footer=readFileSync(join(process.cwd(),"components/v21/Footer.tsx"),"utf8");
-    expect(footer).toContain('href="/administracion"');
-    expect(footer).toContain("Zona de administración");
+    expect(footer).toContain('href="/acceso-administracion"');
+    expect(footer).toContain("Centro de administración");
   });
 });

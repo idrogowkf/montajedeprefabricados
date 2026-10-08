@@ -14,6 +14,7 @@ describe("branded administrator access",()=>{
     expect(page).toContain("socialButtons");
     expect(page).toContain("footerAction");
     expect(page).not.toContain("SignUp");
+    expect(css).toContain(".admin-auth-footer{display:none");
   });
   it("localizes the embedded identity form into Spanish",()=>{
     const layout=readFileSync(join(process.cwd(),"app/layout.tsx"),"utf8");

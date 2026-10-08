@@ -34,7 +34,10 @@ export function validatePublicationTransition(product:CatalogProduct,patch:Comme
 
 function sql(){if(!process.env.DATABASE_URL)throw new Error("DATABASE_URL no configurada");return neon(process.env.DATABASE_URL);}
 
-export async function ensureCatalogSchema(){const db=sql();
+export function isMissingCatalogSchemaError(error:unknown){return Boolean(error&&typeof error==="object"&&"code" in error&&(error as {code?:unknown}).code==="42P01");}
+
+let schemaPromise:Promise<void>|null=null;
+export async function ensureCatalogSchema(){schemaPromise??=(async()=>{const db=sql();
  await db`CREATE TABLE IF NOT EXISTS catalog_products (id text PRIMARY KEY, sku text UNIQUE NOT NULL, payload jsonb NOT NULL, commercial jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now())`;
  await db`CREATE TABLE IF NOT EXISTS catalog_suppliers (product_id text PRIMARY KEY REFERENCES catalog_products(id) ON DELETE CASCADE, name text NOT NULL, country text NOT NULL, reference text NOT NULL, source_url text NOT NULL)`;
  await db`CREATE TABLE IF NOT EXISTS catalog_images (product_id text REFERENCES catalog_products(id) ON DELETE CASCADE, position integer NOT NULL, url text NOT NULL, source text, PRIMARY KEY(product_id,position))`;
@@ -43,10 +46,11 @@ export async function ensureCatalogSchema(){const db=sql();
  await db`CREATE TABLE IF NOT EXISTS catalog_audit (id bigserial PRIMARY KEY, product_id text NOT NULL, actor_id text NOT NULL, patch jsonb NOT NULL, created_at timestamptz NOT NULL DEFAULT now())`;
  await db`CREATE TABLE IF NOT EXISTS product_inquiries (id text PRIMARY KEY, kind text NOT NULL, product_id text, product_name text, customer_name text NOT NULL, company text, email text, phone text, message text NOT NULL, documents jsonb NOT NULL DEFAULT '[]'::jsonb, status text NOT NULL DEFAULT 'new', created_at timestamptz NOT NULL DEFAULT now())`;
  await db`CREATE TABLE IF NOT EXISTS catalog_migrations (id text PRIMARY KEY, applied_at timestamptz NOT NULL DEFAULT now())`;
+ })().catch(error=>{schemaPromise=null;throw error;});return schemaPromise;
 }
 
-export async function createProductInquiry(input:{id:string;kind:string;productId:string;productName:string;name:string;company:string;email:string;phone:string;message:string;documents:unknown[]}){await ensureCatalogSchema();const db=sql();await db`INSERT INTO product_inquiries(id,kind,product_id,product_name,customer_name,company,email,phone,message,documents) VALUES(${input.id},${input.kind},${input.productId||null},${input.productName||null},${input.name},${input.company||null},${input.email||null},${input.phone||null},${input.message},${JSON.stringify(input.documents)}::jsonb)`;}
-export async function getProductInquiries(){await ensureCatalogSchema();return sql()`SELECT id,kind,product_id,product_name,customer_name,company,email,phone,message,documents,status,created_at FROM product_inquiries ORDER BY created_at DESC LIMIT 200`;}
+export async function createProductInquiry(input:{id:string;kind:string;productId:string;productName:string;name:string;company:string;email:string;phone:string;message:string;documents:unknown[]}){const insert=()=>sql()`INSERT INTO product_inquiries(id,kind,product_id,product_name,customer_name,company,email,phone,message,documents) VALUES(${input.id},${input.kind},${input.productId||null},${input.productName||null},${input.name},${input.company||null},${input.email||null},${input.phone||null},${input.message},${JSON.stringify(input.documents)}::jsonb)`;try{await insert();}catch(error){await recoverMissingCatalogSchema(error);await insert();}}
+export async function getProductInquiries(){const read=()=>sql()`SELECT id,kind,product_id,product_name,customer_name,company,email,phone,message,documents,status,created_at FROM product_inquiries ORDER BY created_at DESC LIMIT 200`;try{return await read();}catch(error){await recoverMissingCatalogSchema(error);return read();}}
 
 async function applyCatalogMigrations(){const db=sql();const migration="2026-10-06-verified-products-v2";const applied=await db`SELECT id FROM catalog_migrations WHERE id=${migration}`;if(applied.length)return;
  for(const id of ["arnes-anticaidas","anticaidas-retractil","disco-diamante-230"])await db`UPDATE catalog_products SET commercial=commercial||'{"status":"ready","costVerified":true}'::jsonb,updated_at=now() WHERE id=${id}`;
@@ -75,7 +79,9 @@ export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
 export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct&{adminContent?:CatalogContentPatch};commercial:CatalogProduct["commercial"]}>){const byId=new Map(rows.map(row=>[row.payload.id,row]));return catalogProducts.map(product=>{const stored=byId.get(product.id);if(!stored)return product;const edited=stored.payload.adminContent??{};return {...product,...edited,id:product.id,sku:product.sku,imageVerification:edited.imageUrls?undefined:product.imageVerification,commercial:stored.commercial};});}
 
 let seedPromise:Promise<void>|null=null;
-export async function getCatalog():Promise<CatalogProduct[]>{seedPromise??=seedCatalog().catch(error=>{seedPromise=null;throw error;});await seedPromise;const rows=await sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
+async function readCatalogRows(){return sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;}
+async function recoverMissingCatalogSchema(error:unknown){if(!isMissingCatalogSchemaError(error))throw error;seedPromise??=seedCatalog().catch(cause=>{seedPromise=null;throw cause;});await seedPromise;}
+export async function getCatalog():Promise<CatalogProduct[]>{let rows;try{rows=await readCatalogRows();}catch(error){await recoverMissingCatalogSchema(error);rows=await readCatalogRows();}return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 
 export async function updateCatalogProducts(ids:string[],input:{commercial?:Record<string,unknown>;content?:Record<string,unknown>},actorId:string){
  const unique=[...new Set(ids.map(String).filter(Boolean))];if(!unique.length)throw new Error("Selecciona al menos un producto");

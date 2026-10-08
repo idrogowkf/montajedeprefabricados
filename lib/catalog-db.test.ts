@@ -1,5 +1,5 @@
 import {describe,expect,it} from "vitest";
-import {mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
+import {isMissingCatalogSchemaError,mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
 import {catalogProducts} from "../data/catalog";
 
 describe("catalog database validation",()=>{
@@ -32,5 +32,13 @@ describe("catalog database merge",()=>{
     expect(merged.commercial.targetMarginPercent).toBe(41);
     expect(merged.commercial.status).toBe("draft");
     expect(merged.commercial.costVerified).toBe(false);
+  });
+});
+
+describe("catalog runtime recovery",()=>{
+  it("only initializes the schema when Postgres reports an undefined table",()=>{
+    expect(isMissingCatalogSchemaError({code:"42P01"})).toBe(true);
+    expect(isMissingCatalogSchemaError({code:"57014"})).toBe(false);
+    expect(isMissingCatalogSchemaError(new Error("timeout"))).toBe(false);
   });
 });

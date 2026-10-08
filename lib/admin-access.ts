@@ -1,5 +1,11 @@
 type Claims=Record<string,unknown>;
 
+export function isAdminEmail(email:string|null|undefined,configuredEmails=process.env.ADMIN_EMAILS??""){
+  if(!email)return false;
+  const allowed=new Set(configuredEmails.split(",").map(value=>value.trim().toLowerCase()).filter(Boolean));
+  return allowed.has(email.trim().toLowerCase());
+}
+
 export function isAdminIdentity(userId:string|null|undefined,claims:Claims={},configuredIds=process.env.ADMIN_USER_IDS??""){
   if(!userId)return false;
   const ids=new Set(configuredIds.split(",").map(value=>value.trim()).filter(Boolean));

@@ -32,9 +32,22 @@ export const viewport: Viewport = {
     themeColor: "#070707",
 };
 
+const clerkLocalization={
+    locale:"es-ES",
+    formFieldLabel__emailAddress:"Correo electrónico",
+    formFieldLabel__password:"Contraseña",
+    formFieldInputPlaceholder__emailAddress:"Escribe tu correo administrativo",
+    formFieldInputPlaceholder__password:"Escribe tu contraseña",
+    formFieldAction__forgotPassword:"¿Has olvidado tu contraseña?",
+    formButtonPrimary:"Continuar",
+    signInEnterPasswordTitle:"Introduce tu contraseña",
+    backButton:"Volver",
+    signIn:{start:{title:"Inicia sesión en Montaje de Prefabricados",subtitle:"Acceso reservado a la administración",actionText:"",actionLink:""}},
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <ClerkProvider signInUrl="/acceso-administracion" signUpUrl="/activar-administracion"><html lang="es">
+        <ClerkProvider signInUrl="/acceso-administracion" signUpUrl="/activar-administracion" localization={clerkLocalization}><html lang="es">
             <head>
                 <script
                     type="application/ld+json"

@@ -15,4 +15,8 @@ describe("branded administrator access",()=>{
     expect(page).toContain("footerAction");
     expect(page).not.toContain("SignUp");
   });
+  it("localizes the embedded identity form into Spanish",()=>{
+    const layout=readFileSync(join(process.cwd(),"app/layout.tsx"),"utf8");
+    for(const text of ["Inicia sesión en Montaje de Prefabricados","Correo electrónico","Contraseña","Continuar"]){expect(layout).toContain(text);}
+  });
 });

@@ -4,6 +4,8 @@ import SeoJsonLd from "@/components/v21/SeoJsonLd";
 import { homeFaqs } from "@/data/home-seo";
 import { site } from "@/lib/seo";
 
+export const dynamic="force-dynamic";
+
 export const metadata: Metadata = {
   title: "Montaje de prefabricados en España | Ingeniería e izado",
   description: "Planificación de montaje de prefabricados de hormigón en España: ingeniería de montaje, lifting plan, grúas, logística, secuencia y preestudio técnico.",

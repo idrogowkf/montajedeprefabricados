@@ -24,6 +24,7 @@ pnpm-debug.log*
 # Tests
 coverage/
 *.tsbuildinfo
+tmp/
 
 .vercel
 .env*

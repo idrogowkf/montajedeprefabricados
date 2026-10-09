@@ -56,4 +56,19 @@ describe("store taxonomy controls",()=>{
     expect(source).toContain("product-panel-brand");
     expect(source).not.toContain('onMouseDown={onClose}><section className="product-panel"');
   });
+  it("wires every storefront action instead of rendering inert controls",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    expect(source).toContain("setRequestsOpen(true)");
+    expect(source.match(/SignInButton mode="modal"/g)?.length).toBeGreaterThanOrEqual(2);
+    expect(source).toContain("onCheckout");
+    expect(source).toContain('value={sort}');
+    expect(source).toContain('onChange={event=>setSort');
+  });
+  it("links the landing category chips to real filtered catalog views",()=>{
+    const hero=readFileSync(join(process.cwd(),"components/v21/Hero.tsx"),"utf8");
+    expect(hero).toContain('/tienda?familia=epi');
+    expect(hero).toContain('/tienda?familia=corte');
+    expect(hero).toContain('/tienda?familia=fijacion');
+    expect(hero).toContain('/tienda?familia=elevacion');
+  });
 });

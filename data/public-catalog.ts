@@ -14,3 +14,11 @@ export function filterPublicCatalog(products:PublicCatalogProduct[],query:string
   const terms=normalize(query).trim().split(/\s+/).filter(Boolean);
   return products.filter(product=>(family==="todos"||product.segments.includes(family as CatalogSegment))&&(material==="todos"||product.segments.includes(material as CatalogSegment))&&terms.every(term=>normalize(`${product.name} ${product.brand} ${product.family} ${product.segments.join(" ")}`).includes(term)));
 }
+
+export type PublicCatalogSort="relevance"|"price-asc"|"rating";
+export function sortPublicCatalog(products:PublicCatalogProduct[],sort:PublicCatalogSort){
+  const copy=[...products];
+  if(sort==="price-asc")return copy.sort((a,b)=>a.price-b.price);
+  if(sort==="rating")return copy.sort((a,b)=>(b.rating-a.rating)||(b.reviews-a.reviews));
+  return copy;
+}

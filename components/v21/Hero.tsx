@@ -1,6 +1,11 @@
 import Header from "./Header";
 
-const quickCategories = ["Protección", "Corte", "Fijación", "Elevación"];
+const quickCategories = [
+  ["Protección", "/tienda?familia=epi"],
+  ["Corte", "/tienda?familia=corte"],
+  ["Fijación", "/tienda?familia=fijacion"],
+  ["Elevación", "/tienda?familia=elevacion"],
+] as const;
 
 export default function Hero() {
   return <section className="mast hybrid-mast" id="inicio">
@@ -18,7 +23,7 @@ export default function Hero() {
         <h2>NECESITO<br /><span>MATERIAL.</span></h2>
         <p>Encuentra consumibles, protección, fijación y útiles para obra prefabricada.</p>
         <form className="gateway-search" action="/tienda" method="get"><label className="sr-only" htmlFor="home-store-search">Buscar productos</label><input id="home-store-search" name="q" placeholder="¿Qué necesitas para la obra?" /><button type="submit" aria-label="Buscar en la tienda">Buscar →</button></form>
-        <div className="gateway-chips" aria-label="Categorías rápidas">{quickCategories.map((category) => <a href="/tienda" key={category}>{category}</a>)}</div>
+        <div className="gateway-chips" aria-label="Categorías rápidas">{quickCategories.map(([category,href]) => <a href={href} key={category}>{category}</a>)}</div>
         <a className="v21-btn gateway-store-btn" href="/tienda">Entrar en la tienda <span>→</span></a>
       </article>
     </div>

@@ -1,7 +1,7 @@
-import { catalogProducts, hasStoreImage } from "@/data/catalog";
+import {catalogProducts} from "@/data/catalog";
+import {selectFeaturedStoreProducts} from "@/data/featured-store";
 
-const featuredIds=["arnes-anticaidas","disco-diamante-230","ext-fix-001-varilla-de-anclaje-has-d","ext-epi-081-newton-version-europea","ext-repair-101-arido-sikarep-512","ext-well-120-pinza-para-anillos-de-pozo-1061"];
-const products = featuredIds.map(id=>catalogProducts.find(product=>product.id===id)).filter((product):product is NonNullable<typeof product>=>Boolean(product)).filter(hasStoreImage);
+const products=selectFeaturedStoreProducts(catalogProducts);
 
 export default function StoreDiscovery() {
   return <section className="store-discovery" id="compra-rapida"><div className="shell">

@@ -45,6 +45,7 @@ describe("store taxonomy controls",()=>{
   it("opens landing product hashes in the storefront",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("window.location.hash");
+    expect(source).toContain('addEventListener("hashchange"');
     expect(source).toContain('id={product.id}');
     expect(source).toContain("setSelected(product)");
   });

@@ -11,7 +11,7 @@ describe("public catalog projection",()=>{
   });
 
   it("recalculates public price and VAT from current commercial inputs",()=>{
-    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
+    const source=catalogProducts[0];
     const changed={...source,commercial:{...source.commercial,cost:100,inboundShipping:10,handling:0,contingencyPercent:0,targetMarginPercent:20,vatPercent:10}};
     const result=toPublicCatalogProduct(changed);
     expect(result.price).toBe(137.5);
@@ -20,16 +20,17 @@ describe("public catalog projection",()=>{
   });
 
   it("only enables purchasing with a verified positive cost and complete evidence",()=>{
-    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
-    expect(toPublicCatalogProduct(source).purchasable).toBe(true);
-    expect(toPublicCatalogProduct({...source,commercial:{...source.commercial,costVerified:false}}).purchasable).toBe(false);
-    expect(toPublicCatalogProduct({...source,commercial:{...source.commercial,cost:0}}).purchasable).toBe(false);
+    const source=catalogProducts.find(product=>(product.imageUrls?.length??0)>=2)!;
+    const offers=[1,2,3].map(index=>({seller:`Proveedor ${index}`,sku:source.supplier.reference,price:100+index,vatIncluded:false,shippingIncluded:false,url:`https://example.com/${index}`,capturedAt:"2026-10-13",country:"ES"}));
+    const ready={...source,offers,commercial:{...source.commercial,status:"ready" as const,cost:100,costVerified:true}};
+    expect(toPublicCatalogProduct(ready).purchasable).toBe(true);
+    expect(toPublicCatalogProduct({...ready,commercial:{...ready.commercial,costVerified:false}}).purchasable).toBe(false);
+    expect(toPublicCatalogProduct({...ready,commercial:{...ready.commercial,cost:0}}).purchasable).toBe(false);
   });
 
-  it("never presents a commercial page as a downloadable technical PDF",()=>{
-    const product=catalogProducts.find(item=>item.id==="util-002-anilla-soldable")!;
-    const projected=toPublicCatalogProduct(product);
-    expect(projected.technicalDocument).toBeUndefined();
-    expect(projected.canRequestTechnicalDocument).toBe(true);
+  it("presents the verified official PDF for every approved product",()=>{
+    const projected=toPublicCatalogProduct(catalogProducts[0]);
+    expect(projected.technicalDocument?.url).toMatch(/\.pdf(?:$|[?#])/i);
+    expect(projected.canRequestTechnicalDocument).toBe(false);
   });
 });

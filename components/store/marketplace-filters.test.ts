@@ -8,6 +8,12 @@ describe("store taxonomy controls",()=>{
     expect(source).not.toContain('from "@/data/catalog"');
     expect(source).toContain('["utiles","Útiles de montaje"]');
   });
+  it("presents an elevation-only storefront taxonomy",()=>{
+    const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
+    for(const label of ["Pinzas","Balancines","Ganchos","Eslingas"]){expect(source).toContain(label);}
+    for(const removed of ["Protección y EPI","Corte y perforación","Sellado y reparación"]){expect(source).not.toContain(removed);}
+    expect(source).toContain("60 REFERENCIAS DE ELEVACIÓN");
+  });
   it("uses a dedicated product inquiry without exposing missing datasheets",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     const inquiry=readFileSync(join(process.cwd(),"components/store/ProductInquiryPanel.tsx"),"utf8");
@@ -16,13 +22,11 @@ describe("store taxonomy controls",()=>{
     expect(inquiry).toContain("Cuéntanos qué producto necesitas");
     expect(source).not.toContain("Configuración técnica necesaria");
   });
-  it("uses product families in navigation and a separate prefabricated-material filter",()=>{
+  it("uses an elevation-only family navigation without unrelated material filters",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("Familias de producto");
-    expect(source).toContain("Tipo de prefabricado");
-    expect(source).toContain("Hormigón");
-    expect(source).toContain("Acero");
-    expect(source).toContain("Madera");
+    expect(source).toContain("Medios de elevación");
+    expect(source).not.toContain("Tipo de prefabricado");
     expect(source).not.toContain('title="Altura y líneas de vida"');
   });
   it("keeps commercial intelligence out of the public storefront",()=>{
@@ -66,9 +70,9 @@ describe("store taxonomy controls",()=>{
   });
   it("links the landing category chips to real filtered catalog views",()=>{
     const hero=readFileSync(join(process.cwd(),"components/v21/Hero.tsx"),"utf8");
-    expect(hero).toContain('/tienda?familia=epi');
-    expect(hero).toContain('/tienda?familia=corte');
-    expect(hero).toContain('/tienda?familia=fijacion');
-    expect(hero).toContain('/tienda?familia=elevacion');
+    expect(hero).toContain('/tienda?q=pinza');
+    expect(hero).toContain('/tienda?q=balancín');
+    expect(hero).toContain('/tienda?q=gancho');
+    expect(hero).toContain('/tienda?q=eslinga');
   });
 });

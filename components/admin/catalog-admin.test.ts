@@ -8,7 +8,7 @@ describe("catalog administration",()=>{
     for(const label of ["Coste de compra","Margen objetivo","Beneficio bruto","Proveedor","Bandeja operativa","Publicable"]){expect(source).toContain(label)}
     expect(source).toContain("/api/admin/catalog");
     expect(source).not.toContain("localStorage");
-    expect(source).toContain("Material / sistema");
+    expect(source).toContain("Elevación y manipulación");
     expect(source).toContain("Tipo de producto");
     expect(source).toContain("Estado de publicación");
     expect(source).toContain('statusFilter===\"todos\"');

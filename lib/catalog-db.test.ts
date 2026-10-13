@@ -16,7 +16,7 @@ describe("catalog database validation",()=>{
 
 describe("publication transition",()=>{
   it("rejects ready status without verified commercial evidence",()=>{
-    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
+    const source=catalogProducts[0];
     expect(()=>validatePublicationTransition(source,{status:"ready",costVerified:false})).toThrow("expediente");
     expect(()=>validatePublicationTransition(source,{status:"ready",cost:0})).toThrow("expediente");
   });
@@ -24,7 +24,7 @@ describe("publication transition",()=>{
 
 describe("catalog database merge",()=>{
   it("keeps audited product media while preserving admin commercial edits",()=>{
-    const source=catalogProducts.find(product=>product.id==="disco-diamante-230")!;
+    const source=catalogProducts[0];
     const stale={...source,imageUrl:"https://example.com/stale.jpg"};
     const commercial={...source.commercial,targetMarginPercent:41,status:"draft" as const,costVerified:false};
     const merged=mergeCatalogCommercial([{payload:stale,commercial}]).find(product=>product.id===source.id)!;

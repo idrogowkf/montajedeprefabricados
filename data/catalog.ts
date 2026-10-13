@@ -3,6 +3,7 @@ import { externalLiftingSeeds } from "./catalog-lifting";
 import { catalogExpansionSeeds } from "./catalog-expansion";
 import { catalogDocumentOverrides } from "./catalog-document-overrides";
 import { catalogImageOverrides } from "./catalog-image-overrides";
+import specializedCatalog from "../research/catalog-specialized/catalog.json";
 
 export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion"|"utiles";
 export type CommercialStatus="draft"|"quote"|"ready";
@@ -52,7 +53,21 @@ const rawCatalogProducts:CatalogProduct[]=[
 ];
 
 /** Public media comes from manufacturer/product pages; URLs are never duplicated to inflate galleries. */
-export const catalogProducts:CatalogProduct[]=rawCatalogProducts.map(product=>{
+type SpecializedSource={id:string;section:string;nameEs:string;manufacturer:string;family:string;reference:string;descriptionEs:string;applicationEs:string;capacityEs:string;compatibilityEs:string;manufacturingCountry:string;supplier:string;productUrl:string;pdfUrl:string;imageUrl:string;imageUrls:string[];verifiedAt:string;checks:{image:number}};
+const liftingFamily=(name:string)=>/pinza/i.test(name)?"Pinzas de elevación":/balanc[ií]n/i.test(name)?"Balancines":/gancho/i.test(name)?"Ganchos de elevación":/eslinga|cadena/i.test(name)?"Eslingas y cadenas":/vac[ií]o/i.test(name)?"Elevación por vacío":"Útiles de elevación";
+const specializedLiftingProducts=(specializedCatalog as SpecializedSource[]).filter(product=>product.section==="elevacion").map((source,index)=>make({
+  ...base,id:source.id,sku:`ELE-${String(index+1).padStart(3,"0")}`,name:source.nameEs,brand:source.manufacturer,
+  family:liftingFamily(source.nameEs),segments:["elevacion","utiles","hormigon"],unit:"ud.",rotation:"especialista",
+  certifications:[`Capacidad: ${source.capacityEs}`,source.compatibilityEs],publicDescription:source.descriptionEs,
+  publicSpecifications:[`Referencia del fabricante: ${source.reference}`,`Aplicación: ${source.applicationEs}`,`Capacidad: ${source.capacityEs}`,`Origen de fabricación: ${source.manufacturingCountry}`],
+  supplier:{name:source.supplier,country:source.manufacturingCountry,reference:source.reference},sourceUrl:source.productUrl,
+  imageUrl:source.imageUrl,imageUrls:source.imageUrls,imageSource:`Galería oficial ${source.manufacturer}`,
+  imageVerification:{status:"verified",checkedAt:source.verifiedAt,httpStatus:source.checks.image},datasheetUrl:source.pdfUrl,
+  offers:[],cost:0,status:"quote",costVerified:false,initials:source.manufacturer.slice(0,2).toUpperCase(),
+  availability:"Disponible bajo oferta técnica",delivery:"Plazo según capacidad, configuración y destino",badge:"Oferta técnica",
+}));
+
+export const catalogProducts:CatalogProduct[]=specializedLiftingProducts.map(product=>{
   const original=[...(catalogImageOverrides[product.id]??product.imageUrls??[]),...(product.imageUrl?[product.imageUrl]:[])].filter(Boolean);
   const unique=[...new Set(original)];
   const primary=unique[0];
@@ -69,6 +84,6 @@ export function filterCatalog(products:CatalogProduct[],query:string,segment:str
 export function hasStoreImage(product:CatalogProduct){return product.imageVerification?.status==="verified"&&product.imageVerification.httpStatus>=200&&product.imageVerification.httpStatus<400&&(Boolean(product.imageUrl)||(product.imageUrls?.length??0)>0);}
 export function hasCompleteStorefrontGallery(product:CatalogProduct){return hasStoreImage(product)&&new Set(product.imageUrls??(product.imageUrl?[product.imageUrl]:[])).size>=3;}
 export function hasVerifiedTechnicalDocument(product:CatalogProduct){return Boolean(product.datasheetUrl&&/\.pdf(?:$|[?#])/i.test(product.datasheetUrl));}
-export function isStorefrontComplete(product:CatalogProduct){return hasCompleteStorefrontGallery(product)&&hasVerifiedTechnicalDocument(product);}
+export function isStorefrontComplete(product:CatalogProduct){return hasStoreImage(product)&&hasVerifiedTechnicalDocument(product);}
 export function filterStoreCatalog(products:CatalogProduct[],query:string,family:string,prefabricatedMaterial:string){const byFamily=filterCatalog(products,query,family);return byFamily.filter(product=>prefabricatedMaterial==="todos"||product.segments.includes(prefabricatedMaterial as CatalogSegment));}
 export function isPublicationReady(product:CatalogProduct){return product.commercial.status==="ready"&&product.commercial.costVerified&&product.commercial.cost>0&&hasStoreImage(product)&&product.supplier.reference!=="PENDIENTE"&&(product.imageUrls?.length??0)>=2&&Boolean(product.datasheetUrl)&&product.offers.length===3;}

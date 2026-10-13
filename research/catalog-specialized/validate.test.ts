@@ -8,7 +8,7 @@ const make=(section:SpecializedSection,index:number):SpecializedProduct=>({
  originalName:"Original",nameEs:`Producto profesional ${index}`,descriptionEs:"Descripción técnica en español para montaje prefabricado.",
  applicationEs:"Montaje de piezas prefabricadas",capacityEs:"Según configuración",compatibilityEs:"Consultar ficha técnica",
  manufacturingCountry:index%2?"España":"Alemania",originPriority:index%2?1:2,originEvidenceUrl:`https://example.com/origen/${index}`,
- supplier:"Fabricante oficial",productUrl:`https://example.com/producto/${index}`,pdfUrl:`https://example.com/ficha/${index}.pdf`,imageUrl:`https://example.com/imagen/${index}.jpg`,
+ supplier:"Fabricante oficial",productUrl:`https://example.com/producto/${index}`,pdfUrl:`https://example.com/ficha/${index}.pdf`,imageUrl:`https://example.com/imagen/${index}.jpg`,imageUrls:[`https://example.com/imagen/${index}.jpg`],
  verifiedAt:"2026-10-13",checks:{product:200,pdf:200,image:200,pdfSignature:true,imageMime:"image/jpeg"},
 });
 

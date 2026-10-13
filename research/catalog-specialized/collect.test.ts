@@ -23,7 +23,9 @@ describe("specialized official source parsers",()=>{
   expect(parseWimagProduct("https://wimag.de/en/pipe-suspension-grab.html",html)).toMatchObject({manufacturer:"WIMAG",reference:"110",nameEs:"Pinza suspendida para tubos WIMAG 110",manufacturingCountry:"Alemania",pdfUrl:"https://wimag.de/fileadmin/user_upload/110-Pipe-Suspension-Grab.pdf"});
  });
  it("ignores video placeholders before the actual WIMAG product image",()=>{
-  const html=`<h2>110 | Pipe Suspension Grab</h2><img src="/fileadmin/user_upload/youtube-placeholder.jpg"><img src="/fileadmin/user_upload/110-pipe-grab.jpg"><a href="/fileadmin/user_upload/110-datasheet.pdf">Ficha</a>`;
-  expect(parseWimagProduct("https://wimag.de/en/pipe-suspension-grab.html",html).imageUrl).toBe("https://wimag.de/fileadmin/user_upload/110-pipe-grab.jpg");
+  const html=`<h2>110 | Pipe Suspension Grab</h2><img src="/fileadmin/user_upload/youtube-placeholder.jpg"><a href="/fileadmin/_processed_/1/2/110-piece.jpg" data-fancybox="gallery[1]"><img src="/fileadmin/user_upload/110-piece-thumb.jpg"></a><a href="/fileadmin/user_upload/110-in-use.jpg" data-fancybox="gallery[1]"><img src="/fileadmin/user_upload/110-in-use-thumb.jpg"></a><a href="/fileadmin/user_upload/110-datasheet.pdf"><img src="/fileadmin/_processed_/110-datasheet.png"></a>`;
+  const product=parseWimagProduct("https://wimag.de/en/pipe-suspension-grab.html",html);
+  expect(product.imageUrl).toBe("https://wimag.de/fileadmin/_processed_/1/2/110-piece.jpg");
+  expect(product.imageUrls).toEqual(["https://wimag.de/fileadmin/_processed_/1/2/110-piece.jpg","https://wimag.de/fileadmin/user_upload/110-in-use.jpg"]);
  });
 });

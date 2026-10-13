@@ -58,7 +58,7 @@ async function applyCatalogMigrations(){const db=sql();const migration="2026-10-
 }
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
- const seedVersion="2026-10-07-catalog-editor-v4";
+ const seedVersion="2026-10-13-lifting-only-v1";
  const alreadySeeded=await db`SELECT id FROM catalog_migrations WHERE id=${seedVersion}`;
  if(!alreadySeeded.length){
   const productRows=catalogProducts.map(product=>({id:product.id,sku:product.sku,payload:product,commercial:product.commercial}));
@@ -81,7 +81,7 @@ export function mergeCatalogCommercial(rows:Array<{payload:CatalogProduct&{admin
 let seedPromise:Promise<void>|null=null;
 async function readCatalogRows(){return sql()`SELECT payload,commercial FROM catalog_products ORDER BY sku`;}
 async function recoverMissingCatalogSchema(error:unknown){if(!isMissingCatalogSchemaError(error))throw error;seedPromise??=seedCatalog().catch(cause=>{seedPromise=null;throw cause;});await seedPromise;}
-export async function getCatalog():Promise<CatalogProduct[]>{let rows;try{rows=await readCatalogRows();}catch(error){await recoverMissingCatalogSchema(error);rows=await readCatalogRows();}return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
+export async function getCatalog():Promise<CatalogProduct[]>{seedPromise??=seedCatalog().catch(error=>{seedPromise=null;throw error;});await seedPromise;const rows=await readCatalogRows();return mergeCatalogCommercial(rows as Array<{payload:CatalogProduct;commercial:CatalogProduct["commercial"]}>);}
 
 export async function updateCatalogProducts(ids:string[],input:{commercial?:Record<string,unknown>;content?:Record<string,unknown>},actorId:string){
  const unique=[...new Set(ids.map(String).filter(Boolean))];if(!unique.length)throw new Error("Selecciona al menos un producto");

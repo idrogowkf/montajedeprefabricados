@@ -30,4 +30,9 @@ describe("specialized catalog validation",()=>{
   expect(result.errors.join("\n")).toMatch(/PDF/i);
   expect(result.errors.join("\n")).toMatch(/inglés/i);
  });
+ it("does not treat an exact alphanumeric product reference as English copy",()=>{
+  const products=(Object.entries(quotas) as [SpecializedSection,number][]).flatMap(([section,count])=>Array.from({length:count},(_,i)=>make(section,i)));
+  products[0]={...products[0],reference:"GLUE-ANCHOR",nameEs:"Punto de anclaje Fabricante GLUE-ANCHOR"};
+  expect(validateSpecializedCatalog(products).errors).not.toContain(`${products[0].id}: contenido visible en inglés`);
+ });
 });

@@ -22,4 +22,8 @@ describe("specialized official source parsers",()=>{
   const html=`<h2>110 | Pipe Suspension Grab</h2><p>For moving prefabricated manholes.</p><img src="/fileadmin/user_upload/110-grab.jpg"><a href="/fileadmin/user_upload/110-Pipe-Suspension-Grab.pdf">Download datasheet</a>`;
   expect(parseWimagProduct("https://wimag.de/en/pipe-suspension-grab.html",html)).toMatchObject({manufacturer:"WIMAG",reference:"110",nameEs:"Pinza suspendida para tubos WIMAG 110",manufacturingCountry:"Alemania",pdfUrl:"https://wimag.de/fileadmin/user_upload/110-Pipe-Suspension-Grab.pdf"});
  });
+ it("ignores video placeholders before the actual WIMAG product image",()=>{
+  const html=`<h2>110 | Pipe Suspension Grab</h2><img src="/fileadmin/user_upload/youtube-placeholder.jpg"><img src="/fileadmin/user_upload/110-pipe-grab.jpg"><a href="/fileadmin/user_upload/110-datasheet.pdf">Ficha</a>`;
+  expect(parseWimagProduct("https://wimag.de/en/pipe-suspension-grab.html",html).imageUrl).toBe("https://wimag.de/fileadmin/user_upload/110-pipe-grab.jpg");
+ });
 });

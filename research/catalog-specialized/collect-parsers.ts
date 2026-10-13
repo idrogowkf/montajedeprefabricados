@@ -28,6 +28,6 @@ const wimagNames:Record<string,string>={
 export function parseWimagProduct(productUrl:string,html:string):SourceCandidate{
  const slug=new URL(productUrl).pathname.split("/").filter(Boolean).at(-1)?.replace(/\.html$/i,"")??"producto";const heading=clean(html.match(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/i)?.[1]??"");
  const reference=heading.match(/\b(\d{2,4}(?:\s\d{3})?)\s*\|/)?.[1]?.replace(/\s+/g,"-")??html.match(/\/([0-9]{2,4})[-_][^"']+\.(?:pdf|jpg|png)/i)?.[1]??slug.toUpperCase();
- const base=wimagNames[slug]??`Equipo de manipulación ${slug.replaceAll("-"," ")}`;const image=html.match(/(?:src|href)=["']([^"']*(?:user_upload|_processed_)[^"']*\.(?:jpg|jpeg|png|webp))["']/i)?.[1]??"";
+ const base=wimagNames[slug]??`Equipo de manipulación ${slug.replaceAll("-"," ")}`;const images=[...html.matchAll(/(?:src|href)=["']([^"']*(?:user_upload|_processed_)[^"']*\.(?:jpg|jpeg|png|webp))["']/gi)].map(match=>match[1]).filter(value=>!/(?:youtube|placeholder|logo|appicon|qr[-_]?code)/i.test(value));const image=images.find(value=>value.toLowerCase().includes(reference.toLowerCase().split("-")[0]))??images[0]??"";
  return {manufacturer:"WIMAG",reference,originalName:heading||slug,nameEs:`${base} WIMAG ${reference}`,descriptionEs:`Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.`,capacityEs:"Según configuración",imageUrl:absolute(image,productUrl),pdfUrl:pdf(html,productUrl),productUrl,manufacturingCountry:"Alemania"};
 }

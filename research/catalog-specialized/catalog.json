@@ -3806,8 +3806,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/115_Pipe_Laying_Hook.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_-_Kopie_e514c854b4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_-_Kopie_e514c854b4.jpg",
       "https://wimag.de/fileadmin/_processed_/5/5/csm_115-RHK_-_Kopie_9f09597941.jpg",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_115-RHSV_-_Kopie_16dba12d95.jpg"
@@ -3841,8 +3839,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/125-Pipe-Pulling-Device.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/125-01_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/125-01_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/3/b/csm_125-05_-_Kopie_f738e74f35.jpg"
     ],
@@ -3906,10 +3902,9 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/manhole-housing-grab.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/137-Manhole-Housing-Grab.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -3977,8 +3972,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/118_Pipe_Chain_Sling_01.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/e/csm_118-02_-_Kopie_0699a26411.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/e/csm_118-02_-_Kopie_0699a26411.jpg",
       "https://wimag.de/fileadmin/_processed_/b/b/csm_118-01_-_Kopie_c8be0dbf23.jpg"
     ],
@@ -4011,13 +4004,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/128-Pipe-Puller.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/d/a/csm_128-Rechteckrohr_-_Kopie_72f4657536.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/d/a/csm_128-Rechteckrohr_-_Kopie_72f4657536.jpg",
       "https://wimag.de/fileadmin/_processed_/b/a/csm_128-Fernsteuerung_-_Kopie_45e120449e.jpg",
       "https://wimag.de/fileadmin/user_upload/128-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/c/csm_128-01_-_Kopie_27b6080cf6.jpg",
-      "https://wimag.de/fileadmin/_processed_/2/5/csm_128-02_-_Kopie_f75a355b40.jpg"
+      "https://wimag.de/fileadmin/_processed_/2/5/csm_128-02_-_Kopie_f75a355b40.jpg",
+      "https://wimag.de/fileadmin/_processed_/7/b/csm_128-Drachenprofil_-_Kopie_4f149cfe7b.jpg",
+      "https://wimag.de/fileadmin/_processed_/0/8/csm_128-07_-_Kopie_320de0f397.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4048,13 +4041,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4085,13 +4078,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4122,13 +4115,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4159,13 +4152,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4196,13 +4189,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4233,13 +4226,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4270,13 +4263,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4307,13 +4300,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/112-Pipe-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/1/d/csm_112-05_-_Kopie_0d948075f4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/1/d/csm_112-05_-_Kopie_0d948075f4.jpg",
       "https://wimag.de/fileadmin/user_upload/112-RG3_5_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/c/7/csm_112-RG-10_-_Kopie_205899e67a.jpg",
       "https://wimag.de/fileadmin/_processed_/e/7/csm_112-04_-_Kopie_a4156fe59b.jpg",
-      "https://wimag.de/fileadmin/_processed_/e/6/csm_112_-_Kopie_2fe4ba3d55.jpg"
+      "https://wimag.de/fileadmin/_processed_/e/6/csm_112_-_Kopie_2fe4ba3d55.jpg",
+      "https://wimag.de/fileadmin/_processed_/5/b/csm_112-01_-_Kopie_660d0d935e.jpg",
+      "https://wimag.de/fileadmin/user_upload/112-02_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4376,10 +4369,8 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/pipe-layer.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/129-Pipe-Layer.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/3/7/csm_Rohrleger-WIMAG-04_4b1fc431d0.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/7/csm_Rohrleger-WIMAG-04_4b1fc431d0.jpg",
       "https://wimag.de/fileadmin/user_upload/Rohrleger-WIMAG-03.jpg",
       "https://wimag.de/fileadmin/user_upload/Rohrleger-WIMAG-02.jpg"
@@ -4413,8 +4404,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/135-Road-Gully-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/135-03_-_Kopie_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/135-03_-_Kopie_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/135-13_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/135-05_-_Kopie_-_Kopie.jpg",
@@ -4449,8 +4438,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/140-Aluminium-Tripod.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/8/0/csm_140-01_-_Kopie_721e62c0bd.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/e/2/csm_P1000145_a553689527.jpg",
       "https://wimag.de/fileadmin/_processed_/0/6/csm_P1130106_96751b4289.jpg",
       "https://wimag.de/fileadmin/_processed_/8/0/csm_140-01_-_Kopie_721e62c0bd.jpg",
@@ -4486,8 +4473,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/113-Manhole-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/f/f/csm_113-01-1_-_Kopie_de16a1c502.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/f/f/csm_113-01-1_-_Kopie_de16a1c502.jpg",
       "https://wimag.de/fileadmin/_processed_/1/b/csm_113-02-1_-_Kopie_564f6bc573.jpg"
     ],
@@ -4518,10 +4503,9 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/mini-pipe-layer.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/124_Mini_Pipe_Layer.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/d/d/csm_124_Mini_Pipe_Layer_39fbf922ee.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/d/d/csm_124_Mini_Pipe_Layer_39fbf922ee.png"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4586,8 +4570,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/136-Internal-Manhole-Housing-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/0/csm_136-03_-_Kopie_a2cc8a50cc.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/0/csm_136-03_-_Kopie_a2cc8a50cc.jpg",
       "https://wimag.de/fileadmin/user_upload/136-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/1/f/csm_136-02_-_Kopie_7a76788381.jpg",
@@ -4622,8 +4604,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/144-Aluminium-Tripod-with-Winch.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/140-144-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/aludreibock-neu.jpg",
       "https://wimag.de/fileadmin/user_upload/140-144-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/140-144-04_-_Kopie.jpg"
@@ -4688,8 +4668,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/305-Clamp-For-Upright-Slabs.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/3/1/csm_305-3-neu_-_Kopie_190572f050.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/1/csm_305-3-neu_-_Kopie_190572f050.jpg",
       "https://wimag.de/fileadmin/user_upload/305-2_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/305-5_-_Kopie.jpg",
@@ -4725,13 +4703,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/315-Flat-Grab.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/315-04_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/315-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/7/csm_315-03_-_Kopie_fc352b0f27.jpg",
       "https://wimag.de/fileadmin/_processed_/7/4/csm_315-02_-_Kopie_562570fbc5.jpg",
       "https://wimag.de/fileadmin/user_upload/315-06_-_Kopie.jpg",
-      "https://wimag.de/fileadmin/_processed_/d/8/csm__1190006_9a89423dca.jpg"
+      "https://wimag.de/fileadmin/_processed_/d/8/csm__1190006_9a89423dca.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/1/csm__1180843_d561b3f3a2.jpg",
+      "https://wimag.de/fileadmin/user_upload/315-Sonder_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4760,10 +4738,8 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/floor-panel-lifting-gear.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/330-350-Wall-Panel-Lifting-Gear.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/c/6/csm_350-DeVeZa-4_-_Kopie_7e88da7802.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/6/csm_350-DeVeZa-4_-_Kopie_7e88da7802.jpg",
       "https://wimag.de/fileadmin/_processed_/6/b/csm_350-DeVeZa-3_-_Kopie_d19c30601e.jpg"
     ],
@@ -4796,8 +4772,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/383-Hollow-Block-Clamp.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/383-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/383-02_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
@@ -4827,10 +4801,10 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/motor-for-manual-winch.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/206-Motor-for-Manual-Winch.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Freimuth_Dietmar_S.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/9/c/csm_206-Motor-for-Manual-Winch_b8c07b2cf2.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Freimuth_Dietmar_S.jpg",
-      "https://wimag.de/fileadmin/_processed_/c/a/csm_QR-Dietmar-Freimuthe_287722a015.png"
+      "https://wimag.de/fileadmin/_processed_/f/0/csm_kurbelmotor_7118c4f04a.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/c/csm_206-Motor-for-Manual-Winch_b8c07b2cf2.png"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -4861,8 +4835,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/307-Border-Stone-Lifter.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/9/8/csm_307-Zubehoer_-_Kopie_048c4eff81.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/9/8/csm_307-Zubehoer_-_Kopie_048c4eff81.jpg",
       "https://wimag.de/fileadmin/user_upload/307.jpg"
     ],
@@ -4895,8 +4867,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/316_Boulder_Grab_01.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/316-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/316-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/e/csm_316-01_-_Kopie_85e5d18e4c.jpg"
     ],
@@ -4929,8 +4899,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/355_Gutter_Stone_Clamp.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/355-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/355-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/355-03_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/7/e/csm_355-01_-_Kopie_9681c11e1a.jpg"
@@ -4964,13 +4932,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/405_Lifting_Beam.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/405-18_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/405-18_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/405-17_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/b/b/csm_405000K12_f3d2b7784d.jpg",
       "https://wimag.de/fileadmin/_processed_/7/f/csm_405000K2_5d2705ac6d.jpg",
-      "https://wimag.de/fileadmin/_processed_/2/1/csm_405510K_0e08dd8f28.jpg"
+      "https://wimag.de/fileadmin/_processed_/2/1/csm_405510K_0e08dd8f28.jpg",
+      "https://wimag.de/fileadmin/user_upload/405000K8.jpg",
+      "https://wimag.de/fileadmin/user_upload/405550Kneu.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5032,8 +5000,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/308-Kerb-Stone-Lifter.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/2/a/csm_308-BSH-120_-_Kopie_1884fee4d6.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/2/a/csm_308-BSH-120_-_Kopie_1884fee4d6.jpg",
       "https://wimag.de/fileadmin/_processed_/8/9/csm_308-BSH-02_-_Kopie_6c57efee53.jpg",
       "https://wimag.de/fileadmin/_processed_/b/8/csm_308-BSH-01_-_Kopie_dabfcebafc.jpg",
@@ -5068,13 +5034,12 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/380-Stone-Clamp.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/6/5/csm_380-03-1_-_Kopie_9e304548dc.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/6/5/csm_380-03-1_-_Kopie_9e304548dc.jpg",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_380-03_-_Kopie_695068330d.jpg",
       "https://wimag.de/fileadmin/_processed_/9/a/csm_380-cad_-_Kopie_7145e08729.jpg",
       "https://wimag.de/fileadmin/user_upload/380-04_-_Kopie.jpg",
-      "https://wimag.de/fileadmin/user_upload/380-01_-_Kopie.jpg"
+      "https://wimag.de/fileadmin/user_upload/380-01_-_Kopie.jpg",
+      "https://wimag.de/fileadmin/user_upload/380-02_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5103,10 +5068,10 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/aluminium-lifting-beam.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/410-Aluminium-Lifting-Beam.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/4/5/csm_410-Aluminium-Lifting-Beam_9136520242.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/2/9/csm_alutraverse_6e163d6da3.jpg",
+      "https://wimag.de/fileadmin/_processed_/4/5/csm_410-Aluminium-Lifting-Beam_9136520242.png"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5137,8 +5102,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/303-Block-Clamp.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/303-01_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/303-01_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/303-04_-_Kopie.jpg"
     ],
@@ -5171,8 +5134,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/309_Screw_Clamp.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/9/3/csm_309-neu_-_Kopie_918e0c14ad.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/9/3/csm_309-neu_-_Kopie_918e0c14ad.jpg",
       "https://wimag.de/fileadmin/_processed_/7/8/csm_309_-_Kopie_a15b4c2865.jpg"
     ],
@@ -5205,8 +5166,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/382-Stone-Lifter.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/382-05_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/382-05_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/7/8/csm_382-Steinheber_-_Kopie_bc8d82c54c.jpg",
       "https://wimag.de/fileadmin/user_upload/382-06_-_Kopie.jpg",
@@ -5241,13 +5200,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/422_Load_Rotating_Beam.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/b/f/csm_422-WTVE_3D_-_Kopie_38da523665.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/b/f/csm_422-WTVE_3D_-_Kopie_38da523665.jpg",
       "https://wimag.de/fileadmin/_processed_/1/7/csm_422-WTV_3D_-_Kopie_3a391f4e6e.jpg",
       "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-03_-_Kopie_e894ea35af.jpg",
       "https://wimag.de/fileadmin/_processed_/9/6/csm_422-S-05_-_Kopie_132ee539f7.jpg",
-      "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-04_-_Kopie_4b1a7d7135.jpg"
+      "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-04_-_Kopie_4b1a7d7135.jpg",
+      "https://wimag.de/fileadmin/user_upload/422-05_-_Kopie.jpg",
+      "https://wimag.de/fileadmin/user_upload/422-03_-_Kopie.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5278,8 +5237,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/525-Aluminium-Fourleg.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/b/csm_525-02_-_Kopie_48e38a379f.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/b/csm_525-02_-_Kopie_48e38a379f.jpg",
       "https://wimag.de/fileadmin/_processed_/4/9/csm_525-01_-_Kopie_a0f1ccb981.jpg"
     ],
@@ -5312,8 +5269,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/540-Travelling-Crane.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/540-04-1.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/540-04-1.jpg",
       "https://wimag.de/fileadmin/user_upload/540-06-1.jpg",
       "https://wimag.de/fileadmin/user_upload/540-05-1.jpg",
@@ -5348,8 +5303,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/526-Mobile-Aluminium-Fourleg.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/526-05_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/526-05_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/2/e/csm_526-01_-_Kopie_9af1e6cbc8.jpg",
       "https://wimag.de/fileadmin/_processed_/a/d/csm_526-03_-_Kopie_7d36fe5b1d.jpg",
@@ -5385,8 +5338,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/550-Aluminium-Travelling-Crane.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/550-02-neu-2017.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/550-02-neu-2017.jpg"
     ],
     "verifiedAt": "2026-10-13",
@@ -5418,13 +5369,12 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/530_Aluminium_Gantry_Crane.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/530-2-Traeger_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/530-2-Traeger_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/a/2/csm_530-01-neu_-_Kopie_847a2cca8e.jpg",
       "https://wimag.de/fileadmin/_processed_/3/0/csm_530-03_-_Kopie_4ef5ca128c.jpg",
       "https://wimag.de/fileadmin/_processed_/d/3/csm_P1160517_87b41fb766.jpg",
-      "https://wimag.de/fileadmin/_processed_/f/f/csm__1160514_ae94cedfba.jpg"
+      "https://wimag.de/fileadmin/_processed_/f/f/csm__1160514_ae94cedfba.jpg",
+      "https://wimag.de/fileadmin/_processed_/2/7/csm__1160515_fc7a2e3446.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5455,8 +5405,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/555-Free-Standing-Mobile-Jib-Crane.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/5/b/csm_555-01-2016_0d344365e4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/5/b/csm_555-01-2016_0d344365e4.jpg",
       "https://wimag.de/fileadmin/_processed_/2/3/csm_P1170627__2__b61b43a1a9.jpg"
     ],
@@ -5487,10 +5435,8 @@
     "supplier": "WIMAG (fabricante oficial)",
     "productUrl": "https://wimag.de/en/aluminium-crane.html",
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/520_Alu-Ruck-Zuck.pdf",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/4/8/csm__1100942_1abc5f5ce3.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/4/8/csm__1100942_1abc5f5ce3.jpg",
       "https://wimag.de/fileadmin/_processed_/2/d/csm_P1180250-1_e5b203ad24.jpg"
     ],
@@ -5523,13 +5469,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/535-Mobile-Aluminium-Crane.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/4/a/csm_535-neu-Transportstellung-3D_8e42b14a1d.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_535-neu-Transportstellung-3D_8e42b14a1d.jpg",
       "https://wimag.de/fileadmin/_processed_/b/8/csm_535-neu-Masse_80c460e57d.jpg",
       "https://wimag.de/fileadmin/_processed_/e/5/csm_535-neu-Masse-3D_f698be478e.jpg",
       "https://wimag.de/fileadmin/_processed_/a/7/csm_535-neu-Aufstellhilfe_7990361fe7.jpg",
-      "https://wimag.de/fileadmin/user_upload/535-Gelaenderad.jpg"
+      "https://wimag.de/fileadmin/user_upload/535-Gelaenderad.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/8/csm_535-03_-_Kopie_af56318d4b.jpg",
+      "https://wimag.de/fileadmin/_processed_/5/3/csm_535-01_-_Kopie_9e85928512.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5560,13 +5506,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/810-Alpha-Levator_01.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/810-2-neu.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/810-2-neu.jpg",
       "https://wimag.de/fileadmin/user_upload/810-02-neu.jpg",
       "https://wimag.de/fileadmin/_processed_/1/6/csm_810-01_cb74d2153a.jpg",
       "https://wimag.de/fileadmin/_processed_/9/2/csm_810-03_fa3b694a86.jpg",
-      "https://wimag.de/fileadmin/_processed_/4/4/csm_810-02_d63ccbedc6.jpg"
+      "https://wimag.de/fileadmin/_processed_/4/4/csm_810-02_d63ccbedc6.jpg",
+      "https://wimag.de/fileadmin/user_upload/810-03-neu.jpg",
+      "https://wimag.de/fileadmin/_processed_/0/6/csm_810-04_27d4dd9740.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5597,8 +5543,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/819_Turbo-H-Levator_02.pdf",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/819.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/819.jpg",
       "https://wimag.de/fileadmin/_processed_/4/7/csm__1090914_f67e2d7e0b.jpg"
     ],
@@ -5631,8 +5575,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/816_Beta-Levator_01.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/3/4/csm_816-02_56cbeb7a4a.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/4/csm_816-02_56cbeb7a4a.jpg",
       "https://wimag.de/fileadmin/_processed_/a/b/csm_816-04_0c7acebb69.jpg",
       "https://wimag.de/fileadmin/_processed_/2/4/csm__1150351__3__620bd1abb1.jpg"
@@ -5666,13 +5608,12 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/820_Gamma-Levator_01.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/a/4/csm_820-neu-mit_SP_500_79457bea76.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/a/4/csm_820-neu-mit_SP_500_79457bea76.jpg",
       "https://wimag.de/fileadmin/_processed_/3/b/csm_P1060343_62c0fe79f4.jpg",
       "https://wimag.de/fileadmin/_processed_/e/7/csm_820-S-06_48e50c1655.jpg",
       "https://wimag.de/fileadmin/_processed_/d/5/csm_820-neu_fuer_Rohre_19f1340a1c.jpg",
-      "https://wimag.de/fileadmin/_processed_/c/7/csm_820-neu-8_3014567e1a.jpg"
+      "https://wimag.de/fileadmin/_processed_/c/7/csm_820-neu-8_3014567e1a.jpg",
+      "https://wimag.de/fileadmin/_processed_/8/f/csm_820-neu-9_3726a0387c.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {
@@ -5703,8 +5644,6 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/817_Beta_H-Levator-2023_e.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/1/e/csm_817_100_Beta_H-Levator_b31a976e7e.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/1/e/csm_817_100_Beta_H-Levator_b31a976e7e.jpg",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_817-01_7b03dc132b.jpg"
     ],
@@ -5737,13 +5676,13 @@
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/818_Turbo_M-Levator_03.pdf",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/2/1/csm_818-1-M-120_a734b980a2.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/2/1/csm_818-1-M-120_a734b980a2.jpg",
       "https://wimag.de/fileadmin/user_upload/818-06.jpg",
       "https://wimag.de/fileadmin/_processed_/a/d/csm_818-01_ec5abe446e.jpg",
       "https://wimag.de/fileadmin/user_upload/818-1-M-120-12-neu.jpg",
-      "https://wimag.de/fileadmin/_processed_/d/6/csm_818-1-M-120-13-neu_b758e7ff7b.jpg"
+      "https://wimag.de/fileadmin/_processed_/d/6/csm_818-1-M-120-13-neu_b758e7ff7b.jpg",
+      "https://wimag.de/fileadmin/_processed_/f/2/csm_818-000-neu_2019_bf807f0306.jpg",
+      "https://wimag.de/fileadmin/user_upload/818-Saugplatte_Bordsteine.jpg"
     ],
     "verifiedAt": "2026-10-13",
     "checks": {

@@ -26,8 +26,14 @@ const wimagNames:Record<string,string>={
  "pipe-suspension-grab":"Pinza suspendida para tubos","manhole-clamp":"Pinza para pozos","pipe-laying-hook":"Gancho para colocación de tubos","round-clamp":"Pinza para elementos redondos","manhole-housing-grab":"Pinza para cuerpos de pozo","pipe-chain-sling":"Eslinga de cadena para tubos","hydro-grab":"Pinza hidráulica","clamp-for-upright-slabs":"Pinza para placas verticales","turbo-m-levator":"Elevador por vacío Turbo M","turbo-h-levator":"Elevador por vacío Turbo H","flat-grab":"Pinza plana","lifting-beam":"Balancín de elevación",
 };
 export function parseWimagProduct(productUrl:string,html:string):SourceCandidate{
- const slug=new URL(productUrl).pathname.split("/").filter(Boolean).at(-1)?.replace(/\.html$/i,"")??"producto";const heading=clean(html.match(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/i)?.[1]??"");
+ const slug=new URL(productUrl).pathname.split("/").filter(Boolean).at(-1)?.replace(/\.html$/i,"")??"producto";
+ const heading=clean(html.match(/<h[12][^>]*>([\s\S]*?)<\/h[12]>/i)?.[1]??"");
  const reference=heading.match(/\b(\d{2,4}(?:\s\d{3})?)\s*\|/)?.[1]?.replace(/\s+/g,"-")??html.match(/\/([0-9]{2,4})[-_][^"']+\.(?:pdf|jpg|png)/i)?.[1]??slug.toUpperCase();
- const base=wimagNames[slug]??`Equipo de manipulación ${slug.replaceAll("-"," ")}`;const gallery=[...html.matchAll(/<a[^>]+href=["']([^"']+\.(?:jpg|jpeg|png|webp))["'][^>]+data-fancybox=["']gallery[^"']*["']/gi)].map(match=>absolute(match[1],productUrl));const fallback=[...html.matchAll(/(?:src|href)=["']([^"']*(?:user_upload|_processed_)[^"']*\.(?:jpg|jpeg|png|webp))["']/gi)].map(match=>absolute(match[1],productUrl)).filter(value=>!/(?:youtube|placeholder|logo|appicon|qr[-_]?code|datasheet)/i.test(value));const imageUrls=[...new Set((gallery.length?gallery:fallback).filter(Boolean))].slice(0,7);const image=imageUrls.find(value=>value.toLowerCase().includes(reference.toLowerCase().split("-")[0]))??imageUrls[0]??"";
+ const base=wimagNames[slug]??`Equipo de manipulación ${slug.replaceAll("-"," ")}`;
+ const invalidImage=/(?:youtube|placeholder|logo|appicon|wimag-neg|qr[-_]?|krug[_-]?marco|marco[_-]?krug|freimuth[_-]?dietmar|dietmar[_-]?freimuth|made-in-germany)/i;
+ const gallery=[...html.matchAll(/<a\b([^>]*)>/gi)].flatMap(match=>{const attrs=match[1];if(!/data-fancybox=["']gallery/i.test(attrs))return[];const href=attrs.match(/href=["']([^"']+\.(?:jpg|jpeg|png|webp))["']/i)?.[1];return href?[absolute(href,productUrl)]:[];}).filter(value=>!invalidImage.test(value));
+ const fallback=[...html.matchAll(/(?:src|href)=["']([^"']*(?:user_upload|_processed_)[^"']*\.(?:jpg|jpeg|png|webp))["']/gi)].map(match=>absolute(match[1],productUrl)).filter(value=>!invalidImage.test(value));
+ const imageUrls=[...new Set((gallery.length?gallery:fallback).filter(Boolean))].slice(0,7);
+ const image=imageUrls.find(value=>value.toLowerCase().includes(reference.toLowerCase().split("-")[0]))??imageUrls[0]??"";
  return {manufacturer:"WIMAG",reference,originalName:heading||slug,nameEs:`${base} WIMAG ${reference}`,descriptionEs:`Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.`,capacityEs:"Según configuración",imageUrl:image,imageUrls,pdfUrl:pdf(html,productUrl),productUrl,manufacturingCountry:"Alemania"};
 }

@@ -28,4 +28,15 @@ describe("specialized official source parsers",()=>{
   expect(product.imageUrl).toBe("https://wimag.de/fileadmin/_processed_/1/2/110-piece.jpg");
   expect(product.imageUrls).toEqual(["https://wimag.de/fileadmin/_processed_/1/2/110-piece.jpg","https://wimag.de/fileadmin/user_upload/110-in-use.jpg"]);
  });
+ it("never uses WIMAG staff portraits or QR codes as product images",()=>{
+  const html=`<h2>115 | Pipe Laying Hook</h2><img src="/fileadmin/user_upload/Krug_Marco_.jpg"><img src="/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"><img src="/fileadmin/_processed_/5/f/csm_115-RHSV-1_e514c854b4.jpg"><a href="/fileadmin/user_upload/115.pdf">Ficha</a>`;
+  const product=parseWimagProduct("https://wimag.de/en/pipe-laying-hook.html",html);
+  expect(product.imageUrl).toBe("https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_e514c854b4.jpg");
+  expect(product.imageUrls).toEqual(["https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_e514c854b4.jpg"]);
+ });
+ it("uses the datasheet preview only when the WIMAG page has no product photograph",()=>{
+  const html=`<h2>137 | Manhole Housing Grab</h2><img src="/fileadmin/user_upload/Krug_Marco_.jpg"><img src="/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"><a href="/fileadmin/user_upload/137.pdf"><img src="/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png"></a><img src="/fileadmin/user_upload/wimag-neg.png">`;
+  const product=parseWimagProduct("https://wimag.de/en/manhole-housing-grab.html",html);
+  expect(product.imageUrls).toEqual(["https://wimag.de/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png"]);
+ });
 });

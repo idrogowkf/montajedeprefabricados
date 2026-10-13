@@ -49,8 +49,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_-_Kopie_e514c854b4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/5/f/csm_115-RHSV-1_-_Kopie_e514c854b4.jpg",
       "https://wimag.de/fileadmin/_processed_/5/5/csm_115-RHK_-_Kopie_9f09597941.jpg",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_115-RHSV_-_Kopie_16dba12d95.jpg"
@@ -71,8 +69,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/125-01_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/125-01_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/3/b/csm_125-05_-_Kopie_f738e74f35.jpg"
     ],
@@ -110,10 +106,9 @@
     "nameEs": "Pinza para cuerpos de pozo WIMAG 137",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/e/e/csm_137-Manhole-Housing-Grab_b0f4d6f111.png"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/137-Manhole-Housing-Grab.pdf",
     "productUrl": "https://wimag.de/en/manhole-housing-grab.html",
@@ -155,8 +150,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/e/csm_118-02_-_Kopie_0699a26411.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/e/csm_118-02_-_Kopie_0699a26411.jpg",
       "https://wimag.de/fileadmin/_processed_/b/b/csm_118-01_-_Kopie_c8be0dbf23.jpg"
     ],
@@ -176,13 +169,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/d/a/csm_128-Rechteckrohr_-_Kopie_72f4657536.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/d/a/csm_128-Rechteckrohr_-_Kopie_72f4657536.jpg",
       "https://wimag.de/fileadmin/_processed_/b/a/csm_128-Fernsteuerung_-_Kopie_45e120449e.jpg",
       "https://wimag.de/fileadmin/user_upload/128-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/c/csm_128-01_-_Kopie_27b6080cf6.jpg",
-      "https://wimag.de/fileadmin/_processed_/2/5/csm_128-02_-_Kopie_f75a355b40.jpg"
+      "https://wimag.de/fileadmin/_processed_/2/5/csm_128-02_-_Kopie_f75a355b40.jpg",
+      "https://wimag.de/fileadmin/_processed_/7/b/csm_128-Drachenprofil_-_Kopie_4f149cfe7b.jpg",
+      "https://wimag.de/fileadmin/_processed_/0/8/csm_128-07_-_Kopie_320de0f397.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/128-Pipe-Puller.pdf",
     "productUrl": "https://wimag.de/en/pipe-puller.html",
@@ -200,13 +193,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -224,13 +217,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -248,13 +241,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -272,13 +265,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -296,13 +289,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -320,13 +313,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -344,13 +337,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_134-01_-_Kopie_4281804e15.jpg",
       "https://wimag.de/fileadmin/_processed_/6/d/csm_134-02_-_Kopie_a96a1b3a46.jpg",
       "https://wimag.de/fileadmin/_processed_/3/5/csm_134-04_-_Kopie_1065a41531.jpg",
       "https://wimag.de/fileadmin/_processed_/c/4/csm_134-03_-_Kopie_13e38a9cb5.jpg",
-      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg"
+      "https://wimag.de/fileadmin/_processed_/6/f/csm_134-300_HG_mit_KIT_Betonrohr_e4c0698679.jpg",
+      "https://wimag.de/fileadmin/_processed_/b/2/csm_134-500_HG_mit_UNI_Greifer_2_d88fc9e0fe.jpg",
+      "https://wimag.de/fileadmin/user_upload/134-100_Hydraulischer_Greifer_Grundgeraet_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/134-Hydro-Grab.pdf",
     "productUrl": "https://wimag.de/en/hydro-grab.html",
@@ -368,13 +361,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/1/d/csm_112-05_-_Kopie_0d948075f4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/1/d/csm_112-05_-_Kopie_0d948075f4.jpg",
       "https://wimag.de/fileadmin/user_upload/112-RG3_5_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/c/7/csm_112-RG-10_-_Kopie_205899e67a.jpg",
       "https://wimag.de/fileadmin/_processed_/e/7/csm_112-04_-_Kopie_a4156fe59b.jpg",
-      "https://wimag.de/fileadmin/_processed_/e/6/csm_112_-_Kopie_2fe4ba3d55.jpg"
+      "https://wimag.de/fileadmin/_processed_/e/6/csm_112_-_Kopie_2fe4ba3d55.jpg",
+      "https://wimag.de/fileadmin/_processed_/5/b/csm_112-01_-_Kopie_660d0d935e.jpg",
+      "https://wimag.de/fileadmin/user_upload/112-02_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/112-Pipe-Grab.pdf",
     "productUrl": "https://wimag.de/en/pipe-grab.html",
@@ -411,10 +404,8 @@
     "nameEs": "Equipo de manipulación pipe layer WIMAG 129",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/3/7/csm_Rohrleger-WIMAG-04_4b1fc431d0.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/7/csm_Rohrleger-WIMAG-04_4b1fc431d0.jpg",
       "https://wimag.de/fileadmin/user_upload/Rohrleger-WIMAG-03.jpg",
       "https://wimag.de/fileadmin/user_upload/Rohrleger-WIMAG-02.jpg"
@@ -435,8 +426,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/135-03_-_Kopie_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/135-03_-_Kopie_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/135-13_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/135-05_-_Kopie_-_Kopie.jpg",
@@ -458,8 +447,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/8/0/csm_140-01_-_Kopie_721e62c0bd.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/e/2/csm_P1000145_a553689527.jpg",
       "https://wimag.de/fileadmin/_processed_/0/6/csm_P1130106_96751b4289.jpg",
       "https://wimag.de/fileadmin/_processed_/8/0/csm_140-01_-_Kopie_721e62c0bd.jpg",
@@ -482,8 +469,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/f/f/csm_113-01-1_-_Kopie_de16a1c502.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/f/f/csm_113-01-1_-_Kopie_de16a1c502.jpg",
       "https://wimag.de/fileadmin/_processed_/1/b/csm_113-02-1_-_Kopie_564f6bc573.jpg"
     ],
@@ -501,10 +486,9 @@
     "nameEs": "Equipo de manipulación mini pipe layer WIMAG 124",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/d/d/csm_124_Mini_Pipe_Layer_39fbf922ee.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/d/d/csm_124_Mini_Pipe_Layer_39fbf922ee.png"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/124_Mini_Pipe_Layer.pdf",
     "productUrl": "https://wimag.de/en/mini-pipe-layer.html",
@@ -543,8 +527,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/0/csm_136-03_-_Kopie_a2cc8a50cc.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/0/csm_136-03_-_Kopie_a2cc8a50cc.jpg",
       "https://wimag.de/fileadmin/user_upload/136-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/1/f/csm_136-02_-_Kopie_7a76788381.jpg",
@@ -566,8 +548,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/140-144-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/aludreibock-neu.jpg",
       "https://wimag.de/fileadmin/user_upload/140-144-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/140-144-04_-_Kopie.jpg"
@@ -606,8 +586,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/3/1/csm_305-3-neu_-_Kopie_190572f050.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/1/csm_305-3-neu_-_Kopie_190572f050.jpg",
       "https://wimag.de/fileadmin/user_upload/305-2_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/305-5_-_Kopie.jpg",
@@ -630,13 +608,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/315-04_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/315-04_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/7/csm_315-03_-_Kopie_fc352b0f27.jpg",
       "https://wimag.de/fileadmin/_processed_/7/4/csm_315-02_-_Kopie_562570fbc5.jpg",
       "https://wimag.de/fileadmin/user_upload/315-06_-_Kopie.jpg",
-      "https://wimag.de/fileadmin/_processed_/d/8/csm__1190006_9a89423dca.jpg"
+      "https://wimag.de/fileadmin/_processed_/d/8/csm__1190006_9a89423dca.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/1/csm__1180843_d561b3f3a2.jpg",
+      "https://wimag.de/fileadmin/user_upload/315-Sonder_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/315-Flat-Grab.pdf",
     "productUrl": "https://wimag.de/en/flat-grab.html",
@@ -652,10 +630,8 @@
     "nameEs": "Equipo de manipulación floor panel lifting gear WIMAG 330",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/c/6/csm_350-DeVeZa-4_-_Kopie_7e88da7802.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/6/csm_350-DeVeZa-4_-_Kopie_7e88da7802.jpg",
       "https://wimag.de/fileadmin/_processed_/6/b/csm_350-DeVeZa-3_-_Kopie_d19c30601e.jpg"
     ],
@@ -675,8 +651,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/383-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/383-02_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/383-Hollow-Block-Clamp.pdf",
@@ -693,10 +667,10 @@
     "nameEs": "Equipo de manipulación motor for manual winch WIMAG 206",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Freimuth_Dietmar_S.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/9/c/csm_206-Motor-for-Manual-Winch_b8c07b2cf2.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Freimuth_Dietmar_S.jpg",
-      "https://wimag.de/fileadmin/_processed_/c/a/csm_QR-Dietmar-Freimuthe_287722a015.png"
+      "https://wimag.de/fileadmin/_processed_/f/0/csm_kurbelmotor_7118c4f04a.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/c/csm_206-Motor-for-Manual-Winch_b8c07b2cf2.png"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/206-Motor-for-Manual-Winch.pdf",
     "productUrl": "https://wimag.de/en/motor-for-manual-winch.html",
@@ -714,8 +688,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/9/8/csm_307-Zubehoer_-_Kopie_048c4eff81.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/9/8/csm_307-Zubehoer_-_Kopie_048c4eff81.jpg",
       "https://wimag.de/fileadmin/user_upload/307.jpg"
     ],
@@ -735,8 +707,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/316-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/316-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/6/e/csm_316-01_-_Kopie_85e5d18e4c.jpg"
     ],
@@ -756,8 +726,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/355-02_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/355-02_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/355-03_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/7/e/csm_355-01_-_Kopie_9681c11e1a.jpg"
@@ -778,13 +746,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/405-18_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/405-18_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/405-17_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/b/b/csm_405000K12_f3d2b7784d.jpg",
       "https://wimag.de/fileadmin/_processed_/7/f/csm_405000K2_5d2705ac6d.jpg",
-      "https://wimag.de/fileadmin/_processed_/2/1/csm_405510K_0e08dd8f28.jpg"
+      "https://wimag.de/fileadmin/_processed_/2/1/csm_405510K_0e08dd8f28.jpg",
+      "https://wimag.de/fileadmin/user_upload/405000K8.jpg",
+      "https://wimag.de/fileadmin/user_upload/405550Kneu.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/405_Lifting_Beam.pdf",
     "productUrl": "https://wimag.de/en/lifting-beams.html",
@@ -820,8 +788,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/2/a/csm_308-BSH-120_-_Kopie_1884fee4d6.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/2/a/csm_308-BSH-120_-_Kopie_1884fee4d6.jpg",
       "https://wimag.de/fileadmin/_processed_/8/9/csm_308-BSH-02_-_Kopie_6c57efee53.jpg",
       "https://wimag.de/fileadmin/_processed_/b/8/csm_308-BSH-01_-_Kopie_dabfcebafc.jpg",
@@ -843,13 +809,12 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/6/5/csm_380-03-1_-_Kopie_9e304548dc.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/6/5/csm_380-03-1_-_Kopie_9e304548dc.jpg",
       "https://wimag.de/fileadmin/_processed_/7/0/csm_380-03_-_Kopie_695068330d.jpg",
       "https://wimag.de/fileadmin/_processed_/9/a/csm_380-cad_-_Kopie_7145e08729.jpg",
       "https://wimag.de/fileadmin/user_upload/380-04_-_Kopie.jpg",
-      "https://wimag.de/fileadmin/user_upload/380-01_-_Kopie.jpg"
+      "https://wimag.de/fileadmin/user_upload/380-01_-_Kopie.jpg",
+      "https://wimag.de/fileadmin/user_upload/380-02_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/380-Stone-Clamp.pdf",
     "productUrl": "https://wimag.de/en/stone-clamp.html",
@@ -865,10 +830,10 @@
     "nameEs": "Equipo de manipulación aluminium lifting beam WIMAG 410",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/4/5/csm_410-Aluminium-Lifting-Beam_9136520242.png",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png"
+      "https://wimag.de/fileadmin/_processed_/2/9/csm_alutraverse_6e163d6da3.jpg",
+      "https://wimag.de/fileadmin/_processed_/4/5/csm_410-Aluminium-Lifting-Beam_9136520242.png"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/410-Aluminium-Lifting-Beam.pdf",
     "productUrl": "https://wimag.de/en/aluminium-lifting-beam.html",
@@ -886,8 +851,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/303-01_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/303-01_-_Kopie.jpg",
       "https://wimag.de/fileadmin/user_upload/303-04_-_Kopie.jpg"
     ],
@@ -907,8 +870,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/9/3/csm_309-neu_-_Kopie_918e0c14ad.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/9/3/csm_309-neu_-_Kopie_918e0c14ad.jpg",
       "https://wimag.de/fileadmin/_processed_/7/8/csm_309_-_Kopie_a15b4c2865.jpg"
     ],
@@ -928,8 +889,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/382-05_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/382-05_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/7/8/csm_382-Steinheber_-_Kopie_bc8d82c54c.jpg",
       "https://wimag.de/fileadmin/user_upload/382-06_-_Kopie.jpg",
@@ -951,13 +910,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/b/f/csm_422-WTVE_3D_-_Kopie_38da523665.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/b/f/csm_422-WTVE_3D_-_Kopie_38da523665.jpg",
       "https://wimag.de/fileadmin/_processed_/1/7/csm_422-WTV_3D_-_Kopie_3a391f4e6e.jpg",
       "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-03_-_Kopie_e894ea35af.jpg",
       "https://wimag.de/fileadmin/_processed_/9/6/csm_422-S-05_-_Kopie_132ee539f7.jpg",
-      "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-04_-_Kopie_4b1a7d7135.jpg"
+      "https://wimag.de/fileadmin/_processed_/e/a/csm_422-S-04_-_Kopie_4b1a7d7135.jpg",
+      "https://wimag.de/fileadmin/user_upload/422-05_-_Kopie.jpg",
+      "https://wimag.de/fileadmin/user_upload/422-03_-_Kopie.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/422_Load_Rotating_Beam.pdf",
     "productUrl": "https://wimag.de/en/load-rotating-beam.html",
@@ -975,8 +934,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/c/b/csm_525-02_-_Kopie_48e38a379f.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/c/b/csm_525-02_-_Kopie_48e38a379f.jpg",
       "https://wimag.de/fileadmin/_processed_/4/9/csm_525-01_-_Kopie_a0f1ccb981.jpg"
     ],
@@ -996,8 +953,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/540-04-1.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/540-04-1.jpg",
       "https://wimag.de/fileadmin/user_upload/540-06-1.jpg",
       "https://wimag.de/fileadmin/user_upload/540-05-1.jpg",
@@ -1019,8 +974,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/526-05_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/526-05_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/2/e/csm_526-01_-_Kopie_9af1e6cbc8.jpg",
       "https://wimag.de/fileadmin/_processed_/a/d/csm_526-03_-_Kopie_7d36fe5b1d.jpg",
@@ -1043,8 +996,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/550-02-neu-2017.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/550-02-neu-2017.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/550-Aluminium-Travelling-Crane.pdf",
@@ -1063,13 +1014,12 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/530-2-Traeger_-_Kopie.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/530-2-Traeger_-_Kopie.jpg",
       "https://wimag.de/fileadmin/_processed_/a/2/csm_530-01-neu_-_Kopie_847a2cca8e.jpg",
       "https://wimag.de/fileadmin/_processed_/3/0/csm_530-03_-_Kopie_4ef5ca128c.jpg",
       "https://wimag.de/fileadmin/_processed_/d/3/csm_P1160517_87b41fb766.jpg",
-      "https://wimag.de/fileadmin/_processed_/f/f/csm__1160514_ae94cedfba.jpg"
+      "https://wimag.de/fileadmin/_processed_/f/f/csm__1160514_ae94cedfba.jpg",
+      "https://wimag.de/fileadmin/_processed_/2/7/csm__1160515_fc7a2e3446.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/530_Aluminium_Gantry_Crane.pdf",
     "productUrl": "https://wimag.de/en/aluminium-gantry-crane.html",
@@ -1087,8 +1037,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/5/b/csm_555-01-2016_0d344365e4.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/5/b/csm_555-01-2016_0d344365e4.jpg",
       "https://wimag.de/fileadmin/_processed_/2/3/csm_P1170627__2__b61b43a1a9.jpg"
     ],
@@ -1106,10 +1054,8 @@
     "nameEs": "Equipo de manipulación aluminium crane WIMAG 520",
     "descriptionEs": "Equipo WIMAG para la manipulación y elevación segura de elementos prefabricados de hormigón.",
     "capacityEs": "Según configuración",
-    "imageUrl": "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
+    "imageUrl": "https://wimag.de/fileadmin/_processed_/4/8/csm__1100942_1abc5f5ce3.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/4/8/csm__1100942_1abc5f5ce3.jpg",
       "https://wimag.de/fileadmin/_processed_/2/d/csm_P1180250-1_e5b203ad24.jpg"
     ],
@@ -1129,13 +1075,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/4/a/csm_535-neu-Transportstellung-3D_8e42b14a1d.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_535-neu-Transportstellung-3D_8e42b14a1d.jpg",
       "https://wimag.de/fileadmin/_processed_/b/8/csm_535-neu-Masse_80c460e57d.jpg",
       "https://wimag.de/fileadmin/_processed_/e/5/csm_535-neu-Masse-3D_f698be478e.jpg",
       "https://wimag.de/fileadmin/_processed_/a/7/csm_535-neu-Aufstellhilfe_7990361fe7.jpg",
-      "https://wimag.de/fileadmin/user_upload/535-Gelaenderad.jpg"
+      "https://wimag.de/fileadmin/user_upload/535-Gelaenderad.jpg",
+      "https://wimag.de/fileadmin/_processed_/9/8/csm_535-03_-_Kopie_af56318d4b.jpg",
+      "https://wimag.de/fileadmin/_processed_/5/3/csm_535-01_-_Kopie_9e85928512.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/535-Mobile-Aluminium-Crane.pdf",
     "productUrl": "https://wimag.de/en/mobile-aluminium-crane.html",
@@ -1153,13 +1099,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/810-2-neu.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/810-2-neu.jpg",
       "https://wimag.de/fileadmin/user_upload/810-02-neu.jpg",
       "https://wimag.de/fileadmin/_processed_/1/6/csm_810-01_cb74d2153a.jpg",
       "https://wimag.de/fileadmin/_processed_/9/2/csm_810-03_fa3b694a86.jpg",
-      "https://wimag.de/fileadmin/_processed_/4/4/csm_810-02_d63ccbedc6.jpg"
+      "https://wimag.de/fileadmin/_processed_/4/4/csm_810-02_d63ccbedc6.jpg",
+      "https://wimag.de/fileadmin/user_upload/810-03-neu.jpg",
+      "https://wimag.de/fileadmin/_processed_/0/6/csm_810-04_27d4dd9740.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/810-Alpha-Levator_01.pdf",
     "productUrl": "https://wimag.de/en/alpha-levator.html",
@@ -1177,8 +1123,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/user_upload/819.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/user_upload/819.jpg",
       "https://wimag.de/fileadmin/_processed_/4/7/csm__1090914_f67e2d7e0b.jpg"
     ],
@@ -1198,8 +1142,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/3/4/csm_816-02_56cbeb7a4a.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/3/4/csm_816-02_56cbeb7a4a.jpg",
       "https://wimag.de/fileadmin/_processed_/a/b/csm_816-04_0c7acebb69.jpg",
       "https://wimag.de/fileadmin/_processed_/2/4/csm__1150351__3__620bd1abb1.jpg"
@@ -1220,13 +1162,12 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/a/4/csm_820-neu-mit_SP_500_79457bea76.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/a/4/csm_820-neu-mit_SP_500_79457bea76.jpg",
       "https://wimag.de/fileadmin/_processed_/3/b/csm_P1060343_62c0fe79f4.jpg",
       "https://wimag.de/fileadmin/_processed_/e/7/csm_820-S-06_48e50c1655.jpg",
       "https://wimag.de/fileadmin/_processed_/d/5/csm_820-neu_fuer_Rohre_19f1340a1c.jpg",
-      "https://wimag.de/fileadmin/_processed_/c/7/csm_820-neu-8_3014567e1a.jpg"
+      "https://wimag.de/fileadmin/_processed_/c/7/csm_820-neu-8_3014567e1a.jpg",
+      "https://wimag.de/fileadmin/_processed_/8/f/csm_820-neu-9_3726a0387c.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/820_Gamma-Levator_01.pdf",
     "productUrl": "https://wimag.de/en/gamma-levator.html",
@@ -1244,8 +1185,6 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/1/e/csm_817_100_Beta_H-Levator_b31a976e7e.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/1/e/csm_817_100_Beta_H-Levator_b31a976e7e.jpg",
       "https://wimag.de/fileadmin/_processed_/4/a/csm_817-01_7b03dc132b.jpg"
     ],
@@ -1265,13 +1204,13 @@
     "capacityEs": "Según configuración",
     "imageUrl": "https://wimag.de/fileadmin/_processed_/2/1/csm_818-1-M-120_a734b980a2.jpg",
     "imageUrls": [
-      "https://wimag.de/fileadmin/user_upload/Krug_Marco_.jpg",
-      "https://wimag.de/fileadmin/_processed_/1/e/csm_QR-marco_Krug_a9afa1aebe.png",
       "https://wimag.de/fileadmin/_processed_/2/1/csm_818-1-M-120_a734b980a2.jpg",
       "https://wimag.de/fileadmin/user_upload/818-06.jpg",
       "https://wimag.de/fileadmin/_processed_/a/d/csm_818-01_ec5abe446e.jpg",
       "https://wimag.de/fileadmin/user_upload/818-1-M-120-12-neu.jpg",
-      "https://wimag.de/fileadmin/_processed_/d/6/csm_818-1-M-120-13-neu_b758e7ff7b.jpg"
+      "https://wimag.de/fileadmin/_processed_/d/6/csm_818-1-M-120-13-neu_b758e7ff7b.jpg",
+      "https://wimag.de/fileadmin/_processed_/f/2/csm_818-000-neu_2019_bf807f0306.jpg",
+      "https://wimag.de/fileadmin/user_upload/818-Saugplatte_Bordsteine.jpg"
     ],
     "pdfUrl": "https://wimag.de/fileadmin/user_upload/818_Turbo_M-Levator_03.pdf",
     "productUrl": "https://wimag.de/en/turbo-m-levator.html",
@@ -1288,6 +1227,9 @@
     "descriptionEs": "El anclaje plano de acero PFEIFER SAS se utiliza especialmente para el montaje en elementos de tubo o pozo. El anclaje plano de acero se caracteriza por una altura de anclaje reducida, que permite elevar de forma segura incluso elementos de tubo o pozo muy delgados. Todos los anclajes del sistema de elevación de pozos SAS se pueden fijar fácilmente al encofrado y no requieren armadura adicional.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sca-245879_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sca-245879_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MANHOLE-LIFTING_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-elevacion-de-pozos/anclaje-plano-de-acero-sas.html",
     "manufacturingCountry": "Alemania",
@@ -1303,6 +1245,9 @@
     "descriptionEs": "El anclaje de tornillo PFEIFER SAS se utiliza especialmente para el montaje en elementos de tubo o pozo. El anclaje de tornillo se caracteriza por una distancia mínima al borde reducida, así como por una armadura superficial mínima reducida. Todos los anclajes del sistema de elevación de pozos SAS se pueden fijar fácilmente al encofrado y no requieren armadura adicional.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sch-241979_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sch-241979_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MANHOLE-LIFTING_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-elevacion-de-pozos/anclaje-de-tornillo-sas.html",
     "manufacturingCountry": "Alemania",
@@ -1318,6 +1263,9 @@
     "descriptionEs": "El lazo de elevación PFEIFER SAS es un elevador especial para elementos de pozo y de tubo de hormigón. Combinado con los anclajes de transporte correspondientes permite una elevación segura. El tornillo de tope del lazo de elevación está asegurado de forma fija al prensado y por tanto es imperdible.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sca-243751_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sca-243751_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MANHOLE-LIFTING_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-elevacion-de-pozos/lazo-de-elevacion-sas.html",
     "manufacturingCountry": "Alemania",
@@ -1333,6 +1281,9 @@
     "descriptionEs": "El clip de datos PFEIFER SAS sirve para la identificación inequívoca de los anclajes de transporte PFEIFER del sistema de elevación de pozos SAS. Tiene un color característico especial en función del tamaño del anclaje de transporte. Esta codificación de color facilita enormemente la asignación correcta de anclajes de transporte, elevadores y productos accesorios, también en estado hormigonado. En anillo alrededor del manguito incluye además todas las indicaciones necesarias como fabricante, tipo y tamaño.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-dat-250108_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-dat-250108_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MANHOLE-LIFTING_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-elevacion-de-pozos/clip-de-datos-sas.html",
     "manufacturingCountry": "Alemania",
@@ -1348,6 +1299,9 @@
     "descriptionEs": "Los anclajes superondulados PFEIFER son anclajes de transporte optimizados para el transporte de elementos prefabricados de hormigón de pared delgada, generalmente módulos habitacionales. Se caracterizan por un diámetro reducido de rosca y de manguito y presentan una rosca Z redonda que evita confusiones.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-wel-186896_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-wel-186896_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SUPER-ANCHOR_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-superanclaje-pfeifer/anclaje-superondulado.html",
     "manufacturingCountry": "Alemania",
@@ -1363,6 +1317,9 @@
     "descriptionEs": "Los superelevadores PFEIFER se utilizan para elevar cargas y son un componente fijo, así como esencial del sistema de superanclaje. El superelevador PFEIFER puede enroscarse sin problemas en un superanclaje PFEIFER y garantiza un transporte seguro, incluso de elementos prefabricados de hormigón muy delgados. La placa de presión del elevador produce una distribución favorable de las cargas, en particular, en caso de tracción oblicua y tracción transversal. Si se utilizan correctamente, estos elevadores pueden reutilizarse numerosas veces gracias a su estructura robusta.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-spe-187758_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-spe-187758_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SUPER-ANCHOR_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-superanclaje-pfeifer/superelevador.html",
     "manufacturingCountry": "Alemania",
@@ -1378,6 +1335,9 @@
     "descriptionEs": "El tornillo de sujeción PFEIFER para el sistema de superanclaje puede utilizarse en combinación con un tornillo de fijación PFEIFER para la colocación segura y a ras de la superficie del superanclaje PFEIFER en el encofrado. Si se combina el tornillo de sujeción con el correspondiente plato de escotadura PFEIFER, también es posible un montaje profundo. En general, el tornillo de sujeción representa un acoplamiento entre una rosca métrica del tornillo de fijación y la rosca Z del superanclaje PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-186752_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-186752_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SUPER-ANCHOR_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-superanclaje-pfeifer/tornillo-de-sujecion-para-sistema-de-superanclaje.html",
     "manufacturingCountry": "Alemania",
@@ -1393,6 +1353,9 @@
     "descriptionEs": "El plato de escotadura PFEIFER para el sistema de superanclaje puede utilizarse en combinación con el tornillo de sujeción PFEIFER correspondiente para fijar de forma segura y profunda el superanclaje PFEIFER en el encofrado. Únicamente con el plato de escotadura PFEIFER puede lograrse una superficie de apoyo plana y dispuesta en ángulo recto respecto al eje longitudinal del anclaje de transporte para la placa de presión del elevador y garantizarse el posterior recubrimiento de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-188766_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-188766_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SUPER-ANCHOR_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-superanclaje-pfeifer/plato-de-escotadura-para-sistema-de-superanclaje.html",
     "manufacturingCountry": "Alemania",
@@ -1408,6 +1371,9 @@
     "descriptionEs": "El plato de cierre PFEIFER para el sistema de superanclaje hace posible el cierre duradero de un superanclaje montado con el plato de escotadura correspondiente, tras el montaje del prefabricado. De este modo se crea una vista exterior a ras de la superficie, así como arquitectónicamente limpia y elegante.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-188771_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/zg-hus-188771_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SUPER-ANCHOR_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-superanclaje-pfeifer/plato-de-cierre-para-sistema-de-superanclaje.html",
     "manufacturingCountry": "Alemania",
@@ -1423,6 +1389,9 @@
     "descriptionEs": "El anclaje con pie PFEIFER DB se utiliza como medio de fijación para el anclaje de cargas permanentes en un elemento de hormigón. El Instituto Alemán de Tecnología de la Construcción (DIBt) emitió una autorización válida en toda Europa al respecto en forma de una Evaluación técnica europea (ETA-11/0288).",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-wdb-238295_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-wdb-238295_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_DB_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/anclaje-con-pie-db.html",
     "manufacturingCountry": "Alemania",
@@ -1438,6 +1407,9 @@
     "descriptionEs": "El anclaje ondulado PFEIFER DB se utiliza como medio de fijación para el anclaje de cargas permanentes en un elemento de hormigón. El Instituto Alemán de Tecnología de la Construcción (DIBt) emitió una autorización válida en toda Europa al respecto en forma de una Evaluación técnica europea (ETA-11/0288).",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-wdb-195240_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-wdb-195240_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_DB_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/anclaje-ondulado-db.html",
     "manufacturingCountry": "Alemania",
@@ -1453,6 +1425,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con agujero transversal es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. El anclaje en el hormigón tiene lugar mediante un acero corrugado introducido en obra por el agujero transversal. Además de la variante estándar de acero galvanizado, también está disponible una versión de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186965_apr-1_44x44_4c_1.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186965_apr-1_44x44_4c_1.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-CROSS-HOLE_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-con-agujero-transversal.html",
     "manufacturingCountry": "Alemania",
@@ -1468,6 +1443,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con agujero transversal es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. El anclaje en el hormigón tiene lugar mediante un acero corrugado introducido en obra por el agujero transversal. Además de la variante estándar de acero galvanizado, también está disponible una versión de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186965_apr-2_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186965_apr-2_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-CROSS-HOLE_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-oxid.html",
     "manufacturingCountry": "Alemania",
@@ -1483,6 +1461,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con agujero transversal y placa de clavo es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. La placa de clavo integrada ofrece una posibilidad sencilla y segura para la fijación al encofrado. El anclaje en el hormigón tiene lugar mediante un acero corrugado introducido en obra por el agujero transversal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250648_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250648_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-CROSS-HOLE-NAIL_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-con-agujero-transversal-y-placa-de-clavo.html",
     "manufacturingCountry": "Alemania",
@@ -1498,6 +1479,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con extremo ondulado es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. El anclaje en el hormigón tiene lugar a través del arrastre de forma del extremo ondulado. Además de la variante estándar de acero galvanizado, también está disponible una versión de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186961_apr-1_44x44_4c_1.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-186961_apr-1_44x44_4c_1.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-CRIMPED-END_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-con-extremo-ondulado.html",
     "manufacturingCountry": "Alemania",
@@ -1513,6 +1497,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con extremo ondulado y placa de clavo es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. La placa de clavo integrada ofrece una posibilidad sencilla y segura para la fijación al encofrado. El anclaje en el hormigón tiene lugar a través del arrastre de forma del extremo ondulado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250638_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250638_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-CRIMPED-END-NAIL_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-con-extremo-ondulado-y-placa-de-clavo.html",
     "manufacturingCountry": "Alemania",
@@ -1528,6 +1515,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con extremo acodado es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. El anclaje en el hormigón tiene lugar a través del arrastre de forma del extremo angulado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250640_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250640_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-ANGULAR-END_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado-con-extremo-acodado.html",
     "manufacturingCountry": "Alemania",
@@ -1543,6 +1533,9 @@
     "descriptionEs": "Con la ayuda del manguito roscado PFEIFER pueden realizarse sujeciones constructivas de forma rápida y económica. El presente manguito roscado PFEIFER con extremo acodado es adecuado, tanto para un montaje frontal como también para un montaje superficial en elementos de hormigón. El anclaje en el hormigón tiene lugar a través del arrastre de forma del extremo angulado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250640_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-hud-250640_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SOCKET-ANGULAR-END_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/manguito-roscado.html",
     "manufacturingCountry": "Alemania",
@@ -1558,6 +1551,9 @@
     "descriptionEs": "Tacos de plástico para la fijación económica en casos con exigencias elevadas de protección anticorrosiva Se utiliza como fijación constructiva que no se encuentra en el área relevante de la autoridad de construcción y que, por lo tanto, no requiere autorización.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-pol-118206_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-pol-118206_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_POLYAMIDE-SOCKETS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/taco-de-plastico.html",
     "manufacturingCountry": "Alemania",
@@ -1573,6 +1569,9 @@
     "descriptionEs": "Con la ayuda del tapón de clavo PFEIFER pueden fijarse los tacos de plástico PFEIFER de forma rápida y segura a un encofrado de madera o plástico. Este se clava simplemente en la posición deseada sobre la tabla de encofrado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-nag-118217_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-nag-118217_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_NAIL-CAP_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g162536/tapon-de-clavo-para-taco-de-plastico.html",
     "manufacturingCountry": "Alemania",
@@ -1588,6 +1587,9 @@
     "descriptionEs": "El cáncamo de carga PFEIFER se utiliza como punto de anclaje para suspender temporalmente cargas durante tareas de montaje y mantenimiento o como punto de anclaje para el equipo de protección individual.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-275100_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-275100_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LOAD-EYE_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/ojal-de-carga.html",
     "manufacturingCountry": "Alemania",
@@ -1603,6 +1605,9 @@
     "descriptionEs": "El lazo de suspensión PFEIFER LSF, con certificación del TÜV, es un punto de anclaje para la construcción de elevadores, que se monta de forma superficial en los encofrados de las cubiertas de los pozos de ascensores antes del hormigonado, teniendo en cuenta las distancias mínimas entre ejes y a los bordes definidas. En estado montado, el lazo de suspensión sirve exclusivamente como punto de anclaje para cargas temporales durante el montaje. Por ejemplo, es admisible enganchar temporalmente al lazo de suspensión una cabina de ascensor u otros objetos durante las tareas de montaje y mantenimiento sin transporte de personas. Los lazos de suspensión no deben utilizarse como seguro anticaída. Para ello se encentran disponibles alternativamente los cáncamos de carga con la autorización correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-250720-apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-250720-apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LASTSCHLAUFE-LSF_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsf.html",
     "manufacturingCountry": "Alemania",
@@ -1618,6 +1623,9 @@
     "descriptionEs": "El lazo de suspensión PFEIFER LSP, con certificación del TÜV, es un punto de anclaje, cuyo montaje tiene lugar posteriormente y de forma superficial en la superficie inferior de cubiertas de pozos de ascensores. En estado montado, el lazo de suspensión sirve exclusivamente como punto de anclaje para cargas temporales durante el montaje. Por ejemplo, es admisible enganchar temporalmente al lazo de suspensión una cabina de ascensor u otros objetos durante las tareas de montaje y mantenimiento sin transporte de personas. Los lazos de suspensión no deben utilizarse como seguro anticaída. Para ello se encentran disponibles alternativamente los cáncamos de carga con la autorización correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-248928_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-248928_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LASTSCHLAUFE-LSP_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension.html",
     "manufacturingCountry": "Alemania",
@@ -1633,6 +1641,9 @@
     "descriptionEs": "El lazo de suspensión PFEIFER LSV, con certificación del TÜV, se utiliza como punto de anclaje para cargas estáticas en reposo. El montaje tiene lugar de forma superficial en la cubierta de pozos de ascensores de hormigón armado. En estado montado, el lazo de suspensión sirve exclusivamente como punto de anclaje para cargas temporales durante el montaje. Por ejemplo, es admisible enganchar temporalmente al lazo de suspensión una cabina de ascensor u otros objetos durante las tareas de montaje y mantenimiento sin transporte de personas. Los lazos de suspensión no deben utilizarse como seguro anticaída. Para ello se encentran disponibles alternativamente los cáncamos de carga con la autorización correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-250921_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-250921_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LASTSCHLAUFE-LSV_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsv.html",
     "manufacturingCountry": "Alemania",
@@ -1648,6 +1659,9 @@
     "descriptionEs": "El lazo de suspensión PFEIFER LSG, con certificación del TÜV, se utiliza para el montaje posterior, alejado de los bordes, en las superficies inferiores de cubiertas de pozos de ascensores. En estado montado, el lazo de suspensión sirve exclusivamente como punto de anclaje para cargas temporales durante el montaje. Por ejemplo, es admisible enganchar temporalmente al lazo de suspensión una cabina de ascensor u otros objetos durante las tareas de montaje y mantenimiento sin transporte de personas. Los lazos de suspensión no deben utilizarse como seguro anticaída. Para ello se encentran disponibles alternativamente los cáncamos de carga con la autorización correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-248819_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-248819_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LASTSCHLAUFE-LSG_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsg.html",
     "manufacturingCountry": "Alemania",
@@ -1663,6 +1677,9 @@
     "descriptionEs": "Durch die Verwendung der Lastschlaufe LSB-LB zusammen mit der Lastschlaufe LSB-L kann die Tragfähigkeit des Elementes im Bedarfsfall verdoppelt werden.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511484_apr-2_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511484_apr-2_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_AUFZUGSMONTAGEANKER_PPD.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsb-l.html",
     "manufacturingCountry": "Alemania",
@@ -1678,6 +1695,9 @@
     "descriptionEs": "Durch die Verwendung der Lastschlaufe LSB-LB zusammen mit der Lastschlaufe LSB-L kann die Tragfähigkeit des Elementes im Bedarfsfall verdoppelt werden.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511492_apr-2_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511492_apr-2_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_AUFZUGSMONTAGEANKER_PPD.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsb-lb.html",
     "manufacturingCountry": "Alemania",
@@ -1693,6 +1713,9 @@
     "descriptionEs": "Die Lastschlaufen LSB-LE sind Anschlagpunkte zum temporären Anhängen von Sachlasten bei Montage- oder Wartungsarbeiten. Sie sind vorgesehen für den flächigen Einbau in Decken aus Stahlbeton. Sie kanneinfach auf die Schalung aufgenagelt werden.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511494_apr-3_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-lab-511494_apr-3_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_AUFZUGSMONTAGEANKER_PPD.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-para-montaje-de-ascensores/lazo-de-suspension-lsb-le.html",
     "manufacturingCountry": "Alemania",
@@ -1708,6 +1731,9 @@
     "descriptionEs": "El punto de anclaje PFEIFER DB PSA es adecuado para el anclaje en el hormigón de cargas generadas por la caída de personas aseguradas. En cada punto de anclaje se puede enganchar el equipo de protección individual de dos personas respectivamente. Para poder enganchar el equipo de protección individual se necesita un tornillo de cáncamo PFEIFER PSA que se atornilla con una rosca en el punto de anclaje DB. El sistema está probado por TÜV SÜD según EN 795 y CEN/TS 16415.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364375_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364375_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ATTACHMENT-POINT-PSA_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/db-punto-de-anclaje-para-equipo-de-proteccion-individual/punto-de-anclaje-db-ppe.html",
     "manufacturingCountry": "Alemania",
@@ -1723,6 +1749,9 @@
     "descriptionEs": "El tornillo de cáncamo PFEIFER PSA se utiliza siempre en combinación con un punto de anclaje PFEIFER DB PSA. Los productos se utilizan juntos para asegurar hasta a dos personas contra una posible caída. El tornillo de cáncamo cuenta con un ojal para enganchar fácilmente el equipo de protección individual y con una llave hexagonal encadenada para apretar el tornillo. El tornillo de cáncamo puede reutilizarse. El sistema está probado por TÜV SÜD según EN 795 y CEN/TS 16415.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/si-asp-368461_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/si-asp-368461_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ATTACHMENT-POINT-PSA_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/db-punto-de-anclaje-para-equipo-de-proteccion-individual/ppe.html",
     "manufacturingCountry": "Alemania",
@@ -1738,6 +1767,9 @@
     "descriptionEs": "El tornillo de sujeción/cierre PFEIFER PSA se utiliza en combinación con el plato de escotadura PFEIFER PSA. La combinación permite fijar un punto de anclaje DB al encofrado. Para ello se introduce simplemente un tornillo de fijación adecuado a través de una perforación en el encofrado y se atornilla en el tornillo de sujeción/cierre. Tras el uso del punto de anclaje para el equipo de protección individual, la abertura de rosca remanente puede cerrarse con ayuda del tornillo de sujeción/cierre PSA dejándola con un aspecto óptimo.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364909_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364909_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ATTACHMENT-POINT-PSA_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/db-punto-de-anclaje-para-equipo-de-proteccion-individual/tornillo-de-sujecion-cierre-ppe.html",
     "manufacturingCountry": "Alemania",
@@ -1753,6 +1785,9 @@
     "descriptionEs": "El plato de escotadura PFEIFER PSA se utiliza para montar un punto de anclaje DB profundo en el hormigón. Para la unión entre el anclaje y el plato de escotadura debe utilizarse el correspondiente tornillo de sujeción PSA. El plato de escotadura puede fijarse al encofrado mediante tornillo de sujeción y tornillo de fijación o mediante clavos.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364852_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/lm-per-364852_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ATTACHMENT-POINT-PSA_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/db-punto-de-anclaje-para-equipo-de-proteccion-individual/plato-de-escotadura-ppe.html",
     "manufacturingCountry": "Alemania",
@@ -1768,6 +1803,9 @@
     "descriptionEs": "El angular de fijación PFEIFER LCON se utiliza en combinación con la arandela dentada PFEIFER ZS para la unión por arrastre de fuerza de elementos prefabricados de hormigón. Sirve para la unión tanto temporal como también permanente de dos elementos de hormigón. El usuario puede elegir y dimensionar flexiblemente el anclaje del lado del elemento. La variante especial de isósceles LCON VS ® es adecuada como soporte de montaje para juntas de pared en las que se instalan rieles VS ® ISI. Esto garantiza que los puntos de anclaje no se encuentren en la zona del raíl.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-win-374728_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-win-374728_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_LCON_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-angular-de-fijacion/angular-de-fijacion-lcon.html",
     "manufacturingCountry": "Alemania",
@@ -1783,6 +1821,9 @@
     "descriptionEs": "Los apoyos de acero facilitan el montaje de placas TT, jácenas o placas en U. Absorben todas la cargas de peso propio durante el montaje de los elementos. No son necesarias complejas medidas de apuntalamiento durante el montaje. Junto con la armadura colocada y la capa de hormigón in situ se desvían las cargas móviles de forma segura a las jácenas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-sta-239472_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-sta-239472_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PS-A-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162492/apoyos-de-acero/apoyos-de-acero-ps-a.html",
     "manufacturingCountry": "Alemania",
@@ -1798,6 +1839,9 @@
     "descriptionEs": "El apoyo final para escaleras VarioSonic SLE se utiliza en escaleras rectas o en ángulo para apoyar los puntos finales sobre el forjado o el descansillo. La altura se puede ajustar perfectamente bajo carga.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-tre-152930_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-tre-152930_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SLE_LEEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162492/apoyos-para-escaleras/apoyo-final-para-escaleras-variosonic-sle.html",
     "manufacturingCountry": "Alemania",
@@ -1813,6 +1857,9 @@
     "descriptionEs": "El apoyo intermedio para escaleras VarioSonic SL ha sido concebido como apoyo intermedio para soportar las acciones verticales del par de vuelco de escaleras en ángulo o de caracol en la pared de la caja de escalera. La altura se puede ajustar perfectamente bajo carga.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-tre-152932_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/al-tre-152932_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SL_LEEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162492/apoyos-para-escaleras/apoyo-intermedio-para-escaleras-variosonic-sl.html",
     "manufacturingCountry": "Alemania",
@@ -1828,6 +1875,9 @@
     "descriptionEs": "El anclaje PFEIFER Allround largo se utiliza como anclaje de transporte para el montaje frontal en elementos de hormigón tipo muro. Durante el desarrollo se dio especial importancia a espesores de pared lo más delgados posibles, así como a longitudes de anclaje reducidas. La armadura mínima necesaria en el elemento se seleccionó y probó de forma adecuada a la práctica. Debido a la cabeza recalcada, en combinación con las cortas longitudes de anclaje, este anclaje puede ubicarse de forma especialmente sencilla en el encofrado, incluso en caso de una disposición densa de la armadura, en comparación con otras variantes de anclaje. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ara-368715_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ara-368715_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ALLROUND-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-pfeifer-allround-largo.html",
     "manufacturingCountry": "Alemania",
@@ -1843,6 +1893,9 @@
     "descriptionEs": "El anclaje PFEIFER Allround corto se utiliza como anclaje de transporte para el montaje superficial en elementos superficiales. El objetivo es conseguir la menor altura de anclaje posible, permitiendo los menores espesores posibles de los elementos. Allround Anchors cortos también están especialmente cualificados para levantar escaleras rectas prefabricadas. Permiten la instalación en la escalera de peldaños no reforzados, incluso con espesores de peldaños bajos. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ara-368796_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ara-368796_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ALLROUND-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-pfeifer-allround-corto.html",
     "manufacturingCountry": "Alemania",
@@ -1858,6 +1911,9 @@
     "descriptionEs": "El anclaje de tornillo PFEIFER está concebido como anclaje de transporte para una instalación superficial en elementos superficiales. Representa la solución ideal desde el punto de vista práctico de la construcción ya que su instalación no requiere ningún tipo de armadura de retención. Esta variante de anclaje se especialmente adecuada para cargas reducidas con tamaños de rosca de Rd 12 a Rd 30. Si resulta necesario mover cargas más elevadas, se recomienda el anclaje PFEIFER Allround corto con el mismo mecanismo de anclaje en la base de hormigón que un anclaje de tornillo. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sch-117406_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sch-117406_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-de-tornillo.html",
     "manufacturingCountry": "Alemania",
@@ -1873,6 +1929,9 @@
     "descriptionEs": "El anclaje ondulado PFEIFER largo está concebido como anclaje de transporte para una instalación frontal tanto en elementos superficiales como en elementos de hormigón lineales. La ondulación especialmente conformada asegura una aplicación de carga cuidadosa, principalmente en el caso de elementos de pared delgados con bajo grado de armadura. De este modo también pueden realizarse elementos prefabricados de hormigón con espesores de pared reducidos y reducir a un mínimo el esfuerzo de armadura. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-wel-117432_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-wel-117432_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-ondulado-largo.html",
     "manufacturingCountry": "Alemania",
@@ -1888,6 +1947,9 @@
     "descriptionEs": "El anclaje ondulado PFEIFER corto está concebido como anclaje de transporte tanto para una instalación superficial en elementos superficiales como para una instalación longitudinal en elementos de hormigón lineales. El objetivo es conseguir la menor altura de anclaje posible, permitiendo los menores espesores posibles de los elementos. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-wel-117511_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-wel-117511_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-ondulado-corto.html",
     "manufacturingCountry": "Alemania",
@@ -1903,6 +1965,9 @@
     "descriptionEs": "El anclaje de barra PFEIFER está concebido como anclaje de transporte para una instalación frontal tanto en elementos superficiales como en elementos de hormigón lineales. Debido a su geometría, este anclaje es particularmente adecuado para armaduras densas con espacios estrechos entre barras. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sta-117539_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sta-117539_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-de-barra.html",
     "manufacturingCountry": "Alemania",
@@ -1918,6 +1983,9 @@
     "descriptionEs": "El manguito PFEIFER está concebido como anclaje de transporte tanto para una instalación frontal en elementos superficiales como para una instalación superficial en elementos de hormigón lineales. Para ello, a través del agujero transversal se dispone, por parte del cliente, una armadura de retención definida para el anclaje de retención en el elemento. Esta disposición por parte del cliente ofrece posibilidades de aplicación muy flexibles para el usuario. Además de la variante estándar de acero galvanizado, también está disponible una versión de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hue-116865_apr-1_44x44_4c_a.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hue-116865_apr-1_44x44_4c_a.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/manguito.html",
     "manufacturingCountry": "Alemania",
@@ -1933,6 +2001,9 @@
     "descriptionEs": "El anclaje de barra acodado PFEIFER está concebido para una instalación frontal en placas de tres capas, como elementos sándwich. Gracias a su forma especial, la carga se puede anclar exactamente por encima del centro de gravedad. De este modo se evita una posición inclinada del panel sándwich. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sta-261980_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-sta-261980_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-de-barra-acodado.html",
     "manufacturingCountry": "Alemania",
@@ -1948,6 +2019,9 @@
     "descriptionEs": "El anclaje plano de acero PFEIFER está concebido como anclaje de transporte para una instalación superficial en elementos superficiales y permite conseguir los espesores de elementos más reducidos entre todos los anclajes de transporte del sistema de roscas en esta disposición de instalación. Además de la variante estándar con manguito galvanizado, también está disponible, entre otras, una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-fla-116993_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-fla-116993_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/anclaje-de-transporte/anclaje-plano-de-acero.html",
     "manufacturingCountry": "Alemania",
@@ -1963,6 +2037,9 @@
     "descriptionEs": "La argolla de cable PFEIFER es un elevador flexible y económico para el transporte de elementos prefabricados de hormigón. Las acciones posibles de la carga son tracción centrada y tracción oblicua hasta 45°. En el marco del sistema de roscas, el tamaño de la rosca y una clara codificación de colores permiten una asignación rápida y fiable para el usuario.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-soe-117917_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-soe-117917_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/elevadores/argolla-de-cable.html",
     "manufacturingCountry": "Alemania",
@@ -1978,6 +2055,9 @@
     "descriptionEs": "La argolla de cable tipo tolva PFEIFER es un elevador de uso versátil para el transporte de elementos prefabricados de hormigón. Gracias a la desviación cuidadosa de la argolla de cable en el embudo del prensado, además de tracciones centradas, también son posibles las tracciones oblicuas y transversales. En el marco del sistema de roscas, el tamaño de la rosca y una clara codificación de colores permiten una asignación rápida y fiable para el usuario.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-tso-257284_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-tso-257284_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/elevadores/argolla-de-cable-tipo-tolva.html",
     "manufacturingCountry": "Alemania",
@@ -1993,6 +2073,9 @@
     "descriptionEs": "El dispositivo de suspensión especial PFEIFER forma parte del sistema de roscas y sirve como elevador. Gracias a su placa de presión y su gran superficie de apoyo, se puede garantizar una distribución óptima y uniforme de la presión sobre el elemento prefabricado de hormigón. Esto significa que, además de tracciones centradas, también son posibles tracciones oblicuas y transversales. En el marco del sistema de roscas, el tamaño de la rosca y una clara codificación de colores permiten una asignación rápida y fiable para el usuario.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-spe-118046_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-spe-118046_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/elevadores/dispositivo-de-suspension-especial.html",
     "manufacturingCountry": "Alemania",
@@ -2008,6 +2091,9 @@
     "descriptionEs": "El dispositivo rotativo de suspensión PFEIFER es el elevador más universal y robusto del sistema de roscas PFEIFER. El plato giratorio se orienta sin desenroscarse en cualquier dirección de carga. Son posibles tracciones centradas, oblicuas e incluso transversales. La placa de presión de diseño óptimo permite además una aplicación cuidadosa de carga al elemento prefabricado de hormigón. En el marco del sistema de roscas, el tamaño de la rosca y una clara codificación de colores permiten una asignación rápida y fiable para el usuario.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-dre-117948_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-dre-117948_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/elevadores/dispositivo-rotativo-de-suspension.html",
     "manufacturingCountry": "Alemania",
@@ -2023,6 +2109,9 @@
     "descriptionEs": "El adaptador PFEIFER se utiliza para prolongar un anclaje roscado PFEIFER. Esto es necesario si un anclaje de transporte se monta muy profundo o se colocan o complementan secciones de hormigón posteriormente por encima.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-adp-251476_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-adp-251476_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_THREAD-SYSTEM_KEDEEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/g162505/adaptador.html",
     "manufacturingCountry": "Alemania",
@@ -2038,6 +2127,9 @@
     "descriptionEs": "Las placas de clavos de plástico están diseñadas para la fijación sencilla de anclajes roscados PFEIFER en el encofrado. Para ello, las placas de clavos se atornillan en la rosca interior correspondiente del anclaje y, a continuación, se clavan o atornillan al encofrado a través de los orificios de la placa. También es posible la adhesión al encofrado mediante las superficies adhesivas existentes.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-nag-391646_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-nag-391646_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_NAIL-DISC_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/plato-clavado.html",
     "manufacturingCountry": "Alemania",
@@ -2053,6 +2145,9 @@
     "descriptionEs": "Las placas de clavos de plástico están diseñadas para la fijación sencilla de anclajes roscados PFEIFER en el encofrado. Para ello, las placas de clavos se atornillan en la rosca interior correspondiente del anclaje y, a continuación, se clavan o atornillan al encofrado a través de los orificios de la placa. Esta variante especial se utiliza cuando se utiliza un gancho giratorio para levantar el ancla roscada. Las placas de clavos para colgadores rotativos tienen un diámetro de placa mayor para crear un hueco suficientemente grande en el hormigón para la placa de presión del colgador rotativo.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-nag-391657_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-nag-391657_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_NAIL-DISC_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/plato-clavado-a-favor-de-dispositivo-rotativo-de-suspension.html",
     "manufacturingCountry": "Alemania",
@@ -2068,6 +2163,9 @@
     "descriptionEs": "El tornillo de fijación PFEIFER para el sistema de rosca se utiliza en combinación con los tornillos de sujeción PFEIFER. Combinados, estos productos permiten fijar los anclajes roscados al encofrado de forma rápida, en el ángulo correcto y con las medidas precisas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-fix-118542_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-fix-118542_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/tornillo-de-fijacion.html",
     "manufacturingCountry": "Alemania",
@@ -2083,6 +2181,9 @@
     "descriptionEs": "El tornillo de fijación PFEIFER sin cabeza está previsto para el montaje a ras de la superficie. En combinación con el tornillo de fijación PFEIFER, garantiza la fijación segura de un anclaje roscado al encofrado. Para el cierre de la entalladura generada pueden utilizarse tapones exteriores PFEIFER de plástico pequeños.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-118593_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-118593_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/tornillo-de-sujecion-sin-cabeza.html",
     "manufacturingCountry": "Alemania",
@@ -2098,6 +2199,9 @@
     "descriptionEs": "El tornillo de fijación PFEIFER plano está previsto para el montaje ligeramente profundo. En combinación con el tornillo de fijación PFEIFER, garantiza la fijación segura de un anclaje roscado al encofrado. Para elevar un anclaje de transporte montado profundo mediante el tornillo de sujeción PFEIFER plano se utilizan argollas de cable o argollas de cable tipo tolva. Para el cierre de la entalladura generada se encuentran a disposición elementos de acero inoxidable y plástico.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-227962_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-227962_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/tornillo-de-sujecion-plano.html",
     "manufacturingCountry": "Alemania",
@@ -2113,6 +2217,9 @@
     "descriptionEs": "El tornillo de sujeción PFEIFER medio puede utilizarse solo o combinado con el plato de escotadura PFEIFER para el montaje profundo de anclajes de transporte. En combinación con el tornillo de fijación PFEIFER, garantiza la fijación segura de un anclaje roscado al encofrado. Si se utiliza el tornillo de sujeción medio individualmente, para la elevación de un anclaje de transporte montado profundo deben utilizarse exclusivamente argollas de cable o argollas de cable tipo tolva. Por el contrario, en caso de un montaje combinado con el plato de escotadura, pueden utilizarse todos los elevadores del sistema de rosca. Para el cierre de la entalladura generada se encuentra disponibles elementos de acero inoxidable, plástico y hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-118583_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-118583_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/tornillo-de-sujecion-medio.html",
     "manufacturingCountry": "Alemania",
@@ -2128,6 +2235,9 @@
     "descriptionEs": "El tornillo de sujeción PFEIFER profundo está previsto para un montaje profundo a 30 mm. En combinación con el tornillo de fijación PFEIFER, garantiza la fijación segura de un anclaje roscado al encofrado. Para elevar un anclaje de transporte montado profundo mediante el tornillo de sujeción PFEIFER profundo se utilizan argollas de cable. Para el cierre de la entalladura generada se encuentran a disposición elementos de acero inoxidable y plástico.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-227977_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-hus-227977_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/tornillo-de-sujecion-profundo.html",
     "manufacturingCountry": "Alemania",
@@ -2143,6 +2253,9 @@
     "descriptionEs": "El plato de escotadura PFEIFER puede utilizarse en combinación con el tornillo de sujeción PFEIFER medio para un montaje profundo y la fijación segura de anclajes roscados en el encofrado. El tamaño de la entalladura está adaptado de forma óptima al uso de dispositivos rotativos de suspensión PFEIFER y dispositivos de suspensión especiales PFEIFER. La variante de plástico puede clavarse fácilmente en el encofrado y, además, es muy económica. Para el cierre de la entalladura generada se encuentra disponibles elementos de acero inoxidable, plástico y hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aut-118442_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aut-118442_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/plato-de-escotadura.html",
     "manufacturingCountry": "Alemania",
@@ -2158,6 +2271,9 @@
     "descriptionEs": "El plato de escotadura PFEIFER puede utilizarse en combinación con el tornillo de sujeción PFEIFER medio para un montaje profundo y la fijación segura de anclajes roscados en el encofrado. El tamaño de la entalladura está adaptado de forma óptima al uso de dispositivos rotativos de suspensión PFEIFER y dispositivos de suspensión especiales PFEIFER. La variante de acero galvanizado se caracteriza por su elevada robustez, así como por su vida útil y se puede clavar fácilmente al encofrado. Para el cierre de la entalladura generada se encuentra disponibles elementos de acero inoxidable, plástico y hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aut-118443_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aut-118443_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/plato-de-escotadura-acero.html",
     "manufacturingCountry": "Alemania",
@@ -2173,6 +2289,9 @@
     "descriptionEs": "El plato magnético PFEIFER galvanizado sirve para fijar de forma segura los anclajes roscados a encofrados de acero. Además, permiten realizar un montaje profundo. El tamaño de la entalladura está adaptado de forma óptima al uso de dispositivos rotativos de suspensión PFEIFER y dispositivos de suspensión especiales PFEIFER. Para el cierre de la entalladura generada se encuentra disponibles elementos de acero inoxidable, plástico y hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-mag-118564_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-mag-118564_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/fijaciones-de-encofrados/plato-magnetico.html",
     "manufacturingCountry": "Alemania",
@@ -2188,6 +2307,9 @@
     "descriptionEs": "Los tornillos de cierre PFEIFER de acero inoxidable se utilizan para el cierre duradero de anclajes roscados que se fijaron al encofrado con el tornillo de sujeción correspondiente. El tornillo de cierre PFEIFER plano cierra entalladuras del tornillo de sujeción plano PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227921_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227921_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/tornillo-de-cierre-plano.html",
     "manufacturingCountry": "Alemania",
@@ -2203,6 +2325,9 @@
     "descriptionEs": "Los tornillos de cierre PFEIFER de acero inoxidable se utilizan para el cierre duradero de anclajes roscados que se fijaron al encofrado con el tornillo de sujeción correspondiente. El tornillo de cierre PFEIFER medio cierra entalladuras del tornillo de sujeción medio PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227905_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227905_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/tornillo-de-cierre-medio.html",
     "manufacturingCountry": "Alemania",
@@ -2218,6 +2343,9 @@
     "descriptionEs": "Los tornillos de cierre PFEIFER de acero inoxidable se utilizan para el cierre duradero de anclajes roscados que se fijaron al encofrado con el tornillo de sujeción correspondiente. El tornillo de cierre PFEIFER profundo cierra entalladuras del tornillo de sujeción profundo PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227883_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-227883_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/tornillo-de-cierre-profundo.html",
     "manufacturingCountry": "Alemania",
@@ -2233,6 +2361,9 @@
     "descriptionEs": "El plato de cierre PFEIFER de acero inoxidable permite el cierre duradero de un anclaje roscado montado con el plato magnético o el plato de escotadura PFEIFER. Gracias al material insensible a la corrosión, acero inoxidable, el plato de cierre también puede utilizarse en zonas exteriores y húmedas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-abd-202668_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-abd-202668_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/plato-de-cierre-acero-inoxidable-grande.html",
     "manufacturingCountry": "Alemania",
@@ -2248,6 +2379,9 @@
     "descriptionEs": "El plato de cierre PFEIFER medio de hormigón permite el cierre duradero de un anclaje roscado montado con el tornillo de sujeción PFEIFER medio. Gracias a su superficie de hormigón lisa, las entalladuras pueden cerrarse de forma casi invisible. El plato de cierre se fija al anclaje mediante pegado con un adhesivo adecuado y encaja exactamente en la entalladura del sistema que queda en el hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-278350_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-278350_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_CONCRETE-COVER-CAPS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/plato-de-cierre-de-hormigon-medio.html",
     "manufacturingCountry": "Alemania",
@@ -2263,6 +2397,9 @@
     "descriptionEs": "El plato de cierre PFEIFER grande de hormigón permite el cierre duradero de un anclaje roscado montado con el plato magnético o el plato de escotadura PFEIFER. Gracias a su superficie de hormigón lisa, las entalladuras pueden cerrarse de forma casi invisible. El plato de cierre se fija al anclaje mediante pegado con un adhesivo adecuado y encaja exactamente en la entalladura del sistema que queda en el hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-278350_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-ver-278350_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_CONCRETE-COVER-CAPS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/plato-de-cierre-de-hormigon-grande.html",
     "manufacturingCountry": "Alemania",
@@ -2278,6 +2415,9 @@
     "descriptionEs": "Los tapones exteriores PFEIFER de color gris hormigón se utilizan para el cierre de anclajes roscados con un aspecto óptimo. La presente variante, pequeña, se utiliza para cerrar anclajes roscados montados a ras de la superficie o profundos (independientemente de la medida de profundidad).",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aus-118632_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aus-118632_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/tapon-exterior-pequeno.html",
     "manufacturingCountry": "Alemania",
@@ -2293,6 +2433,9 @@
     "descriptionEs": "Los tapones exteriores PFEIFER de color gris hormigón se utilizan para el cierre de anclajes roscados con un aspecto óptimo. La presente variante, grande, se utiliza para cerrar anclajes roscados montados profundos, que se instalaron con la ayuda de platos magnéticos o platos de escotadura.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aus-118665_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-aus-118665_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/cierre-de-huecos/tapon-exterior-grande.html",
     "manufacturingCountry": "Alemania",
@@ -2308,6 +2451,9 @@
     "descriptionEs": "El sistema de kit de reparación está compuesto por un mortero de inyección KM 5 y un anclaje roscado, así como por un tornillo con arandela. (El número de componentes por unidad de embalaje varía según el tamaño del anclaje) La variante del kit de reparación PFEIFER para forjados incluye un anclaje de tornillo PFEIFER para montaje superficial. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva. Mediante la simple adhesión del anclaje a una perforación, este puede cargarse una vez transcurrido el tiempo de curado del mortero de inyección.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-rep-142496_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-rep-142496_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/g160318/para-forjados.html",
     "manufacturingCountry": "Alemania",
@@ -2323,6 +2469,9 @@
     "descriptionEs": "El sistema de kit de reparación está compuesto por un mortero de inyección KM 5 y un anclaje roscado, así como por un tornillo con arandela. (El número de componentes por unidad de embalaje varía según el tamaño del anclaje) La variante del kit de reparación PFEIFER para paredes incluye un anclaje de barra PFEIFER para montaje frontal. Además de la variante estándar con manguito galvanizado, también está disponible una versión con manguito de acero inoxidable para requisitos elevados de protección anticorrosiva. Mediante la simple adhesión del anclaje a una perforación, este puede cargarse una vez transcurrido el tiempo de curado del mortero de inyección.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-rep-227271_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-rep-227271_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_GEWINDESYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-rosca/g160318/para-muros.html",
     "manufacturingCountry": "Alemania",
@@ -2338,6 +2487,9 @@
     "descriptionEs": "El anclaje PFEIFER DR se utiliza para el transporte de paredes, tubos y forjados y puede disponerse en el elemento tanto de forma superficial como también frontal. La altura del anclaje puede adaptarse en función del uso previsto y, por tanto, seleccionarse de forma óptima para una aplicación de carga segura y específica para la aplicación.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-dra-118241_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-dra-118241_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid-oxid/anclajes-pfeifer-dr.html",
     "manufacturingCountry": "Alemania",
@@ -2353,6 +2505,9 @@
     "descriptionEs": "El anclaje PFEIFER WK corto se utiliza principalmente como anclaje de transporte para elementos lineales con elevado grado de armadura como, por ejemplo, pilares o vigas. Los anclajes se instalan de forma superficial en los mismos. Gracias a la armadura ya existente en los elementos de elevado grado de armadura, todas las fuerzas se pueden transmitir de forma segura a pesar de la construcción corta del anclaje.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wka-118348_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wka-118348_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid-oxid/anclaje-pfeifer-wk-corto.html",
     "manufacturingCountry": "Alemania",
@@ -2368,6 +2523,9 @@
     "descriptionEs": "El anclaje PFEIFER WK para vigas se utiliza como anclaje de transporte de elementos de hormigón armado como vigas. Los anclajes se instalan frontalmente en los mismos. Esta variante especial del anclaje WK reduce las distancias mínimas necesarias, así como las dimensiones mínimas de los elementos gracias a una altura de anclaje y, por tanto, a una profundidad de anclaje, aumentadas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wka-288803_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wka-288803_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid-oxid/anclaje-pfeifer-wk-largo.html",
     "manufacturingCountry": "Alemania",
@@ -2383,6 +2541,9 @@
     "descriptionEs": "El PFEIFER WK Quicklift es el elevador robusto y de alta calidad del sistema WK. Se utiliza en combinación con los anclajes PFEIFER DR y PFEIFER WK de hormigonados. Mediante simple enhebrado de las cabezas de anclaje a través de la ranura se puede generar una unión segura entre el anclaje y el elevador y, por tanto, garantizar un transporte seguro. El proceso de anclaje se reduce considerablemente en comparación con los sistemas de rosca o similares. El sistema PFEIFER WK destaca por el ahorro de tiempo resultante y por su rentabilidad.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkq-175722_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkq-175722_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid-oxid-1/quicklift-wk.html",
     "manufacturingCountry": "Alemania",
@@ -2398,6 +2559,9 @@
     "descriptionEs": "El relleno PFEIFER WK ha sido concebido para asegurar la posición de montaje de todos los anclajes de transporte del sistema WK. El relleno se retira tras el desencofrado. Este deja una cavidad de molde adecuada en el hormigón. Gracias a su forma definida, el PFEIFER WK Quicklift correspondiente encuentra el lugar adecuado en la entalladura para sujetar de forma segura el cabezal de anclaje y garantizar un anclaje eficiente. Esta versión del relleno presenta una placa roscada montada con rosca interior métrica en la que se enrosca el correspondiente tornillo de fijación PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkf-118273_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkf-118273_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid/relleno-pfeifer-wk.html",
     "manufacturingCountry": "Alemania",
@@ -2413,6 +2577,9 @@
     "descriptionEs": "El relleno PFEIFER WK con tornillo prisionero se utiliza para el montaje de todos los anclajes de transporte del sistema WK. El relleno se retira tras el desencofrado. Este deja una cavidad de molde adecuada en el hormigón. Gracias a su forma definida, el PFEIFER WK Quicklift correspondiente encuentra el lugar adecuado en la entalladura para sujetar de forma segura el cabezal de anclaje y garantizar un anclaje eficiente. Con el tornillo prisionero sobresaliente, que sustituye al tornillo de fijación PFEIFER, el cuerpo puede fijarse atravesando el encofrado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkf-118415_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/wk-wkf-118415_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_WK-SYSTEM_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-wk-pfeifer/oxid/relleno-pfeifer-wk-con-tornillo-prisionero.html",
     "manufacturingCountry": "Alemania",
@@ -2428,6 +2595,9 @@
     "descriptionEs": "El anclaje PFEIFER BS es un anclaje de transporte muy económico para elementos prefabricados de hormigón. Se utiliza si su lado de anclaje posteriormente ya no queda visible como, por ejemplo, en el caso de cimentaciones prefabricadas, vigas o muros de contención. El lazo de cable que sobresale del elemento se puede cortar tras el uso. Alternativamente, con la ayuda del relleno BS, algunos tamaños de anclaje sirven para el montaje profundo. Todos los anclajes BS cuentan con etiquetas de capacidad de carga de plástico con la codificación de color correspondiente al color del correspondiente gancho BS.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsa-117669_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsa-117669_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_BS-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-anclaje-pfeifer-bs/oxid/anclaje-pfeifer-bs.html",
     "manufacturingCountry": "Alemania",
@@ -2443,6 +2613,9 @@
     "descriptionEs": "El lazo angular PFEIFER para forjados y paredes angulares fue desarrollado como anclaje de transporte para elevar elementos de hormigón como forjados y paredes angulares. Debido a la forma del lazo angular y a la conformación del angular de sujeción se logran un montaje muy sencillo y una fijación sencilla al la armadura. Tras alcanzar la resistencia objetivo del hormigón, el elemento puede transportarse de forma segura enganchando directamente al lazo que sobresale del elemento con un gancho de suspensión adecuado. Todos los lazos angulares cuentan con etiquetas de capacidad de carga de plástico con codificación de color en función de la resistencia admisible.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-win-117843_3_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/gs-win-117843_3_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_BS-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-anclaje-pfeifer-bs/oxid/lazo-angular.html",
     "manufacturingCountry": "Alemania",
@@ -2458,6 +2631,9 @@
     "descriptionEs": "El gancho PFEIFER BS se utiliza como elevador en el sistema de anclaje BS cuando se ha montado un anclaje BS profundo. Gracias a una conformación de la boca del gancho óptima para el cable, se garantiza una transmisión de fuerzas segura al cable del anclaje BS, al contrario que en el caso de la fijación directa con gancho de grúa, etc. Por tanto, el uso del gancho BS se recomiendo también para el montaje sobresaliente de anclajes BS. Un pasador de seguridad con muelle evita que se suelte accidentalmente el anclaje BS del gancho BS. Para facilitar la diferenciación, los ganchos BS de diferentes niveles de capacidad de carga están pintados de diferentes colores. Los anclajes BS cuentan con etiquetas de capacidad de carga con la misma codificación de color.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsh-118149_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsh-118149_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_BS-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-anclaje-pfeifer-bs/oxid-oxid/gancho-bs-0-8-25-0.html",
     "manufacturingCountry": "Alemania",
@@ -2473,6 +2649,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-spr-393615_apd-3_44x44_4c_tif.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-spr-393615_apd-3_44x44_4c_tif.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_BS-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-anclaje-pfeifer-bs/oxid-oxid/28-0-99-0.html",
     "manufacturingCountry": "Alemania",
@@ -2488,6 +2667,9 @@
     "descriptionEs": "El relleno PFEIFER BS sirve para fijar anclajes PFEIFER BS en caso de montaje profundo en el encofrado. Simultáneamente, el relleno PFEIFER BS crea en el hormigón la entalladura necesaria para enganchar el gancho BS en el anclaje BS. El cuerpo de escotadura de goma se extiende en el plano de separación y se coloca por encima del anclaje BS. En el propio cuerpo se encuentra una chapa troquelada con rosca interior que permite la fijación al encofrado mediante el tornillo de fijación PFEIFER. Los rellenos para el sistema de anclaje BS se encuentran disponibles con forma rectangular y redonda.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsf-118548_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/bs-bsf-118548_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_BS-ANCHOR_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/sistemas-de-anclaje-de-transporte/sistema-de-anclaje-pfeifer-bs/oxid-oxid-1/relleno-pfeifer-bs.html",
     "manufacturingCountry": "Alemania",
@@ -2503,6 +2685,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-fup-503469_apr-1.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-fup-503469_apr-1.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PREISLISTE_PLEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g160321/g162547/tornillo-de-hormigon-oxid.html",
     "manufacturingCountry": "Alemania",
@@ -2518,6 +2703,9 @@
     "descriptionEs": "Las placas de anclaje consisten en una placa de acero con pernos de cizallamiento soldados y se utilizan para conectar componentes de acero con elementos de hormigón. Para ello, las placas de anclaje se colocan en hormigón en el elemento de hormigón donde los pernos de cizallamiento sirven de anclaje. Cuando se instala, la placa de acero está libre de hormigón a ras de la superficie, lo que permite soldar un componente de acero.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-apl-420507_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-apl-420507_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_ANCHOR-PLATES-APL_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/g160329/oxid/placa-de-anclaje-apl.html",
     "manufacturingCountry": "Alemania",
@@ -2533,6 +2721,9 @@
     "descriptionEs": "El anclaje de puntal inclinado PFEIFER MoFi se monta en la superficie de muros de hormigón u hojas de paredes dobles y sirve como punto de fijación seguro, así como técnicamente adecuado para puntales inclinados durante el montaje. El anclaje absorbe cargas de viento o de impactos ligeros.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-moa-268510_apr-7_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/db-moa-268510_apr-7_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid-oxid-1/anclaje-de-puntal-inclinado-mofi.html",
     "manufacturingCountry": "Alemania",
@@ -2548,6 +2739,9 @@
     "descriptionEs": "Para el montaje de un puntal inclinado, el tornillo de sujeción de alta resistencia (8.8) se gira simplemente en el MoFi. Gracias al fijador de roscas en el MoFi se evita que el tornillo se suelte accidentalmente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-289061_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-289061_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid-oxid-1/tornillo-de-sujecion-para-mofi.html",
     "manufacturingCountry": "Alemania",
@@ -2563,6 +2757,9 @@
     "descriptionEs": "La entalladura de plástico se utiliza para la fijación de anclajes de puntal inclinado MoFi al encofrado. Se puede fijar mediante adhesivo o mediante tornillos y clavos sobre el encofrado. Presionando simplemente la entalladura de plástico en el MoFi se asegura una unión suficiente de ambos productos.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mok-287251_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mok-287251_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid/entalladura-de-plastico.html",
     "manufacturingCountry": "Alemania",
@@ -2578,6 +2775,9 @@
     "descriptionEs": "La entalladura magnética PFEIFER se utiliza para la fijación de anclajes de puntal inclinado MoFi al encofrados de acero. El producto está disponible en dos variantes diferentes: una versión con rosca exterior para atornillar en el MoFi, así como una que simplemente se inserta.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-462000_apr-4_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-462000_apr-4_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid/iman-unico.html",
     "manufacturingCountry": "Alemania",
@@ -2593,6 +2793,9 @@
     "descriptionEs": "La entalladura magnética PFEIFER se utiliza para la fijación de anclajes de puntal inclinado MoFi al encofrados de acero.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-290900_apr-3_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mom-290900_apr-3_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid/entalladura-magnetica.html",
     "manufacturingCountry": "Alemania",
@@ -2608,6 +2811,9 @@
     "descriptionEs": "El tapón de cierre PFEIFER se utiliza para el cierre de anclajes de puntal inclinado MoFi con un aspecto óptimo. La presente variante de plástico es especialmente económica. El tapón se fija al anclaje mediante presión y encaja exactamente en la entalladura del sistema que queda en el hormigón. Uso en interiores",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mok-273624_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mok-273624_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_MOFI_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid-oxid/tapon-de-cierre-de-plastico-para-mofi.html",
     "manufacturingCountry": "Alemania",
@@ -2623,6 +2829,9 @@
     "descriptionEs": "El tapón de cierre PFEIFER se utiliza para el cierre de anclajes de puntal inclinado MoFi con un aspecto óptimo. La presente variante de hormigón ofrece una opción planificable para un aspecto duradero y de alta calidad del anclaje cerrado. El tapón se fija al anclaje mediante pegado con un adhesivo adecuado y encaja exactamente en la entalladura del sistema que queda en el hormigón. Especialmente adecuado para el cierre en hormigón visto",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mob-290593_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ms-mob-290593_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_CONCRETE-COVER-CAPS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-fijacion/anclaje-de-puntal-inclinado/oxid-oxid/tapon-de-cierre-de-hormigon-para-mofi.html",
     "manufacturingCountry": "Alemania",
@@ -2638,6 +2847,9 @@
     "descriptionEs": "El sistema VS ® BZ sirve principalmente para la unión por arrastre de fuerza de elementos de pared prefabricados. El clip anaranjado dentro de los raíles identifica un sistema homologado. Solo se pueden combinar productos con el mismo clip anaranjado. El Instituto Alemán de Tecnología de la Construcción (DIBt) emitió una autorización general de construcción (abZ) para el sistema VS ® BZ.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsz-198142_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsz-198142_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-BZ-UE_ZEDE.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid-oxid/sistema-pfeifer-vs-bz.html",
     "manufacturingCountry": "Alemania",
@@ -2653,6 +2865,9 @@
     "descriptionEs": "Los listones VS ® T20 y raíles T50 sirven tanto para la unión constructiva de paredes prefabricadas y pilares, como también para la unión de dos paredes y se utilizan siempre combinados. Los listones en T y raíles presentan un clip negro que garantiza una asignación inequívoca.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vss-286802_apr-1_44x44_4c_1.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vss-286802_apr-1_44x44_4c_1.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-SYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid-oxid/liston-vs-t20.html",
     "manufacturingCountry": "Alemania",
@@ -2668,6 +2883,9 @@
     "descriptionEs": "El raíl VS ® W50 sirve para la unión no portante de elementos de hormigón, principalmente de juntas de pared. Los raíles W50 presentan un clip blanco que garantiza una asignación inequívoca",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vss-142413_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vss-142413_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-SYSTEM_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid-oxid/rail-vs-w50.html",
     "manufacturingCountry": "Alemania",
@@ -2683,6 +2901,9 @@
     "descriptionEs": "La caja VS ® Slim EASYFILL se utiliza para la unión económica de elementos prefabricados de hormigón tipo muro entre sí, así como para la unión de pilares y paredes en caso de elevadas capacidades de carga. El producto consiste en una caja de chapa de acero estable, en la que se encuentran lazos de unión de cable flexibles y desplegables. El clip azul dentro de las cajas identifica un sistema homologado. Solo se pueden combinar productos con el mismo clip azul. El Instituto Alemán de Tecnología de la Construcción (DIBt) emitió una Evaluación técnica europea (ETA) para la caja VS ® Slim EASYFILL.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsp-309578_apr-2_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsp-309578_apr-2_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-SLIM-BOX-EASYFILL_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid/vs-slim-caja-easyfill.html",
     "manufacturingCountry": "Alemania",
@@ -2698,6 +2919,9 @@
     "descriptionEs": "La caja VS ® EASYFILL sirve preferentemente para una unión no portante de elementos de hormigón. Las juntas de pared pueden realizarse de forma sencilla, económica y segura. El producto consiste en una caja de chapa de acero estable, en la que se encuentran lazos de unión de cable flexibles y desplegables. El clip de color dentro de las cajas identifica la longitud respectiva de los lazos de cable integrados. Solo deben combinarse cajas con clips del mismo color.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsp-325524_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsp-325524_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-BOX_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid/vs-caja-easyfill.html",
     "manufacturingCountry": "Alemania",
@@ -2713,6 +2937,9 @@
     "descriptionEs": "La caja VS ® sirve preferentemente para una unión no portante de elementos de hormigón. Las juntas de pared pueden realizarse de forma sencilla, económica y segura. El producto consiste en una caja de chapa de acero estable, en la que se encuentran lazos de unión de cable flexibles y desplegables. El clip de color dentro de las cajas identifica la longitud respectiva de los lazos de cable integrados. Solo deben combinarse cajas con clips del mismo color.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsb-117884_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-vsb-117884_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-BOX_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid/vs-caja-classic.html",
     "manufacturingCountry": "Alemania",
@@ -2728,6 +2955,9 @@
     "descriptionEs": "La caja FS-Box LIGHT se monta como elemento de unión en componentes de hormigón in situ, en semiprefabricados de hormigón armado o prefabricados. El producto consiste en una caja de chapa de acero estable, en la que se encuentran lazos de unión de cable flexibles y desplegables. La caja se utiliza para la transmisión de fuerzas de cargas estáticas o cuasi-estáticas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-fsb-378521_apr-5_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-fsb-378521_apr-5_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_FS-BOX-LIGHT_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid/caja-fs-box-light.html",
     "manufacturingCountry": "Alemania",
@@ -2743,6 +2973,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-mag-516952_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vs-mag-516952_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_VS-MAGNETBEFESTIGUNG_PPDE.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/oxid/oxid-oxid-1/fijacion-magnetica.html",
     "manufacturingCountry": "Alemania",
@@ -2758,6 +2991,9 @@
     "descriptionEs": "El PCC de Pie de Columna PFEIFER está destinado a la conexión rígida atornillada de elementos de hormigón prefabricado - como las columnas con los cimientos. Los pies de columna se utilizan en combinación con los anclajes de los cimientos (o barras de encaje).",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-stz-273703_apr-1_44x44-4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-stz-273703_apr-1_44x44-4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-2/pie-de-pilar-pcc.html",
     "manufacturingCountry": "Alemania",
@@ -2773,6 +3009,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/H con comprobación estática de tipo en su versión de manguito con rosca interior son componentes del pie de columna, así como del sistema de unión para pared y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La unión entre pie de columna o unión para pared y anclaje de cimientos tiene lugar mediante los pernos de unión correspondientes. La presente variante de anclaje tipo PGS/H4 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. Con la técnica de casquillo con rosca conocida de PFEIFER, la principal ventaja durante el proceso de construcción consiste en que los pernos de unión se enroscan en los anclajes justo antes del montaje y por tanto los pernos salientes no perturban el proceso de construcción. Durante la fase de construcción, la rosca interior del manguito soldado puede cerrarse, por ejemplo, con ayuda del tapón exterior PFEIFER pequeño, para protegerlo de las impurezas y contra daños.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-200818_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-200818_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-h4.html",
     "manufacturingCountry": "Alemania",
@@ -2788,6 +3027,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/H con comprobación estática de tipo en su versión de manguito con rosca interior son componentes del pie de columna, así como del sistema de unión para pared y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La unión entre pie de columna o unión para pared y anclaje de cimientos tiene lugar mediante los pernos de unión correspondientes. La presente variante de anclaje tipo PGS/H2 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. Con la técnica de casquillo con rosca conocida de PFEIFER, la principal ventaja durante el proceso de construcción consiste en que los pernos de unión se enroscan en los anclajes justo antes del montaje y por tanto los pernos salientes no perturban el proceso de construcción. Durante la fase de construcción, la rosca interior del manguito soldado puede cerrarse, por ejemplo, con ayuda del tapón exterior PFEIFER pequeño, para protegerlo de las impurezas y contra daños.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020254_gmp-1_90x90_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020254_gmp-1_90x90_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-oxid.html",
     "manufacturingCountry": "Alemania",
@@ -2803,6 +3045,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/H con comprobación estática de tipo en su versión de manguito con rosca interior son componentes del pie de columna, así como del sistema de unión para pared y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La unión entre pie de columna o unión para pared y anclaje de cimientos tiene lugar mediante los pernos de unión correspondientes. La presente variante de anclaje tipo PGS/H2 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. Con la técnica de casquillo con rosca conocida de PFEIFER, la principal ventaja durante el proceso de construcción consiste en que los pernos de unión se enroscan en los anclajes justo antes del montaje y por tanto los pernos salientes no perturban el proceso de construcción. Durante la fase de construcción, la rosca interior del manguito soldado puede cerrarse, por ejemplo, con ayuda del tapón exterior PFEIFER pequeño, para protegerlo de las impurezas y contra daños.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-200809_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-200809_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-h2.html",
     "manufacturingCountry": "Alemania",
@@ -2818,6 +3063,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/H con comprobación estática de tipo en su versión de manguito con rosca interior son componentes del pie de columna, así como del sistema de unión para pared y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La unión entre pie de columna o unión para pared y anclaje de cimientos tiene lugar mediante los pernos de unión correspondientes. La presente variante de anclaje tipo PGS/H2 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. Con la técnica de casquillo con rosca conocida de PFEIFER, la principal ventaja durante el proceso de construcción consiste en que los pernos de unión se enroscan en los anclajes justo antes del montaje y por tanto los pernos salientes no perturban el proceso de construcción. Durante la fase de construcción, la rosca interior del manguito soldado puede cerrarse, por ejemplo, con ayuda del tapón exterior PFEIFER pequeño, para protegerlo de las impurezas y contra daños.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020254_gmp-2_90x90_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020254_gmp-2_90x90_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos.html",
     "manufacturingCountry": "Alemania",
@@ -2833,6 +3081,9 @@
     "descriptionEs": "Der Wandschuh PWC dient als Verbindungselement für Wandanschlüsse. Der Wandschuh besteht aus einer massiven Grundplatte mit zentraler Hauptbohrung, einem Gehäuse aus Seitenblechen und zwei angeschweißten Ankerstäben.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-wan-475602_apr-1_44x44-4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-wan-475602_apr-1_44x44-4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/g35789/union-para-pared-pwc.html",
     "manufacturingCountry": "Alemania",
@@ -2848,6 +3099,9 @@
     "descriptionEs": "La unión para pared PFEIFER PWS con sistema estático tipo comprobado sirve como elemento de unión dentro de construcciones de muro rigidizadoras. Son posibles la absorción y la transmisión tanto de fuerzas de tracción verticales a la junta, como también de fuerzas transversales en dirección longitudinal de la junta. Una unión para pared PFEIFER PWS se utiliza en combinación con anclajes de cimientos PFEIFER PGS tipo H de y pernos de unión PFEIFER PAP.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-wan-199442_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-wan-199442_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/g35789/union-para-pared-pws.html",
     "manufacturingCountry": "Alemania",
@@ -2863,6 +3117,9 @@
     "descriptionEs": "La chapa de cubierta PWS reutilizable con pico de llenado se utiliza para el llenado sencillo y limpio de la entalladura de montaje en la unión para pared PWS.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-wan-165352_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-wan-165352_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/g35789/chapa-de-cubierta-pws.html",
     "manufacturingCountry": "Alemania",
@@ -2878,6 +3135,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La presente variante de anclaje tipo PGS/G1 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. Gracias a este mecanismo de anclaje, este tipo de anclaje de cimientos es especialmente adecuado para la unión de dos pilares. El perno roscado del anclaje sobresale del elemento de hormigón tras el hormigonado y permite la unión con el pie de columna correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-225923_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-225923_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-g1.html",
     "manufacturingCountry": "Alemania",
@@ -2893,6 +3153,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020337_gmp-1_90x90_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020337_gmp-1_90x90_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-g1-b.html",
     "manufacturingCountry": "Alemania",
@@ -2908,6 +3171,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La presente variante de anclaje tipo PGS/G1-K transmite estas cargas al elemento, según la autorización, a través de un cabezal de anclaje recalcado. Gracias a este mecanismo de anclaje, este tipo de anclaje de cimientos es especialmente adecuado para la unión de un pilar con su cimentación. El perno roscado del anclaje sobresale del elemento de hormigón tras el hormigonado y permite la unión con el pie de columna correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-fun-281337_apr-1_44x44_4c_1.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-fun-281337_apr-1_44x44_4c_1.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-g1-k.html",
     "manufacturingCountry": "Alemania",
@@ -2923,6 +3189,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La presente variante de anclaje tipo PGS/G1-DK transmite estas cargas al elemento, según la autorización, a través de dos placas de presión. Debido a estas dos placas de presión, una para fuerzas de tracción y otra para fuerzas de compresión respectivamente, en cada sentido se garantiza una resistencia de cálculo adecuada a la práctica. Esto permite lograr espesores de cimentación muy reducidos a pesar de la acción de las fuerzas de tracción y compresión. El perno roscado del anclaje sobresale del elemento de hormigón tras el hormigonado y permite la unión con el pie de columna correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-222891_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-222891_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-g1-dk.html",
     "manufacturingCountry": "Alemania",
@@ -2938,6 +3207,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La presente variante de anclaje tipo PGS/G2 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. El perno roscado rígidamente soldado sobresale del elemento de hormigón tras el hormigonado y permite la unión con el pie de columna correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-176066_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-176066_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-g2.html",
     "manufacturingCountry": "Alemania",
@@ -2953,6 +3225,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020302_gmp-1_90x90_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020302_gmp-1_90x90_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-oxid-3.html",
     "manufacturingCountry": "Alemania",
@@ -2968,6 +3243,9 @@
     "descriptionEs": "Accesorio PFEIFER para elementos prefabricados de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020216_gmp-1_90x90_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-020216_gmp-1_90x90_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-oxid-1.html",
     "manufacturingCountry": "Alemania",
@@ -2983,6 +3261,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón. La presente variante de anclaje tipo PGS/G3 transmite estas cargas al elemento por unión mediante un anclaje final o un encuentro solapado según la norma. El perno roscado rígidamente soldado sobresale del elemento de hormigón tras el hormigonado y permite la unión con el pie de columna correspondiente.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-176060_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-176060_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-pgs-g3.html",
     "manufacturingCountry": "Alemania",
@@ -2998,6 +3279,9 @@
     "descriptionEs": "Los anclajes de cimientos PFEIFER PGS/G con autorización general de construcción, en su versión de rosca, son componentes del sistema de pie de columna y garantizan el anclaje seguro de cargas estáticas en la base de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-506913_apr-4_44x44.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-fun-506913_apr-4_44x44.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid-1/anclaje-de-cimientos-oxid-2.html",
     "manufacturingCountry": "Alemania",
@@ -3013,6 +3297,9 @@
     "descriptionEs": "El perno de unión PFEIFER PAP está compuesto por un perno roscado de alta resistencia con tuerca hexagonal atornillada y arandela, así como con la placa de anclaje adecuada. Sirve para la unión por arrastre de fuerza de las uniones para pared PFEIFER PWS con los anclajes de cimientos PGS tipo H correspondientes.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-vbb-199401_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-vbb-199401_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid/pernos-de-union-pap.html",
     "manufacturingCountry": "Alemania",
@@ -3028,6 +3315,9 @@
     "descriptionEs": "Los pernos de unión PFEIFER PVB de (M16 - 36) y PGV (M42 - 56) se utilizan en combinación con los anclajes de cimientos PFEIFER PGS/H2 y H4. Tras el enroscado completo, estos aseguran una unión rígida entre el anclaje de cimientos y el pie de columna correspondiente. Gracias a esta sencilla unión atornillada se pueden reducir considerablemente los tiempos de montaje de pilares de hormigón prefabricado y de la cimentación. Los pernos de unión se enroscan justo antes del montaje de los pilares en los casquillos de anclaje de la cimentación. El peligro de daño de las roscas se reduce así adicionalmente a un mínimo.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-vbb-203111_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-vbb-203111_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PWC-PWS_PPEN_1.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid-oxid/perno-de-union-pvb-pgv-fur-pcc-pwc.html",
     "manufacturingCountry": "Alemania",
@@ -3043,6 +3333,9 @@
     "descriptionEs": "Los cuerpos de receso PFEIFER están destinados a la ejecución profesional de la apertura atornillada necesaria para los pies de la columna PCC. Se requieren cuando se fijan los encofrados para evitar que la base de la columna se llene de hormigón. El producto está disponible en dos versiones - para instalación en esquina y lateral - y tres materiales diferentes - poliestireno, goma y metal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-278982_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-278982_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/instalacion-en-esquina.html",
     "manufacturingCountry": "Alemania",
@@ -3058,6 +3351,9 @@
     "descriptionEs": "Los cuerpos de receso PFEIFER están destinados a la ejecución profesional de la apertura atornillada necesaria para los pies de la columna PCC. Se requieren cuando se fijan los encofrados para evitar que la base de la columna se llene de hormigón. El producto está disponible en dos versiones - para instalación en esquina y lateral - y tres materiales diferentes - poliestireno, goma y metal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-278982_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-278982_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/instalacion-lateral.html",
     "manufacturingCountry": "Alemania",
@@ -3073,6 +3369,9 @@
     "descriptionEs": "Los cuerpos de receso PFEIFER están destinados a la ejecución profesional de la apertura atornillada necesaria para los pies de la columna PCC. Se requieren cuando se fijan los encofrados para evitar que la base de la columna se llene de hormigón. El producto está disponible en dos versiones - para instalación en esquina y lateral - y tres materiales diferentes - poliestireno, goma y metal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-337908_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-337908_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/instalacion-en-esquina-oxid.html",
     "manufacturingCountry": "Alemania",
@@ -3088,6 +3387,9 @@
     "descriptionEs": "Los cuerpos de receso PFEIFER están destinados a la ejecución profesional de la apertura atornillada necesaria para los pies de la columna PCC. Se requieren cuando se fijan los encofrados para evitar que la base de la columna se llene de hormigón. El producto está disponible en dos versiones - para instalación en esquina y lateral - y tres materiales diferentes - poliestireno, goma y metal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-432551_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-432551_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/instalacion-lateral-oxid.html",
     "manufacturingCountry": "Alemania",
@@ -3103,6 +3405,9 @@
     "descriptionEs": "Los cuerpos de receso PFEIFER están destinados a la ejecución profesional de la apertura atornillada necesaria para los pies de la columna PCC. Se requieren cuando se fijan los encofrados para evitar que la base de la columna se llene de hormigón. El producto está disponible en dos versiones - para instalación en esquina y lateral - y tres materiales diferentes - poliestireno, goma y metal.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-325859_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-325859_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/instalacion-en-esquina-oxid-1.html",
     "manufacturingCountry": "Alemania",
@@ -3118,6 +3423,9 @@
     "descriptionEs": "El casquillo de sujeción PFEIFER se utiliza en combinación con los cuerpos de escotadura PFEIFER de poliestireno. La cabeza del casquillo de sujeción lo mantiene en posición y encaja exactamente en la entalladura en el lado inferior del cuerpo de escotadura. La parte inferior, más delgada, del casquillo de sujeción tiene a su vez una forma que se adapta perfectamente a la perforación del pie de columna. Con la ayuda de un tornillo adecuado a la rosca del casquillo de sujeción, por ejemplo, el tornillo de fijación PFEIFER para el sistema de pie de columna, es posible fijar el pie de columna PFEIFER de forma adecuada al encofrado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-stz-275657_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/vb-stz-275657_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/casquillo-de-sujecion.html",
     "manufacturingCountry": "Alemania",
@@ -3133,6 +3441,9 @@
     "descriptionEs": "La toma de posición PFEIFER se utiliza en combinación con los cuerpos de receso PFEIFER de goma y metal. El manguito de posición llena la perforación en el lado inferior del pie de columna de forma precisa y disminuye su diámetro al diámetro de un tornillo de fijación adecuado. De este modo, puede enroscarse sin problema a la tuerca hexagonal fijada al lado interior del cuerpo de escotadura. De este modo puede asegurarse una fijación y ubicación adecuadas de los pies de columna sobre el encofrado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-279424_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/cc-zst-279424_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PCC-VISION-GENERAL_PPES.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-union/sistema-de-pie-de-pilar/oxid/manguito-de-posicion.html",
     "manufacturingCountry": "Alemania",
@@ -3148,6 +3459,9 @@
     "descriptionEs": "El anclaje cilíndrico PFEIFER fue desarrollado para la unión de la placa exterior y la placa portante en elementos sándwich de hormigón Debido a su forma redonda y como anclaje portante, es capaz de transmitir de forma uniformemente segura las acciones generadas en todas las direcciones, también al girar los elementos de pared. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso. En la práctica, los anclajes portantes se utilizan generalmente en combinación con las horquillas de conexión.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-zya-176718_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-zya-176718_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165584/anclaje-cilindrico.html",
     "manufacturingCountry": "Alemania",
@@ -3163,6 +3477,9 @@
     "descriptionEs": "El anclaje plano PFEIFER fue desarrollado para la unión de la placa exterior y la placa portante en elementos sándwich de hormigón. Como anclaje de sujeción, el anclaje PFEIFER-Delta evita un desplazamiento horizontal de la placa de paramento en relación a la placa portante. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso. En la práctica, los anclajes portantes se utilizan generalmente en combinación con las horquillas de conexión.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-fla-176777_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-fla-176777_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165584/anclaje-plano.html",
     "manufacturingCountry": "Alemania",
@@ -3178,6 +3495,9 @@
     "descriptionEs": "Los anclajes para paneles sándwich PFEIFER SPA se pueden utilizar para conectar las capas de carga y de revestimiento de los paneles sándwich. Los anclajes absorben el peso propio de la capa de revestimiento, así como las fuerzas horizontales proporcionales del viento y la temperatura.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-spa-413995_apd-2_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-spa-413995_apd-2_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/anclajes-de-placa-sandwich-spa.html",
     "manufacturingCountry": "Alemania",
@@ -3193,6 +3513,9 @@
     "descriptionEs": "Los anclajes para paneles sándwich PFEIFER SPA se pueden utilizar para conectar las capas de carga y de revestimiento de los paneles sándwich. Los anclajes absorben el peso propio de la capa de revestimiento, así como las fuerzas horizontales proporcionales del viento y la temperatura.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-spa-413995_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-spa-413995_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/anclajes-de-placa-sandwich-spa-2.html",
     "manufacturingCountry": "Alemania",
@@ -3208,6 +3531,9 @@
     "descriptionEs": "El anclaje PFEIFER Delta fue desarrollado para la unión de la placa exterior y la placa portante de un elemento sándwich de hormigón. Como anclaje de sujeción, el anclaje PFEIFER-Delta evita un desplazamiento horizontal de la placa de paramento en relación a la placa portante. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso. En la práctica, los anclajes portantes se utilizan generalmente en combinación con las horquillas de conexión.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-dta-218987_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-dta-218987_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/anclaje-delta.html",
     "manufacturingCountry": "Alemania",
@@ -3223,6 +3549,9 @@
     "descriptionEs": "La horquilla PFEIFER es una de las tres variantes de horquillas de conexión disponibles. Sirve como anclaje de unión en el sistema de anclaje Sandwich PFEIFER. Por cada elemento sándwich se distribuye una cantidad definida de horquillas en un patrón uniforme sobre toda la superficie del panel sándwich. Se utilizan siempre en combinación con anclajes PFEIFER Delta, planos o cilíndricos. Alternativamente, las horquillas dispuestas en forma de cruz, en una denominada cruceta de horquillas, pueden utilizarse por sí mismas como anclajes de sujeción o anclajes portantes. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176882_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176882_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/horquillas.html",
     "manufacturingCountry": "Alemania",
@@ -3238,6 +3567,9 @@
     "descriptionEs": "La horquilla tipo estribo PFEIFER es una de las tres variantes de horquillas de conexión disponibles. Sirve como anclaje de unión en el sistema de anclaje Sandwich PFEIFER. Por cada elemento sándwich se distribuye una cantidad definida de horquillas tipo estribo en un patrón uniforme sobre toda la superficie del panel sándwich. Se utilizan siempre en combinación con anclajes PFEIFER Delta, planos o cilíndricos. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176925_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176925_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/horquilla-tipo-estribo.html",
     "manufacturingCountry": "Alemania",
@@ -3253,6 +3585,9 @@
     "descriptionEs": "La horquilla tipo espera PFEIFER es una de las tres variantes de horquillas de conexión disponibles. Sirve como anclaje de unión en el sistema de anclaje Sandwich PFEIFER. Por cada elemento sándwich se distribuye una cantidad definida de horquillas tipo espera en un patrón uniforme sobre toda la superficie del panel sándwich. Se utilizan siempre en combinación con anclajes PFEIFER Delta, planos o cilíndricos. Para su fabricación se utiliza un acero inoxidable adecuado de calidad especial, que cumpla con los elevados requisitos en el marco del uso.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176906_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/va-vbn-176906_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_SWA-OVERVIEW_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/g162494/g165583/g165585/horquilla-tipo-espera.html",
     "manufacturingCountry": "Alemania",
@@ -3268,6 +3603,9 @@
     "descriptionEs": "La barra con manguito PFEIFER con plato de conexión PH es un componente elemental del sistema de conexión de armadura PH. Está compuesto por un acero de barra de armadura para garantizar una longitud de solape, con un casquillo con rosca métrica colocada a presión para la unión. En combinación con otros elementos del sistema PH como, puede crearse una unión de armadura al 100% por arrastre de fuerza mediante un simple enroscado. El plato de conexión permite realizar una fijación eficiente al encofrado y, por esta razón, es un componente fijo del suministro de las barras con manguito PFEIFER.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-muf-135178_apr-1_44x44_4c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-muf-135178_apr-1_44x44_4c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/oxid/barra-con-manguito.html",
     "manufacturingCountry": "Alemania",
@@ -3283,6 +3621,9 @@
     "descriptionEs": "La barra de manguito de reducción PFEIFER es una variante especial de la barra con manguito PFEIFER. La variante especial permite una reducción del diámetro de la barra dentro de un encuentro atornillado. Para ello no se requiere ningún elemento de acoplamiento adicional. En combinación con otros elementos del sistema PH como, puede crearse una unión de armadura al 100% por arrastre de fuerza mediante un simple enroscado.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-mur-020203_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-mur-020203_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/oxid/barra-de-manguito-de-reduccion.html",
     "manufacturingCountry": "Alemania",
@@ -3298,6 +3639,9 @@
     "descriptionEs": "El perno de acoplamiento PFEIFER de alta resistencia se utiliza para unir dos barras con manguito PFEIFER entre sí. De este modo se garantiza el 100% del arrastre de fuerza. En combinación con dos barras con manguito PFEIFER, a través del perno de acoplamiento PFEIFER se pueden trasmitir de forma segura, no solo cargas estáticas y dinámicas, sino también solicitaciones sísmicas, derivadas de eventos sísmicos.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-119263_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-119263_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/acoplamiento-y-reduccion-de-elementos/perno-de-acoplamiento.html",
     "manufacturingCountry": "Alemania",
@@ -3313,6 +3657,9 @@
     "descriptionEs": "El acoplador derecha-izquierda PFEIFER permite unir barras anguladas cuando estas están ubicadas tan estrechamente cerca entre sí que la rotación libre de las barras resulta imposible. Con la ayuda de este elemento de acoplamiento es perfectamente posible montar barras sin rotación libre, gracias a roscas de sentido contrario.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-119269_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-119269_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/acoplamiento-y-reduccion-de-elementos/acoplador-derecha-izquierda.html",
     "manufacturingCountry": "Alemania",
@@ -3328,6 +3675,9 @@
     "descriptionEs": "Con el perno de reducción PFEIFER pueden unirse entre sí barras con manguito de dos diferentes diámetros. De esta manera puede realizarse un escalonamiento rentable de las secciones de armadura en función de los requisitos estáticos.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211277_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211277_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/acoplamiento-y-reduccion-de-elementos/perno-de-reduccion.html",
     "manufacturingCountry": "Alemania",
@@ -3343,6 +3693,9 @@
     "descriptionEs": "La conexión de posicionamiento PFEIFER ofrece al usuario la posibilidad de unir entre sí dos barras de armadura sin rotación libre del sistema PH, que pueden desplazarse axialmente de forma condicionada. De este modo se garantiza el 100% del arrastre de fuerza.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211299_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211299_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/acoplamiento-y-reduccion-de-elementos/conexion-de-posicionamiento.html",
     "manufacturingCountry": "Alemania",
@@ -3358,6 +3711,9 @@
     "descriptionEs": "El manguito soldado PFEIFER está previsto para áreas en las que se combinan elementos estructurales de acero y acero corrugado. Mediante simple soldadura de los manguitos PH-AH puede realizarse una unión entre un elemento de acero y uno de hormigón.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211307_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-211307_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/g162618/manguito-soldado.html",
     "manufacturingCountry": "Alemania",
@@ -3373,6 +3729,9 @@
     "descriptionEs": "La placa de anclaje final PFEIFER se utiliza para realizar un anclaje final según DIN EN 1992-1-1. Es decir, que también son admisibles para solicitaciones dinámicas.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-218365_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kop-218365_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/g162618/placa-de-anclaje-final.html",
     "manufacturingCountry": "Alemania",
@@ -3388,6 +3747,9 @@
     "descriptionEs": "El plato de conexión PFEIFER PH con codificación de color se suministra como accesorio de montaje, así como para la protección de la rosca interior de las barras con manguito. En caso de pérdida, los platos de conexión también pueden adquirirse por separado. Permiten la fijación con clavos de una barra con manguito PFEIFER al encofrado en la posición precisa. Aviso: El acero corrugado debe fijarse adicionalmente a la armadura existente mediante alambre.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kst-118515_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-kst-118515_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/fijaciones-de-encofrados/plato-de-conexion-ph.html",
     "manufacturingCountry": "Alemania",
@@ -3403,6 +3765,9 @@
     "descriptionEs": "La llave dinamométrica PFEIFER se utiliza para apretar las uniones del sistema PH con un par controlado y conforme a la autorización. La llave dispone de mordazas ajustables, autoblocantes, así como dentadas, lo que permite sujetar de forma segura el acero corrugado. El rango de par de 40 a 200 Nm puede ajustarse libremente para todos los tamaños de conexión de armadura.",
     "capacityEs": "Según variante y ficha técnica",
     "imageUrl": "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-dre-219272_apr-1_44x44_1c.jpg",
+    "imageUrls": [
+      "https://www.pfeifer.info/out/pictures/generated/product/1/680_335_100/ph-dre-219272_apr-1_44x44_1c.jpg"
+    ],
     "pdfUrl": "https://www.pfeifer.info/out/assets/PFEIFER_PH_PPEN.PDF",
     "productUrl": "https://www.pfeifer.info/es/productos-servicios/productos/piezas-de-montaje-de-hormigon/tecnologia-de-armadura/sistema-de-conexion-de-armadura/oxid-oxid/llave-dinamometrica.html",
     "manufacturingCountry": "Alemania",

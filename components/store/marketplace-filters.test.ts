@@ -71,9 +71,7 @@ describe("store taxonomy controls",()=>{
   });
   it("links the landing category chips to real filtered catalog views",()=>{
     const hero=readFileSync(join(process.cwd(),"components/v21/Hero.tsx"),"utf8");
-    expect(hero).toContain('/tienda?q=pinza');
-    expect(hero).toContain('/tienda?q=balancín');
-    expect(hero).toContain('/tienda?q=gancho');
-    expect(hero).toContain('/tienda?q=eslinga');
+    for(const category of ["elevacion","fijacion","corte","altura","epi","sellado"])expect(hero).toContain(`/tienda?category=${category}`);
+    expect(hero).toContain('/tienda?ayuda=1');
   });
 });

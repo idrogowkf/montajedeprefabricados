@@ -12,6 +12,7 @@ export type CatalogSearchState={
   brands?:string[];
   hasDocument?:boolean;
   commercialMode?:CatalogCommercialMode;
+  assisted?:boolean;
 };
 export type CatalogSuggestion={type:"product"|"category"|"application"|"brand"|"assisted";id:string;label:string;detail:string};
 export type CatalogFacetOption={value:string;label:string;count:number;disabled:boolean};
@@ -115,6 +116,7 @@ export function parseCatalogState(input:URLSearchParams|string):CatalogSearchSta
   for(const [key,field] of [["subcategory","subcategories"],["piece","pieceTypes"],["material","materials"],["brand","brands"]] as const){const values=splitValues(params,key);if(values.length)state[field]=values;}
   if(params.get("document")==="yes")state.hasDocument=true;else if(params.get("document")==="no")state.hasDocument=false;
   if(params.get("mode")==="purchase"||params.get("mode")==="quote")state.commercialMode=params.get("mode") as CatalogCommercialMode;
+  if(params.get("ayuda")==="1")state.assisted=true;
   return state;
 }
 
@@ -124,5 +126,6 @@ export function serializeCatalogState(state:CatalogSearchState){
   for(const [key,values] of [["category",state.categories],["subcategory",state.subcategories],["application",state.applications],["piece",state.pieceTypes],["material",state.materials],["brand",state.brands]] as const)for(const value of values??[])params.append(key,value);
   if(state.hasDocument!==undefined)params.set("document",state.hasDocument?"yes":"no");
   if(state.commercialMode)params.set("mode",state.commercialMode);
+  if(state.assisted)params.set("ayuda","1");
   return params;
 }

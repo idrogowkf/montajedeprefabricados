@@ -38,6 +38,12 @@ describe("V2.1 technical navigation", () => {
     expect(source).toContain('href="/#inicio"');
   });
 
+  it("keeps the landing store navigation functional rather than brand-led",()=>{
+    const hero=readFileSync(resolve(process.cwd(),"components/v21/Hero.tsx"),"utf8");
+    for(const brand of ["Hilti","Petzl","Kratos","WIMAG"])expect(hero).not.toContain(`>${brand}<`);
+    expect(hero).toContain("Tienda profesional");
+  });
+
   it("uses the connected production domain for canonical discovery", () => {
     for (const file of ["app/layout.tsx", "app/robots.ts", "app/sitemap.ts", "lib/seo.ts"]) {
       const source = readFileSync(resolve(process.cwd(), file), "utf8");

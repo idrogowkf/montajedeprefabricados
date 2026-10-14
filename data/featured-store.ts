@@ -1,4 +1,4 @@
-import {isStorefrontComplete,type CatalogProduct} from "./catalog";
+import {hasStoreImage,type CatalogProduct} from "./catalog";
 
 const preferredIds=[
   "arnes-anticaidas",
@@ -10,7 +10,9 @@ const preferredIds=[
 ];
 
 export function selectFeaturedStoreProducts(products:CatalogProduct[],limit=6){
-  const complete=products.filter(isStorefrontComplete);
+  const complete=products.filter(product=>hasStoreImage(product)&&product.supplier.reference!=="PENDIENTE"&&product.sourceUrl.startsWith("https://"));
   const preferred=preferredIds.map(id=>complete.find(product=>product.id===id)).filter((product):product is CatalogProduct=>Boolean(product));
-  return [...preferred,...complete.filter(product=>!preferred.some(item=>item.id===product.id))].slice(0,limit);
+  const categories=["elevacion","fijacion","corte","altura","epi"];
+  const diverse=categories.map(category=>preferred.find(product=>product.category===category)??complete.find(product=>product.category===category)).filter((product):product is CatalogProduct=>Boolean(product));
+  return [...diverse,...preferred,...complete].filter((product,index,all)=>all.findIndex(item=>item.id===product.id)===index).slice(0,limit);
 }

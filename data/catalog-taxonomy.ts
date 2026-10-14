@@ -42,7 +42,7 @@ export const catalogSynonyms={
   pozos:["pozo","pozos","arqueta","arquetas","anillo","anillos","registro","registros"],
   elevar:["elevar","izar","levantar","coger","manipular"],
   perforar:["taladrar","perforar","agujero","agujeros"],
-  fijar:["taco","tacos","anclaje","anclajes","fijacion","fijaciones","perno","pernos"],
+  fijar:["fijar","montar","taco","tacos","anclaje","anclajes","fijacion","fijaciones","perno","pernos"],
   altura:["arnes","arneses","anticaidas","altura","eolico","eolica"],
 } as const;
 

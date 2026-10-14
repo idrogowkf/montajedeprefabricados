@@ -10,6 +10,14 @@ describe("public catalog projection",()=>{
     }
   });
 
+  it("exposes searchable technical attributes without supplier intelligence",()=>{
+    const source=catalogProducts.find(product=>product.category==="elevacion")!;
+    const projected=toPublicCatalogProduct(source);
+    expect(projected).toMatchObject({category:"elevacion",reference:source.supplier.reference});
+    expect(projected.applications).toContain("manipular-prefabricado");
+    expect(projected.materials).toContain("hormigón");
+  });
+
   it("recalculates public price and VAT from current commercial inputs",()=>{
     const source=catalogProducts[0];
     const changed={...source,commercial:{...source.commercial,cost:100,inboundShipping:10,handling:0,contingencyPercent:0,targetMarginPercent:20,vatPercent:10}};

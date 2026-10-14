@@ -1,7 +1,9 @@
 import type {CatalogSegment} from "./catalog";
+import type {CatalogApplicationId,CatalogCategoryId} from "./catalog-taxonomy";
 
 export type PublicCatalogProduct={
-  id:string;sku:string;name:string;brand:string;family:string;segments:CatalogSegment[];unit:string;
+  id:string;sku:string;name:string;brand:string;reference:string;family:string;segments:CatalogSegment[];
+  category?:CatalogCategoryId;subcategory?:string;applications:CatalogApplicationId[];pieceTypes:string[];materials:string[];technicalAttributes:Record<string,string|number>;unit:string;
   certifications:string[];imageUrl?:string;imageUrls?:string[];
   technicalDocument?:{url:string;label:string};canRequestTechnicalDocument:boolean;
   description:string;specifications:string[];

@@ -6,8 +6,8 @@ export function toPublicCatalogProduct(product:CatalogProduct):PublicCatalogProd
   const calculated=calculatePrice(product.commercial);
   const technicalDocument=product.datasheetUrl&&/\.pdf(?:$|[?#])/i.test(product.datasheetUrl)?{url:product.datasheetUrl,label:"Descargar ficha técnica (PDF)"}:undefined;
   return {
-    id:product.id,sku:product.sku,name:product.name,brand:product.brand,family:product.family,
-    segments:product.segments,unit:product.unit,certifications:product.certifications,
+    id:product.id,sku:product.sku,name:product.name,brand:product.brand,reference:product.supplier.reference,family:product.family,
+    segments:product.segments,category:product.category,subcategory:product.subcategory,applications:product.applications??[],pieceTypes:product.pieceTypes??[],materials:product.materials??[],technicalAttributes:product.technicalAttributes??{},unit:product.unit,certifications:product.certifications,
     imageUrl:product.imageUrl,imageUrls:[...new Set(product.imageUrls??(product.imageUrl?[product.imageUrl]:[]))].slice(0,7),technicalDocument,canRequestTechnicalDocument:!technicalDocument,
     description:product.publicDescription??(product.commercial.status==="ready"?`${product.name} de ${product.brand}, referencia identificada para uso profesional. Comprueba la compatibilidad con la aplicación antes de utilizarla.`:`${product.name} de ${product.brand}. La capacidad, medida o configuración exacta se confirma mediante oferta técnica antes del suministro.`),
     specifications:[`Marca: ${product.brand}`,`Unidad de suministro: ${product.unit}`,...(product.publicSpecifications??product.certifications)],

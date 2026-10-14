@@ -1,6 +1,6 @@
 import {describe,expect,it} from "vitest";
 import {catalogProducts} from "./catalog";
-import {toPublicCatalogProduct} from "../lib/public-catalog";
+import {isPubliclyListable,toPublicCatalogProduct} from "../lib/public-catalog";
 
 describe("public catalog projection",()=>{
   it("never serializes internal commercial intelligence",()=>{
@@ -40,5 +40,13 @@ describe("public catalog projection",()=>{
     const projected=toPublicCatalogProduct(catalogProducts[0]);
     expect(projected.technicalDocument?.url).toMatch(/\.pdf(?:$|[?#])/i);
     expect(projected.canRequestTechnicalDocument).toBe(false);
+  });
+
+  it("lists recovered Hilti and Petzl records with verified product imagery even before a PDF is attached",()=>{
+    const hilti=catalogProducts.find(product=>product.brand==="Hilti")!;
+    const petzl=catalogProducts.find(product=>product.brand==="Petzl")!;
+    expect(isPubliclyListable(hilti)).toBe(true);
+    expect(isPubliclyListable(petzl)).toBe(true);
+    expect(catalogProducts.filter(isPubliclyListable)).toHaveLength(157);
   });
 });

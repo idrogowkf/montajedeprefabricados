@@ -1,6 +1,10 @@
-import {isPublicationReady,type CatalogProduct} from "../data/catalog";
+import {hasStoreImage,isPublicationReady,type CatalogProduct} from "../data/catalog";
 import type {PublicCatalogProduct} from "../data/public-catalog";
 import {calculatePrice} from "./pricing";
+
+export function isPubliclyListable(product:CatalogProduct){
+  return Boolean(product.category)&&hasStoreImage(product)&&product.supplier.reference!=="PENDIENTE";
+}
 
 export function toPublicCatalogProduct(product:CatalogProduct):PublicCatalogProduct{
   const calculated=calculatePrice(product.commercial);

@@ -1,8 +1,9 @@
 import {neon} from "@neondatabase/serverless";
 import {catalogProducts,isPublicationReady,type CatalogProduct} from "../data/catalog";
+import {catalogApplications,isCatalogCategory} from "../data/catalog-taxonomy";
 
 type CommercialPatch=Partial<CatalogProduct["commercial"]>;
-export type CatalogContentPatch=Partial<Pick<CatalogProduct,"name"|"brand"|"family"|"unit"|"publicDescription"|"publicSpecifications"|"certifications"|"imageUrl"|"imageUrls"|"datasheetUrl"|"sourceUrl"|"availability"|"delivery">>;
+export type CatalogContentPatch=Partial<Pick<CatalogProduct,"name"|"brand"|"family"|"unit"|"publicDescription"|"publicSpecifications"|"certifications"|"imageUrl"|"imageUrls"|"datasheetUrl"|"sourceUrl"|"availability"|"delivery"|"category"|"subcategory"|"applications"|"pieceTypes"|"materials"|"technicalAttributes">>;
 const numericKeys=["cost","inboundShipping","handling","contingencyPercent","targetMarginPercent","vatPercent"] as const;
 
 export function sanitizeCommercialPatch(input:Record<string,unknown>):CommercialPatch{
@@ -24,6 +25,11 @@ export function sanitizeCatalogPatch(input:Record<string,unknown>):CatalogConten
  for(const key of ["datasheetUrl","sourceUrl"] as const)if(input[key]!==undefined)patch[key]=safeHttps(input[key]);
  for(const key of ["publicSpecifications","certifications"] as const)if(input[key]!==undefined){if(!Array.isArray(input[key]))throw new Error(`${key} debe ser una lista`);patch[key]=(input[key] as unknown[]).map(String).map(value=>value.trim()).filter(Boolean).slice(0,40);}
  if(input.imageUrls!==undefined){if(!Array.isArray(input.imageUrls))throw new Error("imageUrls debe ser una lista");const urls=(input.imageUrls as unknown[]).map((value,index)=>{try{return safeHttps(value);}catch{throw new Error(`URL de imagen no válida en la línea ${index+1}`);}}).filter((value):value is string=>Boolean(value)).slice(0,12);if(!urls.length)throw new Error("Añade al menos una URL HTTPS de imagen");patch.imageUrls=[...new Set(urls)];patch.imageUrl=patch.imageUrls[0];}
+ if(input.category!==undefined){if(!isCatalogCategory(input.category))throw new Error("La categoría no es válida");patch.category=input.category;}
+ if(input.subcategory!==undefined){const value=String(input.subcategory).trim();if(!value)throw new Error("subcategory no puede quedar vacío");patch.subcategory=value.slice(0,80);}
+ if(input.applications!==undefined){if(!Array.isArray(input.applications))throw new Error("applications debe ser una lista");const allowed=new Set(catalogApplications.map(item=>item.id));const values=(input.applications as unknown[]).map(String).map(value=>value.trim()).filter(Boolean);if(values.some(value=>!allowed.has(value as never)))throw new Error("La aplicación no es válida");patch.applications=[...new Set(values)].slice(0,20) as CatalogProduct["applications"];}
+ for(const key of ["pieceTypes","materials"] as const)if(input[key]!==undefined){if(!Array.isArray(input[key]))throw new Error(`${key} debe ser una lista`);patch[key]=[...new Set((input[key] as unknown[]).map(String).map(value=>value.trim().slice(0,80)).filter(Boolean))].slice(0,20);}
+ if(input.technicalAttributes!==undefined){if(!input.technicalAttributes||typeof input.technicalAttributes!=="object"||Array.isArray(input.technicalAttributes))throw new Error("technicalAttributes debe ser un objeto");const entries=Object.entries(input.technicalAttributes as Record<string,unknown>).slice(0,20);const attributes:Record<string,string|number>={};for(const [rawKey,rawValue] of entries){const key=rawKey.trim().slice(0,60);if(!key||!(["string","number"].includes(typeof rawValue))||(typeof rawValue==="number"&&!Number.isFinite(rawValue)))throw new Error("El atributo técnico no es válido");attributes[key]=typeof rawValue==="string"?rawValue.trim().slice(0,160):rawValue as number;}patch.technicalAttributes=attributes;}
  return patch;
 }
 

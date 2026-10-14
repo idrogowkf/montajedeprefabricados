@@ -1,5 +1,5 @@
 import {describe,expect,it} from "vitest";
-import {CATALOG_SEED_VERSION,isMissingCatalogSchemaError,mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
+import {CATALOG_SEED_VERSION,isMissingCatalogSchemaError,mergeCatalogCommercial,sanitizeCatalogPatch,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
 import {catalogProducts} from "../data/catalog";
 
 describe("catalog database validation",()=>{
@@ -11,6 +11,28 @@ describe("catalog database validation",()=>{
     expect(()=>sanitizeCommercialPatch({status:"published"})).toThrow();
     expect(()=>sanitizeCommercialPatch({targetMarginPercent:100})).toThrow();
     expect(()=>sanitizeCommercialPatch({vatPercent:101})).toThrow();
+  });
+});
+
+describe("catalog taxonomy validation",()=>{
+  it("accepts only the shared structured marketplace fields",()=>{
+    expect(sanitizeCatalogPatch({
+      category:"fijacion",subcategory:"Anclajes mecánicos",
+      applications:["fijar-hormigon"],pieceTypes:["Placa base"],materials:["Hormigón"],
+      technicalAttributes:{capacityKg:1200,thread:"M16"},cost:99,supplier:"oculto"
+    })).toEqual({
+      category:"fijacion",subcategory:"Anclajes mecánicos",
+      applications:["fijar-hormigon"],pieceTypes:["Placa base"],materials:["Hormigón"],
+      technicalAttributes:{capacityKg:1200,thread:"M16"}
+    });
+  });
+  it("rejects brand names as categories and unknown applications",()=>{
+    expect(()=>sanitizeCatalogPatch({category:"hilti"})).toThrow("categoría");
+    expect(()=>sanitizeCatalogPatch({applications:["inventada"]})).toThrow("aplicación");
+  });
+  it("bounds lists and technical metadata",()=>{
+    expect(sanitizeCatalogPatch({materials:Array.from({length:30},(_,i)=>`Material ${i}`)}).materials).toHaveLength(20);
+    expect(()=>sanitizeCatalogPatch({technicalAttributes:{bad:{nested:true}}})).toThrow("atributo técnico");
   });
 });
 

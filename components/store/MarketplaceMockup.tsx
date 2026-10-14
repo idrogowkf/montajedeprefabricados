@@ -6,6 +6,7 @@ import {filterPublicCatalog,sortPublicCatalog,type PublicCatalogProduct,type Pub
 import {SignInButton,SignedIn,SignedOut,UserButton} from "@clerk/nextjs";
 import ProductInquiryPanel from "./ProductInquiryPanel";
 import type {ProductInquiryKind} from "@/lib/product-inquiry";
+import {CatalogSearch,type CatalogSearchAction} from "./CatalogSearch";
 
 const families = [
   ["todos","Todos"],["elevacion","Medios de elevación"],["utiles","Útiles de montaje"],
@@ -24,6 +25,10 @@ export default function MarketplaceMockup({initialProducts}:{initialProducts:Pub
   const units = Object.values(cart).reduce((sum,value)=>sum+value,0);
   const subtotal = initialProducts.reduce((sum,product)=>sum+(cart[product.id] ?? 0)*product.price,0);
   const add = (product:PublicCatalogProduct) => setCart((current)=>({...current,[product.id]:(current[product.id] ?? 0)+1}));
+  const handleSearchNavigation=(action:Exclude<CatalogSearchAction,{kind:"assisted"}>)=>{
+    if(action.kind==="product"){const product=initialProducts.find(item=>item.id===action.value);if(product)setSelected(product);return;}
+    setFamily("todos");setQuery(action.value);
+  };
   useEffect(()=>{const params=new URLSearchParams(window.location.search);const initialQuery=params.get("q");const initialFamily=params.get("familia");if(initialQuery)setQuery(initialQuery);if(initialFamily&&families.some(([value])=>value===initialFamily))setFamily(initialFamily);},[]);
   useEffect(()=>{const openHashProduct=()=>{const id=decodeURIComponent(window.location.hash.slice(1));if(!id)return;const product=initialProducts.find(item=>item.id===id);if(product){setSelected(product);document.getElementById(id)?.scrollIntoView({block:"center"});}};openHashProduct();window.addEventListener("hashchange",openHashProduct);return()=>window.removeEventListener("hashchange",openHashProduct);},[initialProducts]);
   useEffect(()=>{if(!selected)return;const previous=document.activeElement as HTMLElement|null;const overflow=document.body.style.overflow;document.body.style.overflow="hidden";requestAnimationFrame(()=>document.querySelector<HTMLElement>(".product-panel .close")?.focus());const onKey=(event:KeyboardEvent)=>{if(event.key==="Escape")setSelected(null);if(event.key==="Tab"){const controls=[...document.querySelectorAll<HTMLElement>(".product-panel button,.product-panel a")].filter(item=>!item.hasAttribute("disabled"));if(!controls.length)return;const first=controls[0],last=controls.at(-1)!;if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}};document.addEventListener("keydown",onKey);return()=>{document.removeEventListener("keydown",onKey);document.body.style.overflow=overflow;previous?.focus();};},[selected]);
@@ -31,7 +36,7 @@ export default function MarketplaceMockup({initialProducts}:{initialProducts:Pub
     <div className="demo-ribbon">CATÁLOGO EN PREPARACIÓN · PRECIOS CALCULADOS NO VINCULANTES · IVA NO INCLUIDO</div>
     <header className="commerce-head">
       <Brand />
-      <form className="store-search" onSubmit={(event)=>event.preventDefault()}><label className="sr-only" htmlFor="store-search">Buscar productos</label><input id="store-search" value={query} onChange={(event)=>setQuery(event.target.value)} placeholder="Buscar pinzas, balancines, ganchos o eslingas…"/><button aria-label="Buscar">⌕</button></form>
+      <CatalogSearch products={initialProducts} query={query} onQueryChange={setQuery} onNavigate={handleSearchNavigation} onAssistedSearch={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}/>
       <nav className="commerce-actions" aria-label="Cuenta y carrito"><SignedOut><SignInButton mode="modal"><button><small>Hola, identifícate</small><strong>Cuenta y listas</strong></button></SignInButton></SignedOut><SignedIn><span className="account-control"><UserButton/><strong>Mi cuenta</strong></span></SignedIn><button onClick={()=>setRequestsOpen(true)}><small>Seguimiento</small><strong>Mis solicitudes</strong></button><button className="cart-trigger" onClick={()=>setCartOpen(true)}><span>{units}</span><strong>Carrito</strong></button></nav>
     </header>
     <nav className="category-bar" aria-label="Familias de producto">{families.map(([value,label])=><button key={value} className={family===value?"active":""} onClick={()=>setFamily(value)}>{label}</button>)}<a href="/#preestudio">Necesito ayuda técnica</a></nav>

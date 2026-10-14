@@ -1,5 +1,5 @@
 import {describe,expect,it} from "vitest";
-import {isMissingCatalogSchemaError,mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
+import {CATALOG_SEED_VERSION,isMissingCatalogSchemaError,mergeCatalogCommercial,sanitizeCommercialPatch,validatePublicationTransition} from "./catalog-db";
 import {catalogProducts} from "../data/catalog";
 
 describe("catalog database validation",()=>{
@@ -23,6 +23,9 @@ describe("publication transition",()=>{
 });
 
 describe("catalog database merge",()=>{
+  it("uses the versioned functional catalog migration",()=>{
+    expect(CATALOG_SEED_VERSION).toBe("2026-10-14-functional-catalog-v2");
+  });
   it("keeps audited product media while preserving admin commercial edits",()=>{
     const source=catalogProducts[0];
     const stale={...source,imageUrl:"https://example.com/stale.jpg"};

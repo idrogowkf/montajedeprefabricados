@@ -5,6 +5,7 @@ import { catalogDocumentOverrides } from "./catalog-document-overrides";
 import { catalogImageOverrides } from "./catalog-image-overrides";
 import specializedCatalog from "../research/catalog-specialized/catalog.json";
 import type {CatalogApplicationId,CatalogCategoryId} from "./catalog-taxonomy";
+import {recoveredCatalogProducts} from "./catalog-recovery";
 
 export type CatalogSegment="altura"|"hormigon"|"acero"|"madera"|"pvc"|"epi"|"corte"|"fijacion"|"sellado"|"elevacion"|"utiles";
 export type CommercialStatus="draft"|"quote"|"ready";
@@ -58,7 +59,7 @@ type SpecializedSource={id:string;section:string;nameEs:string;manufacturer:stri
 const liftingFamily=(name:string)=>/pinza/i.test(name)?"Pinzas de elevación":/balanc[ií]n/i.test(name)?"Balancines":/gancho/i.test(name)?"Ganchos de elevación":/eslinga|cadena/i.test(name)?"Eslingas y cadenas":/vac[ií]o/i.test(name)?"Elevación por vacío":"Útiles de elevación";
 const specializedLiftingProducts=(specializedCatalog as SpecializedSource[]).filter(product=>product.section==="elevacion").map((source,index)=>make({
   ...base,id:source.id,sku:`ELE-${String(index+1).padStart(3,"0")}`,name:source.nameEs,brand:source.manufacturer,
-  family:liftingFamily(source.nameEs),segments:["elevacion","utiles","hormigon"],unit:"ud.",rotation:"especialista",
+  family:liftingFamily(source.nameEs),segments:["elevacion","utiles","hormigon"],category:"elevacion",subcategory:liftingFamily(source.nameEs),applications:["manipular-prefabricado"],pieceTypes:[source.compatibilityEs],materials:["hormigón"],technicalAttributes:{capacity:source.capacityEs},unit:"ud.",rotation:"especialista",
   certifications:[`Capacidad: ${source.capacityEs}`,source.compatibilityEs],publicDescription:source.descriptionEs,
   publicSpecifications:[`Referencia del fabricante: ${source.reference}`,`Aplicación: ${source.applicationEs}`,`Capacidad: ${source.capacityEs}`,`Origen de fabricación: ${source.manufacturingCountry}`],
   supplier:{name:source.supplier,country:source.manufacturingCountry,reference:source.reference},sourceUrl:source.productUrl,
@@ -68,7 +69,7 @@ const specializedLiftingProducts=(specializedCatalog as SpecializedSource[]).fil
   availability:"Disponible bajo oferta técnica",delivery:"Plazo según capacidad, configuración y destino",badge:"Oferta técnica",
 }));
 
-export const catalogProducts:CatalogProduct[]=specializedLiftingProducts.map(product=>{
+const auditedLiftingProducts:CatalogProduct[]=specializedLiftingProducts.map(product=>{
   const original=[...(catalogImageOverrides[product.id]??product.imageUrls??[]),...(product.imageUrl?[product.imageUrl]:[])].filter(Boolean);
   const unique=[...new Set(original)];
   const primary=unique[0];
@@ -79,6 +80,8 @@ export const catalogProducts:CatalogProduct[]=specializedLiftingProducts.map(pro
     datasheetUrl:catalogDocumentOverrides[product.id]??product.datasheetUrl??product.sourceUrl,
   };
 });
+
+export const catalogProducts:CatalogProduct[]=[...auditedLiftingProducts,...recoveredCatalogProducts];
 
 const normalize=(value:string)=>value.normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase();
 export function filterCatalog(products:CatalogProduct[],query:string,segment:string){const terms=normalize(query).trim().split(/\s+/).filter(Boolean);return products.filter(p=>(segment==="todos"||p.segments.includes(segment as CatalogSegment))&&terms.every(t=>normalize(`${p.name} ${p.brand} ${p.family} ${p.segments.join(" ")}`).includes(t)));}

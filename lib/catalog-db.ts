@@ -37,6 +37,7 @@ function sql(){if(!process.env.DATABASE_URL)throw new Error("DATABASE_URL no con
 export function isMissingCatalogSchemaError(error:unknown){return Boolean(error&&typeof error==="object"&&"code" in error&&(error as {code?:unknown}).code==="42P01");}
 
 let schemaPromise:Promise<void>|null=null;
+export const CATALOG_SEED_VERSION="2026-10-14-functional-catalog-v2";
 export async function ensureCatalogSchema(){schemaPromise??=(async()=>{const db=sql();
  await db`CREATE TABLE IF NOT EXISTS catalog_products (id text PRIMARY KEY, sku text UNIQUE NOT NULL, payload jsonb NOT NULL, commercial jsonb NOT NULL, updated_at timestamptz NOT NULL DEFAULT now())`;
  await db`CREATE TABLE IF NOT EXISTS catalog_suppliers (product_id text PRIMARY KEY REFERENCES catalog_products(id) ON DELETE CASCADE, name text NOT NULL, country text NOT NULL, reference text NOT NULL, source_url text NOT NULL)`;
@@ -58,7 +59,7 @@ async function applyCatalogMigrations(){const db=sql();const migration="2026-10-
 }
 
 export async function seedCatalog(){await ensureCatalogSchema();const db=sql();
- const seedVersion="2026-10-13-lifting-only-v1";
+ const seedVersion=CATALOG_SEED_VERSION;
  const alreadySeeded=await db`SELECT id FROM catalog_migrations WHERE id=${seedVersion}`;
  if(!alreadySeeded.length){
   const productRows=catalogProducts.map(product=>({id:product.id,sku:product.sku,payload:product,commercial:product.commercial}));

@@ -67,7 +67,7 @@ describe("store taxonomy controls",()=>{
     expect(source.match(/SignInButton mode="modal"/g)?.length).toBeGreaterThanOrEqual(2);
     expect(source).toContain("onCheckout");
     expect(source).toContain('value={sort}');
-    expect(source).toContain('onChange={event=>setSort');
+    expect(source).toMatch(/onChange=\{\(?event\)?\s*=>\s*setSort/);
   });
   it("links the landing category chips to real filtered catalog views",()=>{
     const hero=readFileSync(join(process.cwd(),"components/v21/Hero.tsx"),"utf8");

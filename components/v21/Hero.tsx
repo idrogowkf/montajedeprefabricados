@@ -21,7 +21,7 @@ export default function Hero() {
       </article>
       <article className="gateway-panel gateway-commerce">
         <div className="gateway-eyebrow mono"><span>02</span> Suministro profesional</div>
-        <div className="gateway-shop-head"><p className="gateway-mode">Tienda profesional</p><span className="gateway-demo">CATÁLOGO TÉCNICO</span></div>
+        <div className="gateway-shop-head"><p className="gateway-mode">Tienda profesional</p><span className="gateway-catalog-badge">CATÁLOGO TÉCNICO</span></div>
         <h2>NECESITO<br /><span>MATERIAL.</span></h2>
         <p>Encuentra elevación, fijación, corte y protección para el montaje de prefabricados.</p>
         <form className="gateway-search" action="/tienda" method="get"><label className="sr-only" htmlFor="home-store-search">Buscar productos</label><input id="home-store-search" name="q" placeholder="¿Qué necesitas para la obra?" /><button type="submit" aria-label="Buscar en la tienda">Buscar →</button></form>

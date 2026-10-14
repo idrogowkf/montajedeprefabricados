@@ -1,85 +1,836 @@
 "use client";
 
-import {useEffect,useMemo, useState} from "react";
+import { useEffect, useMemo, useState } from "react";
 import Brand from "@/components/v21/Brand";
-import {sortPublicCatalog,type PublicCatalogProduct,type PublicCatalogSort} from "@/data/public-catalog";
-import {buildFacets,parseCatalogState,searchCatalog,serializeCatalogState,type CatalogSearchState} from "@/data/catalog-search";
-import {catalogCategories,type CatalogCategoryId} from "@/data/catalog-taxonomy";
-import {SignInButton,SignedIn,SignedOut,UserButton} from "@clerk/nextjs";
+import {
+  sortPublicCatalog,
+  type PublicCatalogProduct,
+  type PublicCatalogSort,
+} from "@/data/public-catalog";
+import {
+  buildFacets,
+  parseCatalogState,
+  searchCatalog,
+  serializeCatalogState,
+  type CatalogSearchState,
+} from "@/data/catalog-search";
+import {
+  catalogCategories,
+  type CatalogCategoryId,
+} from "@/data/catalog-taxonomy";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import ProductInquiryPanel from "./ProductInquiryPanel";
-import type {ProductInquiryKind} from "@/lib/product-inquiry";
-import {CatalogSearch,type CatalogSearchAction} from "./CatalogSearch";
-import {CatalogFilters} from "./CatalogFilters";
-import {TechnicalFinder} from "./TechnicalFinder";
+import type { ProductInquiryKind } from "@/lib/product-inquiry";
+import { CatalogSearch, type CatalogSearchAction } from "./CatalogSearch";
+import { CatalogFilters } from "./CatalogFilters";
+import { TechnicalFinder } from "./TechnicalFinder";
 
-export default function MarketplaceMockup({initialProducts}:{initialProducts:PublicCatalogProduct[]}) {
-  const [searchState,setSearchState] = useState<CatalogSearchState>({query:""});
-  const [urlReady,setUrlReady] = useState(false);
-  const [cart,setCart] = useState<Record<string,number>>({});
-  const [selected,setSelected] = useState<PublicCatalogProduct | null>(null);
-  const [cartOpen,setCartOpen] = useState(false);
-  const [requestsOpen,setRequestsOpen] = useState(false);
-  const [sort,setSort] = useState<PublicCatalogSort>("relevance");
-  const [inquiry,setInquiry] = useState<{kind:ProductInquiryKind;product?:PublicCatalogProduct;initialMessage?:string}|null>(null);
-  const [finder,setFinder] = useState<{initialIntent?:CatalogCategoryId}|null>(null);
-  const products = useMemo(()=>sortPublicCatalog(searchCatalog(initialProducts,searchState),sort),[initialProducts,searchState,sort]);
-  const facets = useMemo(()=>buildFacets(initialProducts,searchState),[initialProducts,searchState]);
-  const query=searchState.query;
-  const units = Object.values(cart).reduce((sum,value)=>sum+value,0);
-  const subtotal = initialProducts.reduce((sum,product)=>sum+(cart[product.id] ?? 0)*product.price,0);
-  const add = (product:PublicCatalogProduct) => setCart((current)=>({...current,[product.id]:(current[product.id] ?? 0)+1}));
-  const closeFinder=()=>{setFinder(null);setSearchState(current=>({...current,assisted:undefined}));};
-  const handleSearchNavigation=(action:Exclude<CatalogSearchAction,{kind:"assisted"}>)=>{
-    if(action.kind==="product"){const product=initialProducts.find(item=>item.id===action.value);if(product)setSelected(product);return;}
-    if(action.kind==="category")setSearchState(current=>({...current,query:"",categories:[action.value as NonNullable<CatalogSearchState["categories"]>[number]]}));
-    if(action.kind==="application")setSearchState(current=>({...current,query:"",applications:[action.value as NonNullable<CatalogSearchState["applications"]>[number]]}));
-    if(action.kind==="brand")setSearchState(current=>({...current,query:"",brands:[action.value]}));
+export default function MarketplaceMockup({
+  initialProducts,
+}: {
+  initialProducts: PublicCatalogProduct[];
+}) {
+  const [searchState, setSearchState] = useState<CatalogSearchState>({
+    query: "",
+  });
+  const [urlReady, setUrlReady] = useState(false);
+  const [cart, setCart] = useState<Record<string, number>>({});
+  const [selected, setSelected] = useState<PublicCatalogProduct | null>(null);
+  const [cartOpen, setCartOpen] = useState(false);
+  const [requestsOpen, setRequestsOpen] = useState(false);
+  const [sort, setSort] = useState<PublicCatalogSort>("relevance");
+  const [inquiry, setInquiry] = useState<{
+    kind: ProductInquiryKind;
+    product?: PublicCatalogProduct;
+    initialMessage?: string;
+  } | null>(null);
+  const [finder, setFinder] = useState<{
+    initialIntent?: CatalogCategoryId;
+  } | null>(null);
+  const products = useMemo(
+    () => sortPublicCatalog(searchCatalog(initialProducts, searchState), sort),
+    [initialProducts, searchState, sort],
+  );
+  const facets = useMemo(
+    () => buildFacets(initialProducts, searchState),
+    [initialProducts, searchState],
+  );
+  const query = searchState.query;
+  const units = Object.values(cart).reduce((sum, value) => sum + value, 0);
+  const subtotal = initialProducts.reduce(
+    (sum, product) => sum + (cart[product.id] ?? 0) * product.price,
+    0,
+  );
+  const add = (product: PublicCatalogProduct) =>
+    setCart((current) => ({
+      ...current,
+      [product.id]: (current[product.id] ?? 0) + 1,
+    }));
+  const closeFinder = () => {
+    setFinder(null);
+    setSearchState((current) => ({ ...current, assisted: undefined }));
   };
-  useEffect(()=>{const read=()=>{const next=parseCatalogState(window.location.search);setSearchState(next);if(next.assisted)setFinder({initialIntent:next.categories?.[0]});};read();setUrlReady(true);window.addEventListener("popstate",read);return()=>window.removeEventListener("popstate",read);},[]);
-  useEffect(()=>{if(!urlReady)return;const params=serializeCatalogState(searchState);const next=params.size?`${window.location.pathname}?${params}${window.location.hash}`:`${window.location.pathname}${window.location.hash}`;window.history.replaceState(null,"",next);},[searchState,urlReady]);
-  useEffect(()=>{const openHashProduct=()=>{const id=decodeURIComponent(window.location.hash.slice(1));if(!id)return;const product=initialProducts.find(item=>item.id===id);if(product){setSelected(product);document.getElementById(id)?.scrollIntoView({block:"center"});}};openHashProduct();window.addEventListener("hashchange",openHashProduct);return()=>window.removeEventListener("hashchange",openHashProduct);},[initialProducts]);
-  useEffect(()=>{if(!selected)return;const previous=document.activeElement as HTMLElement|null;const overflow=document.body.style.overflow;document.body.style.overflow="hidden";requestAnimationFrame(()=>document.querySelector<HTMLElement>(".product-panel .close")?.focus());const onKey=(event:KeyboardEvent)=>{if(event.key==="Escape")setSelected(null);if(event.key==="Tab"){const controls=[...document.querySelectorAll<HTMLElement>(".product-panel button,.product-panel a")].filter(item=>!item.hasAttribute("disabled"));if(!controls.length)return;const first=controls[0],last=controls.at(-1)!;if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}};document.addEventListener("keydown",onKey);return()=>{document.removeEventListener("keydown",onKey);document.body.style.overflow=overflow;previous?.focus();};},[selected]);
-  return <div className="store-mock">
-    <div className="demo-ribbon">CATÁLOGO EN PREPARACIÓN · PRECIOS CALCULADOS NO VINCULANTES · IVA NO INCLUIDO</div>
-    <header className="commerce-head">
-      <Brand />
-      <CatalogSearch products={initialProducts} query={query} onQueryChange={value=>setSearchState(current=>({...current,query:value}))} onNavigate={handleSearchNavigation} onAssistedSearch={()=>setFinder({initialIntent:searchState.categories?.[0]})}/>
-      <nav className="commerce-actions" aria-label="Cuenta y carrito"><SignedOut><SignInButton mode="modal"><button><small>Hola, identifícate</small><strong>Cuenta y listas</strong></button></SignInButton></SignedOut><SignedIn><span className="account-control"><UserButton/><strong>Mi cuenta</strong></span></SignedIn><button onClick={()=>setRequestsOpen(true)}><small>Seguimiento</small><strong>Mis solicitudes</strong></button><button className="cart-trigger" onClick={()=>setCartOpen(true)}><span>{units}</span><strong>Carrito</strong></button></nav>
-    </header>
-    <nav className="category-bar" aria-label="Familias de producto"><button className={!searchState.categories?.length?"active":""} onClick={()=>setSearchState(current=>({query:current.query}))}>Todos</button>{catalogCategories.map(category=><button key={category.id} className={searchState.categories?.includes(category.id)?"active":""} onClick={()=>setSearchState(current=>({...current,categories:[category.id]}))}>{category.label}</button>)}<button onClick={()=>setFinder({initialIntent:searchState.categories?.[0]})}>Necesito ayuda técnica</button></nav>
+  const handleSearchNavigation = (
+    action: Exclude<CatalogSearchAction, { kind: "assisted" }>,
+  ) => {
+    if (action.kind === "product") {
+      const product = initialProducts.find((item) => item.id === action.value);
+      if (product) setSelected(product);
+      return;
+    }
+    if (action.kind === "category")
+      setSearchState((current) => ({
+        ...current,
+        query: "",
+        categories: [
+          action.value as NonNullable<CatalogSearchState["categories"]>[number],
+        ],
+      }));
+    if (action.kind === "application")
+      setSearchState((current) => ({
+        ...current,
+        query: "",
+        applications: [
+          action.value as NonNullable<
+            CatalogSearchState["applications"]
+          >[number],
+        ],
+      }));
+    if (action.kind === "brand")
+      setSearchState((current) => ({
+        ...current,
+        query: "",
+        brands: [action.value],
+      }));
+  };
+  useEffect(() => {
+    const read = () => {
+      const next = parseCatalogState(window.location.search);
+      setSearchState(next);
+      if (next.assisted) setFinder({ initialIntent: next.categories?.[0] });
+    };
+    read();
+    setUrlReady(true);
+    window.addEventListener("popstate", read);
+    return () => window.removeEventListener("popstate", read);
+  }, []);
+  useEffect(() => {
+    if (!urlReady) return;
+    const params = serializeCatalogState(searchState);
+    const next = params.size
+      ? `${window.location.pathname}?${params}${window.location.hash}`
+      : `${window.location.pathname}${window.location.hash}`;
+    window.history.replaceState(null, "", next);
+  }, [searchState, urlReady]);
+  useEffect(() => {
+    const openHashProduct = () => {
+      const id = decodeURIComponent(window.location.hash.slice(1));
+      if (!id) return;
+      const product = initialProducts.find((item) => item.id === id);
+      if (product) {
+        setSelected(product);
+        document.getElementById(id)?.scrollIntoView({ block: "center" });
+      }
+    };
+    openHashProduct();
+    window.addEventListener("hashchange", openHashProduct);
+    return () => window.removeEventListener("hashchange", openHashProduct);
+  }, [initialProducts]);
+  useEffect(() => {
+    if (!selected) return;
+    const previous = document.activeElement as HTMLElement | null;
+    const overflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    requestAnimationFrame(() =>
+      document.querySelector<HTMLElement>(".product-panel .close")?.focus(),
+    );
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelected(null);
+      if (event.key === "Tab") {
+        const controls = [
+          ...document.querySelectorAll<HTMLElement>(
+            ".product-panel button,.product-panel a",
+          ),
+        ].filter((item) => !item.hasAttribute("disabled"));
+        if (!controls.length) return;
+        const first = controls[0],
+          last = controls.at(-1)!;
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = overflow;
+      previous?.focus();
+    };
+  }, [selected]);
+  return (
+    <div className="store-mock">
+      <header className="commerce-head">
+        <Brand />
+        <CatalogSearch
+          products={initialProducts}
+          query={query}
+          onQueryChange={(value) =>
+            setSearchState((current) => ({ ...current, query: value }))
+          }
+          onNavigate={handleSearchNavigation}
+          onAssistedSearch={() =>
+            setFinder({ initialIntent: searchState.categories?.[0] })
+          }
+        />
+        <nav className="commerce-actions" aria-label="Cuenta y carrito">
+          <SignedOut>
+            <SignInButton mode="modal">
+              <button>
+                <small>Hola, identifícate</small>
+                <strong>Cuenta y listas</strong>
+              </button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <span className="account-control">
+              <UserButton />
+              <strong>Mi cuenta</strong>
+            </span>
+          </SignedIn>
+          <button onClick={() => setRequestsOpen(true)}>
+            <small>Seguimiento</small>
+            <strong>Mis solicitudes</strong>
+          </button>
+          <button className="cart-trigger" onClick={() => setCartOpen(true)}>
+            <span>{units}</span>
+            <strong>Carrito</strong>
+          </button>
+        </nav>
+      </header>
+      <nav className="category-bar" aria-label="Familias de producto">
+        <button
+          className={!searchState.categories?.length ? "active" : ""}
+          onClick={() =>
+            setSearchState((current) => ({ query: current.query }))
+          }
+        >
+          Todos
+        </button>
+        {catalogCategories.map((category) => (
+          <button
+            key={category.id}
+            className={
+              searchState.categories?.includes(category.id) ? "active" : ""
+            }
+            onClick={() =>
+              setSearchState((current) => ({
+                ...current,
+                categories: [category.id],
+              }))
+            }
+          >
+            {category.label}
+          </button>
+        ))}
+        <button
+          onClick={() =>
+            setFinder({ initialIntent: searchState.categories?.[0] })
+          }
+        >
+          Necesito ayuda técnica
+        </button>
+      </nav>
 
-    <main>
-      <section className="store-hero"><div><span className="eyebrow">CATÁLOGO TÉCNICO MULTIFAMILIA</span><h1>Encuentra el equipo.<br/><em>Con criterio técnico.</em></h1><p>Elevación, fijación, corte, EPI y trabajos en altura para el montaje de prefabricados.</p><div className="hero-pills"><span>Fotografías oficiales</span><span>Documentación verificada</span><span>Oferta profesional</span></div></div><aside><span>¿No sabes qué referencia necesitas?</span><strong>Te guiamos por trabajo, pieza, material y carga.</strong><button onClick={()=>setFinder({initialIntent:searchState.categories?.[0]})}>Abrir selector técnico</button></aside></section>
+      <main>
+        <section className="store-hero">
+          <div>
+            <span className="eyebrow">CATÁLOGO TÉCNICO MULTIFAMILIA</span>
+            <h1>
+              Encuentra el equipo.
+              <br />
+              <em>Con criterio técnico.</em>
+            </h1>
+            <p>
+              Elevación, fijación, corte, EPI y trabajos en altura para el
+              montaje de prefabricados.
+            </p>
+            <div className="hero-pills">
+              <span>Fotografías oficiales</span>
+              <span>Documentación verificada</span>
+              <span>Oferta profesional</span>
+            </div>
+          </div>
+          <aside>
+            <span>¿No sabes qué referencia necesitas?</span>
+            <strong>Te guiamos por trabajo, pieza, material y carga.</strong>
+            <button
+              onClick={() =>
+                setFinder({ initialIntent: searchState.categories?.[0] })
+              }
+            >
+              Abrir selector técnico
+            </button>
+          </aside>
+        </section>
 
-      <section className="quick-categories" aria-label="Accesos rápidos"><CategoryTile code="01" title="Pinzas" note="Pozos, placas y piezas" onClick={()=>setSearchState({query:"pinza",categories:["elevacion"]})}/><CategoryTile code="02" title="Fijación" note="Anclajes y montaje" onClick={()=>setSearchState({query:"",categories:["fijacion"]})}/><CategoryTile code="03" title="Corte y perforación" note="Brocas, coronas y discos" onClick={()=>setSearchState({query:"",categories:["corte"]})}/><CategoryTile code="04" title="Trabajos en altura" note="Arneses y anticaídas" onClick={()=>setSearchState({query:"",categories:["altura"]})}/></section>
+        <section className="quick-categories" aria-label="Accesos rápidos">
+          <CategoryTile
+            code="01"
+            title="Pinzas"
+            note="Pozos, placas y piezas"
+            onClick={() =>
+              setSearchState({ query: "pinza", categories: ["elevacion"] })
+            }
+          />
+          <CategoryTile
+            code="02"
+            title="Fijación"
+            note="Anclajes y montaje"
+            onClick={() =>
+              setSearchState({ query: "", categories: ["fijacion"] })
+            }
+          />
+          <CategoryTile
+            code="03"
+            title="Corte y perforación"
+            note="Brocas, coronas y discos"
+            onClick={() => setSearchState({ query: "", categories: ["corte"] })}
+          />
+          <CategoryTile
+            code="04"
+            title="Trabajos en altura"
+            note="Arneses y anticaídas"
+            onClick={() =>
+              setSearchState({ query: "", categories: ["altura"] })
+            }
+          />
+        </section>
 
-       <section className="catalog-shell"><CatalogFilters facets={facets} state={searchState} onChange={setSearchState} onClear={()=>setSearchState({query:searchState.query})}/>
-        <div className="results"><div className="results-head"><div><span>{products.length} resultados con imagen verificada</span><h2>{searchState.categories?.length===1?catalogCategories.find(category=>category.id===searchState.categories?.[0])?.label:"Catálogo profesional"}</h2></div><select aria-label="Ordenar resultados" value={sort} onChange={event=>setSort(event.target.value as PublicCatalogSort)}><option value="relevance">Más relevantes</option><option value="price-asc">Precio: menor a mayor</option><option value="rating">Mejor valorados</option></select></div><div className="catalog-help"><div><span className="eyebrow">BÚSQUEDA ASISTIDA</span><h3>¿No encuentras lo que buscas?</h3><p>Responde unas preguntas sobre la pieza y la aplicación. Si faltan datos, preparamos la solicitud técnica por ti.</p></div><button onClick={()=>setFinder({initialIntent:searchState.categories?.[0]})}>Ayúdame a elegir →</button></div><div className="product-grid">{products.map((product)=><ProductCard key={product.id} product={product} onAdd={()=>add(product)} onOpen={()=>setSelected(product)}/>)}</div>{!products.length&&<div className="empty-state"><strong>No hay referencias para esta búsqueda</strong><span>La consulta o los filtros activos están bloqueando los resultados.</span><button onClick={()=>setSearchState({query})}>Limpiar filtros</button><button onClick={()=>setFinder({initialIntent:searchState.categories?.[0]})}>Ayúdame a elegir</button></div>}</div>
+        <section className="catalog-shell">
+          <CatalogFilters
+            facets={facets}
+            state={searchState}
+            onChange={setSearchState}
+            onClear={() => setSearchState({ query: searchState.query })}
+          />
+          <div className="results">
+            <div className="results-head">
+              <div>
+                <span>{products.length} resultados con imagen verificada</span>
+                <h2>
+                  {searchState.categories?.length === 1
+                    ? catalogCategories.find(
+                        (category) =>
+                          category.id === searchState.categories?.[0],
+                      )?.label
+                    : "Catálogo profesional"}
+                </h2>
+              </div>
+              <select
+                aria-label="Ordenar resultados"
+                value={sort}
+                onChange={(event) =>
+                  setSort(event.target.value as PublicCatalogSort)
+                }
+              >
+                <option value="relevance">Más relevantes</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="rating">Mejor valorados</option>
+              </select>
+            </div>
+            <div className="catalog-help">
+              <div>
+                <span className="eyebrow">BÚSQUEDA ASISTIDA</span>
+                <h3>¿No encuentras lo que buscas?</h3>
+                <p>
+                  Responde unas preguntas sobre la pieza y la aplicación. Si
+                  faltan datos, preparamos la solicitud técnica por ti.
+                </p>
+              </div>
+              <button
+                onClick={() =>
+                  setFinder({ initialIntent: searchState.categories?.[0] })
+                }
+              >
+                Ayúdame a elegir →
+              </button>
+            </div>
+            <div className="product-grid">
+              {products.map((product) => (
+                <ProductCard
+                  key={product.id}
+                  product={product}
+                  onAdd={() => add(product)}
+                  onOpen={() => setSelected(product)}
+                />
+              ))}
+            </div>
+            {!products.length && (
+              <div className="empty-state">
+                <strong>No hay referencias para esta búsqueda</strong>
+                <span>
+                  La consulta o los filtros activos están bloqueando los
+                  resultados.
+                </span>
+                <button onClick={() => setSearchState({ query })}>
+                  Limpiar filtros
+                </button>
+                <button
+                  onClick={() =>
+                    setFinder({ initialIntent: searchState.categories?.[0] })
+                  }
+                >
+                  Ayúdame a elegir
+                </button>
+              </div>
+            )}
+          </div>
+        </section>
+      </main>
+      <nav className="mobile-dock" aria-label="Navegación móvil">
+        <button onClick={() => setSearchState({ query: "" })}>
+          ⌂<span>Inicio</span>
+        </button>
+        <button
+          onClick={() => document.getElementById("store-search")?.focus()}
+        >
+          ⌕<span>Buscar</span>
+        </button>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button>
+              ◎<span>Cuenta</span>
+            </button>
+          </SignInButton>
+        </SignedOut>
+        <SignedIn>
+          <span className="mobile-account">
+            <UserButton />
+            <span>Cuenta</span>
+          </span>
+        </SignedIn>
+        <button onClick={() => setCartOpen(true)} className="dock-cart">
+          ▣<b>{units}</b>
+          <span>Carrito</span>
+        </button>
+      </nav>
+      {selected && (
+        <ProductPanel
+          product={selected}
+          onClose={() => setSelected(null)}
+          onAdd={() => {
+            add(selected);
+            setSelected(null);
+          }}
+          onRequest={(kind) => {
+            setSelected(null);
+            setInquiry({ kind, product: selected });
+          }}
+        />
+      )}
+      {inquiry && (
+        <ProductInquiryPanel
+          kind={inquiry.kind}
+          product={inquiry.product}
+          initialMessage={inquiry.initialMessage}
+          onClose={() => setInquiry(null)}
+        />
+      )}
+      {finder && (
+        <TechnicalFinder
+          products={initialProducts}
+          initialIntent={finder.initialIntent}
+          onResults={() => {}}
+          onRequest={(message) => {
+            closeFinder();
+            setInquiry({ kind: "search", initialMessage: message });
+          }}
+          onClose={closeFinder}
+        />
+      )}
+      {requestsOpen && <RequestsPanel onClose={() => setRequestsOpen(false)} />}
+      {cartOpen && (
+        <CartPanel
+          products={initialProducts}
+          cart={cart}
+          subtotal={subtotal}
+          onClose={() => setCartOpen(false)}
+          onChange={(id, amount) =>
+            setCart((current) => ({ ...current, [id]: Math.max(0, amount) }))
+          }
+          onCheckout={(message) => {
+            setCartOpen(false);
+            setInquiry({ kind: "product", initialMessage: message });
+          }}
+        />
+      )}
+    </div>
+  );
+}
+
+function CategoryTile({
+  code,
+  title,
+  note,
+  onClick,
+}: {
+  code: string;
+  title: string;
+  note: string;
+  onClick: () => void;
+}) {
+  return (
+    <button className="category-tile" onClick={onClick}>
+      <span>{code}</span>
+      <strong>{title}</strong>
+      <small>{note}</small>
+    </button>
+  );
+}
+function ProductVisual({
+  product,
+  imageUrl,
+}: {
+  product: PublicCatalogProduct;
+  imageUrl?: string;
+}) {
+  const photo = imageUrl ?? product.imageUrl;
+  return (
+    <div
+      className={`product-visual ${photo ? "has-photo" : ""}`}
+      style={{ "--accent": product.accent } as React.CSSProperties}
+    >
+      {photo ? (
+        <img src={photo} alt={product.name} />
+      ) : (
+        <>
+          <span>{product.initials}</span>
+          <small>FOTO EN BÚSQUEDA</small>
+        </>
+      )}
+    </div>
+  );
+}
+const euros = (value: number) => `${value.toFixed(2).replace(".", ",")} €`;
+function ProductCard({
+  product,
+  onAdd,
+  onOpen,
+}: {
+  product: PublicCatalogProduct;
+  onAdd: () => void;
+  onOpen: () => void;
+}) {
+  const ready = product.purchasable;
+  return (
+    <article className="product-card" id={product.id}>
+      <button
+        className="visual-button"
+        onClick={onOpen}
+        aria-label={`Ver ${product.name}`}
+      >
+        <ProductVisual product={product} />
+      </button>
+      <div className="product-info">
+        <small className="brand-line">
+          {product.brand} · {product.family}
+        </small>
+        <button className="product-name" onClick={onOpen}>
+          {product.name}
+        </button>
+        <div className="price-line">
+          {ready ? (
+            <>
+              <span>
+                <small>Precio sin IVA</small>
+                <strong>{euros(product.price)}</strong>
+              </span>
+              <small>/ {product.unit}</small>
+            </>
+          ) : (
+            <strong>Solicitar oferta</strong>
+          )}
+        </div>
+        {ready && (
+          <small className="tax-summary">
+            IVA ({product.vatPercent} %):{" "}
+            {euros(product.priceVat - product.price)} · Total con IVA:{" "}
+            {euros(product.priceVat)}
+          </small>
+        )}
+        <span className="delivery-public">
+          Transporte: calculado según destino
+        </span>
+        <span className="availability">
+          {ready
+            ? product.availability
+            : "Precio, plazo y transporte se confirman según cantidad y destino"}
+        </span>
+        <button className="add-button" onClick={ready ? onAdd : onOpen}>
+          {ready ? "Añadir al carrito" : "Solicitar oferta"}
+        </button>
+      </div>
+    </article>
+  );
+}
+function ProductPanel({
+  product,
+  onClose,
+  onAdd,
+  onRequest,
+}: {
+  product: PublicCatalogProduct;
+  onClose: () => void;
+  onAdd: () => void;
+  onRequest: (kind: ProductInquiryKind) => void;
+}) {
+  const ready = product.purchasable;
+  const [activeImage, setActiveImage] = useState(
+    product.imageUrls?.[0] ?? product.imageUrl,
+  );
+  return (
+    <div
+      className="overlay"
+      role="presentation"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        className="product-panel product-panel-brand"
+        role="dialog"
+        aria-modal="true"
+        aria-label={product.name}
+      >
+        <button className="close" onClick={onClose} aria-label="Cerrar ficha">
+          ×
+        </button>
+        <div className="product-gallery">
+          <ProductVisual product={product} imageUrl={activeImage} />
+          <div className="gallery-thumbs">
+            {product.imageUrls?.map((url, index) => (
+              <button
+                key={url}
+                className={url === activeImage ? "active" : ""}
+                onClick={() => setActiveImage(url)}
+                aria-label={`Ver imagen ${index + 1}`}
+              >
+                <img src={url} alt="" />
+              </button>
+            ))}
+          </div>
+        </div>
+        <div className="product-panel-copy">
+          <span className="product-panel-kicker">
+            FICHA PROFESIONAL · {product.sku}
+          </span>
+          <small>
+            {product.brand} · {product.family}
+          </small>
+          <h2>{product.name}</h2>
+          <p>{product.description}</p>
+          <div className="specification-box">
+            <strong>Datos del producto</strong>
+            <ul>
+              {product.specifications.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+              <li>Aplicaciones: {product.segments.join(" · ")}</li>
+            </ul>
+          </div>
+          {product.technicalDocument && (
+            <div className="documentation-box">
+              <small>DOCUMENTACIÓN TÉCNICA</small>
+              <a
+                className="product-document"
+                href={product.technicalDocument.url}
+                target="_blank"
+                rel="noreferrer"
+                download
+              >
+                <strong>{product.technicalDocument.label} ↓</strong>
+              </a>
+            </div>
+          )}
+          <div className="buy-box">
+            {ready ? (
+              <>
+                <div>
+                  <span>Precio sin IVA</span>
+                  <strong>{euros(product.price)}</strong>
+                </div>
+                <div>
+                  <span>IVA ({product.vatPercent} %)</span>
+                  <b>{euros(product.priceVat - product.price)}</b>
+                </div>
+                <div>
+                  <span>Total con IVA</span>
+                  <b>{euros(product.priceVat)}</b>
+                </div>
+                <span>
+                  Transporte: calculado según destino antes de confirmar el
+                  pedido.
+                </span>
+                <button onClick={onAdd}>Añadir al carrito</button>
+              </>
+            ) : (
+              <>
+                <strong>Oferta profesional</strong>
+                <span>
+                  Indica cantidad, medida o capacidad y código postal de
+                  entrega.
+                </span>
+                <button
+                  className="add-button request-quote-button"
+                  onClick={() => onRequest("product")}
+                >
+                  Solicitar información
+                </button>
+              </>
+            )}
+          </div>
+        </div>
       </section>
-    </main>
-    <nav className="mobile-dock" aria-label="Navegación móvil"><button onClick={()=>setSearchState({query:""})}>⌂<span>Inicio</span></button><button onClick={()=>document.getElementById("store-search")?.focus()}>⌕<span>Buscar</span></button><SignedOut><SignInButton mode="modal"><button>◎<span>Cuenta</span></button></SignInButton></SignedOut><SignedIn><span className="mobile-account"><UserButton/><span>Cuenta</span></span></SignedIn><button onClick={()=>setCartOpen(true)} className="dock-cart">▣<b>{units}</b><span>Carrito</span></button></nav>
-    {selected&&<ProductPanel product={selected} onClose={()=>setSelected(null)} onAdd={()=>{add(selected);setSelected(null);}} onRequest={(kind)=>{setSelected(null);setInquiry({kind,product:selected});}}/>}
-    {inquiry&&<ProductInquiryPanel kind={inquiry.kind} product={inquiry.product} initialMessage={inquiry.initialMessage} onClose={()=>setInquiry(null)}/>}
-    {finder&&<TechnicalFinder products={initialProducts} initialIntent={finder.initialIntent} onResults={()=>{}} onRequest={message=>{closeFinder();setInquiry({kind:"search",initialMessage:message});}} onClose={closeFinder}/>} 
-    {requestsOpen&&<RequestsPanel onClose={()=>setRequestsOpen(false)}/>}
-    {cartOpen&&<CartPanel products={initialProducts} cart={cart} subtotal={subtotal} onClose={()=>setCartOpen(false)} onChange={(id,amount)=>setCart((current)=>({...current,[id]:Math.max(0,amount)}))} onCheckout={(message)=>{setCartOpen(false);setInquiry({kind:"product",initialMessage:message});}}/>}
-  </div>;
+    </div>
+  );
 }
-
-function CategoryTile({code,title,note,onClick}:{code:string;title:string;note:string;onClick:()=>void}){return <button className="category-tile" onClick={onClick}><span>{code}</span><strong>{title}</strong><small>{note}</small></button>}
-function ProductVisual({product,imageUrl}:{product:PublicCatalogProduct;imageUrl?:string}){const photo=imageUrl??product.imageUrl;return <div className={`product-visual ${photo?"has-photo":""}`} style={{"--accent":product.accent} as React.CSSProperties}>{photo?<img src={photo} alt={product.name}/>:<><span>{product.initials}</span><small>FOTO EN BÚSQUEDA</small></>}</div>}
-const euros=(value:number)=>`${value.toFixed(2).replace(".",",")} €`;
-function ProductCard({product,onAdd,onOpen}:{product:PublicCatalogProduct;onAdd:()=>void;onOpen:()=>void}){const ready=product.purchasable;return <article className="product-card" id={product.id}><button className="visual-button" onClick={onOpen} aria-label={`Ver ${product.name}`}><ProductVisual product={product}/></button><div className="product-info"><small className="brand-line">{product.brand} · {product.family}</small><button className="product-name" onClick={onOpen}>{product.name}</button><div className="price-line">{ready?<><span><small>Precio sin IVA</small><strong>{euros(product.price)}</strong></span><small>/ {product.unit}</small></>:<strong>Solicitar oferta</strong>}</div>{ready&&<small className="tax-summary">IVA ({product.vatPercent} %): {euros(product.priceVat-product.price)} · Total con IVA: {euros(product.priceVat)}</small>}<span className="delivery-public">Transporte: calculado según destino</span><span className="availability">{ready?product.availability:"Precio, plazo y transporte se confirman según cantidad y destino"}</span><button className="add-button" onClick={ready?onAdd:onOpen}>{ready?"Añadir al carrito":"Solicitar oferta"}</button></div></article>}
-function ProductPanel({product,onClose,onAdd,onRequest}:{product:PublicCatalogProduct;onClose:()=>void;onAdd:()=>void;onRequest:(kind:ProductInquiryKind)=>void}){
- const ready=product.purchasable;
- const [activeImage,setActiveImage]=useState(product.imageUrls?.[0]??product.imageUrl);
- return <div className="overlay" role="presentation" onClick={event=>{if(event.target===event.currentTarget)onClose();}}><section className="product-panel product-panel-brand" role="dialog" aria-modal="true" aria-label={product.name}>
-  <button className="close" onClick={onClose} aria-label="Cerrar ficha">×</button>
-  <div className="product-gallery"><ProductVisual product={product} imageUrl={activeImage}/><div className="gallery-thumbs">{product.imageUrls?.map((url,index)=><button key={url} className={url===activeImage?"active":""} onClick={()=>setActiveImage(url)} aria-label={`Ver imagen ${index+1}`}><img src={url} alt=""/></button>)}</div></div>
-  <div className="product-panel-copy"><span className="product-panel-kicker">FICHA PROFESIONAL · {product.sku}</span><small>{product.brand} · {product.family}</small><h2>{product.name}</h2><p>{product.description}</p><div className="specification-box"><strong>Datos del producto</strong><ul>{product.specifications.map(item=><li key={item}>{item}</li>)}<li>Aplicaciones: {product.segments.join(" · ")}</li></ul></div>
-  {product.technicalDocument&&<div className="documentation-box"><small>DOCUMENTACIÓN TÉCNICA</small><a className="product-document" href={product.technicalDocument.url} target="_blank" rel="noreferrer" download><strong>{product.technicalDocument.label} ↓</strong></a></div>}
-  <div className="buy-box">{ready?<><div><span>Precio sin IVA</span><strong>{euros(product.price)}</strong></div><div><span>IVA ({product.vatPercent} %)</span><b>{euros(product.priceVat-product.price)}</b></div><div><span>Total con IVA</span><b>{euros(product.priceVat)}</b></div><span>Transporte: calculado según destino antes de confirmar el pedido.</span><button onClick={onAdd}>Añadir al carrito</button></>:<><strong>Oferta profesional</strong><span>Indica cantidad, medida o capacidad y código postal de entrega.</span><button className="add-button request-quote-button" onClick={()=>onRequest("product")}>Solicitar información</button></>}</div></div>
- </section></div>;
+function CartPanel({
+  products,
+  cart,
+  subtotal,
+  onClose,
+  onChange,
+  onCheckout,
+}: {
+  products: PublicCatalogProduct[];
+  cart: Record<string, number>;
+  subtotal: number;
+  onClose: () => void;
+  onChange: (id: string, amount: number) => void;
+  onCheckout: (message: string) => void;
+}) {
+  const lines = products.filter((product) => cart[product.id] > 0);
+  const message = `Solicitud de oferta para:\n${lines.map((product) => `- ${cart[product.id]} × ${product.name} (${product.sku})`).join("\n")}\n\nCódigo postal de entrega: `;
+  return (
+    <div
+      className="overlay cart-overlay"
+      role="presentation"
+      onMouseDown={onClose}
+    >
+      <aside
+        className="cart-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Carrito"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <button className="close" onClick={onClose} aria-label="Cerrar carrito">
+          ×
+        </button>
+        <span className="eyebrow">TU SELECCIÓN</span>
+        <h2>Carrito</h2>
+        {lines.length ? (
+          <>
+            <div className="cart-lines">
+              {lines.map((product) => (
+                <div className="cart-line" key={product.id}>
+                  <ProductVisual product={product} />
+                  <div>
+                    <strong>{product.name}</strong>
+                    <small>
+                      {product.price.toFixed(2).replace(".", ",")} € /{" "}
+                      {product.unit}
+                    </small>
+                    <div>
+                      <button
+                        aria-label={`Quitar una unidad de ${product.name}`}
+                        onClick={() =>
+                          onChange(product.id, cart[product.id] - 1)
+                        }
+                      >
+                        −
+                      </button>
+                      <span>{cart[product.id]}</span>
+                      <button
+                        aria-label={`Añadir una unidad de ${product.name}`}
+                        onClick={() =>
+                          onChange(product.id, cart[product.id] + 1)
+                        }
+                      >
+                        +
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="subtotal">
+              <span>Subtotal sin IVA</span>
+              <strong>{subtotal.toFixed(2).replace(".", ",")} €</strong>
+            </div>
+            <button
+              className="checkout-offer"
+              onClick={() => onCheckout(message)}
+            >
+              Solicitar oferta
+            </button>
+            <p>
+              No se realizará ningún pago. Confirmaremos referencias, stock y
+              transporte antes de emitir una oferta vinculante.
+            </p>
+          </>
+        ) : (
+          <div className="empty-cart">
+            <strong>Tu carrito está vacío</strong>
+            <span>Añade los productos que quieras incluir en tu solicitud.</span>
+          </div>
+        )}
+      </aside>
+    </div>
+  );
 }
-function CartPanel({products,cart,subtotal,onClose,onChange,onCheckout}:{products:PublicCatalogProduct[];cart:Record<string,number>;subtotal:number;onClose:()=>void;onChange:(id:string,amount:number)=>void;onCheckout:(message:string)=>void}){const lines=products.filter((product)=>cart[product.id]>0);const message=`Solicitud de oferta para:\n${lines.map(product=>`- ${cart[product.id]} × ${product.name} (${product.sku})`).join("\n")}\n\nCódigo postal de entrega: `;return <div className="overlay cart-overlay" role="presentation" onMouseDown={onClose}><aside className="cart-panel" role="dialog" aria-modal="true" aria-label="Carrito" onMouseDown={(event)=>event.stopPropagation()}><button className="close" onClick={onClose} aria-label="Cerrar carrito">×</button><span className="eyebrow">TU SELECCIÓN</span><h2>Carrito</h2>{lines.length? <><div className="cart-lines">{lines.map((product)=><div className="cart-line" key={product.id}><ProductVisual product={product}/><div><strong>{product.name}</strong><small>{product.price.toFixed(2).replace(".",",")} € / {product.unit}</small><div><button aria-label={`Quitar una unidad de ${product.name}`} onClick={()=>onChange(product.id,cart[product.id]-1)}>−</button><span>{cart[product.id]}</span><button aria-label={`Añadir una unidad de ${product.name}`} onClick={()=>onChange(product.id,cart[product.id]+1)}>+</button></div></div></div>)}</div><div className="subtotal"><span>Subtotal sin IVA</span><strong>{subtotal.toFixed(2).replace(".",",")} €</strong></div><button className="checkout-demo" onClick={()=>onCheckout(message)}>Solicitar oferta</button><p>No se realizará ningún pago. Confirmaremos referencias, stock y transporte antes de emitir una oferta vinculante.</p></>:<div className="empty-cart"><strong>Tu carrito está vacío</strong><span>Añade productos para probar el recorrido.</span></div>}</aside></div>}
-function RequestsPanel({onClose}:{onClose:()=>void}){return <div className="overlay inquiry-overlay" role="presentation" onClick={event=>{if(event.target===event.currentTarget)onClose();}}><section className="inquiry-panel" role="dialog" aria-modal="true" aria-label="Seguimiento de solicitudes"><header><span>ATENCIÓN COMERCIAL</span><h2>Mis solicitudes</h2><button className="close" onClick={onClose} aria-label="Cerrar">×</button></header><div className="inquiry-success"><strong>Seguimiento por referencia</strong><p>Cada solicitud enviada desde la tienda genera una referencia que recibirás por correo. Responde a ese correo indicando la referencia para consultar su estado.</p><a className="inquiry-submit" href="mailto:ofertas@montajedeprefabricados.com?subject=Seguimiento%20de%20solicitud">Consultar una solicitud</a><button onClick={onClose}>Cerrar</button></div></section></div>}
+function RequestsPanel({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="overlay inquiry-overlay"
+      role="presentation"
+      onClick={(event) => {
+        if (event.target === event.currentTarget) onClose();
+      }}
+    >
+      <section
+        className="inquiry-panel"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Seguimiento de solicitudes"
+      >
+        <header>
+          <span>ATENCIÓN COMERCIAL</span>
+          <h2>Mis solicitudes</h2>
+          <button className="close" onClick={onClose} aria-label="Cerrar">
+            ×
+          </button>
+        </header>
+        <div className="inquiry-success">
+          <strong>Seguimiento por referencia</strong>
+          <p>
+            Cada solicitud enviada desde la tienda genera una referencia que
+            recibirás por correo. Responde a ese correo indicando la referencia
+            para consultar su estado.
+          </p>
+          <a
+            className="inquiry-submit"
+            href="mailto:ofertas@montajedeprefabricados.com?subject=Seguimiento%20de%20solicitud"
+          >
+            Consultar una solicitud
+          </a>
+          <button onClick={onClose}>Cerrar</button>
+        </div>
+      </section>
+    </div>
+  );
+}

@@ -3,16 +3,16 @@ import {readFileSync} from "node:fs";
 import {join} from "node:path";
 
 describe("store taxonomy controls",()=>{
-  it("exposes assembly tools as a dedicated product family",()=>{
+  it("uses the shared functional search and filter components",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    expect(source).not.toContain('from "@/data/catalog"');
-    expect(source).toContain('["utiles","Útiles de montaje"]');
+    expect(source).toContain("CatalogSearch");
+    expect(source).toContain("CatalogFilters");
+    expect(source).toContain("catalogCategories.map");
   });
-  it("presents an elevation-only storefront taxonomy",()=>{
+  it("presents functional categories instead of brand categories",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    for(const label of ["Pinzas","Balancines","Ganchos","Eslingas"]){expect(source).toContain(label);}
-    for(const removed of ["Protección y EPI","Corte y perforación","Sellado y reparación"]){expect(source).not.toContain(removed);}
-    expect(source).toContain("60 REFERENCIAS DE ELEVACIÓN");
+    for(const label of ["Fijación","Corte y perforación","Trabajos en altura"]){expect(source).toContain(label);}
+    expect(source).not.toContain('title="Productos Hilti"');
   });
   it("uses a dedicated product inquiry without exposing missing datasheets",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
@@ -22,12 +22,12 @@ describe("store taxonomy controls",()=>{
     expect(inquiry).toContain("Cuéntanos qué producto necesitas");
     expect(source).not.toContain("Configuración técnica necesaria");
   });
-  it("uses an elevation-only family navigation without unrelated material filters",()=>{
+  it("shares functional navigation and URL state with the filter panel",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("Familias de producto");
-    expect(source).toContain("Medios de elevación");
-    expect(source).not.toContain("Tipo de prefabricado");
-    expect(source).not.toContain('title="Altura y líneas de vida"');
+    expect(source).toContain("catalogCategories.map");
+    expect(source).toContain("serializeCatalogState");
+    expect(source).toContain('addEventListener("popstate"');
   });
   it("keeps commercial intelligence out of the public storefront",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");

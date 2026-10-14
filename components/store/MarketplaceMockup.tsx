@@ -2,55 +2,59 @@
 
 import {useEffect,useMemo, useState} from "react";
 import Brand from "@/components/v21/Brand";
-import {filterPublicCatalog,sortPublicCatalog,type PublicCatalogProduct,type PublicCatalogSort} from "@/data/public-catalog";
+import {sortPublicCatalog,type PublicCatalogProduct,type PublicCatalogSort} from "@/data/public-catalog";
+import {buildFacets,parseCatalogState,searchCatalog,serializeCatalogState,type CatalogSearchState} from "@/data/catalog-search";
+import {catalogCategories} from "@/data/catalog-taxonomy";
 import {SignInButton,SignedIn,SignedOut,UserButton} from "@clerk/nextjs";
 import ProductInquiryPanel from "./ProductInquiryPanel";
 import type {ProductInquiryKind} from "@/lib/product-inquiry";
 import {CatalogSearch,type CatalogSearchAction} from "./CatalogSearch";
-
-const families = [
-  ["todos","Todos"],["elevacion","Medios de elevación"],["utiles","Útiles de montaje"],
-] as const;
+import {CatalogFilters} from "./CatalogFilters";
 
 export default function MarketplaceMockup({initialProducts}:{initialProducts:PublicCatalogProduct[]}) {
-  const [query,setQuery] = useState("");
-  const [family,setFamily] = useState("todos");
+  const [searchState,setSearchState] = useState<CatalogSearchState>({query:""});
+  const [urlReady,setUrlReady] = useState(false);
   const [cart,setCart] = useState<Record<string,number>>({});
   const [selected,setSelected] = useState<PublicCatalogProduct | null>(null);
   const [cartOpen,setCartOpen] = useState(false);
   const [requestsOpen,setRequestsOpen] = useState(false);
   const [sort,setSort] = useState<PublicCatalogSort>("relevance");
   const [inquiry,setInquiry] = useState<{kind:ProductInquiryKind;product?:PublicCatalogProduct;initialMessage?:string}|null>(null);
-  const products = useMemo(()=>sortPublicCatalog(filterPublicCatalog(initialProducts,query,family,"todos"),sort),[initialProducts,query,family,sort]);
+  const products = useMemo(()=>sortPublicCatalog(searchCatalog(initialProducts,searchState),sort),[initialProducts,searchState,sort]);
+  const facets = useMemo(()=>buildFacets(initialProducts,searchState),[initialProducts,searchState]);
+  const query=searchState.query;
   const units = Object.values(cart).reduce((sum,value)=>sum+value,0);
   const subtotal = initialProducts.reduce((sum,product)=>sum+(cart[product.id] ?? 0)*product.price,0);
   const add = (product:PublicCatalogProduct) => setCart((current)=>({...current,[product.id]:(current[product.id] ?? 0)+1}));
   const handleSearchNavigation=(action:Exclude<CatalogSearchAction,{kind:"assisted"}>)=>{
     if(action.kind==="product"){const product=initialProducts.find(item=>item.id===action.value);if(product)setSelected(product);return;}
-    setFamily("todos");setQuery(action.value);
+    if(action.kind==="category")setSearchState(current=>({...current,query:"",categories:[action.value as NonNullable<CatalogSearchState["categories"]>[number]]}));
+    if(action.kind==="application")setSearchState(current=>({...current,query:"",applications:[action.value as NonNullable<CatalogSearchState["applications"]>[number]]}));
+    if(action.kind==="brand")setSearchState(current=>({...current,query:"",brands:[action.value]}));
   };
-  useEffect(()=>{const params=new URLSearchParams(window.location.search);const initialQuery=params.get("q");const initialFamily=params.get("familia");if(initialQuery)setQuery(initialQuery);if(initialFamily&&families.some(([value])=>value===initialFamily))setFamily(initialFamily);},[]);
+  useEffect(()=>{const read=()=>setSearchState(parseCatalogState(window.location.search));read();setUrlReady(true);window.addEventListener("popstate",read);return()=>window.removeEventListener("popstate",read);},[]);
+  useEffect(()=>{if(!urlReady)return;const params=serializeCatalogState(searchState);const next=params.size?`${window.location.pathname}?${params}${window.location.hash}`:`${window.location.pathname}${window.location.hash}`;window.history.replaceState(null,"",next);},[searchState,urlReady]);
   useEffect(()=>{const openHashProduct=()=>{const id=decodeURIComponent(window.location.hash.slice(1));if(!id)return;const product=initialProducts.find(item=>item.id===id);if(product){setSelected(product);document.getElementById(id)?.scrollIntoView({block:"center"});}};openHashProduct();window.addEventListener("hashchange",openHashProduct);return()=>window.removeEventListener("hashchange",openHashProduct);},[initialProducts]);
   useEffect(()=>{if(!selected)return;const previous=document.activeElement as HTMLElement|null;const overflow=document.body.style.overflow;document.body.style.overflow="hidden";requestAnimationFrame(()=>document.querySelector<HTMLElement>(".product-panel .close")?.focus());const onKey=(event:KeyboardEvent)=>{if(event.key==="Escape")setSelected(null);if(event.key==="Tab"){const controls=[...document.querySelectorAll<HTMLElement>(".product-panel button,.product-panel a")].filter(item=>!item.hasAttribute("disabled"));if(!controls.length)return;const first=controls[0],last=controls.at(-1)!;if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}};document.addEventListener("keydown",onKey);return()=>{document.removeEventListener("keydown",onKey);document.body.style.overflow=overflow;previous?.focus();};},[selected]);
   return <div className="store-mock">
     <div className="demo-ribbon">CATÁLOGO EN PREPARACIÓN · PRECIOS CALCULADOS NO VINCULANTES · IVA NO INCLUIDO</div>
     <header className="commerce-head">
       <Brand />
-      <CatalogSearch products={initialProducts} query={query} onQueryChange={setQuery} onNavigate={handleSearchNavigation} onAssistedSearch={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}/>
+      <CatalogSearch products={initialProducts} query={query} onQueryChange={value=>setSearchState(current=>({...current,query:value}))} onNavigate={handleSearchNavigation} onAssistedSearch={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}/>
       <nav className="commerce-actions" aria-label="Cuenta y carrito"><SignedOut><SignInButton mode="modal"><button><small>Hola, identifícate</small><strong>Cuenta y listas</strong></button></SignInButton></SignedOut><SignedIn><span className="account-control"><UserButton/><strong>Mi cuenta</strong></span></SignedIn><button onClick={()=>setRequestsOpen(true)}><small>Seguimiento</small><strong>Mis solicitudes</strong></button><button className="cart-trigger" onClick={()=>setCartOpen(true)}><span>{units}</span><strong>Carrito</strong></button></nav>
     </header>
-    <nav className="category-bar" aria-label="Familias de producto">{families.map(([value,label])=><button key={value} className={family===value?"active":""} onClick={()=>setFamily(value)}>{label}</button>)}<a href="/#preestudio">Necesito ayuda técnica</a></nav>
+    <nav className="category-bar" aria-label="Familias de producto"><button className={!searchState.categories?.length?"active":""} onClick={()=>setSearchState(current=>({query:current.query}))}>Todos</button>{catalogCategories.map(category=><button key={category.id} className={searchState.categories?.includes(category.id)?"active":""} onClick={()=>setSearchState(current=>({...current,categories:[category.id]}))}>{category.label}</button>)}<button onClick={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}>Necesito ayuda técnica</button></nav>
 
     <main>
       <section className="store-hero"><div><span className="eyebrow">60 REFERENCIAS DE ELEVACIÓN Y MANIPULACIÓN</span><h1>Eleva y coloca.<br/><em>Con criterio técnico.</em></h1><p>Pinzas, balancines, ganchos, eslingas y equipos configurables para manipular elementos prefabricados con la capacidad y geometría adecuadas.</p><div className="hero-pills"><span>Fotografías oficiales</span><span>Ficha técnica PDF</span><span>Oferta profesional</span></div></div><aside><span>¿No sabes qué referencia necesitas?</span><strong>Indícanos pieza, peso y puntos de izado.</strong><button onClick={()=>setInquiry({kind:"search"})}>Solicitar selección técnica</button></aside></section>
 
-      <section className="quick-categories" aria-label="Accesos rápidos"><CategoryTile code="01" title="Pinzas" note="Pozos, placas y piezas" onClick={()=>{setFamily("todos");setQuery("pinza");}}/><CategoryTile code="02" title="Balancines" note="Reparto y estabilización" onClick={()=>{setFamily("todos");setQuery("balancín");}}/><CategoryTile code="03" title="Ganchos" note="Conexión y elevación" onClick={()=>{setFamily("todos");setQuery("gancho");}}/><CategoryTile code="04" title="Eslingas" note="Cadenas y suspensión" onClick={()=>{setFamily("todos");setQuery("eslinga");}}/></section>
+      <section className="quick-categories" aria-label="Accesos rápidos"><CategoryTile code="01" title="Pinzas" note="Pozos, placas y piezas" onClick={()=>setSearchState({query:"pinza",categories:["elevacion"]})}/><CategoryTile code="02" title="Fijación" note="Anclajes y montaje" onClick={()=>setSearchState({query:"",categories:["fijacion"]})}/><CategoryTile code="03" title="Corte y perforación" note="Brocas, coronas y discos" onClick={()=>setSearchState({query:"",categories:["corte"]})}/><CategoryTile code="04" title="Trabajos en altura" note="Arneses y anticaídas" onClick={()=>setSearchState({query:"",categories:["altura"]})}/></section>
 
-       <section className="catalog-shell lifting-only"><aside className="filters"><strong>Catálogo especializado</strong><p>Solo medios de elevación y manipulación aprobados para esta fase.</p><button onClick={()=>{setFamily("todos");setQuery("");}}>Ver las 60 referencias</button></aside>
-        <div className="results"><div className="results-head"><div><span>{products.length} resultados con imagen verificada</span><h2>{family==="todos"?"Elevación y manipulación":families.find(([value])=>value===family)?.[1]}</h2></div><select aria-label="Ordenar resultados" value={sort} onChange={event=>setSort(event.target.value as PublicCatalogSort)}><option value="relevance">Más relevantes</option><option value="price-asc">Precio: menor a mayor</option><option value="rating">Mejor valorados</option></select></div><div className="catalog-help"><div><span className="eyebrow">BÚSQUEDA ASISTIDA</span><h3>¿No encuentras lo que buscas?</h3><p>Dinos la pieza, aplicación o problema de montaje. Te lo buscamos y, si hace falta, lo revisamos contigo por teléfono.</p></div><button onClick={()=>setInquiry({kind:"search"})}>Te lo buscamos →</button></div><div className="product-grid">{products.map((product)=><ProductCard key={product.id} product={product} onAdd={()=>add(product)} onOpen={()=>setSelected(product)}/>)}</div>{!products.length&&<div className="empty-state"><strong>No hay referencias para esta búsqueda</strong><span>Prueba otra palabra o utiliza la búsqueda asistida.</span></div>}</div>
+       <section className="catalog-shell"><CatalogFilters facets={facets} state={searchState} onChange={setSearchState} onClear={()=>setSearchState({query:searchState.query})}/>
+        <div className="results"><div className="results-head"><div><span>{products.length} resultados con imagen verificada</span><h2>{searchState.categories?.length===1?catalogCategories.find(category=>category.id===searchState.categories?.[0])?.label:"Catálogo profesional"}</h2></div><select aria-label="Ordenar resultados" value={sort} onChange={event=>setSort(event.target.value as PublicCatalogSort)}><option value="relevance">Más relevantes</option><option value="price-asc">Precio: menor a mayor</option><option value="rating">Mejor valorados</option></select></div><div className="catalog-help"><div><span className="eyebrow">BÚSQUEDA ASISTIDA</span><h3>¿No encuentras lo que buscas?</h3><p>Dinos la pieza, aplicación o problema de montaje. Te lo buscamos y, si hace falta, lo revisamos contigo por teléfono.</p></div><button onClick={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}>Te lo buscamos →</button></div><div className="product-grid">{products.map((product)=><ProductCard key={product.id} product={product} onAdd={()=>add(product)} onOpen={()=>setSelected(product)}/>)}</div>{!products.length&&<div className="empty-state"><strong>No hay referencias para esta búsqueda</strong><span>La consulta o los filtros activos están bloqueando los resultados.</span><button onClick={()=>setSearchState({query})}>Limpiar filtros</button><button onClick={()=>setInquiry({kind:"search",initialMessage:query?`Necesito ayuda para encontrar: ${query}`:undefined})}>Ayúdame a elegir</button></div>}</div>
       </section>
     </main>
-    <nav className="mobile-dock" aria-label="Navegación móvil"><button onClick={()=>setFamily("todos")}>⌂<span>Inicio</span></button><button onClick={()=>document.getElementById("store-search")?.focus()}>⌕<span>Buscar</span></button><SignedOut><SignInButton mode="modal"><button>◎<span>Cuenta</span></button></SignInButton></SignedOut><SignedIn><span className="mobile-account"><UserButton/><span>Cuenta</span></span></SignedIn><button onClick={()=>setCartOpen(true)} className="dock-cart">▣<b>{units}</b><span>Carrito</span></button></nav>
+    <nav className="mobile-dock" aria-label="Navegación móvil"><button onClick={()=>setSearchState({query:""})}>⌂<span>Inicio</span></button><button onClick={()=>document.getElementById("store-search")?.focus()}>⌕<span>Buscar</span></button><SignedOut><SignInButton mode="modal"><button>◎<span>Cuenta</span></button></SignInButton></SignedOut><SignedIn><span className="mobile-account"><UserButton/><span>Cuenta</span></span></SignedIn><button onClick={()=>setCartOpen(true)} className="dock-cart">▣<b>{units}</b><span>Carrito</span></button></nav>
     {selected&&<ProductPanel product={selected} onClose={()=>setSelected(null)} onAdd={()=>{add(selected);setSelected(null);}} onRequest={(kind)=>{setSelected(null);setInquiry({kind,product:selected});}}/>}
     {inquiry&&<ProductInquiryPanel kind={inquiry.kind} product={inquiry.product} initialMessage={inquiry.initialMessage} onClose={()=>setInquiry(null)}/>}
     {requestsOpen&&<RequestsPanel onClose={()=>setRequestsOpen(false)}/>}

@@ -132,6 +132,8 @@ export default function MarketplaceMockup({
       }
     };
     openHashProduct();
+    const pending=sessionStorage.getItem("pending-product-inquiry");
+    if(pending)try{const value=JSON.parse(pending) as {kind:ProductInquiryKind;productId:string;message:string};const product=initialProducts.find(item=>item.id===value.productId);setInquiry({kind:value.kind,product,initialMessage:value.message});}catch{sessionStorage.removeItem("pending-product-inquiry");}
     window.addEventListener("hashchange", openHashProduct);
     return () => window.removeEventListener("hashchange", openHashProduct);
   }, [initialProducts]);

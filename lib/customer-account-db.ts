@@ -98,4 +98,5 @@ export async function anonymizeCustomerAccount(userId:string){
   ]);
 }
 
+export async function requestCustomerAccountDeletion(userId:string){await ensureCustomerAccountSchema();await sql()`INSERT INTO customer_account_deletions(user_id) VALUES(${userId}) ON CONFLICT(user_id) DO NOTHING`;}
 export async function hasCompletedAccountDeletion(userId:string){await ensureCustomerAccountSchema();const rows=await sql()`SELECT completed_at FROM customer_account_deletions WHERE user_id=${userId}`;return Boolean(rows[0]?.completed_at);}

@@ -39,4 +39,5 @@ describe("customer account persistence helpers",()=>{
       privacy_accepted_at:"2026-10-15T10:00:00.000Z",created_at:"2026-10-15T10:00:00.000Z",updated_at:"2026-10-15T10:00:00.000Z",
     })).toMatchObject({userId:"user_1",email:"user@example.com",customerType:"individual",legalName:"",addressLine2:""});
   });
+  it("anonymizes personal data while preserving the commercial record",()=>{const code=source();for(const value of ["customer_name='Cuenta eliminada'","email=NULL","phone=NULL","documents='[]'::jsonb","profile_snapshot='{}'::jsonb"])expect(code).toContain(value);expect(code).not.toContain("DELETE FROM product_inquiries");expect(code).toContain("requestCustomerAccountDeletion");});
 });

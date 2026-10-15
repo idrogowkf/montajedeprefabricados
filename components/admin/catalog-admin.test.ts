@@ -14,6 +14,6 @@ describe("catalog administration",()=>{
     expect(source).not.toContain('<option value="hilti">');
     expect(source).toContain("Aplicar en masa");
     expect(source).toContain("Estado de publicación");
-    expect(source).toContain('statusFilter===\"todos\"');
+    expect(source).toMatch(/statusFilter\s*===\s*"todos"/);
   });
 });

@@ -21,6 +21,6 @@ describe("catalog administration",()=>{
       "PDF técnico verificado",
     ]){expect(source).toContain(label);}
     expect(source).toContain("hasVerifiedTechnicalDocument");
-    expect(source).toContain('statusFilter==="missing-doc"');
+    expect(source).toMatch(/statusFilter\s*===\s*"missing-doc"/);
   });
 });

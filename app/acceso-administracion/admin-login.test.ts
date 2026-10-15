@@ -1,25 +1,2 @@
-import {describe,expect,it} from "vitest";
-import {readFileSync} from "node:fs";
-import {join} from "node:path";
-
-describe("branded administrator access",()=>{
-  const page=readFileSync(join(process.cwd(),"app/acceso-administracion/[[...sign-in]]/page.tsx"),"utf8");
-  const css=readFileSync(join(process.cwd(),"app/acceso-administracion/access.css"),"utf8");
-  it("keeps the login inside the Montaje de Prefabricados identity",()=>{
-    for(const text of ["Acceso de administración","Correo y contraseña","SignIn"]){expect(page).toContain(text);}
-    expect(page).toContain('fallbackRedirectUrl="/administracion"');
-    expect(css).toContain("#ef233c");
-    expect(page).toContain('import Brand from "@/components/v21/Brand"');
-    expect(page).toContain("<Brand />");
-  });
-  it("does not expose Google access or public registration",()=>{
-    expect(page).toContain("socialButtons");
-    expect(page).toContain("footerAction");
-    expect(page).not.toContain("SignUp");
-    expect(css).toContain(".admin-auth-footer{display:none");
-  });
-  it("localizes the embedded identity form into Spanish",()=>{
-    const layout=readFileSync(join(process.cwd(),"app/layout.tsx"),"utf8");
-    for(const text of ["Accede a tu cuenta","Correo electrónico","Contraseña","Continuar"]){expect(layout).toContain(text);}
-  });
-});
+import {describe,expect,it} from "vitest";import {readFileSync} from "node:fs";import {join} from "node:path";
+describe("branded administrator access",()=>{const page=readFileSync(join(process.cwd(),"app/acceso-administracion/[[...sign-in]]/page.tsx"),"utf8"),form=readFileSync(join(process.cwd(),"components/auth/ClassicAuth.tsx"),"utf8"),css=readFileSync(join(process.cwd(),"app/acceso-administracion/access.css"),"utf8");it("uses the Montaje de Prefabricados identity and classic access",()=>{for(const text of ["Acceso de administración","correo administrativo","ClassicAuth","Brand"])expect(page).toContain(text);for(const text of ["Correo electrónico","Contraseña","Iniciar sesión","He olvidado mi contraseña"])expect(form).toContain(text);expect(css).toContain("#ef233c");});it("does not expose Clerk or Google",()=>{expect(page+form).not.toContain("Clerk");expect(page+form).not.toContain("Google");});});

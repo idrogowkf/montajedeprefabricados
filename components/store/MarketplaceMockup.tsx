@@ -18,7 +18,6 @@ import {
   catalogCategories,
   type CatalogCategoryId,
 } from "@/data/catalog-taxonomy";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import ProductInquiryPanel from "./ProductInquiryPanel";
 import type { ProductInquiryKind } from "@/lib/product-inquiry";
 import { CatalogSearch, type CatalogSearchAction } from "./CatalogSearch";
@@ -188,20 +187,7 @@ export default function MarketplaceMockup({
           }
         />
         <nav className="commerce-actions" aria-label="Cuenta y carrito">
-          <SignedOut>
-            <SignInButton mode="modal">
-              <button>
-                <small>Hola, identifícate</small>
-                <strong>Cuenta y listas</strong>
-              </button>
-            </SignInButton>
-          </SignedOut>
-          <SignedIn>
-            <span className="account-control">
-              <UserButton userProfileMode="navigation" userProfileUrl="/mi-cuenta" />
-              <a href="/mi-cuenta"><strong>Mi cuenta</strong></a>
-            </span>
-          </SignedIn>
+          <a className="account-control" href="/mi-cuenta"><small>Área de cliente</small><strong>Mi cuenta</strong></a>
           <a href="/mi-cuenta?seccion=solicitudes" className="requests-link">
             <small>Seguimiento</small>
             <strong>Mis solicitudes</strong>
@@ -401,19 +387,7 @@ export default function MarketplaceMockup({
         >
           ⌕<span>Buscar</span>
         </button>
-        <SignedOut>
-          <SignInButton mode="modal">
-            <button>
-              ◎<span>Cuenta</span>
-            </button>
-          </SignInButton>
-        </SignedOut>
-        <SignedIn>
-          <span className="mobile-account">
-            <UserButton userProfileMode="navigation" userProfileUrl="/mi-cuenta" />
-            <a href="/mi-cuenta">Cuenta</a>
-          </span>
-        </SignedIn>
+        <a className="mobile-account" href="/mi-cuenta">◎<span>Cuenta</span></a>
         <button onClick={() => setCartOpen(true)} className="dock-cart">
           ▣<b>{units}</b>
           <span>Carrito</span>

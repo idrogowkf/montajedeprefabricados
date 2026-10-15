@@ -62,10 +62,10 @@ export async function ensureCustomerAccountSchema(){schemaPromise??=(async()=>{
   )`;
 })().catch(error=>{schemaPromise=null;throw error;});return schemaPromise;}
 
-export async function getCustomerProfile(userId:string){await ensureCustomerAccountSchema();const rows=await sql()`SELECT * FROM customer_profiles WHERE user_id=${userId} AND deleted_at IS NULL LIMIT 1`;return rows.length?profileRowToCustomerProfile(rows[0] as ProfileRow):null;}
+export async function getCustomerProfile(userId:string){const rows=await sql()`SELECT * FROM customer_profiles WHERE user_id=${userId} AND deleted_at IS NULL LIMIT 1`;return rows.length?profileRowToCustomerProfile(rows[0] as ProfileRow):null;}
 
 export async function upsertCustomerProfile(userId:string,email:string,input:CustomerProfileInput){
-  await ensureCustomerAccountSchema();const db=sql();const normalizedEmail=normalizeCustomerEmail(email),taxId=normalizeTaxId(input.taxId),country=input.countryCode.trim().toUpperCase();
+  const db=sql();const normalizedEmail=normalizeCustomerEmail(email),taxId=normalizeTaxId(input.taxId),country=input.countryCode.trim().toUpperCase();
   const rows=await db`INSERT INTO customer_profiles(user_id,email,customer_type,contact_name,legal_name,tax_id_type,tax_id,phone,address_line1,address_line2,postal_code,city,province,country_code,privacy_accepted_at)
     VALUES(${userId},${normalizedEmail},${input.customerType},${input.contactName.trim()},${input.legalName.trim()||null},${input.taxIdType},${taxId},${input.phone.trim()},${input.addressLine1.trim()},${input.addressLine2.trim()||null},${input.postalCode.trim()},${input.city.trim()},${input.province.trim()},${country},now())
     ON CONFLICT(user_id) DO UPDATE SET email=EXCLUDED.email,customer_type=EXCLUDED.customer_type,contact_name=EXCLUDED.contact_name,legal_name=EXCLUDED.legal_name,tax_id_type=EXCLUDED.tax_id_type,tax_id=EXCLUDED.tax_id,phone=EXCLUDED.phone,address_line1=EXCLUDED.address_line1,address_line2=EXCLUDED.address_line2,postal_code=EXCLUDED.postal_code,city=EXCLUDED.city,province=EXCLUDED.province,country_code=EXCLUDED.country_code,privacy_accepted_at=CASE WHEN customer_profiles.privacy_accepted_at IS NULL THEN now() ELSE customer_profiles.privacy_accepted_at END,updated_at=now(),deleted_at=NULL RETURNING *`;
@@ -73,23 +73,23 @@ export async function upsertCustomerProfile(userId:string,email:string,input:Cus
 }
 
 export async function linkHistoricalInquiries(userId:string,verifiedEmails:string[]){
-  await ensureCustomerAccountSchema();const emails=[...new Set(verifiedEmails.map(normalizeCustomerEmail).filter(Boolean))];if(!emails.length)return 0;
+  const emails=[...new Set(verifiedEmails.map(normalizeCustomerEmail).filter(Boolean))];if(!emails.length)return 0;
   const rows=await sql()`UPDATE product_inquiries SET user_id=${userId},updated_at=now() WHERE user_id IS NULL AND lower(email)=ANY(${emails}) RETURNING id`;
   return rows.length;
 }
 
-export async function getCustomerInquiries(userId:string){await ensureCustomerAccountSchema();return sql()`SELECT id,kind,product_id,product_name,message,documents,public_status,created_at,updated_at FROM product_inquiries WHERE user_id=${userId} ORDER BY created_at DESC`;}
+export async function getCustomerInquiries(userId:string){return sql()`SELECT id,kind,product_id,product_name,message,documents,public_status,created_at,updated_at FROM product_inquiries WHERE user_id=${userId} ORDER BY created_at DESC`;}
 
-export async function getCustomerInquirySummary(userId:string){await ensureCustomerAccountSchema();const rows=await sql()`SELECT count(*)::int AS total,count(*) FILTER (WHERE public_status<>'closed')::int AS active FROM product_inquiries WHERE user_id=${userId}`;return {total:Number(rows[0]?.total??0),active:Number(rows[0]?.active??0)};}
+export async function getCustomerInquirySummary(userId:string){const rows=await sql()`SELECT count(*)::int AS total,count(*) FILTER (WHERE public_status<>'closed')::int AS active FROM product_inquiries WHERE user_id=${userId}`;return {total:Number(rows[0]?.total??0),active:Number(rows[0]?.active??0)};}
 
 export async function updateInquiryStatus(id:string,status:PublicInquiryStatus,adminNotes:string,actorId:string){
-  if(!isAllowedInquiryStatus(status))throw new Error("Estado de solicitud no válido");await ensureCustomerAccountSchema();const db=sql();
+  if(!isAllowedInquiryStatus(status))throw new Error("Estado de solicitud no válido");const db=sql();
   const queries=[db`UPDATE product_inquiries SET public_status=${status},admin_notes=${adminNotes.trim()||null},updated_at=now() WHERE id=${id} RETURNING id,kind,product_id,product_name,customer_name,company,email,phone,message,documents,status,public_status,admin_notes,profile_snapshot,created_at,updated_at`,db`INSERT INTO product_inquiry_status_audit(inquiry_id,actor_id,public_status,admin_notes) VALUES(${id},${actorId},${status},${adminNotes.trim()||null})`];
   const [updated]=await db.transaction(queries);if(!updated.length)throw new Error("Solicitud no encontrada");return updated[0];
 }
 
 export async function anonymizeCustomerAccount(userId:string){
-  await ensureCustomerAccountSchema();const db=sql();
+  const db=sql();
   await db.transaction([
     db`INSERT INTO customer_account_deletions(user_id) VALUES(${userId}) ON CONFLICT(user_id) DO NOTHING`,
     db`UPDATE product_inquiries SET user_id=NULL,customer_name='Cuenta eliminada',company=NULL,email=NULL,phone=NULL,documents='[]'::jsonb,profile_snapshot='{}'::jsonb,updated_at=now() WHERE user_id=${userId}`,
@@ -98,5 +98,5 @@ export async function anonymizeCustomerAccount(userId:string){
   ]);
 }
 
-export async function requestCustomerAccountDeletion(userId:string){await ensureCustomerAccountSchema();await sql()`INSERT INTO customer_account_deletions(user_id) VALUES(${userId}) ON CONFLICT(user_id) DO NOTHING`;}
-export async function hasCompletedAccountDeletion(userId:string){await ensureCustomerAccountSchema();const rows=await sql()`SELECT completed_at FROM customer_account_deletions WHERE user_id=${userId}`;return Boolean(rows[0]?.completed_at);}
+export async function requestCustomerAccountDeletion(userId:string){await sql()`INSERT INTO customer_account_deletions(user_id) VALUES(${userId}) ON CONFLICT(user_id) DO NOTHING`;}
+export async function hasCompletedAccountDeletion(userId:string){const rows=await sql()`SELECT completed_at FROM customer_account_deletions WHERE user_id=${userId}`;return Boolean(rows[0]?.completed_at);}

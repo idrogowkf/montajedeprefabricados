@@ -1,0 +1,13 @@
+import fs from "node:fs";
+import pg from "pg";
+const file=process.argv[2];
+if(!file)throw new Error("Indica el archivo de entorno");
+const line=fs.readFileSync(file,"utf8").split(/\r?\n/).find(value=>value.startsWith("DATABASE_URL="));
+if(!line)throw new Error("DATABASE_URL no encontrada");
+let connectionString=line.slice("DATABASE_URL=".length).trim();
+if((connectionString.startsWith('"')&&connectionString.endsWith('"'))||(connectionString.startsWith("'")&&connectionString.endsWith("'")))connectionString=connectionString.slice(1,-1);
+const pool=new pg.Pool({connectionString,ssl:{rejectUnauthorized:false}});
+const migration=fs.readFileSync("scripts/better-auth-schema.sql","utf8").replaceAll("create table ","create table if not exists ").replaceAll("create index ","create index if not exists ");
+await pool.query(migration);
+await pool.end();
+console.log("Migración de autenticación completada");

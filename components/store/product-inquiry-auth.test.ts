@@ -10,7 +10,7 @@ describe("authenticated inquiry experience", () => {
   it("shows sign-in and profile-completion states with a resumable product intent", () => {
     const code = source();
     for (const text of [
-      "useUser",
+      "signedIn",
       "Inicia sesión para solicitar una oferta",
       "Completa tu perfil",
       "sessionStorage",

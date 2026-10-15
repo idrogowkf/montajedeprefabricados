@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import { useUser } from "@clerk/nextjs";
 import FileUploader from "@/components/prestudy/FileUploader";
 import type { PublicCatalogProduct } from "@/data/public-catalog";
 import type {
@@ -11,6 +10,7 @@ import type { UploadedDocument } from "@/lib/prestudy";
 
 type AccountState = {
   loading: boolean;
+  signedIn: boolean;
   complete: boolean;
   email: string;
   contactName: string;
@@ -27,9 +27,9 @@ export default function ProductInquiryPanel({
   initialMessage?: string;
   onClose: () => void;
 }) {
-  const { isLoaded, isSignedIn } = useUser();
   const [account, setAccount] = useState<AccountState>({
       loading: true,
+      signedIn: false,
       complete: false,
       email: "",
       contactName: "",
@@ -57,17 +57,22 @@ export default function ProductInquiryPanel({
       }),
     );
   useEffect(() => {
-    if (!isLoaded) return;
-    if (!isSignedIn) {
-      setAccount((current) => ({ ...current, loading: false }));
-      return;
-    }
     fetch("/api/account/profile")
       .then(async (response) => {
+        if (response.status === 401) {
+          setAccount((current) => ({
+            ...current,
+            loading: false,
+            signedIn: false,
+          }));
+          return null;
+        }
         const data = await response.json();
         if (!response.ok) throw new Error(data.error);
+        if (!data) return;
         setAccount({
           loading: false,
+          signedIn: true,
           complete: Boolean(data.completion?.complete),
           email: data.identity?.email ?? "",
           contactName:
@@ -81,13 +86,14 @@ export default function ProductInquiryPanel({
       .catch(() =>
         setAccount({
           loading: false,
+          signedIn: false,
           complete: false,
           email: "",
           contactName: "",
           error: "No hemos podido comprobar tu perfil.",
         }),
       );
-  }, [isLoaded, isSignedIn]);
+  }, []);
   async function submit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setBusy(true);
@@ -163,11 +169,11 @@ export default function ProductInquiryPanel({
             </a>
             <button onClick={onClose}>Cerrar</button>
           </div>
-        ) : account.loading || !isLoaded ? (
+        ) : account.loading ? (
           <div className="inquiry-auth-state">
             <strong>Comprobando tu cuenta…</strong>
           </div>
-        ) : !isSignedIn ? (
+        ) : !account.signedIn ? (
           <div className="inquiry-auth-state">
             <strong>Inicia sesión para solicitar una oferta</strong>
             <p>Guardaremos el producto para que puedas continuar al volver.</p>

@@ -3,7 +3,6 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { jsonLdOrganization, jsonLdWebSite } from "@/lib/seo";
 import FloatingContactActions from "@/components/v21/FloatingContactActions";
-import {ClerkProvider} from "@clerk/nextjs";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.montajedeprefabricados.com"),
@@ -32,22 +31,9 @@ export const viewport: Viewport = {
     themeColor: "#070707",
 };
 
-const clerkLocalization={
-    locale:"es-ES",
-    formFieldLabel__emailAddress:"Correo electrónico",
-    formFieldLabel__password:"Contraseña",
-    formFieldInputPlaceholder__emailAddress:"Escribe tu correo electrónico",
-    formFieldInputPlaceholder__password:"Escribe tu contraseña",
-    formFieldAction__forgotPassword:"¿Has olvidado tu contraseña?",
-    formButtonPrimary:"Continuar",
-    signInEnterPasswordTitle:"Introduce tu contraseña",
-    backButton:"Volver",
-    signIn:{start:{title:"Accede a tu cuenta",subtitle:"Consulta tus datos y solicitudes",actionText:"",actionLink:""}},
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <ClerkProvider signInUrl="/iniciar-sesion" localization={clerkLocalization}><html lang="es">
+        <html lang="es">
             <head>
                 <script
                     type="application/ld+json"
@@ -60,6 +46,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className="bg-neutral-950 text-neutral-200">{children}<FloatingContactActions /></body>
-        </html></ClerkProvider>
+        </html>
     );
 }

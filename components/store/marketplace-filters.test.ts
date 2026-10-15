@@ -63,7 +63,9 @@ describe("store taxonomy controls",()=>{
   });
   it("wires every storefront action instead of rendering inert controls",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    expect(source).toContain("setRequestsOpen(true)");
+    expect(source).toContain('/mi-cuenta?seccion=solicitudes');
+    expect(source).toContain('userProfileUrl="/mi-cuenta"');
+    expect(source).not.toContain("Seguimiento por referencia");
     expect(source.match(/SignInButton mode="modal"/g)?.length).toBeGreaterThanOrEqual(2);
     expect(source).toContain("onCheckout");
     expect(source).toContain('value={sort}');

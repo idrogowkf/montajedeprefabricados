@@ -37,7 +37,6 @@ export default function MarketplaceMockup({
   const [cart, setCart] = useState<Record<string, number>>({});
   const [selected, setSelected] = useState<PublicCatalogProduct | null>(null);
   const [cartOpen, setCartOpen] = useState(false);
-  const [requestsOpen, setRequestsOpen] = useState(false);
   const [sort, setSort] = useState<PublicCatalogSort>("relevance");
   const [inquiry, setInquiry] = useState<{
     kind: ProductInquiryKind;
@@ -197,14 +196,14 @@ export default function MarketplaceMockup({
           </SignedOut>
           <SignedIn>
             <span className="account-control">
-              <UserButton />
-              <strong>Mi cuenta</strong>
+              <UserButton userProfileMode="navigation" userProfileUrl="/mi-cuenta" />
+              <a href="/mi-cuenta"><strong>Mi cuenta</strong></a>
             </span>
           </SignedIn>
-          <button onClick={() => setRequestsOpen(true)}>
+          <a href="/mi-cuenta?seccion=solicitudes" className="requests-link">
             <small>Seguimiento</small>
             <strong>Mis solicitudes</strong>
-          </button>
+          </a>
           <button className="cart-trigger" onClick={() => setCartOpen(true)}>
             <span>{units}</span>
             <strong>Carrito</strong>
@@ -409,8 +408,8 @@ export default function MarketplaceMockup({
         </SignedOut>
         <SignedIn>
           <span className="mobile-account">
-            <UserButton />
-            <span>Cuenta</span>
+            <UserButton userProfileMode="navigation" userProfileUrl="/mi-cuenta" />
+            <a href="/mi-cuenta">Cuenta</a>
           </span>
         </SignedIn>
         <button onClick={() => setCartOpen(true)} className="dock-cart">
@@ -452,7 +451,6 @@ export default function MarketplaceMockup({
           onClose={closeFinder}
         />
       )}
-      {requestsOpen && <RequestsPanel onClose={() => setRequestsOpen(false)} />}
       {cartOpen && (
         <CartPanel
           products={initialProducts}
@@ -790,47 +788,6 @@ function CartPanel({
           </div>
         )}
       </aside>
-    </div>
-  );
-}
-function RequestsPanel({ onClose }: { onClose: () => void }) {
-  return (
-    <div
-      className="overlay inquiry-overlay"
-      role="presentation"
-      onClick={(event) => {
-        if (event.target === event.currentTarget) onClose();
-      }}
-    >
-      <section
-        className="inquiry-panel"
-        role="dialog"
-        aria-modal="true"
-        aria-label="Seguimiento de solicitudes"
-      >
-        <header>
-          <span>ATENCIÓN COMERCIAL</span>
-          <h2>Mis solicitudes</h2>
-          <button className="close" onClick={onClose} aria-label="Cerrar">
-            ×
-          </button>
-        </header>
-        <div className="inquiry-success">
-          <strong>Seguimiento por referencia</strong>
-          <p>
-            Cada solicitud enviada desde la tienda genera una referencia que
-            recibirás por correo. Responde a ese correo indicando la referencia
-            para consultar su estado.
-          </p>
-          <a
-            className="inquiry-submit"
-            href="mailto:ofertas@montajedeprefabricados.com?subject=Seguimiento%20de%20solicitud"
-          >
-            Consultar una solicitud
-          </a>
-          <button onClick={onClose}>Cerrar</button>
-        </div>
-      </section>
     </div>
   );
 }

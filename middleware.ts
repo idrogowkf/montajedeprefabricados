@@ -6,7 +6,14 @@ const isAdminApi=createRouteMatcher(["/api/admin(.*)"]);
 const isCustomerAccount=createRouteMatcher(["/mi-cuenta(.*)","/api/account(.*)"]);
 
 export default clerkMiddleware(async(auth,request)=>{
-  if(isCustomerAccount(request))await auth.protect();
+  if(isCustomerAccount(request)){
+    const {userId}=await auth();
+    if(!userId&&request.nextUrl.pathname.startsWith("/mi-cuenta")){
+      const signInUrl=new URL("/iniciar-sesion",request.url);
+      signInUrl.searchParams.set("redirect_url",request.url);
+      return NextResponse.redirect(signInUrl);
+    }
+  }
   if(isAdminApi(request))await auth.protect();
   if(isAdminPage(request)){
     const {userId}=await auth();

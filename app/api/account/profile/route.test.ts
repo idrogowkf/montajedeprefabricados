@@ -50,6 +50,7 @@ describe("customer profile API",()=>{
     const middleware=readFileSync(join(process.cwd(),"middleware.ts"),"utf8");
     const layout=readFileSync(join(process.cwd(),"app/layout.tsx"),"utf8");
     expect(middleware).toContain('createRouteMatcher(["/mi-cuenta(.*)","/api/account(.*)"])');
+    expect(middleware).toContain('new URL("/iniciar-sesion",request.url)');
     expect(layout).toContain("Accede a tu cuenta");
     expect(layout).not.toContain("Acceso reservado a la administración");
     expect(layout).not.toContain("correo administrativo");

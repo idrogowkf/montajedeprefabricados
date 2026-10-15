@@ -47,7 +47,7 @@ const clerkLocalization={
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
-        <ClerkProvider signInUrl="/acceso-administracion" signUpUrl="/activar-administracion" localization={clerkLocalization}><html lang="es">
+        <ClerkProvider signInUrl="/iniciar-sesion" localization={clerkLocalization}><html lang="es">
             <head>
                 <script
                     type="application/ld+json"

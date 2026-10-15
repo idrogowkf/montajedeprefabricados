@@ -36,13 +36,13 @@ const clerkLocalization={
     locale:"es-ES",
     formFieldLabel__emailAddress:"Correo electrónico",
     formFieldLabel__password:"Contraseña",
-    formFieldInputPlaceholder__emailAddress:"Escribe tu correo administrativo",
+    formFieldInputPlaceholder__emailAddress:"Escribe tu correo electrónico",
     formFieldInputPlaceholder__password:"Escribe tu contraseña",
     formFieldAction__forgotPassword:"¿Has olvidado tu contraseña?",
     formButtonPrimary:"Continuar",
     signInEnterPasswordTitle:"Introduce tu contraseña",
     backButton:"Volver",
-    signIn:{start:{title:"Inicia sesión en Montaje de Prefabricados",subtitle:"Acceso reservado a la administración",actionText:"",actionLink:""}},
+    signIn:{start:{title:"Accede a tu cuenta",subtitle:"Consulta tus datos y solicitudes",actionText:"",actionLink:""}},
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

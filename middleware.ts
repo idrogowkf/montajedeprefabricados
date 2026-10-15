@@ -3,8 +3,10 @@ import {NextResponse} from "next/server";
 
 const isAdminPage=createRouteMatcher(["/administracion(.*)"]);
 const isAdminApi=createRouteMatcher(["/api/admin(.*)"]);
+const isCustomerAccount=createRouteMatcher(["/mi-cuenta(.*)","/api/account(.*)"]);
 
 export default clerkMiddleware(async(auth,request)=>{
+  if(isCustomerAccount(request))await auth.protect();
   if(isAdminApi(request))await auth.protect();
   if(isAdminPage(request)){
     const {userId}=await auth();

@@ -3,11 +3,12 @@ import {readFileSync} from "node:fs";
 import {join} from "node:path";
 
 describe("store taxonomy controls",()=>{
-  it("uses the shared functional search and filter components",()=>{
+  it("keeps one category selector below the hero and removes duplicate filters",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     expect(source).toContain("CatalogSearch");
-    expect(source).toContain("CatalogFilters");
-    expect(source).toContain("catalogCategories.map");
+    expect(source).toContain('className="quick-categories"');
+    expect(source).not.toContain("CatalogFilters");
+    expect(source).not.toContain('className="category-bar"');
   });
   it("presents functional categories instead of brand categories",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
@@ -22,10 +23,9 @@ describe("store taxonomy controls",()=>{
     expect(inquiry).toContain("Cuéntanos qué producto necesitas");
     expect(source).not.toContain("Configuración técnica necesaria");
   });
-  it("shares functional navigation and URL state with the filter panel",()=>{
+  it("keeps URL state without the duplicated category bar",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
-    expect(source).toContain("Familias de producto");
-    expect(source).toContain("catalogCategories.map");
+    expect(source).not.toContain("Familias de producto");
     expect(source).toContain("serializeCatalogState");
     expect(source).toContain('addEventListener("popstate"');
   });
@@ -38,14 +38,13 @@ describe("store taxonomy controls",()=>{
       expect(source).toContain(publicLabel);
     }
   });
-  it("offers assisted sourcing and keeps the filter panel legible",()=>{
+  it("offers assisted sourcing without a lateral filter panel",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");
     const css=readFileSync(join(process.cwd(),"app/catalog-enhancements.css"),"utf8");
     expect(source).toContain("¿No encuentras lo que buscas?");
     expect(source).toContain("Ayúdame a elegir");
     expect(source).toContain("TechnicalFinder");
-    expect(css).toContain(".store-mock .filters");
-    expect(css).toContain("background:#fff");
+    expect(source).not.toContain("CatalogFilters");
   });
   it("opens landing product hashes in the storefront",()=>{
     const source=readFileSync(join(process.cwd(),"components/store/MarketplaceMockup.tsx"),"utf8");

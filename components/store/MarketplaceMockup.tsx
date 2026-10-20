@@ -8,7 +8,6 @@ import {
   type PublicCatalogSort,
 } from "@/data/public-catalog";
 import {
-  buildFacets,
   parseCatalogState,
   searchCatalog,
   serializeCatalogState,
@@ -21,7 +20,6 @@ import {
 import ProductInquiryPanel from "./ProductInquiryPanel";
 import type { ProductInquiryKind } from "@/lib/product-inquiry";
 import { CatalogSearch, type CatalogSearchAction } from "./CatalogSearch";
-import { CatalogFilters } from "./CatalogFilters";
 import { TechnicalFinder } from "./TechnicalFinder";
 
 export default function MarketplaceMockup({
@@ -48,10 +46,6 @@ export default function MarketplaceMockup({
   const products = useMemo(
     () => sortPublicCatalog(searchCatalog(initialProducts, searchState), sort),
     [initialProducts, searchState, sort],
-  );
-  const facets = useMemo(
-    () => buildFacets(initialProducts, searchState),
-    [initialProducts, searchState],
   );
   const query = searchState.query;
   const units = Object.values(cart).reduce((sum, value) => sum + value, 0);
@@ -198,40 +192,6 @@ export default function MarketplaceMockup({
           </button>
         </nav>
       </header>
-      <nav className="category-bar" aria-label="Familias de producto">
-        <button
-          className={!searchState.categories?.length ? "active" : ""}
-          onClick={() =>
-            setSearchState((current) => ({ query: current.query }))
-          }
-        >
-          Todos
-        </button>
-        {catalogCategories.map((category) => (
-          <button
-            key={category.id}
-            className={
-              searchState.categories?.includes(category.id) ? "active" : ""
-            }
-            onClick={() =>
-              setSearchState((current) => ({
-                ...current,
-                categories: [category.id],
-              }))
-            }
-          >
-            {category.label}
-          </button>
-        ))}
-        <button
-          onClick={() =>
-            setFinder({ initialIntent: searchState.categories?.[0] })
-          }
-        >
-          Necesito ayuda técnica
-        </button>
-      </nav>
-
       <main>
         <section className="store-hero">
           <div>
@@ -298,12 +258,6 @@ export default function MarketplaceMockup({
         </section>
 
         <section className="catalog-shell">
-          <CatalogFilters
-            facets={facets}
-            state={searchState}
-            onChange={setSearchState}
-            onClear={() => setSearchState({ query: searchState.query })}
-          />
           <div className="results">
             <div className="results-head">
               <div>

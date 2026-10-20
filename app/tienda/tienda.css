@@ -242,7 +242,7 @@
   margin: 0 auto;
   padding: 28px 0 90px;
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 1fr;
   gap: 30px;
 }
 .filters {

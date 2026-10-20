@@ -25,6 +25,7 @@ export function normalizeCatalogText(value:string){
 const synonymGroups=Object.values(catalogSynonyms).map(group=>group.map(normalizeCatalogText));
 function aliases(term:string){return synonymGroups.find(group=>group.includes(term))??[term];}
 const includesAlias=(text:string,term:string)=>aliases(term).some(alias=>text.includes(alias));
+const searchStopWords=new Set(["a","al","con","de","del","el","en","la","las","lo","los","para","por","un","una","unos","unas","y"]);
 const categoryLabel=(id?:CatalogCategoryId)=>catalogCategories.find(category=>category.id===id)?.label??"";
 const applicationLabels=(ids:CatalogApplicationId[])=>ids.map(id=>catalogApplications.find(application=>application.id===id)?.label??id).join(" ");
 
@@ -44,14 +45,18 @@ export function buildSearchDocument(product:PublicCatalogProduct):CatalogSearchD
 function scoreProduct(product:PublicCatalogProduct,query:string){
   const normalized=normalizeCatalogText(query);
   if(!normalized)return 1;
-  const terms=normalized.split(" ");
+  const rawTerms=normalized.split(" ");
+  const terms=rawTerms.filter(term=>!searchStopWords.has(term));
   const document=buildSearchDocument(product);
   let score=0;
   const intentCategory:CatalogCategoryId|undefined=
-    terms.some(term=>catalogSynonyms.elevar.map(normalizeCatalogText).includes(term))?"elevacion":
+    rawTerms.some(term=>catalogSynonyms.elevar.map(normalizeCatalogText).includes(term))?"elevacion":
     terms.some(term=>catalogSynonyms.perforar.map(normalizeCatalogText).includes(term))?"corte":
     terms.some(term=>catalogSynonyms.fijar.map(normalizeCatalogText).includes(term))?"fijacion":
     terms.some(term=>catalogSynonyms.altura.map(normalizeCatalogText).includes(term))?"altura":undefined;
+  const coreSearchable=[document.reference,document.name,document.applications,document.pieceTypes,document.category,document.brand].join(" ");
+  if(intentCategory&&product.category!==intentCategory)return 0;
+  if(!intentCategory&&terms.length>1&&!terms.every(term=>includesAlias(coreSearchable,term)))return 0;
   if(intentCategory&&product.category===intentCategory)score+=200;
   if(document.reference===normalized)score+=1000;
   for(const term of terms){

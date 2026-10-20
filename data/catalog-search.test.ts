@@ -28,6 +28,16 @@ describe("catalog intent search",()=>{
     expect(searchCatalog(products,{query:"r11219549"})[0].id).toBe(target.id);
   });
 
+  it("requires every meaningful word so natural-language searches stay relevant",()=>{
+    const results=searchCatalog(products,{query:"pinza para pozos"});
+    expect(results.length).toBeGreaterThan(0);
+    expect(results.length).toBeLessThan(30);
+    expect(results.every(product=>{
+      const text=`${product.name} ${product.description} ${product.applications.join(" ")} ${product.pieceTypes.join(" ")}`.toLowerCase();
+      return text.includes("pinza")&&(text.includes("pozo")||text.includes("anillo")||text.includes("arqueta"));
+    })).toBe(true);
+  });
+
   it("suggests products, categories, applications, brands and assisted search within the limit",()=>{
     const suggestions=suggestCatalog(products,"perforar",6);
     expect(suggestions).toHaveLength(6);

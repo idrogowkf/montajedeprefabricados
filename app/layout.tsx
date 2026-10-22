@@ -22,7 +22,11 @@ export const metadata: Metadata = {
     openGraph: { type: "website", locale: "es_ES", siteName: "Montaje de Prefabricados", images: [{ url: "/og.png", alt: "Montaje de prefabricados" }] },
     twitter: { card: "summary_large_image", images: ["/og.png"] },
     icons: {
-        icon: "/favicon.svg",
+        icon: [
+            { url: "/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+            { url: "/favicon.ico", type: "image/x-icon" },
+        ],
+        apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
     },
     manifest: "/site.webmanifest",
 };
@@ -43,7 +47,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     }}
                 />
                 <script type="application/ld+json" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdWebSite()) }} />
-                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className="bg-neutral-950 text-neutral-200">{children}<FloatingContactActions /></body>
         </html>

@@ -183,7 +183,7 @@ function ClassicAuthForm({
       <nav>
         {mode === "signin" && (
           <>
-            <a href="/registro">Crear una cuenta</a>
+            {!admin && <a href="/registro">Crear una cuenta</a>}
             <a href="/recuperar-contrasena">He olvidado mi contraseña</a>
           </>
         )}

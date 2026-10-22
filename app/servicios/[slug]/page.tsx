@@ -6,8 +6,9 @@ import { createPageMetadata } from "@/lib/seo";
 
 export const dynamicParams = false;
 export function generateStaticParams(){return serviceSeoPages.map(({path})=>({slug:path.split("/").pop()!}));}
-export function generateMetadata({params}:{params:{slug:string}}):Metadata {
-  const service=seoPageByPath[`/servicios/${params.slug}`];
+export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata> {
+  const {slug}=await params;
+  const service=seoPageByPath[`/servicios/${slug}`];
   return service ? createPageMetadata(service) : {};
 }
-export default function Page({params}:{params:{slug:string}}){const page=seoPageByPath[`/servicios/${params.slug}`];if(!page)notFound();return <TechnicalServicePage page={page}/>;}
+export default async function Page({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const page=seoPageByPath[`/servicios/${slug}`];if(!page)notFound();return <TechnicalServicePage page={page}/>;}

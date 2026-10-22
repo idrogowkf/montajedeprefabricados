@@ -28,8 +28,8 @@ export async function POST(request: Request) {
     }
     const id = reference();
     const resend = new Resend(process.env.RESEND_API_KEY);
-    const from = process.env.MAIL_FROM || "Montaje Prefabricado <ofertas@montajesprefabricados.com>";
-    const to = process.env.MAIL_TO || "ofertas@montajesprefabricados.com";
+    const from = process.env.MAIL_FROM || "Montaje Prefabricado <ofertas@montajedeprefabricados.com>";
+    const to = process.env.MAIL_TO || "ofertas@montajedeprefabricados.com";
     const adminEmail = renderAdminPreStudyEmail(raw,id);
     const admin = await resend.emails.send({from,to,replyTo:raw.email || undefined,subject:`Nuevo preestudio de montaje — ${sanitizeText(raw.location,80)} / ${sanitizeText(raw.projectType,80)}`,...adminEmail});
     if (admin.error) throw new Error(admin.error.message);

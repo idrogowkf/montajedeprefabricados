@@ -47,7 +47,7 @@ describe("customer profile API",()=>{
   });
 
   it("keeps account routing protected and global sign-in copy customer-neutral",()=>{
-    const middleware=readFileSync(join(process.cwd(),"middleware.ts"),"utf8");
+    const middleware=readFileSync(join(process.cwd(),"proxy.ts"),"utf8");
     const layout=readFileSync(join(process.cwd(),"app/layout.tsx"),"utf8");
     expect(middleware).toContain('path.startsWith("/mi-cuenta")');
     expect(middleware).toContain('"/iniciar-sesion"');
